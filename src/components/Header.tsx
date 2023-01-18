@@ -9,6 +9,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { ComplexImageType, ImageType, Image } from "@yext/pages/components";
 import MobileMenu from "./MobileMenu";
+import { twMerge } from "tailwind-merge";
 
 // create a type from the navigation object
 export type NavItem = {
@@ -23,10 +24,6 @@ export type NavItem = {
     }[];
   };
 };
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 type HeaderProps = {
   logo?: ComplexImageType | ImageType;
@@ -75,7 +72,7 @@ const Header = ({ logo, navigation }: HeaderProps) => {
                                   <Popover.Button className="relative z-10 flex items-center justify-center text-sm font-medium text-white transition-colors duration-200 ease-out">
                                     {item.name}
                                     <span
-                                      className={classNames(
+                                      className={twMerge(
                                         open ? "bg-white" : "",
                                         "absolute inset-x-0 -bottom-px h-0.5 transition duration-200 ease-out"
                                       )}

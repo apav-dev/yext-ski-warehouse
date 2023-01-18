@@ -4,6 +4,7 @@ import { Dialog, Tab, Transition } from "@headlessui/react";
 import { NavItem } from "./Header";
 import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { ComplexImageType, ImageType, Image } from "@yext/pages/components";
+import { twMerge } from "tailwind-merge";
 
 type MobileMenuProps = {
   mobileMenuOpen: boolean;
@@ -69,9 +70,9 @@ const MobileMenu = ({
                       <Tab
                         key={item.name}
                         className={({ selected }) =>
-                          classNames(
+                          twMerge(
                             selected
-                              ? "text-indigo-600 border-indigo-600"
+                              ? "text-sky-400 border-sky-400"
                               : "text-gray-900 border-transparent",
                             "flex-1 whitespace-nowrap border-b-2 py-4 px-1 text-base font-medium"
                           )
@@ -92,16 +93,11 @@ const MobileMenu = ({
                             className="group relative"
                           >
                             <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                              {/* <img
-                                src={filter.imageSrc}
-                                alt={filter.imageAlt}
-                                className="object-cover object-center"
-                              /> */}
                               {filter.image && <Image image={filter.image} />}
                             </div>
                             <a
                               href={filter.href}
-                              className="mt-6 block text-sm font-medium text-gray-900"
+                              className="mt-6 block text-sm font-medium text-sky-400"
                             >
                               <span
                                 className="absolute inset-0 z-10"
@@ -116,25 +112,6 @@ const MobileMenu = ({
                   ))}
                 </Tab.Panels>
               </Tab.Group>
-
-              <div className="space-y-6 border-t border-gray-200 py-6 px-4">
-                <div className="flow-root">
-                  <a
-                    href="#"
-                    className="-m-2 block p-2 font-medium text-gray-900"
-                  >
-                    Create an account
-                  </a>
-                </div>
-                <div className="flow-root">
-                  <a
-                    href="#"
-                    className="-m-2 block p-2 font-medium text-gray-900"
-                  >
-                    Sign in
-                  </a>
-                </div>
-              </div>
             </Dialog.Panel>
           </Transition.Child>
         </div>

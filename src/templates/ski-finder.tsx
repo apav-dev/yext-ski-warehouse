@@ -7,8 +7,10 @@ import {
   TemplateRenderProps,
   TemplateConfig,
 } from "@yext/pages";
-import { Image } from "@yext/pages/components";
+import { ComplexImageType, Image } from "@yext/pages/components";
 import Header from "../components/Header";
+import ScrollingSelector from "../components/CategorySelector";
+import { useEffect, useState } from "react";
 
 export const config: TemplateConfig = {
   stream: {
@@ -20,6 +22,14 @@ export const config: TemplateConfig = {
       "c_subHeadingText",
       "c_navBar.name",
       "c_navBar.c_collection",
+      "c_genderFilter.name",
+      "c_genderFilter.primaryPhoto",
+      "c_abilityFilter.name",
+      "c_abilityFilter.description",
+      "c_abilityFilter.primaryPhoto",
+      "c_terrainFilter.name",
+      "c_terrainFilter.description",
+      "c_terrainFilter.primaryPhoto",
     ],
     filter: {
       entityTypes: ["ce_skiFinder"],
@@ -31,19 +41,10 @@ export const config: TemplateConfig = {
   },
 };
 
-/**
- * Defines the path that the generated file will live at for production.
- */
 export const getPath: GetPath<TemplateRenderProps> = () => {
   return `/ski-finder`;
 };
 
-/**
- * This allows the user to define a function which will take in their template
- * data and produce a HeadConfig object. When the site is generated, the HeadConfig
- * will be used to generate the inner contents of the HTML document's <head> tag.
- * This can include the title, meta tags, script tags, etc.
- */
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
   path,
@@ -65,16 +66,58 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const SkiFinder = ({ document }: TemplateRenderProps) => {
-  const { c_coverPhoto, c_headingText, c_subHeadingText, c_navBar, _site } =
-    document;
+  const {
+    c_coverPhoto,
+    c_headingText,
+    c_subHeadingText,
+    c_navBar,
+    c_genderFilter,
+    c_abilityFilter,
+    c_terrainFilter,
+    _site,
+  } = document;
   const logo = _site?.c_primaryLogo;
 
-  console.log("c_navBar", c_navBar);
+  const [sections, setSections] = useState<
+    {
+      name: string;
+      items: {
+        name: string;
+        image: ComplexImageType;
+        description?: string;
+      }[];
+    }[]
+  >([]);
+  const [started, getStarted] = useState(false);
+
+  useEffect(() => {
+    setSections([
+      {
+        name: "What kind of skis are you looking for?",
+        items: c_genderFilter.map((gender) => ({
+          name: gender.name,
+          image: gender.primaryPhoto,
+        })),
+      },
+      {
+        name: "What level of Skier are you?",
+        items: c_abilityFilter.map((ability) => ({
+          name: ability.name,
+          description: ability.description,
+          image: ability.primaryPhoto,
+        })),
+      },
+      {
+        name: "What terrain do you like to ski?",
+        items: c_terrainFilter.map((terrain) => ({
+          name: terrain.name,
+          description: terrain.description,
+          image: terrain.primaryPhoto,
+        })),
+      },
+    ]);
+  }, []);
 
   return (
     <>
@@ -92,40 +135,21 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
               <Image image={c_coverPhoto} />
             </div>
           )}
-          {/* <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-sky-400 opacity-40"
-          /> */}
-
           <div className="relative mx-auto flex max-w-3xl flex-col items-center py-32 px-6 text-center sm:py-64 lg:px-0">
             <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">
               {c_headingText}
             </h1>
             <p className="mt-4 text-xl text-white">{c_subHeadingText}</p>
-            <a
-              href="#"
+            <button
               className="mt-8 inline-block rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100"
+              onClick={() => getStarted(true)}
             >
-              Shop New Arrivals
-            </a>
+              Get Started
+            </button>
           </div>
         </div>
 
-        {/* <footer
-        aria-labelledby="footer-heading"
-        className="bg-gray-900 fixed bottom-0 w-full"
-      >
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="border-t border-gray-800 py-10">
-            <p className="text-sm text-gray-400">
-              Copyright &copy; 2021 Your Company, Inc.
-            </p>
-          </div>
-        </div>
-      </footer> */}
+        <ScrollingSelector sections={sections} scrollToStart={started} />
       </div>
     </>
   );
