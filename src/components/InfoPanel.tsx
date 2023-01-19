@@ -12,7 +12,13 @@ type InfoPanelProps = {
   data?: Section;
 };
 
-const InfoPanel = ({ infoPanelOpen, setPanelOpen, data }: InfoPanelProps) => {
+const InfoPanel = ({
+  infoPanelOpen,
+  setPanelOpen,
+  data,
+  title,
+  description,
+}: InfoPanelProps) => {
   return (
     <Transition.Root show={infoPanelOpen} as={Fragment}>
       <Dialog as="div" className="relative z-40 " onClose={setPanelOpen}>
@@ -50,15 +56,11 @@ const InfoPanel = ({ infoPanelOpen, setPanelOpen, data }: InfoPanelProps) => {
                 </button>
               </div>
               <h2 className="px-4 pt-5 pb-2 text-xl font-bold text-sky-400">
-                Terrain
+                {data?.title}
               </h2>
-              <p className="px-4">
-                Terrain refers to the type of snow and slopes that you will be
-                skiing on. It can have a big impact on the type of ski that you
-                should choose.
-              </p>
+              <p className="px-4">{data?.description}</p>
               <ul role="list">
-                {data?.items.map((item) => (
+                {data?.filterItems.map((item) => (
                   <li key={item.name} className="p-4">
                     <h3 className="font-bold text-sky-400 pb-1">{item.name}</h3>
                     <p>{item.description}</p>

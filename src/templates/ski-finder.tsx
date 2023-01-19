@@ -7,29 +7,28 @@ import {
   TemplateRenderProps,
   TemplateConfig,
 } from "@yext/pages";
-import { ComplexImageType, Image } from "@yext/pages/components";
+import { Image } from "@yext/pages/components";
 import Header from "../components/Header";
 import ScrollingSelector from "../components/CategorySelector";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export const config: TemplateConfig = {
   stream: {
     $id: "ski-finder",
-
     fields: [
       "c_coverPhoto",
       "c_headingText",
       "c_subHeadingText",
+      "c_finderHeadingText",
+      "c_finderDescriptionText",
       "c_navBar.name",
       "c_navBar.c_collection",
-      "c_genderFilter.name",
-      "c_genderFilter.primaryPhoto",
-      "c_abilityFilter.name",
-      "c_abilityFilter.description",
-      "c_abilityFilter.primaryPhoto",
-      "c_terrainFilter.name",
-      "c_terrainFilter.description",
-      "c_terrainFilter.primaryPhoto",
+      "c_filters.title",
+      "c_filters.description",
+      "c_filters.filterId",
+      "c_filters.filterItems.name",
+      "c_filters.filterItems.description",
+      "c_filters.filterItems.primaryPhoto",
     ],
     filter: {
       entityTypes: ["ce_skiFinder"],
@@ -42,7 +41,7 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateRenderProps> = () => {
-  return `/ski-finder`;
+  return `ski-finder`;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
@@ -71,66 +70,41 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     c_coverPhoto,
     c_headingText,
     c_subHeadingText,
+    c_finderHeadingText,
+    c_finderDescriptionText,
     c_navBar,
-    c_genderFilter,
-    c_abilityFilter,
-    c_terrainFilter,
+    c_filters,
     _site,
   } = document;
   const logo = _site?.c_primaryLogo;
 
-  const [sections, setSections] = useState<
-    {
-      name: string;
-      items: {
-        name: string;
-        image: ComplexImageType;
-        description?: string;
-      }[];
-    }[]
-  >([]);
   const [started, getStarted] = useState(false);
 
-  useEffect(() => {
-    setSections([
-      {
-        name: "What kind of skis are you looking for?",
-        items: c_genderFilter.map((gender) => ({
-          name: gender.name,
-          image: gender.primaryPhoto,
-        })),
-      },
-      {
-        name: "What level of Skier are you?",
-        items: c_abilityFilter.map((ability) => ({
-          name: ability.name,
-          description: ability.description,
-          image: ability.primaryPhoto,
-        })),
-      },
-      {
-        name: "What terrain do you like to ski?",
-        items: c_terrainFilter.map((terrain) => ({
-          name: terrain.name,
-          description: terrain.description,
-          image: terrain.primaryPhoto,
-        })),
-      },
-    ]);
-  }, []);
+  const handleComplete = (
+    filters: {
+      filterId: string;
+      filterValue: string;
+    }[]
+  ) => {
+    // add each filter to the url and redirect to the results page
+    let url = "/ski-finder/results";
+    filters.forEach((filter, index) => {
+      url += `${index === 0 ? "?" : "&"}${filter.filterId}=${
+        filter.filterValue
+      }`;
+    });
+    window.location.href = url;
+  };
 
   return (
     <>
-      <div className="bg-white">
-        {/* Hero section */}
-        <div className="relative bg-gray-900">
+      <div className="bg-gray-50">
+        <div className="relative ">
           <Header logo={logo} navigation={c_navBar} />
-
-          {/* Decorative image and overlay */}
           {c_coverPhoto && (
             <div
               aria-hidden="true"
-              className="absolute inset-0 overflow-hidden"
+              className="absolute inset-x-0 bottom-0 top-16 overflow-hidden"
             >
               <Image image={c_coverPhoto} />
             </div>
@@ -148,8 +122,13 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
             </button>
           </div>
         </div>
-
-        <ScrollingSelector sections={sections} scrollToStart={started} />
+        <ScrollingSelector
+          title={c_finderHeadingText}
+          description={c_finderDescriptionText}
+          sections={c_filters}
+          scrollToStart={started}
+          onComplete={handleComplete}
+        />
       </div>
     </>
   );
