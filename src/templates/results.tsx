@@ -16,7 +16,7 @@ import SearchResults from "../components/SearchResults";
 
 export const config: TemplateConfig = {
   stream: {
-    $id: "home",
+    $id: "results",
     fields: [
       "c_headingText",
       "c_subHeadingText",
