@@ -142,7 +142,7 @@ const ScrollingSelector = ({
                         "border-sky-400"
                     )}
                   >
-                    <div className="aspect-w-3 aspect-h-2 max-w-[300px] ">
+                    <div className="aspect-w-3 aspect-h-2 max-w-[300px] mx-auto">
                       <Image
                         className="rounded-lg object-cover object-center  shadow-lg"
                         image={item.primaryPhoto}

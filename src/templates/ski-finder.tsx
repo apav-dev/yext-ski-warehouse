@@ -85,7 +85,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     }[]
   ) => {
     // add each filter to the url and redirect to the results page
-    let url = "/ski-finder/results";
+    let url = "/results";
     filters.forEach((filter, index) => {
       url += `${index === 0 ? "?" : "&"}${filter.filterId}=${
         filter.filterValue
