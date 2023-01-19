@@ -5,21 +5,40 @@ import {
   GetHeadConfig,
   HeadConfig,
   TemplateRenderProps,
+  TemplateConfig,
 } from "@yext/pages";
 import {
-  FieldValueStaticFilter,
-  Matcher,
   provideHeadless,
   SearchHeadlessProvider,
-  SelectableStaticFilter,
 } from "@yext/search-headless-react";
 import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
-import { useEffect, useState } from "react";
-import useURLSearchParams from "../hooks/useURLSearchParams";
+
+export const config: TemplateConfig = {
+  stream: {
+    $id: "home",
+    fields: [
+      "c_headingText",
+      "c_subHeadingText",
+      "c_filters.title",
+      "c_filters.description",
+      "c_filters.filterId",
+      "c_filters.filterItems.name",
+      "c_filters.filterItems.description",
+      "c_filters.filterItems.primaryPhoto",
+    ],
+    filter: {
+      entityIds: ["8587540044421985388"],
+    },
+    localization: {
+      locales: ["en"],
+      primary: false,
+    },
+  },
+};
 
 export const getPath: GetPath<TemplateRenderProps> = () => {
-  return `ski-finder/results`;
+  return `results`;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
@@ -51,15 +70,21 @@ const searcher = provideHeadless({
 });
 
 const SkiFinder = ({ document }: TemplateRenderProps) => {
-  const { _site } = document;
+  const { _site, c_headingText, c_subHeadingText, c_filters } = document;
   const logo = _site?.c_primaryLogo;
+
+  const navBar = _site?.c_navBar;
 
   return (
     <SearchHeadlessProvider searcher={searcher}>
       <div className="bg-gray-50 min-h-screen">
         <div className="relative ">
-          <Header logo={logo} />
-          <SearchResults />
+          <Header logo={logo} navigation={navBar} />
+          <SearchResults
+            filters={c_filters}
+            headingText={c_headingText}
+            subheadingText={c_subHeadingText}
+          />
         </div>
       </div>
     </SearchHeadlessProvider>

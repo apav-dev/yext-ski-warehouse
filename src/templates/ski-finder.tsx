@@ -14,15 +14,13 @@ import { useState } from "react";
 
 export const config: TemplateConfig = {
   stream: {
-    $id: "ski-finder",
+    $id: "home",
     fields: [
       "c_coverPhoto",
       "c_headingText",
       "c_subHeadingText",
       "c_finderHeadingText",
       "c_finderDescriptionText",
-      "c_navBar.name",
-      "c_navBar.c_collection",
       "c_filters.title",
       "c_filters.description",
       "c_filters.filterId",
@@ -31,7 +29,7 @@ export const config: TemplateConfig = {
       "c_filters.filterItems.primaryPhoto",
     ],
     filter: {
-      entityTypes: ["ce_skiFinder"],
+      entityIds: ["9039550424390195544"],
     },
     localization: {
       locales: ["en"],
@@ -41,7 +39,7 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateRenderProps> = () => {
-  return `ski-finder`;
+  return `index.html`;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
@@ -72,11 +70,11 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     c_subHeadingText,
     c_finderHeadingText,
     c_finderDescriptionText,
-    c_navBar,
     c_filters,
     _site,
   } = document;
   const logo = _site?.c_primaryLogo;
+  const navBar = _site?.c_navBar;
 
   const [started, getStarted] = useState(false);
 
@@ -100,7 +98,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     <>
       <div className="bg-gray-50">
         <div className="relative ">
-          <Header logo={logo} navigation={c_navBar} />
+          <Header logo={logo} navigation={navBar} />
           {c_coverPhoto && (
             <div
               aria-hidden="true"

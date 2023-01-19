@@ -10,8 +10,19 @@ import { useEffect } from "react";
 import SkiCard from "./SkiCard";
 import CategoryFilters from "./CategoryFilters";
 import { getRuntime } from "@yext/pages/util";
+import { Section } from "./CategorySelector";
 
-const SearchResults = () => {
+type SearchResultsProps = {
+  filters: Section[];
+  headingText?: string;
+  subheadingText?: string;
+};
+
+const SearchResults = ({
+  headingText,
+  subheadingText,
+  filters,
+}: SearchResultsProps) => {
   const searchActions = useSearchActions();
 
   const staticFilters = useSearchState((state) => state.filters.static);
@@ -44,7 +55,11 @@ const SearchResults = () => {
 
   return (
     <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
-      <CategoryFilters />
+      <CategoryFilters
+        headingText={headingText}
+        subheadingText={subheadingText}
+        filters={filters}
+      />
       <VerticalResults
         customCssClasses={{
           verticalResultsContainer:

@@ -1,13 +1,7 @@
 import * as React from "react";
 
-import { Fragment, useEffect, useMemo, useState } from "react";
-import {
-  Dialog,
-  Disclosure,
-  Menu,
-  Popover,
-  Transition,
-} from "@headlessui/react";
+import { Fragment, useMemo, useState } from "react";
+import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { twMerge } from "tailwind-merge";
@@ -16,49 +10,29 @@ import {
   useSearchActions,
   useSearchState,
 } from "@yext/search-headless-react";
+import { Section } from "./CategorySelector";
 
 const sortOptions = [
   { name: "Most Popular", href: "#" },
   { name: "Best Rating", href: "#" },
   { name: "Newest", href: "#" },
 ];
-const filters = [
-  {
-    id: "c_gender.name",
-    name: "Gender",
-    options: [
-      { value: "Men", label: "Men's" },
-      { value: "Women", label: "Women's" },
-    ],
-  },
-  {
-    id: "c_abilityLevel.name",
-    name: "Ability Level",
-    options: [
-      { value: "Beginner-Intermediate", label: "Beginner-Intermediate" },
-      { value: "Intermediate-Advanced", label: "Intermediate-Advanced" },
-      { value: "Advanced-Expert", label: "Advanced-Expert" },
-    ],
-  },
-  {
-    id: "c_terrain.name",
-    name: "Terrain",
-    options: [
-      { value: "All-Mountain", label: "All-Mountain" },
-      { value: "Alpine Touring", label: "Alpine Touring" },
-      { value: "Big Mountain", label: "Big Mountain" },
-      { value: "Carving", label: "Carving" },
-      { value: "Park & Pipe", label: "Park & Pipe" },
-      { value: "Powder", label: "Powder" },
-    ],
-  },
-];
 
-const CategoryFilters = () => {
+type CategoryFiltersProps = {
+  headingText?: string;
+  subheadingText?: string;
+  filters: Section[];
+};
+
+const CategoryFilters = ({
+  headingText,
+  subheadingText,
+  filters,
+}: CategoryFiltersProps) => {
   const [open, setOpen] = useState(false);
   const [sectionCount, setSectionCount] = useState<Record<string, number>>(
     filters.reduce((acc, f) => {
-      acc[f.id] = 0;
+      acc[f.filterId] = 0;
       return acc;
     }, {} as Record<string, number>)
   );
@@ -164,7 +138,7 @@ const CategoryFilters = () => {
                   {filters.map((section) => (
                     <Disclosure
                       as="div"
-                      key={section.name}
+                      key={section.title}
                       className="border-t border-gray-200 px-4 py-6"
                     >
                       {({ open }) => (
@@ -172,7 +146,7 @@ const CategoryFilters = () => {
                           <h3 className="-mx-2 -my-3 flow-root">
                             <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-sm text-gray-400">
                               <span className="font-medium text-gray-900">
-                                {section.name}
+                                {section.title}
                               </span>
                               <span className="ml-6 flex items-center">
                                 <ChevronDownIcon
@@ -187,30 +161,30 @@ const CategoryFilters = () => {
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-6">
-                              {section.options.map((option, optionIdx) => (
+                              {section.filterItems.map((option, optionIdx) => (
                                 <div
-                                  key={option.value}
+                                  key={option.name}
                                   className="flex items-center"
                                 >
                                   <input
-                                    id={`filter-mobile-${section.id}-${optionIdx}`}
-                                    name={`${section.id}[]`}
-                                    defaultValue={option.value}
+                                    id={`filter-mobile-${section.title}-${optionIdx}`}
+                                    name={`${section.filterId}[]`}
+                                    defaultValue={option.name}
                                     type="checkbox"
                                     className="h-4 w-4 rounded border-gray-300 text-sky-400 focus:ring-sky-400"
                                     onChange={(e) =>
                                       handleOptionClick(
-                                        section.id,
-                                        option.value,
+                                        section.filterId,
+                                        option.name,
                                         e.target.checked
                                       )
                                     }
                                   />
                                   <label
-                                    htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
+                                    htmlFor={`filter-mobile-${section.filterId}-${optionIdx}`}
                                     className="ml-3 text-sm text-gray-500"
                                   >
-                                    {option.label}
+                                    {option.name}
                                   </label>
                                 </div>
                               ))}
@@ -230,10 +204,10 @@ const CategoryFilters = () => {
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="py-24">
           <h1 className="text-4xl font-bold tracking-tight text-sky-400">
-            New Arrivals
+            {headingText}
           </h1>
           <p className="mx-auto mt-4 max-w-3xl text-base text-sky-400">
-            Thoughtfully designed objects for the workspace, home, and travel.
+            {subheadingText}
           </p>
         </div>
 
@@ -300,16 +274,16 @@ const CategoryFilters = () => {
               {filters.map((section, sectionIdx) => (
                 <Popover
                   as="div"
-                  key={section.name}
+                  key={section.title}
                   id={`desktop-menu-${sectionIdx}`}
                   className="relative inline-block text-left"
                 >
                   <div>
                     <Popover.Button className="group inline-flex items-center justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
-                      <span>{section.name}</span>
-                      {sectionCount[section.id] > 0 ? (
+                      <span>{section.title}</span>
+                      {sectionCount[section.filterId] > 0 ? (
                         <span className="ml-1.5 rounded bg-gray-200 py-0.5 px-1.5 text-xs font-semibold tabular-nums text-gray-700">
-                          {sectionCount[section.id]}
+                          {sectionCount[section.filterId]}
                         </span>
                       ) : null}
                       <ChevronDownIcon
@@ -330,30 +304,30 @@ const CategoryFilters = () => {
                   >
                     <Popover.Panel className="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-white p-4 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <form className="space-y-4">
-                        {section.options.map((option, optionIdx) => (
-                          <div key={option.value} className="flex items-center">
+                        {section.filterItems.map((option, optionIdx) => (
+                          <div key={option.name} className="flex items-center">
                             <input
-                              id={`filter-${section.id}-${optionIdx}`}
-                              name={`${section.id}[]`}
-                              defaultValue={option.value}
+                              id={`filter-${section.filterId}-${optionIdx}`}
+                              name={`${section.filterId}[]`}
+                              defaultValue={option.name}
                               type="checkbox"
                               checked={activeFiltersValues.includes(
-                                option.value
+                                option.name
                               )}
                               onChange={(e) =>
                                 handleOptionClick(
-                                  section.id,
-                                  option.value,
+                                  section.filterId,
+                                  option.name,
                                   e.target.checked
                                 )
                               }
                               className="h-4 w-4 rounded border-gray-300 text-sky-400 focus:ring-sky-400"
                             />
                             <label
-                              htmlFor={`filter-${section.id}-${optionIdx}`}
+                              htmlFor={`filter-${section.filterId}-${optionIdx}`}
                               className="ml-3 whitespace-nowrap pr-6 text-sm font-medium text-gray-900"
                             >
-                              {option.label}
+                              {option.name}
                             </label>
                           </div>
                         ))}
