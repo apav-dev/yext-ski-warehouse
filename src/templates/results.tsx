@@ -28,7 +28,7 @@ export const config: TemplateConfig = {
       "c_filters.filterItems.primaryPhoto",
     ],
     filter: {
-      entityIds: ["8587540044421985388"],
+      entityIds: ["search_results"],
     },
     localization: {
       locales: ["en"],

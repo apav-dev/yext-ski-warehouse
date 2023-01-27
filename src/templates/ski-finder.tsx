@@ -29,7 +29,7 @@ export const config: TemplateConfig = {
       "c_filters.filterItems.primaryPhoto",
     ],
     filter: {
-      entityIds: ["9039550424390195544"],
+      entityIds: ["ski_finder"],
     },
     localization: {
       locales: ["en"],
