@@ -1,0 +1,54 @@
+{
+  "$id": "133672968",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "599.95",
+    "c_terrain": [
+      "463117075052872663"
+    ],
+    "description": "Phil Casabon AKA BDog is the one the the greatest street skiers of all time. And his signature ride, the Armada BDog Skis, are one of the greatest park and urban skis of all time as well. The BDog is super flexy, loaded with pop, and ready to rock your local terrain park or urban feature. They butter better than almost any ski on the market and are a prime tool for high level freestyle skiers looking to unleash their creativity.",
+    "name": "Armada BDog Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219359/918243/armada-bdog-skis-2023-.jpg,\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/erXcCnK2OrWNZ23OzvdHwrH5RFVHJtVvDNFiJKNmL1E/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/erXcCnK2OrWNZ23OzvdHwrH5RFVHJtVvDNFiJKNmL1E/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/erXcCnK2OrWNZ23OzvdHwrH5RFVHJtVvDNFiJKNmL1E/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/erXcCnK2OrWNZ23OzvdHwrH5RFVHJtVvDNFiJKNmL1E/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/erXcCnK2OrWNZ23OzvdHwrH5RFVHJtVvDNFiJKNmL1E/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

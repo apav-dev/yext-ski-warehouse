@@ -1,0 +1,71 @@
+{
+  "$id": "7096784237424891914",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 16,
+        "thumbnails": [
+          {
+            "height": 16,
+            "url": "https://a.mktgcdn.com/p/v9vAb-aaHUIyOkJ4QqGcMWB0mC_7VM8zqY267we__hI/16x16.png",
+            "width": 16
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/v9vAb-aaHUIyOkJ4QqGcMWB0mC_7VM8zqY267we__hI/16x16.png",
+        "width": 16
+      }
+    },
+    "c_skisByTerrain": [
+      "133672296",
+      "133674079",
+      "133672363",
+      "133672336",
+      "133672281",
+      "133699284",
+      "133672317",
+      "133699110",
+      "133672358"
+    ],
+    "description": "Alpine Touring, or backcountry, refers to skiing off of marked trails in the backcountry. This type of terrain can be very varied, including everything from powder to trees to steeps. Skiers who enjoy backcountry terrain typically have advanced or expert level skills and are comfortable navigating off-piste and in more remote areas. They may also use specialized equipment, such as touring bindings and skins, to access backcountry terrain.",
+    "name": "Alpine Touring",
+    "primaryPhoto": {
+      "image": {
+        "height": 1380,
+        "sourceUrl": "https://images.unsplash.com/photo-1615825007602-43c07677acaf?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2070\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1380,
+            "url": "https://a.mktgcdn.com/p/DwlHKutihtCjZRWO-uuN5csxwz6uNuEidndODuhOGpA/2070x1380.jpg",
+            "width": 2070
+          },
+          {
+            "height": 1267,
+            "url": "https://a.mktgcdn.com/p/DwlHKutihtCjZRWO-uuN5csxwz6uNuEidndODuhOGpA/1900x1267.jpg",
+            "width": 1900
+          },
+          {
+            "height": 413,
+            "url": "https://a.mktgcdn.com/p/DwlHKutihtCjZRWO-uuN5csxwz6uNuEidndODuhOGpA/619x413.jpg",
+            "width": 619
+          },
+          {
+            "height": 400,
+            "url": "https://a.mktgcdn.com/p/DwlHKutihtCjZRWO-uuN5csxwz6uNuEidndODuhOGpA/600x400.jpg",
+            "width": 600
+          },
+          {
+            "height": 131,
+            "url": "https://a.mktgcdn.com/p/DwlHKutihtCjZRWO-uuN5csxwz6uNuEidndODuhOGpA/196x131.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/DwlHKutihtCjZRWO-uuN5csxwz6uNuEidndODuhOGpA/2070x1380.jpg",
+        "width": 2070
+      }
+    }
+  },
+  "entityType": "ce_terrain",
+  "labels": []
+}

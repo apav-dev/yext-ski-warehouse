@@ -1,0 +1,54 @@
+{
+  "$id": "133672399",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "649.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Blizzard Black Pearl 88 Skis have been a fan favorite for many years, and there\u0027s no sign of a letup. Smooth, balanced, and supremely capable in variable conditions, they offer a versatile ride that won\u0027t let you down on firmer snow, or at faster speeds. And that\u0027s not all. This year the Black Pearl 88 has been redesigned with input from Blizzard\u0027s trailblazing Women 2 Women project, engineered with a women\u0027s specific TrueBlend Flipcore layup that allows you to squeeze the juice out of every run.",
+    "name": "Blizzard Black Pearl 88 Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/223097/978825/clone.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/pxM14ngswyhmwlzztibHbnaJmaGBczx4J4mKuph1yy4/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/pxM14ngswyhmwlzztibHbnaJmaGBczx4J4mKuph1yy4/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/pxM14ngswyhmwlzztibHbnaJmaGBczx4J4mKuph1yy4/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/pxM14ngswyhmwlzztibHbnaJmaGBczx4J4mKuph1yy4/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/pxM14ngswyhmwlzztibHbnaJmaGBczx4J4mKuph1yy4/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

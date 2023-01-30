@@ -1,0 +1,54 @@
+{
+  "$id": "133673002",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "599.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Lightweight alpine ski that\u0027s quick and nimble enough for tight trees and technical terrain? Touring ski with enough guts to ski with confidence in tough terrain and variable snow? The Völkl Blaze 94 Skis are both. Amazingly stable and confident for their light weight, experienced backcountry skiers as well as inbounds riders who prefer their sticks on the light and maneuverable side are both finding the Blaze 94 hits a sweet spot they\u0027d never known existed. A full sidewall construction with just a bit of Titanal underfoot and Völkl\u0027s proven 3D Radius add up to a package that\u0027s yearning to turn and capable anywhere on the mountain.",
+    "name": "Völkl Blaze 94 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227078/915707/volkl-blaze-94-skis-2023-.jpg",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/yBz5M9UwxpcT4kujNyC2bmy22YEDfpxW3A6v-Azf1dU/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/yBz5M9UwxpcT4kujNyC2bmy22YEDfpxW3A6v-Azf1dU/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/yBz5M9UwxpcT4kujNyC2bmy22YEDfpxW3A6v-Azf1dU/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/yBz5M9UwxpcT4kujNyC2bmy22YEDfpxW3A6v-Azf1dU/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/yBz5M9UwxpcT4kujNyC2bmy22YEDfpxW3A6v-Azf1dU/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

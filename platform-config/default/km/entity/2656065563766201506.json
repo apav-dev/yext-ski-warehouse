@@ -1,0 +1,60 @@
+{
+  "$id": "2656065563766201506",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 16,
+        "thumbnails": [
+          {
+            "height": 16,
+            "url": "https://a.mktgcdn.com/p/Pwg92a-Dq9T-o-oKeEnsE5rQfo55g7xlxLfMNy9wDoU/16x16.png",
+            "width": 16
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/Pwg92a-Dq9T-o-oKeEnsE5rQfo55g7xlxLfMNy9wDoU/16x16.png",
+        "width": 16
+      }
+    },
+    "description": "Carving refers to the technique of making precise, clean turns on skis by leaning the skis onto their edges. Carving skis are designed to make this technique easier and more efficient. Skiers who enjoy carving typically have good technique and enjoy the feeling of making smooth, controlled turns on the mountain.",
+    "name": "Carving",
+    "primaryPhoto": {
+      "image": {
+        "height": 1380,
+        "sourceUrl": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2070\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1380,
+            "url": "https://a.mktgcdn.com/p/81eEtL-YQ8V1Oek60idtDxk9_2wpPwCsN1diIKaq29Y/2070x1380.png",
+            "width": 2070
+          },
+          {
+            "height": 1267,
+            "url": "https://a.mktgcdn.com/p/81eEtL-YQ8V1Oek60idtDxk9_2wpPwCsN1diIKaq29Y/1900x1267.png",
+            "width": 1900
+          },
+          {
+            "height": 413,
+            "url": "https://a.mktgcdn.com/p/81eEtL-YQ8V1Oek60idtDxk9_2wpPwCsN1diIKaq29Y/619x413.png",
+            "width": 619
+          },
+          {
+            "height": 400,
+            "url": "https://a.mktgcdn.com/p/81eEtL-YQ8V1Oek60idtDxk9_2wpPwCsN1diIKaq29Y/600x400.png",
+            "width": 600
+          },
+          {
+            "height": 131,
+            "url": "https://a.mktgcdn.com/p/81eEtL-YQ8V1Oek60idtDxk9_2wpPwCsN1diIKaq29Y/196x131.png",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/81eEtL-YQ8V1Oek60idtDxk9_2wpPwCsN1diIKaq29Y/2070x1380.png",
+        "width": 2070
+      }
+    }
+  },
+  "entityType": "ce_terrain",
+  "labels": []
+}

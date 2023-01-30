@@ -1,0 +1,19 @@
+{
+  "$id": "c_abilityLevel",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Ability Level",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "entityReference",
+      "type": {
+        "entityReferenceType": {
+          "relatedFieldId": "c_skisByAbility",
+          "type": "TWO_WAY"
+        }
+      }
+    }
+  },
+  "typeId": "list"
+}

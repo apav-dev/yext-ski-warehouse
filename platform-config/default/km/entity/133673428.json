@@ -1,0 +1,54 @@
+{
+  "$id": "133673428",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "849.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Ripstick 96 is a special ski. Few sticks can offer the same range of versatility. It\u0027s powerful, precise, charges hard through choppy snow and icy groomers alike, yet can be relaxed and non-demanding enough for everyday riding. The Elan Ripstick 96 Black Edition Skis keeps that same core philosophy, but turns up the volume a little bit. In addition to the more serious topsheet, the Black Edition features an extra dose of carbon for added stiffness and top-end speed. It\u0027s a powerful all-mountain machine for demanding skiers to pick up any day in any conditions. And it\u0027s so lightweight you wouldn\u0027t be bummed at all if you tossed a pair of hybrid touring bindings on to craft a do-it-all weapon for technical backcountry lines.",
+    "name": "Elan Ripstick 96 Black Edition Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/198223/788806/clone.jpg,\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/8N_ztqPwWNX5uMywIl18Ki7mOH_TO65NbC6g1OYrMyw/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/8N_ztqPwWNX5uMywIl18Ki7mOH_TO65NbC6g1OYrMyw/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/8N_ztqPwWNX5uMywIl18Ki7mOH_TO65NbC6g1OYrMyw/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/8N_ztqPwWNX5uMywIl18Ki7mOH_TO65NbC6g1OYrMyw/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/8N_ztqPwWNX5uMywIl18Ki7mOH_TO65NbC6g1OYrMyw/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

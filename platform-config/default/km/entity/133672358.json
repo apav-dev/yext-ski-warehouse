@@ -1,0 +1,54 @@
+{
+  "$id": "133672358",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "799.95",
+    "c_terrain": [
+      "7096784237424891914"
+    ],
+    "description": "The Atomic Bent Chetler 120 Skis have been going strong for 14 years with no sign of slowing down. As the big brother of the newly expanded Bent family, they continue to set the standard for powder hungry freeriders seeking a more progressive - but no less capable - shape. Light, nimble, impossibly floaty, and stacked with enough guts to stomp every landing from here to Hokkaido, the Bent Chetler 120s are built to nurture your creativity and stoke the fire within.",
+    "name": "Atomic Bent Chetler 120 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219398/896896/atomic-bent-chetler-120-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/9nr4CS6J4mfUMT4Pkf_c75Id6DNSxekZnGgIE-3g0ns/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/9nr4CS6J4mfUMT4Pkf_c75Id6DNSxekZnGgIE-3g0ns/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/9nr4CS6J4mfUMT4Pkf_c75Id6DNSxekZnGgIE-3g0ns/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/9nr4CS6J4mfUMT4Pkf_c75Id6DNSxekZnGgIE-3g0ns/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/9nr4CS6J4mfUMT4Pkf_c75Id6DNSxekZnGgIE-3g0ns/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

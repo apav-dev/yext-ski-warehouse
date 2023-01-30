@@ -1,0 +1,14 @@
+{
+  "$id": "ce_abilityLevel.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Ability Level-default",
+  "entityType": "ce_abilityLevel",
+  "fields": [
+    "c_categoryFilterId",
+    "c_icon",
+    "c_skisByAbility",
+    "description",
+    "primaryPhoto"
+  ],
+  "required": []
+}

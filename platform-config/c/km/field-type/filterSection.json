@@ -1,0 +1,69 @@
+{
+  "$id": "c_filterSection",
+  "$schema": "https://schema.yext.com/config/km/field-type/v1",
+  "displayName": "Filter Section",
+  "type": {
+    "structType": {
+      "property": [
+        {
+          "name": "title",
+          "displayName": "Title",
+          "isRequired": true,
+          "typeId": "string",
+          "type": {
+            "stringType": {
+              "stereotype": "SIMPLE",
+              "maxLength": 100000
+            }
+          }
+        },
+        {
+          "name": "description",
+          "displayName": "Description",
+          "isRequired": false,
+          "typeId": "string",
+          "type": {
+            "stringType": {
+              "stereotype": "SIMPLE",
+              "maxLength": 100000
+            }
+          }
+        },
+        {
+          "name": "filterItems",
+          "displayName": "Filter Items",
+          "isRequired": false,
+          "typeId": "list",
+          "type": {
+            "listType": {
+              "typeId": "entityReference",
+              "maxLength": 5000,
+              "type": {
+                "entityReferenceType": {
+                  "supportedEntityTypeIds": [
+                    "ce_gender",
+                    "ce_terrain",
+                    "ce_abilityLevel"
+                  ],
+                  "type": "ONE_WAY"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "filterId",
+          "displayName": "filterId",
+          "isRequired": false,
+          "typeId": "string",
+          "type": {
+            "stringType": {
+              "stereotype": "SIMPLE",
+              "maxLength": 100000
+            }
+          }
+        }
+      ]
+    }
+  }
+}

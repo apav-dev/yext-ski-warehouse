@@ -1,0 +1,54 @@
+{
+  "$id": "133672949",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "3726456647343833499"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "399.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Whether you\u0027re just getting started in the park, or just getting started on the mountain, the Armada ARV 84 Skis are a perfect first step. They\u0027re made with a lightweight, highly durable composite core, plus semi-cap sidewalls and oversized edges for maximum durability. They\u0027re soft and easy to press into a variety of turn shapes, which makes them perfect for mastering the art of the turn, or bashing against rails on your way to your first stomp.",
+    "name": "Armada ARV 84 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219355/923866/armada-arv-84-skis-2023-.jpg,\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/iBhy3mcKkMfpmjDtHD5Ev8qx46BmHJR5OEVnU6KVxqg/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/iBhy3mcKkMfpmjDtHD5Ev8qx46BmHJR5OEVnU6KVxqg/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/iBhy3mcKkMfpmjDtHD5Ev8qx46BmHJR5OEVnU6KVxqg/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/iBhy3mcKkMfpmjDtHD5Ev8qx46BmHJR5OEVnU6KVxqg/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/iBhy3mcKkMfpmjDtHD5Ev8qx46BmHJR5OEVnU6KVxqg/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

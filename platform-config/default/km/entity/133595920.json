@@ -1,0 +1,54 @@
+{
+  "$id": "133595920",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "749.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Salomon QST Stella 106 Skis are refined perfection in a soft snow freeride tool. They\u0027re nimble, lightweight, and directional, perfect for crushing around the resort or dancing through trees in the side country. They\u0027re dependable and fun, and the level of technical detail put into them is simply astounding. Cutout sections in the tips are filled with cork for lightweight dampening, and a blend of flax and carbon fiber is placed underfoot. The full poplar core lends the stability and power needed for high speed performance, and the tapered tips and twin rocker profile keeps them loose and bouncy. Find out why so many skiers of all levels turn to the Stella 106 when there\u0027s fresh snow to be slayed!",
+    "name": "Salomon QST Stella 106 Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219250/910802/salomon-qst-stella-106-skis-women-s-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/sfaG5duqyoJsHIvU-1RkXGypUpjrN5a5tszEbhWdrmQ/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/sfaG5duqyoJsHIvU-1RkXGypUpjrN5a5tszEbhWdrmQ/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/sfaG5duqyoJsHIvU-1RkXGypUpjrN5a5tszEbhWdrmQ/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/sfaG5duqyoJsHIvU-1RkXGypUpjrN5a5tszEbhWdrmQ/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/sfaG5duqyoJsHIvU-1RkXGypUpjrN5a5tszEbhWdrmQ/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

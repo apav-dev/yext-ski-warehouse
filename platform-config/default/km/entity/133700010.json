@@ -1,0 +1,54 @@
+{
+  "$id": "133700010",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "949.00",
+    "c_terrain": [
+      "7200013882251703847"
+    ],
+    "description": "The fattest of the fats in the Faction paddock at 119 millimeters underfoot, the Faction Mana 4 Skis are surprisingly nimble underfoot considering their girth, and lend themselves to the most creative and playful styles in the deepest conditions. The Mana 4 is laid up around a Paulownia-Poplar core with a full Carbon Weave construction for a light but poppy feel and easy handling in variable snow. Face it, a powder day is a rare gift, and \"Mana from Heaven\" should be on your menu on such a day.",
+    "name": "Faction Mana 4 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227145/939884/faction-mana-4-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/XZp7A15QH9zBSpCVOCVcBh2vLoAtirBY2IaNm5Il0Z0/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/XZp7A15QH9zBSpCVOCVcBh2vLoAtirBY2IaNm5Il0Z0/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/XZp7A15QH9zBSpCVOCVcBh2vLoAtirBY2IaNm5Il0Z0/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/XZp7A15QH9zBSpCVOCVcBh2vLoAtirBY2IaNm5Il0Z0/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/XZp7A15QH9zBSpCVOCVcBh2vLoAtirBY2IaNm5Il0Z0/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

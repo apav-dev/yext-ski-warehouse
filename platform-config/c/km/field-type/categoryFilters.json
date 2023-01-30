@@ -1,0 +1,77 @@
+{
+  "$id": "c_categoryFilters",
+  "$schema": "https://schema.yext.com/config/km/field-type/v1",
+  "displayName": "Category Filters",
+  "type": {
+    "structType": {
+      "property": [
+        {
+          "name": "filters",
+          "displayName": "Filters",
+          "isRequired": false,
+          "typeId": "list",
+          "type": {
+            "listType": {
+              "typeId": "struct",
+              "maxLength": 5000,
+              "type": {
+                "structType": {
+                  "property": [
+                    {
+                      "displayName": "value",
+                      "isRequired": true,
+                      "name": "value",
+                      "type": {
+                        "stringType": {
+                          "maxLength": 100000,
+                          "stereotype": "SIMPLE"
+                        }
+                      },
+                      "typeId": "string"
+                    },
+                    {
+                      "displayName": "Image",
+                      "isRequired": false,
+                      "name": "image",
+                      "type": {
+                        "imageType": {
+                          "isSimpleImage": false,
+                          "unconstrainedAspectRatioAllowed": true
+                        }
+                      },
+                      "typeId": "image"
+                    },
+                    {
+                      "displayName": "Label",
+                      "isRequired": false,
+                      "name": "label",
+                      "type": {
+                        "stringType": {
+                          "maxLength": 100000,
+                          "stereotype": "SIMPLE"
+                        }
+                      },
+                      "typeId": "string"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "filterID",
+          "displayName": "Filter ID",
+          "isRequired": true,
+          "typeId": "string",
+          "type": {
+            "stringType": {
+              "stereotype": "SIMPLE",
+              "maxLength": 100000
+            }
+          }
+        }
+      ]
+    }
+  }
+}

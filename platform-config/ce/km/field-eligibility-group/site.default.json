@@ -4,11 +4,8 @@
   "name": "Site-default",
   "entityType": "ce_site",
   "fields": [
-    "c_footer",
-    "c_header",
-    "instagramHandle",
-    "logo",
-    "twitterHandle"
+    "c_navBar",
+    "c_primaryLogo"
   ],
   "required": []
 }

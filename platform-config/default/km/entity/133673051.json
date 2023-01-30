@@ -1,0 +1,54 @@
+{
+  "$id": "133673051",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "649.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Looking for a light platform to mount up with a tech or hybrid binding and go hunting for some distant pow turns? Take a hard look at the Völkl Blaze 106 W Skis, a lightweight option that doesn\u0027t forget you sometimes need edgehold to get to and from those pow turns unscathed. Or mount the Blaze 106 with an alpine binding and revel in the nimble capabilities of a ski that knows more mass doesn\u0027t always equal more fun. Either way, the 3D Radius sidecut and full sidewall construction get the job done, making sure you\u0027ve got the security you demand when it gets dicey and easy turn initiation when snow conditions get funky.",
+    "name": "Völkl Blaze 106 W Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227075/915709/volkl-blaze-106-w-skis-women-s-2023-.jpg,\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/lrzghsx8RvmaL0CB2MpPPPw1051L-qL87aWnvZ54f-0/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/lrzghsx8RvmaL0CB2MpPPPw1051L-qL87aWnvZ54f-0/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/lrzghsx8RvmaL0CB2MpPPPw1051L-qL87aWnvZ54f-0/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/lrzghsx8RvmaL0CB2MpPPPw1051L-qL87aWnvZ54f-0/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/lrzghsx8RvmaL0CB2MpPPPw1051L-qL87aWnvZ54f-0/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

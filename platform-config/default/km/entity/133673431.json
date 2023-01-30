@@ -1,0 +1,54 @@
+{
+  "$id": "133673431",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "749.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Elan Ripstick 106 Skis are so good you\u0027ll be saying \"I love you,\" before the end of the first date. Adept at both short and long radius turns on anything from boilerplate ice to knee deep pow, these all-mountain tools aren\u0027t picky about where you take them, and with all new Carbon Line Technology for increased power through the turn, they\u0027re snappier than ever. I now pronounce you, Ripstick and Ripper.",
+    "name": "Elan Ripstick 106 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/226934/913470/clone.jpg,\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/e_r_nX3syv045Lu3zA0M-ivPIRSOd8GlYa2lZpHiy8M/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/e_r_nX3syv045Lu3zA0M-ivPIRSOd8GlYa2lZpHiy8M/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/e_r_nX3syv045Lu3zA0M-ivPIRSOd8GlYa2lZpHiy8M/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/e_r_nX3syv045Lu3zA0M-ivPIRSOd8GlYa2lZpHiy8M/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/e_r_nX3syv045Lu3zA0M-ivPIRSOd8GlYa2lZpHiy8M/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

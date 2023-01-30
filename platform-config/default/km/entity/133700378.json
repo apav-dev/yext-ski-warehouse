@@ -1,0 +1,54 @@
+{
+  "$id": "133700378",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "649.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The all-mountain ease of the Black Crows Captis Skis will captivate you with it\u0027s style. These smooth-turning skis are like a finely honed fusion delicacy. They borrow a bit from freestyle skis, a bit from carving skis, and a bit from freeride skis to give you an all-around platform that can do anything in the resort with surprising simplicity. They feature a versatile mid-skinny 90mm waist, a gentle flex, and the right blend of camber underfoot and rocker at the tips and tails. Set the Captis free and unlock playful, progressive riding across the whole mountain.",
+    "name": "Black Crows Captis Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/224534/940594/black-crows-captis-skis-2023-.jpg,\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/CmdYURv9ptCyl3hfGry4UOLmwm5r56lJAAwZJk0trJs/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/CmdYURv9ptCyl3hfGry4UOLmwm5r56lJAAwZJk0trJs/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/CmdYURv9ptCyl3hfGry4UOLmwm5r56lJAAwZJk0trJs/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/CmdYURv9ptCyl3hfGry4UOLmwm5r56lJAAwZJk0trJs/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/CmdYURv9ptCyl3hfGry4UOLmwm5r56lJAAwZJk0trJs/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

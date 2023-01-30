@@ -1,0 +1,54 @@
+{
+  "$id": "133699990",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "649.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Magic on the mountain is more than just snowflakes falling tenderly on your glove, sometimes its clipping into a pair of Elan Ripstick 94 Skis and feeling them grip the snow beneath you on every turn. Thanks to Elan\u0027s signature Tubelite Wood Core that provides torsional stability and supreme response, variable snow, moguls, groomers, and chop don\u0027t stand a chance. The Elan Ripstick 94 skis are almost better than a pow day... Almost.",
+    "name": "Elan Ripstick 94 Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/226939/913467/elan-ripstick-94-skis-women-s-2023-.jpg,",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/XSIvESrcKKrnTSHncuNm8k3fi3KyRRCKPwFDKq6P7eI/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/XSIvESrcKKrnTSHncuNm8k3fi3KyRRCKPwFDKq6P7eI/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/XSIvESrcKKrnTSHncuNm8k3fi3KyRRCKPwFDKq6P7eI/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/XSIvESrcKKrnTSHncuNm8k3fi3KyRRCKPwFDKq6P7eI/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/XSIvESrcKKrnTSHncuNm8k3fi3KyRRCKPwFDKq6P7eI/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

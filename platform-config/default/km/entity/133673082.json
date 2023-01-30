@@ -1,0 +1,54 @@
+{
+  "$id": "133673082",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "549.95",
+    "c_terrain": [
+      "463117075052872663"
+    ],
+    "description": "The Line Skis Chronic Skis are all around freestyle machines that are built with just a little more beef underfoot than your standard park rippers. They\u0027re spring loaded pop pandas that crush big jump lines for breakfast and send cat tracks for a mid morning snack. There\u0027s a reason four out of five park rats recommend the Chronic for daily use.",
+    "name": "Line Skis Chronic Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/221774/906619/line-skis-chronic-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/SzOYw6rHj4kiuknHWxEens1zq5IDzii-Acdf__A0p_w/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/SzOYw6rHj4kiuknHWxEens1zq5IDzii-Acdf__A0p_w/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/SzOYw6rHj4kiuknHWxEens1zq5IDzii-Acdf__A0p_w/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/SzOYw6rHj4kiuknHWxEens1zq5IDzii-Acdf__A0p_w/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/SzOYw6rHj4kiuknHWxEens1zq5IDzii-Acdf__A0p_w/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

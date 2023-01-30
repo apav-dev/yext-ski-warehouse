@@ -1,0 +1,54 @@
+{
+  "$id": "133673026",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "799.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Perhaps one of the best-balanced daily drivers of all time, the Völkl Mantra 102 Skis took the winning Mantra platform and made it wide enough to excel on a powder day without losing the famous smooth ride or laser-sharp edgehold Völkl is famous for. This 100+ category is a tough one, but you\u0027ll have no problem finding expert skiers who love the Mantra 102 more than any ski in their quiver.",
+    "name": "Völkl Mantra 102 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227086/915717/volkl-mantra-102-skis-2023-.jpg",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/ICi-K-U0Ul5HjfZ1jn2DnTpV7hF1YzmZ9ecZH7QHecg/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/ICi-K-U0Ul5HjfZ1jn2DnTpV7hF1YzmZ9ecZH7QHecg/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/ICi-K-U0Ul5HjfZ1jn2DnTpV7hF1YzmZ9ecZH7QHecg/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/ICi-K-U0Ul5HjfZ1jn2DnTpV7hF1YzmZ9ecZH7QHecg/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/ICi-K-U0Ul5HjfZ1jn2DnTpV7hF1YzmZ9ecZH7QHecg/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

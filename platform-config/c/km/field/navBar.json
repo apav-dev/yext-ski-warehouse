@@ -1,0 +1,22 @@
+{
+  "$id": "c_navBar",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Nav Bar",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "entityReference",
+      "maxLength": 5000,
+      "type": {
+        "entityReferenceType": {
+          "supportedEntityTypeIds": [
+            "ce_gender"
+          ],
+          "type": "ONE_WAY"
+        }
+      }
+    }
+  },
+  "typeId": "list"
+}

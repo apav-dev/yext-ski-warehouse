@@ -1,0 +1,54 @@
+{
+  "$id": "133673429",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "649.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Hey you. Yes, you reading this page. Do you like to go fast? Like, really fast? Get in on this, the Elan Ripstick 88 Skis MIGHT just help you beat your friends. Whether you like to smash the Ice Coast or get out on freshly groomed runs everywhere else, these sticks are all but guaranteed to help you beat your pals to the lift. Constructed with carbon rods that provide stability and power and a lightweight Tubelite Wood Core that makes the Ripstick easy to handle, they\u0027re a recipe for success. You\u0027ve heard of the saying \"No friends on a pow day.\" But what about, \"No friends on a fast day?\" You know who you are. Get em\u0027 while they last!",
+    "name": "Elan Ripstick 88 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/226936/913464/elan-ripstick-88-skis-2023-.jpg,",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/yNqTUxc6ttOOwlC9Xti7-he32jbskjlEfEGvF3oP370/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/yNqTUxc6ttOOwlC9Xti7-he32jbskjlEfEGvF3oP370/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/yNqTUxc6ttOOwlC9Xti7-he32jbskjlEfEGvF3oP370/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/yNqTUxc6ttOOwlC9Xti7-he32jbskjlEfEGvF3oP370/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/yNqTUxc6ttOOwlC9Xti7-he32jbskjlEfEGvF3oP370/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

@@ -1,0 +1,83 @@
+{
+  "$id": "ski_finder",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_coverPhoto": {
+      "image": {
+        "height": 1380,
+        "sourceUrl": "https://images.unsplash.com/photo-1616429553002-faf23468952d?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2070\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1380,
+            "url": "https://a.mktgcdn.com/p/P-a2kt87Ao7OCT7ALUA4TdRRpMzBo4HX_WmEW_jC-A0/2070x1380.jpg",
+            "width": 2070
+          },
+          {
+            "height": 1267,
+            "url": "https://a.mktgcdn.com/p/P-a2kt87Ao7OCT7ALUA4TdRRpMzBo4HX_WmEW_jC-A0/1900x1267.jpg",
+            "width": 1900
+          },
+          {
+            "height": 413,
+            "url": "https://a.mktgcdn.com/p/P-a2kt87Ao7OCT7ALUA4TdRRpMzBo4HX_WmEW_jC-A0/619x413.jpg",
+            "width": 619
+          },
+          {
+            "height": 400,
+            "url": "https://a.mktgcdn.com/p/P-a2kt87Ao7OCT7ALUA4TdRRpMzBo4HX_WmEW_jC-A0/600x400.jpg",
+            "width": 600
+          },
+          {
+            "height": 131,
+            "url": "https://a.mktgcdn.com/p/P-a2kt87Ao7OCT7ALUA4TdRRpMzBo4HX_WmEW_jC-A0/196x131.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/P-a2kt87Ao7OCT7ALUA4TdRRpMzBo4HX_WmEW_jC-A0/2070x1380.jpg",
+        "width": 2070
+      }
+    },
+    "c_filters": [
+      {
+        "filterId": "c_gender.name",
+        "filterItems": [
+          "5929891552541128688",
+          "6490805738900090466"
+        ],
+        "title": "What type of Skis are you looking for?"
+      },
+      {
+        "description": "We have something for seasoned vets and newbies.",
+        "filterId": "c_abilityLevel.name",
+        "filterItems": [
+          "3726456647343833499",
+          "4422719013200450384",
+          "5195394095823606585"
+        ],
+        "title": "What is your skill level?"
+      },
+      {
+        "description": "Champagne powder, east coast ice, and everything in between.",
+        "filterId": "c_terrain.name",
+        "filterItems": [
+          "1295894924104146377",
+          "7096784237424891914",
+          "7200013882251703847",
+          "2656065563766201506",
+          "463117075052872663",
+          "1312210429080442948"
+        ],
+        "title": "What kind of terrain do you like to ski?"
+      }
+    ],
+    "c_finderDescriptionText": "Your answers to the following questions will help us recommend the best skis based on your skills and preferences.",
+    "c_finderHeadingText": "Welcome to the Ski Finder",
+    "c_headingText": "Find the skis of your dreams today!",
+    "c_subHeadingText": "Picking the right skis is tough. but we\u0027re here to help.",
+    "name": "Ski Finder"
+  },
+  "entityType": "ce_searchPage",
+  "folder": "yext/root",
+  "labels": []
+}

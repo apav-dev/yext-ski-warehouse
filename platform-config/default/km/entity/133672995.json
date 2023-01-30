@@ -1,0 +1,54 @@
+{
+  "$id": "133672995",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "649.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Tired of researching light mid-fats that can double as touring skis? Put down the Google and jump on the Völkl Blaze 106 Skis, you won\u0027t regret it for a minute. Light enough for long days in the saddle (1593 grams at 165cm) but not so light as to compromise edgehold and security when it gets sketchy, the Blaze 106 exemplifies Völkl\u0027s obsessive attitude toward quality and performance. Built around a Hybrid Multilayer Woodcore with full sidewall construction and Suspension Tips and Tails for smooth riding in all conditions, the Blaze 106 brings the heat to the backcountry.",
+    "name": "Völkl Blaze 106 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227074/915710/volkl-blaze-106-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/cBn8ClX3tFn7_MIN6wrF56X7yFtHnPihvIhnRq4ugfE/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/cBn8ClX3tFn7_MIN6wrF56X7yFtHnPihvIhnRq4ugfE/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/cBn8ClX3tFn7_MIN6wrF56X7yFtHnPihvIhnRq4ugfE/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/cBn8ClX3tFn7_MIN6wrF56X7yFtHnPihvIhnRq4ugfE/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/cBn8ClX3tFn7_MIN6wrF56X7yFtHnPihvIhnRq4ugfE/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

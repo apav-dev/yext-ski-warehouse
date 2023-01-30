@@ -1,0 +1,54 @@
+{
+  "$id": "133673446",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "699.00",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The new \"everyday\" width in the Mana Series is going to turn some heads and convert a few non-believers this season - we\u0027re talking about the Faction Mana 2 Skis, and you\u0027d be advised to check out their lightweight twin-tip design that rips both resort and backcountry with equal ease. Amazingly precise for a \"freestyle\" shape, the Mana 2 also spins and butters with the best of them, so there\u0027s no limit to what you can do on these things day in and day out.",
+    "name": "Faction Mana 2 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227141/939875/faction-mana-2-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/2kSOxoR8EVPuN0KqlT2kcllYWVoyFF42zyAxqaWkiLA/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/2kSOxoR8EVPuN0KqlT2kcllYWVoyFF42zyAxqaWkiLA/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/2kSOxoR8EVPuN0KqlT2kcllYWVoyFF42zyAxqaWkiLA/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/2kSOxoR8EVPuN0KqlT2kcllYWVoyFF42zyAxqaWkiLA/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/2kSOxoR8EVPuN0KqlT2kcllYWVoyFF42zyAxqaWkiLA/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

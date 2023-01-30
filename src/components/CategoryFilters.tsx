@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Fragment, useMemo, useState } from "react";
+import { Fragment, useEffect, useMemo, useState } from "react";
 import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
@@ -8,10 +8,12 @@ import { twMerge } from "tailwind-merge";
 import {
   FieldValueFilter,
   Matcher,
+  SelectableStaticFilter,
   useSearchActions,
   useSearchState,
 } from "@yext/search-headless-react";
 import { Section } from "./CategorySelector";
+import { getRuntime } from "@yext/pages/util";
 
 type CategoryFiltersProps = {
   headingText?: string;
@@ -25,16 +27,33 @@ const CategoryFilters = ({
   filters,
 }: CategoryFiltersProps) => {
   const [open, setOpen] = useState(false);
-  const [sectionCount, setSectionCount] = useState<Record<string, number>>(
-    filters.reduce((acc, f) => {
-      acc[f.filterId] = 0;
-      return acc;
-    }, {} as Record<string, number>)
-  );
 
   const searchActions = useSearchActions();
-
   const staticFilters = useSearchState((state) => state.filters.static) || [];
+
+  useEffect(() => {
+    if (!getRuntime().isServerSide) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const filters: SelectableStaticFilter[] = [];
+      urlParams.forEach((value, fieldId) => {
+        filters.push({
+          selected: true,
+          filter: {
+            kind: "fieldValue",
+            matcher: Matcher.Equals,
+            fieldId,
+            value,
+          },
+        });
+      });
+      searchActions.setStaticFilters(filters);
+      searchActions.executeVerticalQuery();
+    }
+  }, []);
+
+  useEffect(() => {
+    searchActions.executeVerticalQuery();
+  }, [staticFilters]);
 
   const activeFiltersValues = useMemo(() => {
     const selectedFieldValueFilters = staticFilters
@@ -52,13 +71,6 @@ const CategoryFilters = ({
     checked: boolean
   ) => {
     if (checked) {
-      setSectionCount((prev) => {
-        return {
-          ...prev,
-          [fieldId]: prev[fieldId] + 1,
-        };
-      });
-
       searchActions.setStaticFilters([
         ...staticFilters,
         {
@@ -72,13 +84,6 @@ const CategoryFilters = ({
         },
       ]);
     } else {
-      setSectionCount((prev) => {
-        return {
-          ...prev,
-          [fieldId]: prev[fieldId] - 1,
-        };
-      });
-
       searchActions.setStaticFilters(
         staticFilters.filter(
           (f) =>
@@ -238,9 +243,17 @@ const CategoryFilters = ({
                   <div>
                     <Popover.Button className="group inline-flex items-center justify-center text-sm font-medium text-gray-700 hover:text-gray-900">
                       <span>{section.title}</span>
-                      {sectionCount[section.filterId] > 0 ? (
+                      {staticFilters.filter(
+                        (sf) =>
+                          sf.filter.kind === "fieldValue" &&
+                          sf.filter.fieldId === section.filterId
+                      ).length > 0 ? (
                         <span className="ml-1.5 rounded bg-gray-200 py-0.5 px-1.5 text-xs font-semibold tabular-nums text-gray-700">
-                          {sectionCount[section.filterId]}
+                          {
+                            section.filterItems.filter((item) =>
+                              activeFiltersValues.includes(item.name)
+                            ).length
+                          }
                         </span>
                       ) : null}
                       <ChevronDownIcon

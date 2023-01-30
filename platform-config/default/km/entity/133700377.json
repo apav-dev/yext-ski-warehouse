@@ -1,0 +1,54 @@
+{
+  "$id": "133700377",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "899.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "For too long, all new ski tech has been made only for the deepest powder, the steepest lines, and the biggest stomps. But over the past few years, a new trend has started. Crazy new shapes are coming out designed specifically for the average day. And we\u0027re all about it. The Black Crows Mirus Cor Skis are the wacky French ski manufacturers take on a wacky ski designed to have the funnest, wackiest time possible ripping around the resort on an otherwise unremarkable snow day. It has skinny waist, a short length, a super tight turn radius, an eye-catching swallow tail, a single plate of titanal, and a nearly symmetrical twin shape. If this sounds like a crazy mishmash of carving features and park features, you\u0027re right. If you think this sounds like a crazy amount of fun, you\u0027re right again.",
+    "name": "Black Crows Mirus Cor Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/224527/930759/black-crows-mirus-cor-skis-2023-.jpg,\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/MclRu7xIJjvS2KTmM4VqfEpxobn54H8NDlPcKDgM-Gc/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/MclRu7xIJjvS2KTmM4VqfEpxobn54H8NDlPcKDgM-Gc/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/MclRu7xIJjvS2KTmM4VqfEpxobn54H8NDlPcKDgM-Gc/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/MclRu7xIJjvS2KTmM4VqfEpxobn54H8NDlPcKDgM-Gc/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/MclRu7xIJjvS2KTmM4VqfEpxobn54H8NDlPcKDgM-Gc/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

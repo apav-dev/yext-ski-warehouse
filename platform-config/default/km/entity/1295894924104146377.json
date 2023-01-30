@@ -1,0 +1,136 @@
+{
+  "$id": "1295894924104146377",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 16,
+        "thumbnails": [
+          {
+            "height": 16,
+            "url": "https://a.mktgcdn.com/p/bHWCNin5ukyiAMAzzq4k8bKX66qxOWJYJBysf9opSfc/16x16.png",
+            "width": 16
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/bHWCNin5ukyiAMAzzq4k8bKX66qxOWJYJBysf9opSfc/16x16.png",
+        "width": 16
+      }
+    },
+    "c_skisByTerrain": [
+      "133672949",
+      "133674069",
+      "133673446",
+      "133674157",
+      "133672272",
+      "133672364",
+      "133673440",
+      "133674156",
+      "133700003",
+      "133673054",
+      "133700007",
+      "133673431",
+      "133699996",
+      "133595863",
+      "133699997",
+      "133673051",
+      "133673430",
+      "133673429",
+      "133699999",
+      "133673428",
+      "133673026",
+      "133672401",
+      "133674049",
+      "133673439",
+      "133672350",
+      "133672269",
+      "133699985",
+      "133672268",
+      "133699986",
+      "133677900",
+      "133672267",
+      "133672860",
+      "133673526",
+      "133699988",
+      "133673436",
+      "133699989",
+      "133674046",
+      "133699990",
+      "133673021",
+      "133673434",
+      "133672847",
+      "133672999",
+      "133679142",
+      "133672399",
+      "133699114",
+      "133699192",
+      "133679310",
+      "133672995",
+      "133672306",
+      "133699116",
+      "133673516",
+      "133679229",
+      "133672374",
+      "133673002",
+      "133672828",
+      "133672383",
+      "133672726",
+      "133700377",
+      "133672359",
+      "133673081",
+      "133700378",
+      "133672312",
+      "133673126",
+      "133672724",
+      "133672723",
+      "133672357",
+      "133595920",
+      "133700011",
+      "133672989",
+      "133672355",
+      "133673243",
+      "133700012",
+      "133672354",
+      "133673223",
+      "133672866",
+      "133672717",
+      "133700013",
+      "133674158",
+      "133699983"
+    ],
+    "description": "All-Mountain terrain refers to a variety of slopes and conditions that can be found at a ski resort. All-Mountain skis are designed to perform well on a variety of terrain, including groomed runs, moguls, and powder. Skiers who enjoy All-Mountain terrain are typically comfortable on a variety of slopes and conditions.",
+    "name": "All-Mountain",
+    "primaryPhoto": {
+      "image": {
+        "height": 1395,
+        "sourceUrl": "https://images.unsplash.com/photo-1587037307164-ab66fa72a903?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d1027\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1395,
+            "url": "https://a.mktgcdn.com/p/h2JRmMOgufCFHzopOSn-_9Vkehx1Htc-y9GFKYjTJt4/1027x1395.jpg",
+            "width": 1027
+          },
+          {
+            "height": 841,
+            "url": "https://a.mktgcdn.com/p/h2JRmMOgufCFHzopOSn-_9Vkehx1Htc-y9GFKYjTJt4/619x841.jpg",
+            "width": 619
+          },
+          {
+            "height": 450,
+            "url": "https://a.mktgcdn.com/p/h2JRmMOgufCFHzopOSn-_9Vkehx1Htc-y9GFKYjTJt4/331x450.jpg",
+            "width": 331
+          },
+          {
+            "height": 266,
+            "url": "https://a.mktgcdn.com/p/h2JRmMOgufCFHzopOSn-_9Vkehx1Htc-y9GFKYjTJt4/196x266.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/h2JRmMOgufCFHzopOSn-_9Vkehx1Htc-y9GFKYjTJt4/1027x1395.jpg",
+        "width": 1027
+      }
+    }
+  },
+  "entityType": "ce_terrain",
+  "labels": []
+}

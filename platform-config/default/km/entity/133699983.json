@@ -1,0 +1,52 @@
+{
+  "$id": "133699983",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "When people think Black Crows, they think of the Black Crows Corvus Skis. Stable, decisive freeride skis with a mid-fat waist, a hard charging mentality, a couple sheets of metal, and a cheeky dose of style. These are the everyday ski of choice for big mountain skiers everywhere, capable of handling the spiciest lines with commanding grace. They pivot easily to allow for a playful flair in your riding, but the Corvus really excels when being driven hard down the fall line, showcasing its power and dampness.",
+    "name": "Black Crows Corvus Skis 2022",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/181604/727248/clone.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/Sqi0ywERnjUh6l6cv6IvAqD1oNVcqnETDCKfKMG7_g8/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/Sqi0ywERnjUh6l6cv6IvAqD1oNVcqnETDCKfKMG7_g8/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/Sqi0ywERnjUh6l6cv6IvAqD1oNVcqnETDCKfKMG7_g8/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/Sqi0ywERnjUh6l6cv6IvAqD1oNVcqnETDCKfKMG7_g8/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/Sqi0ywERnjUh6l6cv6IvAqD1oNVcqnETDCKfKMG7_g8/700x700.jpg",
+          "width": 700
+        }
+      }
+    ]
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

@@ -1,0 +1,7 @@
+{
+  "$id": "ce_gender",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v2",
+  "description": "",
+  "displayName": "Gender",
+  "pluralDisplayName": ""
+}

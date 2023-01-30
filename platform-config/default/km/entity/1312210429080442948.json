@@ -1,0 +1,63 @@
+{
+  "$id": "1312210429080442948",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 16,
+        "thumbnails": [
+          {
+            "height": 16,
+            "url": "https://a.mktgcdn.com/p/WJIws0a6BUNrT8Tp5P7ehPGNsm_NbksuDT1YlBVJINY/16x16.png",
+            "width": 16
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/WJIws0a6BUNrT8Tp5P7ehPGNsm_NbksuDT1YlBVJINY/16x16.png",
+        "width": 16
+      }
+    },
+    "c_skisByTerrain": [
+      "133672376"
+    ],
+    "description": "Powder refers to fresh, deep snow that has not been skied on or groomed. Skiers who enjoy powder typically look for resorts or areas with a good snowfall and may prefer wider skis to help them float on top of the snow.",
+    "name": "Powder",
+    "primaryPhoto": {
+      "image": {
+        "height": 1380,
+        "sourceUrl": "https://images.unsplash.com/photo-1583426330106-ce7a80513237?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2071\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1380,
+            "url": "https://a.mktgcdn.com/p/Pesqc1k-rcIh6Xtpegjn4TPqpMTcRAWpeboz3m26sJQ/2071x1380.jpg",
+            "width": 2071
+          },
+          {
+            "height": 1266,
+            "url": "https://a.mktgcdn.com/p/Pesqc1k-rcIh6Xtpegjn4TPqpMTcRAWpeboz3m26sJQ/1900x1266.jpg",
+            "width": 1900
+          },
+          {
+            "height": 412,
+            "url": "https://a.mktgcdn.com/p/Pesqc1k-rcIh6Xtpegjn4TPqpMTcRAWpeboz3m26sJQ/619x412.jpg",
+            "width": 619
+          },
+          {
+            "height": 400,
+            "url": "https://a.mktgcdn.com/p/Pesqc1k-rcIh6Xtpegjn4TPqpMTcRAWpeboz3m26sJQ/600x400.jpg",
+            "width": 600
+          },
+          {
+            "height": 131,
+            "url": "https://a.mktgcdn.com/p/Pesqc1k-rcIh6Xtpegjn4TPqpMTcRAWpeboz3m26sJQ/196x131.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/Pesqc1k-rcIh6Xtpegjn4TPqpMTcRAWpeboz3m26sJQ/2071x1380.jpg",
+        "width": 2071
+      }
+    }
+  },
+  "entityType": "ce_terrain",
+  "labels": []
+}

@@ -1,0 +1,54 @@
+{
+  "$id": "133699988",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "899.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Black Crows Serpo Skis are all-mountain rippers with a frontside focus. They combine a moderate flex with titanal reinforcement to give you the best of both words. They\u0027re powerful and decisive on edge, perfect for ripping down groomers at speed, but they also are forgiving and versatile enough for some off-piste adventuring when the mood strikes you. If you\u0027re looking for an everyday ski that you can lay down some hip dragging carves with, the Serpo is what you need.",
+    "name": "Black Crows Serpo Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/224533/930774/black-crows-serpo-skis-2023-.jpg,\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/XaNi9iYUB4Zem6olMvVHq_TfvNZXcCgEKjdoyJBlzAw/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/XaNi9iYUB4Zem6olMvVHq_TfvNZXcCgEKjdoyJBlzAw/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/XaNi9iYUB4Zem6olMvVHq_TfvNZXcCgEKjdoyJBlzAw/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/XaNi9iYUB4Zem6olMvVHq_TfvNZXcCgEKjdoyJBlzAw/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/XaNi9iYUB4Zem6olMvVHq_TfvNZXcCgEKjdoyJBlzAw/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

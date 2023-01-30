@@ -1,0 +1,16 @@
+{
+  "$id": "ce_skis.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Skis-default",
+  "entityType": "ce_skis",
+  "fields": [
+    "c_abilityLevel",
+    "c_gender",
+    "c_price",
+    "c_terrain",
+    "description",
+    "photoGallery",
+    "slug"
+  ],
+  "required": []
+}

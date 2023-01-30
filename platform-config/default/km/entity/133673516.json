@@ -1,0 +1,54 @@
+{
+  "$id": "133673516",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "599.00",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "One ski to do it all — freeride, pow, groomers and hit the park at the end of each lap — is a tall order, and a bit overhyped, but if there ever was such a thing it\u0027s the Faction Prodigy 2 Skis. Clocking in at 98mm underfoot and with a do-it-all directional twin shape that outskis many purpose-built groomer skis but still spins and switches with the best, the Prodigy 2 makes anything possible, run after run after run.",
+    "name": "Faction Prodigy 2 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227214/939926/faction-prodigy-2-skis-2023-.jpg,\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/OPDXZ6oduuqnRYJAUY75Jo1Lim5zX7WYcxqvHzWA3z4/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/OPDXZ6oduuqnRYJAUY75Jo1Lim5zX7WYcxqvHzWA3z4/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/OPDXZ6oduuqnRYJAUY75Jo1Lim5zX7WYcxqvHzWA3z4/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/OPDXZ6oduuqnRYJAUY75Jo1Lim5zX7WYcxqvHzWA3z4/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/OPDXZ6oduuqnRYJAUY75Jo1Lim5zX7WYcxqvHzWA3z4/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

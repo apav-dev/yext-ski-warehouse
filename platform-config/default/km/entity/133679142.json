@@ -1,0 +1,54 @@
+{
+  "$id": "133679142",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "699.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "When you\u0027re going to a knife fight, bring a knife. Hard snow and speed require just such an implement, and the Blizzard Brahma 88 Skis are as good as they get. Two sheets of Titanal sandwiching a Beech and Poplar TrueBlend core give the Brahma 88 the grip and power to slice and dice those groomers as well as anything not currently being used on the World Cup circuit, but aren\u0027t too demanding for those without World Cup legs. This ski is legendary, and the legend continues to grow year by year.",
+    "name": "Blizzard Brahma 88 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/223100/906220/blizzard-brahma-88-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/MoWBLm7JpB8e7j6f40d58cKPuNOn_Pp6LmUxtAZETxg/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/MoWBLm7JpB8e7j6f40d58cKPuNOn_Pp6LmUxtAZETxg/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/MoWBLm7JpB8e7j6f40d58cKPuNOn_Pp6LmUxtAZETxg/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/MoWBLm7JpB8e7j6f40d58cKPuNOn_Pp6LmUxtAZETxg/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/MoWBLm7JpB8e7j6f40d58cKPuNOn_Pp6LmUxtAZETxg/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

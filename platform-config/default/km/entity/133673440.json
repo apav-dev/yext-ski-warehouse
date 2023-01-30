@@ -1,0 +1,54 @@
+{
+  "$id": "133673440",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "799.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Up the ante on your every day with the all new Fischer Ranger 102 Skis. Designed to be agile, stable, and easy to steer, these lovingly developed planks feature Fischer\u0027s Freeski Rocker profile and a Titanal reinforced wood core. If you\u0027re ripping nooks and crannies in the West or Sailing through a fluffy day everywhere else, the Ranger 102 is the tool you need to ski more and worry less.",
+    "name": "Fischer Ranger 102 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/223716/897751/fischer-ranger-102-skis-2023-.jpg,\"data:,\",\"data:,\",,",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/8ZQ_lCRsdLP18I38IxWGnU3F1Fr63rTvYSscTlnH5TU/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/8ZQ_lCRsdLP18I38IxWGnU3F1Fr63rTvYSscTlnH5TU/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/8ZQ_lCRsdLP18I38IxWGnU3F1Fr63rTvYSscTlnH5TU/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/8ZQ_lCRsdLP18I38IxWGnU3F1Fr63rTvYSscTlnH5TU/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/8ZQ_lCRsdLP18I38IxWGnU3F1Fr63rTvYSscTlnH5TU/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.yext.com/config/answers/answers-config/v1",
+  "$id": "yext-ski-warehouse",
+  "name": "Yext Ski Warehouse",
+  "supportedLocales": [],
+  "countryRestrictions": [],
+  "verticals": {
+    "skis": {
+      "displayFields": [
+        "name",
+        "photoGallery",
+        "c_terrain.name",
+        "c_price",
+        "c_abilityLevel.name",
+        "c_abilityLevel.c_icon",
+        "c_terrain.name",
+        "c_terrain.c_icon"
+      ],
+      "entityTypes": [
+        "ce_skis"
+      ],
+      "name": "Skis",
+      "searchableFields": {
+        "builtin.entityType": {
+          "nlpFilter": true
+        },
+        "c_abilityLevel.name": {
+          "staticFilter": true
+        },
+        "c_gender.name": {
+          "staticFilter": true
+        },
+        "c_terrain.name": {
+          "staticFilter": true
+        },
+        "name": {
+          "semanticTextSearch": true
+        }
+      },
+      "sortBys": [],
+      "source": "KNOWLEDGE_MANAGER"
+    }
+  },
+  "localizations": {},
+  "additionalSearchablePlaces": [],
+  "querySuggestions": {
+    "disablePopularQueries": false,
+    "verticalPromptsOnEmpty": false,
+    "popularQueriesBlacklistedTerms": [],
+    "universalPrompts": [],
+    "verticalPrompts": {
+      "skis": [
+        "[[name]]"
+      ]
+    }
+  }
+}

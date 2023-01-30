@@ -1,0 +1,54 @@
+{
+  "$id": "133672355",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "749.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Nordica Santa Ana 98 Skis might just be the most versatile women\u0027s skis ever made. It\u0027s hard to make something so universally beloved by pros and everyday skiers alike, but Nordica has done it. The middle child of the Santa Ana family is a blend of lightweight and powerful, with tons of grip and drive for confidence down the fall line, but a surprisingly quick and intuitive feel when carving turns at slower speeds. It rewards good technique without punishing the occasional lapse in form, and performs well in the full spectrum of snow conditions, making it an ideal one-ski quiver for skiers that want to ride it all.",
+    "name": "Nordica Santa Ana 98 Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/224777/902354/nordica-santa-ana-98-skis-women-s-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/f6UiCpbx596jwQwPEh8-SJBAfTylBTReQXUz_rJeBYI/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/f6UiCpbx596jwQwPEh8-SJBAfTylBTReQXUz_rJeBYI/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/f6UiCpbx596jwQwPEh8-SJBAfTylBTReQXUz_rJeBYI/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/f6UiCpbx596jwQwPEh8-SJBAfTylBTReQXUz_rJeBYI/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/f6UiCpbx596jwQwPEh8-SJBAfTylBTReQXUz_rJeBYI/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

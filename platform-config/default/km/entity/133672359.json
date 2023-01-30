@@ -1,0 +1,54 @@
+{
+  "$id": "133672359",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "699.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Atomic Maverick 95 TI Skis are outstanding piste performers with a healthy dose of off-trail capability. Strong and smooth in just about any conceivable set of conditions, the Mavericks utilize a new OMatic core construction that expertly balances stiffness and flex over the length of the ski for top-notch riding through variable snow. Whether you find yourself laying trenches in fresh groomers or dipping into the trees for some leftover freshies, the Atomic Maverick 95 TI Skis make the transition seamless.",
+    "name": "Atomic Maverick 95 Ti Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219394/902840/atomic-maverick-95-ti-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/hIxFgW482DOOsOtClfZUFJAY3LAWB6bm4ATl49lB5Bw/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/hIxFgW482DOOsOtClfZUFJAY3LAWB6bm4ATl49lB5Bw/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/hIxFgW482DOOsOtClfZUFJAY3LAWB6bm4ATl49lB5Bw/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/hIxFgW482DOOsOtClfZUFJAY3LAWB6bm4ATl49lB5Bw/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/hIxFgW482DOOsOtClfZUFJAY3LAWB6bm4ATl49lB5Bw/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

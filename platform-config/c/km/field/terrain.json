@@ -1,0 +1,19 @@
+{
+  "$id": "c_terrain",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Terrain",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "entityReference",
+      "type": {
+        "entityReferenceType": {
+          "relatedFieldId": "c_skisByTerrain",
+          "type": "TWO_WAY"
+        }
+      }
+    }
+  },
+  "typeId": "list"
+}

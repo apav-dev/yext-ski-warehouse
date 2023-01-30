@@ -1,0 +1,54 @@
+{
+  "$id": "133672723",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "649.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "A funny thing happened in the winter of \u002721-22. Winter went dry for months in most of North America, and the wide ski powder maniacs were stuck for a low tide answer. A few of them got out on the Blizzard Rustler 9 Skis and were blown away. Who woulda thought, with that rocker line and limited edge contact, but here is ski that can rail with the best of the flat-tailed carvers and not punish the rider in bumps and re-frozen slop! The Titanal D.R.T. laminate does just what it was intended to do, namely smooth out the ride and make the ski feel uber-confident at speed, and the tail rocker means the Rustler doesn\u0027t lock in and take you for a ride. Do yourself a favor and check these out.",
+    "name": "Blizzard Rustler 9 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/223106/906218/blizzard-rustler-9-skis-2023-.jpg,",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/1CYbR2giv4cSCloHuQUG3-InsOC91RHyR8CqEemSaS0/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/1CYbR2giv4cSCloHuQUG3-InsOC91RHyR8CqEemSaS0/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/1CYbR2giv4cSCloHuQUG3-InsOC91RHyR8CqEemSaS0/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/1CYbR2giv4cSCloHuQUG3-InsOC91RHyR8CqEemSaS0/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/1CYbR2giv4cSCloHuQUG3-InsOC91RHyR8CqEemSaS0/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

@@ -1,0 +1,101 @@
+{
+  "$id": "5195394095823606585",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 8,
+        "thumbnails": [
+          {
+            "height": 8,
+            "url": "https://a.mktgcdn.com/p/R0tzVG_2aA7IGh3QXlMKm3APeiocbKovGt9y3n6naN0/16x8.png",
+            "width": 16
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/R0tzVG_2aA7IGh3QXlMKm3APeiocbKovGt9y3n6naN0/16x8.png",
+        "width": 16
+      }
+    },
+    "c_skisByAbility": [
+      "133672968",
+      "133672272",
+      "133672364",
+      "133673440",
+      "133674079",
+      "133700003",
+      "133672363",
+      "133700007",
+      "133673431",
+      "133699996",
+      "133699997",
+      "133673051",
+      "133673430",
+      "133672336",
+      "133672281",
+      "133699999",
+      "133673428",
+      "133677727",
+      "133699984",
+      "133673026",
+      "133672401",
+      "133674049",
+      "133672269",
+      "133673438",
+      "133699985",
+      "133672995",
+      "133673086",
+      "133672374",
+      "133699110",
+      "133672376",
+      "133672726",
+      "133673084",
+      "133673081",
+      "133672358",
+      "133672312",
+      "133672722",
+      "133672355",
+      "133672866",
+      "133699983"
+    ],
+    "description": "Advanced-Expert skiers have a high level of skill and confidence on the mountain. They can ski any type of terrain and are comfortable tackling challenging runs and skiing at high speeds. They may also be skilled in skiing off-piste, in moguls, and on steep slopes. Advanced-Expert skiers are typically able to execute advanced techniques such as short turns and carving with ease.",
+    "name": "Advanced-Expert",
+    "primaryPhoto": {
+      "image": {
+        "height": 1910,
+        "sourceUrl": "https://images.unsplash.com/photo-1608561807980-6e39958ae1c8?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d1528\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1910,
+            "url": "https://a.mktgcdn.com/p/GcNUmsnGjT-p20rtmbTKQZ9qGENMcfAVa2mDVZboH_8/1528x1910.jpg",
+            "width": 1528
+          },
+          {
+            "height": 1900,
+            "url": "https://a.mktgcdn.com/p/GcNUmsnGjT-p20rtmbTKQZ9qGENMcfAVa2mDVZboH_8/1520x1900.jpg",
+            "width": 1520
+          },
+          {
+            "height": 774,
+            "url": "https://a.mktgcdn.com/p/GcNUmsnGjT-p20rtmbTKQZ9qGENMcfAVa2mDVZboH_8/619x774.jpg",
+            "width": 619
+          },
+          {
+            "height": 450,
+            "url": "https://a.mktgcdn.com/p/GcNUmsnGjT-p20rtmbTKQZ9qGENMcfAVa2mDVZboH_8/360x450.jpg",
+            "width": 360
+          },
+          {
+            "height": 245,
+            "url": "https://a.mktgcdn.com/p/GcNUmsnGjT-p20rtmbTKQZ9qGENMcfAVa2mDVZboH_8/196x245.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/GcNUmsnGjT-p20rtmbTKQZ9qGENMcfAVa2mDVZboH_8/1528x1910.jpg",
+        "width": 1528
+      }
+    }
+  },
+  "entityType": "ce_abilityLevel",
+  "labels": []
+}

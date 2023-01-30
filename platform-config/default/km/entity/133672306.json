@@ -1,0 +1,54 @@
+{
+  "$id": "133672306",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "699.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Get your carve on with the Elan Ripstick 96 Skis, an every day ripper that excels on hard stuff and still delivers when it gets soft and creamy. From carving corduroy to hitting your fave stash, these bombers are made for heavy hitters who cut turns all the way across the run and don\u0027t mess around. Their asymmetrical amphibio profile gives you targeted precision exactly where you need it, while a Tubelite wood core with carbon keeps things light, agile, and ready to send side hits. Elan skis always deliver, and the Ripstick 96 is no exception.",
+    "name": "Elan Ripstick 96 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/226935/913462/elan-ripstick-96-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/LL2s2b17vEkPw4IYXGnHkE1ZKHaZ2H7TV7zNcTpWmVY/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/LL2s2b17vEkPw4IYXGnHkE1ZKHaZ2H7TV7zNcTpWmVY/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/LL2s2b17vEkPw4IYXGnHkE1ZKHaZ2H7TV7zNcTpWmVY/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/LL2s2b17vEkPw4IYXGnHkE1ZKHaZ2H7TV7zNcTpWmVY/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/LL2s2b17vEkPw4IYXGnHkE1ZKHaZ2H7TV7zNcTpWmVY/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

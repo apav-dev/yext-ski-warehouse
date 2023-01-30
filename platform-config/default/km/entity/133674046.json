@@ -1,0 +1,54 @@
+{
+  "$id": "133674046",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "699.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The most versatile option in the remarkable Sheeva series, the Blizzard Sheeva 10 Skis split the difference in waist width between the \"11\" and the \"9\" and come up with a ski that doesn\u0027t have \"bad snow conditions\" in its vocabulary. Pow? Sure. Groomers? No problem. Chunky Monkey re-frozen mank? Oh yeah! If you\u0027re up for it, the Sheeva 10 certainly is. Carbon Fiipcore D.R.T. construction gives this ski the combination of power and forgiveness you (and everyone else) have been looking for. Join the legions of satisfied skiers who\u0027ve settled on the Sheeva 10 and see what real all-mountain versatility is all about.",
+    "name": "Blizzard Sheeva 10 Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/223108/906217/blizzard-sheeva-10-skis-women-s-2023-.jpg,\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/yVbJDiiOGltx9gYE6WCeY1ic-4kV7rABymfiolkq1qM/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/yVbJDiiOGltx9gYE6WCeY1ic-4kV7rABymfiolkq1qM/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/yVbJDiiOGltx9gYE6WCeY1ic-4kV7rABymfiolkq1qM/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/yVbJDiiOGltx9gYE6WCeY1ic-4kV7rABymfiolkq1qM/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/yVbJDiiOGltx9gYE6WCeY1ic-4kV7rABymfiolkq1qM/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

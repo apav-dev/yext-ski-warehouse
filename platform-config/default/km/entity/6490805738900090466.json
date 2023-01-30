@@ -1,0 +1,203 @@
+{
+  "$id": "6490805738900090466",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_collection": {
+      "filterID": "c_productType",
+      "filters": [
+        {
+          "image": {
+            "image": {
+              "alternateText": "Women\u0027s Skis",
+              "height": 576,
+              "sourceUrl": "https://u7q2x7c9.stackpathcdn.com/photos/26/61/387607_15723_XL.jpg",
+              "thumbnails": [
+                {
+                  "height": 576,
+                  "url": "https://a.mktgcdn.com/p/u5SWn-xXzODO9XHjs47kmqMcWUQxX02TFongJyjJ6Cw/1024x576.jpg",
+                  "width": 1024
+                },
+                {
+                  "height": 348,
+                  "url": "https://a.mktgcdn.com/p/u5SWn-xXzODO9XHjs47kmqMcWUQxX02TFongJyjJ6Cw/619x348.jpg",
+                  "width": 619
+                },
+                {
+                  "height": 338,
+                  "url": "https://a.mktgcdn.com/p/u5SWn-xXzODO9XHjs47kmqMcWUQxX02TFongJyjJ6Cw/600x338.jpg",
+                  "width": 600
+                },
+                {
+                  "height": 110,
+                  "url": "https://a.mktgcdn.com/p/u5SWn-xXzODO9XHjs47kmqMcWUQxX02TFongJyjJ6Cw/196x110.jpg",
+                  "width": 196
+                }
+              ],
+              "url": "https://a.mktgcdn.com/p/u5SWn-xXzODO9XHjs47kmqMcWUQxX02TFongJyjJ6Cw/1024x576.jpg",
+              "width": 1024
+            }
+          },
+          "value": "Skis"
+        },
+        {
+          "image": {
+            "image": {
+              "height": 1772,
+              "sourceUrl": "https://www.najlacnejsie-lyze.sk/116145/women-s-ski-boots-salomon-focus-pink-auto-custom-shell-oversized-lever-micro-macro.jpg",
+              "thumbnails": [
+                {
+                  "height": 1772,
+                  "url": "https://a.mktgcdn.com/p/D7g4kMpyGGYGS_L-wc29R9FTQ9T4OmMSOsFgGvI17Oc/2110x1772.jpg",
+                  "width": 2110
+                },
+                {
+                  "height": 1596,
+                  "url": "https://a.mktgcdn.com/p/D7g4kMpyGGYGS_L-wc29R9FTQ9T4OmMSOsFgGvI17Oc/1900x1596.jpg",
+                  "width": 1900
+                },
+                {
+                  "height": 520,
+                  "url": "https://a.mktgcdn.com/p/D7g4kMpyGGYGS_L-wc29R9FTQ9T4OmMSOsFgGvI17Oc/619x520.jpg",
+                  "width": 619
+                },
+                {
+                  "height": 450,
+                  "url": "https://a.mktgcdn.com/p/D7g4kMpyGGYGS_L-wc29R9FTQ9T4OmMSOsFgGvI17Oc/536x450.jpg",
+                  "width": 536
+                },
+                {
+                  "height": 165,
+                  "url": "https://a.mktgcdn.com/p/D7g4kMpyGGYGS_L-wc29R9FTQ9T4OmMSOsFgGvI17Oc/196x165.jpg",
+                  "width": 196
+                }
+              ],
+              "url": "https://a.mktgcdn.com/p/D7g4kMpyGGYGS_L-wc29R9FTQ9T4OmMSOsFgGvI17Oc/2110x1772.jpg",
+              "width": 2110
+            }
+          },
+          "value": "Boots"
+        },
+        {
+          "image": {
+            "image": {
+              "height": 1097,
+              "sourceUrl": "https://cdn11.bigcommerce.com/s-691ef/images/stencil/1280x1280/products/15963/32237/rossignol_saphir_110_ski_bindings_women_s_2015_Thumb__53241.1446260944.jpg?c\u003d2",
+              "thumbnails": [
+                {
+                  "height": 1097,
+                  "url": "https://a.mktgcdn.com/p/G3GZQPbRpNCX_3zwfcg2uaMzueKdTiBNFuCXg-eJyfk/1280x1097.jpg",
+                  "width": 1280
+                },
+                {
+                  "height": 531,
+                  "url": "https://a.mktgcdn.com/p/G3GZQPbRpNCX_3zwfcg2uaMzueKdTiBNFuCXg-eJyfk/619x531.jpg",
+                  "width": 619
+                },
+                {
+                  "height": 450,
+                  "url": "https://a.mktgcdn.com/p/G3GZQPbRpNCX_3zwfcg2uaMzueKdTiBNFuCXg-eJyfk/525x450.jpg",
+                  "width": 525
+                },
+                {
+                  "height": 168,
+                  "url": "https://a.mktgcdn.com/p/G3GZQPbRpNCX_3zwfcg2uaMzueKdTiBNFuCXg-eJyfk/196x168.jpg",
+                  "width": 196
+                }
+              ],
+              "url": "https://a.mktgcdn.com/p/G3GZQPbRpNCX_3zwfcg2uaMzueKdTiBNFuCXg-eJyfk/1280x1097.jpg",
+              "width": 1280
+            }
+          },
+          "value": "Bindings"
+        },
+        {
+          "image": {
+            "image": {
+              "height": 440,
+              "sourceUrl": "https://www.rei.com/media/product/125741",
+              "thumbnails": [
+                {
+                  "height": 440,
+                  "url": "https://a.mktgcdn.com/p/qIO-bDb-L6DMciWl01mEDOaCfdB1x3DJVutscU0Miqg/429x440.jpg",
+                  "width": 429
+                },
+                {
+                  "height": 201,
+                  "url": "https://a.mktgcdn.com/p/qIO-bDb-L6DMciWl01mEDOaCfdB1x3DJVutscU0Miqg/196x201.jpg",
+                  "width": 196
+                }
+              ],
+              "url": "https://a.mktgcdn.com/p/qIO-bDb-L6DMciWl01mEDOaCfdB1x3DJVutscU0Miqg/429x440.jpg",
+              "width": 429
+            }
+          },
+          "value": "Poles"
+        }
+      ]
+    },
+    "c_skisByGender": [
+      "133673243",
+      "133700012",
+      "133595920",
+      "133672355",
+      "133674158",
+      "133674069",
+      "133700013",
+      "133672267",
+      "133674157",
+      "133672999",
+      "133699989",
+      "133674046",
+      "133595863",
+      "133699990",
+      "133673051",
+      "133672399",
+      "133699114",
+      "133673156",
+      "133699999",
+      "133672395",
+      "133679229",
+      "133699116",
+      "133672350",
+      "133672269",
+      "133674049",
+      "133672828",
+      "133672383",
+      "133699986"
+    ],
+    "name": "Women",
+    "primaryPhoto": {
+      "image": {
+        "height": 675,
+        "sourceUrl": "https://realskiers.com/wp-content/uploads/2020/08/2021-blizzard-skis-frontside-w_03-1080x675.jpg",
+        "thumbnails": [
+          {
+            "height": 675,
+            "url": "https://a.mktgcdn.com/p/picCDI-lIKEP3YgNVCBzN1HQ-LAw5oZqRG33gHYivGE/1080x675.jpg",
+            "width": 1080
+          },
+          {
+            "height": 387,
+            "url": "https://a.mktgcdn.com/p/picCDI-lIKEP3YgNVCBzN1HQ-LAw5oZqRG33gHYivGE/619x387.jpg",
+            "width": 619
+          },
+          {
+            "height": 375,
+            "url": "https://a.mktgcdn.com/p/picCDI-lIKEP3YgNVCBzN1HQ-LAw5oZqRG33gHYivGE/600x375.jpg",
+            "width": 600
+          },
+          {
+            "height": 123,
+            "url": "https://a.mktgcdn.com/p/picCDI-lIKEP3YgNVCBzN1HQ-LAw5oZqRG33gHYivGE/196x123.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/picCDI-lIKEP3YgNVCBzN1HQ-LAw5oZqRG33gHYivGE/1080x675.jpg",
+        "width": 1080
+      }
+    }
+  },
+  "entityType": "ce_gender",
+  "labels": []
+}

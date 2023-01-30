@@ -1,0 +1,14 @@
+{
+  "$id": "ce_terrain.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Terrain-default",
+  "entityType": "ce_terrain",
+  "fields": [
+    "c_categoryFilterId",
+    "c_icon",
+    "c_skisByTerrain",
+    "description",
+    "primaryPhoto"
+  ],
+  "required": []
+}

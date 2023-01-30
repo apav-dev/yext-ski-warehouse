@@ -1,0 +1,54 @@
+{
+  "$id": "133672717",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "749.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "With a versatile 100mm+ waist and balanced Carbon Flipcore construction, the Blizzard Rustler 10 Skis live in the Goldilocks zone where anything is possible. Firm groomers? No problem, the Rustlers will lay trenches. 8 inches of fresh overnight? Great, the Rustlers can surf with the best of \u0027em. Chop and chunder? Please, the Rustlers eat those for breakfast. If you\u0027re after a setup that\u0027s capable of handling anything you put in front of it no questions asked, look no further than the Blizzard Rustler 10 Skis.",
+    "name": "Blizzard Rustler 10 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/216620/985587/clone.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/RM515EJ37OIKM-rtfBH3UNLvVZCsPLl2dtWTNebDDis/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/RM515EJ37OIKM-rtfBH3UNLvVZCsPLl2dtWTNebDDis/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/RM515EJ37OIKM-rtfBH3UNLvVZCsPLl2dtWTNebDDis/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/RM515EJ37OIKM-rtfBH3UNLvVZCsPLl2dtWTNebDDis/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/RM515EJ37OIKM-rtfBH3UNLvVZCsPLl2dtWTNebDDis/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

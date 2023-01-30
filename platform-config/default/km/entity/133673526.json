@@ -1,0 +1,54 @@
+{
+  "$id": "133673526",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "699.00",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Candide may be gone, but that means there\u0027s a spot for you on top of the Faction Prodigy 3 Skis this season. This all-mountain, all-snow twinnish-tipped freeride monster is still out there, ready to kill it for the right skier, and itching to stomp some big lines. Classic Poplar wood core construction with Multi-axial fiberglass and plenty of rocker at both ends mean hard charging goodness going both ways.",
+    "name": "Faction Prodigy 3 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227217/939932/faction-prodigy-3-skis-2023-.jpg,\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/NQ637ZWZvxr_ravOV9zEJ5v0fruBdYY0lT0QUmCuxE8/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/NQ637ZWZvxr_ravOV9zEJ5v0fruBdYY0lT0QUmCuxE8/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/NQ637ZWZvxr_ravOV9zEJ5v0fruBdYY0lT0QUmCuxE8/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/NQ637ZWZvxr_ravOV9zEJ5v0fruBdYY0lT0QUmCuxE8/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/NQ637ZWZvxr_ravOV9zEJ5v0fruBdYY0lT0QUmCuxE8/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

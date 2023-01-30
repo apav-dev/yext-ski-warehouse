@@ -1,0 +1,64 @@
+{
+  "$id": "3726456647343833499",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 8,
+        "thumbnails": [
+          {
+            "height": 8,
+            "url": "https://a.mktgcdn.com/p/jdHBz5esm3clzpAOdp4xSlb9B8L8EWfEf9cHAlY6B0o/18x8.png",
+            "width": 18
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/jdHBz5esm3clzpAOdp4xSlb9B8L8EWfEf9cHAlY6B0o/18x8.png",
+        "width": 18
+      }
+    },
+    "c_skisByAbility": [
+      "133672949",
+      "133672989"
+    ],
+    "description": "Beginner-Intermediate skiers are still developing their skills and are typically more comfortable on groomed runs and easier slopes. They may still be working on their parallel turns and stopping techniques, and may feel more comfortable skiing at slower speeds. These skiers are still learning to navigate the mountain and may benefit from taking lessons to improve their technique and build confidence.",
+    "name": "Beginner-Intermediate",
+    "primaryPhoto": {
+      "image": {
+        "height": 1930,
+        "sourceUrl": "https://images.unsplash.com/photo-1601721360403-ac2578993a3c?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2574\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1930,
+            "url": "https://a.mktgcdn.com/p/eZ2fUJ30xTqM9aowj6lyJhMqNRtAdUzM5NcL4YNVzSE/2574x1930.jpg",
+            "width": 2574
+          },
+          {
+            "height": 1425,
+            "url": "https://a.mktgcdn.com/p/eZ2fUJ30xTqM9aowj6lyJhMqNRtAdUzM5NcL4YNVzSE/1900x1425.jpg",
+            "width": 1900
+          },
+          {
+            "height": 464,
+            "url": "https://a.mktgcdn.com/p/eZ2fUJ30xTqM9aowj6lyJhMqNRtAdUzM5NcL4YNVzSE/619x464.jpg",
+            "width": 619
+          },
+          {
+            "height": 450,
+            "url": "https://a.mktgcdn.com/p/eZ2fUJ30xTqM9aowj6lyJhMqNRtAdUzM5NcL4YNVzSE/600x450.jpg",
+            "width": 600
+          },
+          {
+            "height": 147,
+            "url": "https://a.mktgcdn.com/p/eZ2fUJ30xTqM9aowj6lyJhMqNRtAdUzM5NcL4YNVzSE/196x147.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/eZ2fUJ30xTqM9aowj6lyJhMqNRtAdUzM5NcL4YNVzSE/2574x1930.jpg",
+        "width": 2574
+      }
+    }
+  },
+  "entityType": "ce_abilityLevel",
+  "labels": []
+}

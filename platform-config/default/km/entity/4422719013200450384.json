@@ -1,0 +1,126 @@
+{
+  "$id": "4422719013200450384",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 8,
+        "thumbnails": [
+          {
+            "height": 8,
+            "url": "https://a.mktgcdn.com/p/beSFf4-XbUuS0vB2V8OJkzFSLY6ZFLHXzQmqnORv6a8/8x8.png",
+            "width": 8
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/beSFf4-XbUuS0vB2V8OJkzFSLY6ZFLHXzQmqnORv6a8/8x8.png",
+        "width": 8
+      }
+    },
+    "c_skisByAbility": [
+      "133700001",
+      "133672296",
+      "133674069",
+      "133673446",
+      "133674157",
+      "133674156",
+      "133673054",
+      "133595863",
+      "133673429",
+      "133673439",
+      "133672350",
+      "133672268",
+      "133699986",
+      "133677900",
+      "133672267",
+      "133672860",
+      "133673526",
+      "133699988",
+      "133673436",
+      "133699989",
+      "133674046",
+      "133699284",
+      "133699990",
+      "133673021",
+      "133673434",
+      "133672847",
+      "133672999",
+      "133673156",
+      "133679142",
+      "133672399",
+      "133699114",
+      "133699192",
+      "133679310",
+      "133672306",
+      "133699116",
+      "133672395",
+      "133673516",
+      "133672317",
+      "133679229",
+      "133673002",
+      "133672828",
+      "133672383",
+      "133700377",
+      "133672359",
+      "133673082",
+      "133700378",
+      "133673126",
+      "133672724",
+      "133673080",
+      "133672723",
+      "133700009",
+      "133672303",
+      "133672357",
+      "133595920",
+      "133700010",
+      "133700011",
+      "133673243",
+      "133700012",
+      "133672967",
+      "133672354",
+      "133673223",
+      "133672717",
+      "133700013",
+      "133674158"
+    ],
+    "description": "Intermediate-Advanced skiers are comfortable on most types of terrain and can navigate through moguls and steep runs with confidence. They may still feel challenged by the most difficult terrain, but have the skills and ability to tackle a variety of slopes. These skiers are able to make parallel turns and may be starting to experiment with more advanced techniques.",
+    "name": "Intermediate-Advanced",
+    "primaryPhoto": {
+      "image": {
+        "height": 1981,
+        "sourceUrl": "https://images.unsplash.com/photo-1596473537047-50758f115d04?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2970\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1981,
+            "url": "https://a.mktgcdn.com/p/05sVb223tiT5pkV9KyZq8fbaKlo9PSppkKIaLGMxoq0/2970x1981.jpg",
+            "width": 2970
+          },
+          {
+            "height": 1267,
+            "url": "https://a.mktgcdn.com/p/05sVb223tiT5pkV9KyZq8fbaKlo9PSppkKIaLGMxoq0/1900x1267.jpg",
+            "width": 1900
+          },
+          {
+            "height": 413,
+            "url": "https://a.mktgcdn.com/p/05sVb223tiT5pkV9KyZq8fbaKlo9PSppkKIaLGMxoq0/619x413.jpg",
+            "width": 619
+          },
+          {
+            "height": 400,
+            "url": "https://a.mktgcdn.com/p/05sVb223tiT5pkV9KyZq8fbaKlo9PSppkKIaLGMxoq0/600x400.jpg",
+            "width": 600
+          },
+          {
+            "height": 131,
+            "url": "https://a.mktgcdn.com/p/05sVb223tiT5pkV9KyZq8fbaKlo9PSppkKIaLGMxoq0/196x131.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/05sVb223tiT5pkV9KyZq8fbaKlo9PSppkKIaLGMxoq0/2970x1981.jpg",
+        "width": 2970
+      }
+    }
+  },
+  "entityType": "ce_abilityLevel",
+  "labels": []
+}

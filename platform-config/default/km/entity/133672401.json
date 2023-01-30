@@ -1,0 +1,54 @@
+{
+  "$id": "133672401",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "899.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "As crown jewel of their new Sender series, the Rossignol Sender 106 Ti Plus Skis carry the torch passed down from Rossi\u0027s previously iconic S-Series skis and trust us, they carry it well! With a unique combination of a poplar wood core, titanal metal, carbon alloy, and dampening laminates — not to mention Rossignol\u0027s signature AirTip tips/tails — the Sender 106 delivers a fusion of technical precision, high-octane stability, and all-mountain versatility. Whether you\u0027re presented with knee-deep pow, chopped up leftovers, steep trees, or fast, top-to-bottom groomers, you\u0027ll feel right at home on the Rossignol Sender 106 Ti Plus Skis.",
+    "name": "Rossignol Sender 106 Ti Plus Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/216291/898237/rossignol-sender-106-ti-plus-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/vO1ZrUXre0Xbbw3EDTVLCunU41RN37d-S4F4CgeNfdo/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/vO1ZrUXre0Xbbw3EDTVLCunU41RN37d-S4F4CgeNfdo/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/vO1ZrUXre0Xbbw3EDTVLCunU41RN37d-S4F4CgeNfdo/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/vO1ZrUXre0Xbbw3EDTVLCunU41RN37d-S4F4CgeNfdo/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/vO1ZrUXre0Xbbw3EDTVLCunU41RN37d-S4F4CgeNfdo/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

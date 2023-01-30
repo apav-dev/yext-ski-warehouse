@@ -1,0 +1,54 @@
+{
+  "$id": "133673439",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "599.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Built to fly higher, spin like a top, and butter like a breadknife, the Völkl Revolt 90 Skis are fully cambered, fully symmetrical tools for all your freestyle needs. With a new Light Swingweight Woodcore, tough sandwich construction and smooth smooth flexing tip and tail, this ski is built to take a beating without giving you one.",
+    "name": "Völkl Revolt 90 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227105/915729/volkl-revolt-90-skis-2023-.jpg",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/g0j7lDSZACjshPM4tBCrYMeaR-amxxAVOxuoCm3wJMc/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/g0j7lDSZACjshPM4tBCrYMeaR-amxxAVOxuoCm3wJMc/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/g0j7lDSZACjshPM4tBCrYMeaR-amxxAVOxuoCm3wJMc/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/g0j7lDSZACjshPM4tBCrYMeaR-amxxAVOxuoCm3wJMc/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/g0j7lDSZACjshPM4tBCrYMeaR-amxxAVOxuoCm3wJMc/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

@@ -1,0 +1,54 @@
+{
+  "$id": "133672828",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "499.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Atomic Maven 86 C Skis are a nimble and versatile front-side tool aimed at improving all mountain performance (read, not perfect groomers). Whereas Austrians love to don the Spandex and see what kind of edge angles they can generate, North American skiers tend to go all over the place, whether it be steep bumps, tight trees, or fresh powder. If you\u0027re the kind of skier who revels in the full range of mountain conditions the Atomic Maven 86 C Skis will suit you just fine.",
+    "name": "Atomic Maven 86 C Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219396/904885/atomic-maven-86-c-skis-women-s-2023-.jpg,\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/z3bNd5C3la2fEMlW5X9Xj_x0AvZjfa6KQWGFZe2thw0/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/z3bNd5C3la2fEMlW5X9Xj_x0AvZjfa6KQWGFZe2thw0/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/z3bNd5C3la2fEMlW5X9Xj_x0AvZjfa6KQWGFZe2thw0/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/z3bNd5C3la2fEMlW5X9Xj_x0AvZjfa6KQWGFZe2thw0/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/z3bNd5C3la2fEMlW5X9Xj_x0AvZjfa6KQWGFZe2thw0/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

@@ -1,0 +1,54 @@
+{
+  "$id": "133672847",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "599.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Atomic Maverick 88 TI Skis were developed after an extensive testing program in North America which targeted the type of skiing North American skiers got after (ie, not just \"faux racing\" on groomers). They came up with the Maverick lineup in response to testers who wanted more stability at speed and better performance in fresh and cut up snow, and they came up with a winner. Not only do the Maverick 88 TI\u0027s feel more solid and planted on firm snow, they yield better float and directional confidence off-piste. The new Flow Profile is a mashup of previous Atomic technologies like the HRZN Tech Tip plus deeper sidecuts and longer rocker profiles, and the new OMatic cores are a further evolution of Atomic\u0027s poplar cores but more finely tuned to individual skier weights and ski lengths.",
+    "name": "Atomic Maverick 88 Ti Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219393/902838/atomic-maverick-88-ti-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/n-dTNA3L0dtnN0BOFgJQr4zsk9HGxizB64HeJUqGbNE/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/n-dTNA3L0dtnN0BOFgJQr4zsk9HGxizB64HeJUqGbNE/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/n-dTNA3L0dtnN0BOFgJQr4zsk9HGxizB64HeJUqGbNE/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/n-dTNA3L0dtnN0BOFgJQr4zsk9HGxizB64HeJUqGbNE/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/n-dTNA3L0dtnN0BOFgJQr4zsk9HGxizB64HeJUqGbNE/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

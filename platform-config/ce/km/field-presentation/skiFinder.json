@@ -1,0 +1,60 @@
+{
+  "$id": "ce_skiFinder",
+  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+  "entityType": "ce_searchPage",
+  "displayName": "Ski Finder",
+  "presentationEntries": [
+    {
+      "displayName": "Content",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Core Information",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "name",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "entityId",
+          "visibleOnAdd": true
+        },
+        {
+          "id": "c_coverPhoto"
+        },
+        {
+          "id": "c_headingText"
+        },
+        {
+          "id": "c_subHeadingText"
+        },
+        {
+          "id": "c_finderHeadingText"
+        },
+        {
+          "id": "c_finderDescriptionText"
+        },
+        {
+          "id": "c_filters"
+        }
+      ]
+    },
+    {
+      "displayName": "Other",
+      "entryType": "DIVIDER"
+    },
+    {
+      "displayName": "Internal Use Only",
+      "entryType": "SECTION",
+      "fields": [
+        {
+          "id": "folder"
+        },
+        {
+          "id": "labels"
+        }
+      ]
+    }
+  ]
+}

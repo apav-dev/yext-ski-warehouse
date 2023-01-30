@@ -1,0 +1,54 @@
+{
+  "$id": "133672268",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "399.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Session the park for a while, rip some groomers for a while, play in the trees a bit - all part of the game for the Völkl Revolt 86 Skis. A versatile all-mountain twin shape that also rips in the park, the Revolt 86 comes in two awesome graphic options and may be the best bang-for-the-buck choice for freestyle-oriented rippers on a budget.",
+    "name": "Völkl Revolt 86 Temple Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227095/915726/volkl-revolt-86-temple-skis-2023-.jpg",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/oVnFRyKB3_aM4EPREPSQFh3-gxRkGYBrYZ6c-UJ3tn8/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/oVnFRyKB3_aM4EPREPSQFh3-gxRkGYBrYZ6c-UJ3tn8/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/oVnFRyKB3_aM4EPREPSQFh3-gxRkGYBrYZ6c-UJ3tn8/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/oVnFRyKB3_aM4EPREPSQFh3-gxRkGYBrYZ6c-UJ3tn8/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/oVnFRyKB3_aM4EPREPSQFh3-gxRkGYBrYZ6c-UJ3tn8/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

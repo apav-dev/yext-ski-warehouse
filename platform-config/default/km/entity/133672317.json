@@ -1,0 +1,54 @@
+{
+  "$id": "133672317",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "799.95",
+    "c_terrain": [
+      "7096784237424891914"
+    ],
+    "description": "The Black Crows Camox Freebird Skis make the backcountry more accessible than ever before. These super light touring skis offer easier handling that almost any touring ski on the market, with a smooth directional design and moderate flex. The 95mm waist width is versatile and nimble through the varied conditions you\u0027re likely to find beyond the reach of groomers and ski patrollers, making this an awesome choice for experienced riders to expand their repertoire. They pair well with sturdy touring bindings, a well-rounded avalanche education, and a knowledgeable ski partner.",
+    "name": "Black Crows Camox Freebird Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/224549/930812/black-crows-camox-freebird-skis-2023-.jpg,\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/fmxwRNDDZhyjCOHWy6mf-dh6OfY4jZHuuGbkmQWxBB4/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/fmxwRNDDZhyjCOHWy6mf-dh6OfY4jZHuuGbkmQWxBB4/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/fmxwRNDDZhyjCOHWy6mf-dh6OfY4jZHuuGbkmQWxBB4/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/fmxwRNDDZhyjCOHWy6mf-dh6OfY4jZHuuGbkmQWxBB4/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/fmxwRNDDZhyjCOHWy6mf-dh6OfY4jZHuuGbkmQWxBB4/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

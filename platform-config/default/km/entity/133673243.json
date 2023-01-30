@@ -1,0 +1,54 @@
+{
+  "$id": "133673243",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "299.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Tips up, gnar out! The K2 Reckoner 92 Skis are a twin-tip park pony that bucks around on features with ease and still packs enough power to gallop into the steeps, race around bumps, and circle back for end-of-day victory laps in the park. The women\u0027s specific, all-terrain twin rocker stays light underfoot but rigid and rowdy enough for all-mountain riding. Time to giddy-up to the slopes to take these girls for a spin!",
+    "name": "K2 Reckoner 92 Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/221702/977842/clone.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/dHS44nH-N7FPbj-3QYZ7TOKkyVkJMsNeLp3GLnRjrYA/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/dHS44nH-N7FPbj-3QYZ7TOKkyVkJMsNeLp3GLnRjrYA/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/dHS44nH-N7FPbj-3QYZ7TOKkyVkJMsNeLp3GLnRjrYA/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/dHS44nH-N7FPbj-3QYZ7TOKkyVkJMsNeLp3GLnRjrYA/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/dHS44nH-N7FPbj-3QYZ7TOKkyVkJMsNeLp3GLnRjrYA/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

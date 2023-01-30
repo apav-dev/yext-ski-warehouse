@@ -1,0 +1,15 @@
+{
+  "$id": "ce_skiFinder.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Ski Finder-default",
+  "entityType": "ce_searchPage",
+  "fields": [
+    "c_coverPhoto",
+    "c_filters",
+    "c_finderDescriptionText",
+    "c_finderHeadingText",
+    "c_headingText",
+    "c_subHeadingText"
+  ],
+  "required": []
+}

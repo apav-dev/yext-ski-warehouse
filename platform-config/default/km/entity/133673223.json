@@ -1,0 +1,54 @@
+{
+  "$id": "133673223",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "349.00",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The narrowest, lightest and most affordable ski in the Prodigy adult lineup isn\u0027t a noodle - the Faction Prodigy 0 Skis will stay in your quiver long after you\u0027ve acquired other quiver arrows as a great ski to learn new tricks on and generally have a blast in the park - but the 85mm waist and lighter Fusion Core mean it is also a great ski for progression both for skiing in general and freestyle specific moves.",
+    "name": "Faction Prodigy 0 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227161/939913/faction-prodigy-0-skis-2023-.jpg,\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/EH9WxMGxQfpGHdUWhWFY0phwS_7D_bBYTG5rBRDR2RY/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/EH9WxMGxQfpGHdUWhWFY0phwS_7D_bBYTG5rBRDR2RY/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/EH9WxMGxQfpGHdUWhWFY0phwS_7D_bBYTG5rBRDR2RY/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/EH9WxMGxQfpGHdUWhWFY0phwS_7D_bBYTG5rBRDR2RY/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/EH9WxMGxQfpGHdUWhWFY0phwS_7D_bBYTG5rBRDR2RY/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

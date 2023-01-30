@@ -1,0 +1,54 @@
+{
+  "$id": "133672336",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "849.95",
+    "c_terrain": [
+      "7096784237424891914"
+    ],
+    "description": "Somewhere out there, just over the next ridge, is the line you\u0027ve been waiting your whole life to ski. Maybe it\u0027s a perfect pillow field, or a straight line chute with serious implications. Whatever it is, there\u0027s certainly not a chairlift that goes to the top of it, and it\u0027s certainly not the type of thing you want to be skiing on dinky little skimo planks. To help you find the nirvana you\u0027ve been seeking, Armada has developed a new line of touring skis. The Armada Locator 112 Skis are the big guns of the new Locator series. They\u0027re wide and beefy for float and power charging the fall line and surfing through soft snow, but they also are remarkably light to make the skin track a breeze.",
+    "name": "Armada Locator 112 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219347/910708/clone.jpg,\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/Shm92VYJncHpt1wmMUgwomQ0bncePmV0RWDV8D73KQ4/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/Shm92VYJncHpt1wmMUgwomQ0bncePmV0RWDV8D73KQ4/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/Shm92VYJncHpt1wmMUgwomQ0bncePmV0RWDV8D73KQ4/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/Shm92VYJncHpt1wmMUgwomQ0bncePmV0RWDV8D73KQ4/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/Shm92VYJncHpt1wmMUgwomQ0bncePmV0RWDV8D73KQ4/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

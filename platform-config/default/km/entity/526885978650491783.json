@@ -1,0 +1,34 @@
+{
+  "$id": "526885978650491783",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_navBar": [
+      "5929891552541128688",
+      "6490805738900090466"
+    ],
+    "c_primaryLogo": {
+      "image": {
+        "height": 300,
+        "thumbnails": [
+          {
+            "height": 300,
+            "url": "https://a.mktgcdn.com/p/R9FjcYjRNA5dAespqgHFLMvu2m18-E5Apnb3KON0oJY/300x300.png",
+            "width": 300
+          },
+          {
+            "height": 196,
+            "url": "https://a.mktgcdn.com/p/R9FjcYjRNA5dAespqgHFLMvu2m18-E5Apnb3KON0oJY/196x196.png",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/R9FjcYjRNA5dAespqgHFLMvu2m18-E5Apnb3KON0oJY/300x300.png",
+        "width": 300
+      }
+    },
+    "name": "Site"
+  },
+  "entityType": "ce_site",
+  "folder": "yext/root",
+  "labels": []
+}

@@ -1,0 +1,44 @@
+{
+  "$id": "search_results",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_filters": [
+      {
+        "filterId": "c_gender.name",
+        "filterItems": [
+          "5929891552541128688",
+          "6490805738900090466"
+        ],
+        "title": "Gender"
+      },
+      {
+        "filterId": "c_abilityLevel.name",
+        "filterItems": [
+          "3726456647343833499",
+          "4422719013200450384",
+          "5195394095823606585"
+        ],
+        "title": "Ability"
+      },
+      {
+        "filterId": "c_terrain.name",
+        "filterItems": [
+          "1295894924104146377",
+          "7096784237424891914",
+          "7200013882251703847",
+          "2656065563766201506",
+          "463117075052872663",
+          "1312210429080442948"
+        ],
+        "title": "Terrain"
+      }
+    ],
+    "c_headingText": "Our Reccomendations",
+    "c_subHeadingText": "Skis based on your selections.",
+    "name": "Search Results"
+  },
+  "entityType": "ce_searchPage",
+  "folder": "yext/root",
+  "labels": []
+}

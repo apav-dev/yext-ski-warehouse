@@ -1,0 +1,54 @@
+{
+  "$id": "133672364",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "799.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "It\u0027s not easy to make a ski that\u0027s universally loved by seriously badass skiers, and at the same time a no brainer to recommend to strong intermediates. But that\u0027s exactly what Nordica has done with the Nordica Enforcer 100 Skis. The Enforcer line has by now become a perennial staple in \"Best Ski of the Year\" discussions, and the latest rendition is no different. A stout flex underfoot is backed up by two sheets of titanal for smooth stability and edge hold through chop, but when it comes time to transfer your weight, the ski happily flicks over to the other edge, making for a surprisingly user friendly ride. If you haven\u0027t gotten on an Enforcer by now, do yourself a favor - the hype is fully deserved.",
+    "name": "Nordica Enforcer 100 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/224769/902350/nordica-enforcer-100-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/9HHWk0KY7CfbZz6f8MTbkl98CiSFvZ9ySUxzCC2sKmM/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/9HHWk0KY7CfbZz6f8MTbkl98CiSFvZ9ySUxzCC2sKmM/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/9HHWk0KY7CfbZz6f8MTbkl98CiSFvZ9ySUxzCC2sKmM/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/9HHWk0KY7CfbZz6f8MTbkl98CiSFvZ9ySUxzCC2sKmM/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/9HHWk0KY7CfbZz6f8MTbkl98CiSFvZ9ySUxzCC2sKmM/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

@@ -1,0 +1,54 @@
+{
+  "$id": "133673430",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "749.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Enforcer line has become something of a cult classic by now. They\u0027re just so good, and with a wide range of widths available, there\u0027s one that\u0027s just right for every set of daily conditions. As the mid skinny option in the lineup, the Nordica Enforcer 94 Skis are an ideal daily driver for East Coast riders or those who tend to find themselves in firmer conditions. They\u0027re built around two sheets of titanal and a reinforced carbon chassis that makes them exceptionally precise, quick, and powerful snapping off turns edge to edge.",
+    "name": "Nordica Enforcer 94 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/224770/902347/nordica-enforcer-94-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/ncmdPzwGHqfwwdUKn0dtv3vrSCbN8stKvAM6F0aLVkU/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/ncmdPzwGHqfwwdUKn0dtv3vrSCbN8stKvAM6F0aLVkU/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/ncmdPzwGHqfwwdUKn0dtv3vrSCbN8stKvAM6F0aLVkU/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/ncmdPzwGHqfwwdUKn0dtv3vrSCbN8stKvAM6F0aLVkU/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/ncmdPzwGHqfwwdUKn0dtv3vrSCbN8stKvAM6F0aLVkU/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

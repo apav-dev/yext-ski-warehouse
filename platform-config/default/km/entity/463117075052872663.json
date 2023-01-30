@@ -1,0 +1,71 @@
+{
+  "$id": "463117075052872663",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 16,
+        "thumbnails": [
+          {
+            "height": 16,
+            "url": "https://a.mktgcdn.com/p/htBBCDL7ZLb7JoiHnue5QpoW-K7NgIu5Gg1iP6gKGaU/16x16.png",
+            "width": 16
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/htBBCDL7ZLb7JoiHnue5QpoW-K7NgIu5Gg1iP6gKGaU/16x16.png",
+        "width": 16
+      }
+    },
+    "c_skisByTerrain": [
+      "133672968",
+      "133673438",
+      "133673156",
+      "133673086",
+      "133673084",
+      "133673082",
+      "133673080",
+      "133672303",
+      "133672967"
+    ],
+    "description": "Park \u0026 Pipe terrain refers to areas at a ski resort that are dedicated to freestyle skiing and snowboarding, including half pipes, quarter pipes, and rail features. Skiers and snowboarders who enjoy Park \u0026 Pipe terrain typically have a good level of skill and enjoy doing tricks and hitting jumps.",
+    "name": "Park \u0026 Pipe",
+    "primaryPhoto": {
+      "image": {
+        "height": 1318,
+        "sourceUrl": "https://images.unsplash.com/photo-1557977398-18b39bf47159?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2145\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1318,
+            "url": "https://a.mktgcdn.com/p/Dscn8nGNpt9lCmO1SnW0B4cQtm_oV0m4gmU8Za9C_Vo/2145x1318.jpg",
+            "width": 2145
+          },
+          {
+            "height": 1167,
+            "url": "https://a.mktgcdn.com/p/Dscn8nGNpt9lCmO1SnW0B4cQtm_oV0m4gmU8Za9C_Vo/1900x1167.jpg",
+            "width": 1900
+          },
+          {
+            "height": 380,
+            "url": "https://a.mktgcdn.com/p/Dscn8nGNpt9lCmO1SnW0B4cQtm_oV0m4gmU8Za9C_Vo/619x380.jpg",
+            "width": 619
+          },
+          {
+            "height": 369,
+            "url": "https://a.mktgcdn.com/p/Dscn8nGNpt9lCmO1SnW0B4cQtm_oV0m4gmU8Za9C_Vo/600x369.jpg",
+            "width": 600
+          },
+          {
+            "height": 120,
+            "url": "https://a.mktgcdn.com/p/Dscn8nGNpt9lCmO1SnW0B4cQtm_oV0m4gmU8Za9C_Vo/196x120.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/Dscn8nGNpt9lCmO1SnW0B4cQtm_oV0m4gmU8Za9C_Vo/2145x1318.jpg",
+        "width": 2145
+      }
+    }
+  },
+  "entityType": "ce_terrain",
+  "labels": []
+}

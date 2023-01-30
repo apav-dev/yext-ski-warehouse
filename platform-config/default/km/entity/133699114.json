@@ -1,0 +1,54 @@
+{
+  "$id": "133699114",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "649.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "For the all-mountain skier extraordinaire, we present the Lib Tech Libstick 98 Skis. These skis blend the best of both worlds when it comes to all-mountain riding. With the directional shape and sturdy edge hold of a big mountain ski, they provide poised descents down any terrain and smooth tracking across groomers. With the more forward mount point and medium flex of a freestyle ski, they offer tons of pop and lively energy. They\u0027re fun and nimble, rocketing out of turns and snaking through sneaky tree lines, yet steadfast and dependable when you just need to get to the bottom in one piece.",
+    "name": "Lib Tech Libstick 98 Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/226843/913506/lib-tech-libstick-98-skis-women-s-2023-.jpg,\"data:,\"",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/LlBI5029Bb_mDfgL07MTfTDCdg-WslvQAI3HARe_B2M/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/LlBI5029Bb_mDfgL07MTfTDCdg-WslvQAI3HARe_B2M/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/LlBI5029Bb_mDfgL07MTfTDCdg-WslvQAI3HARe_B2M/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/LlBI5029Bb_mDfgL07MTfTDCdg-WslvQAI3HARe_B2M/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/LlBI5029Bb_mDfgL07MTfTDCdg-WslvQAI3HARe_B2M/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

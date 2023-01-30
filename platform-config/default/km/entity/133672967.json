@@ -1,0 +1,54 @@
+{
+  "$id": "133672967",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "399.95",
+    "c_terrain": [
+      "463117075052872663"
+    ],
+    "description": "Okay, okay, we all know that the honey badger don\u0027t care. And if you don\u0027t know by now that the Line Skis Honey Badger Skis are one of the best freestyle skis around, then we don\u0027t know where you\u0027ve been sleeping. If you\u0027re looking to progress your park game, chances are someone has recommended this ski to you. And they were right! It offers some of the best bang for buck around, with high level performance on rails, jumps, and boxes, plus out-of-this-world durability. These Honey Badgers are crazy!",
+    "name": "Line Skis Honey Badger Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/221777/906621/line-skis-honey-badger-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/7MXOoTPYafiWIgcuXkwd_2ekDX8oiu1Xh34_dswa6DY/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/7MXOoTPYafiWIgcuXkwd_2ekDX8oiu1Xh34_dswa6DY/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/7MXOoTPYafiWIgcuXkwd_2ekDX8oiu1Xh34_dswa6DY/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/7MXOoTPYafiWIgcuXkwd_2ekDX8oiu1Xh34_dswa6DY/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/7MXOoTPYafiWIgcuXkwd_2ekDX8oiu1Xh34_dswa6DY/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

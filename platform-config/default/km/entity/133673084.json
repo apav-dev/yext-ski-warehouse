@@ -1,0 +1,54 @@
+{
+  "$id": "133673084",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "649.95",
+    "c_terrain": [
+      "463117075052872663"
+    ],
+    "description": "Henrik Harlaut is a bonafide ski legend, and his pro model skis are legendary in their own right. Just as he has pushed the envelope of what\u0027s possible on skis over the years, his pro model has pushed the envelope of what defines a modern park ski. The Armada Edollo Skis have a silky smooth medium flex, a bit more tip rocker than you\u0027d expect out of a sub-100 waisted ski, and are built to crush everything in the park. They\u0027re stable, nimble, and can boost to the moon. Wu-tang is for the children, but the Edollo skis are for you.",
+    "name": "Armada Edollo Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/219358/918247/armada-edollo-skis-2023-.jpg,\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/udv8XEMHwlo5ELILm1PCSXWTGrQwfBeoH-0pOS9CGB0/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/udv8XEMHwlo5ELILm1PCSXWTGrQwfBeoH-0pOS9CGB0/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/udv8XEMHwlo5ELILm1PCSXWTGrQwfBeoH-0pOS9CGB0/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/udv8XEMHwlo5ELILm1PCSXWTGrQwfBeoH-0pOS9CGB0/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/udv8XEMHwlo5ELILm1PCSXWTGrQwfBeoH-0pOS9CGB0/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

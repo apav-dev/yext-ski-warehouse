@@ -1,0 +1,54 @@
+{
+  "$id": "133672312",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "799.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The man, the legend, the ski. It\u0027s hard to believe the Elan Ripstick Tour 104 Skis are Glen Plake\u0027s first signature model, but we can\u0027t think of a better candidate. Elan have paid tribute to Plake\u0027s mold-breaking style with a ski that combines raw freeride power with incredible agility and maneuverability, all at a touring friendly weight you can take to the skin track. They come with Elan\u0027s legendary Amphibio Profile, a light, snappy Tubelite Wood Core, and all new Carbon Bridge Technology for stability and vibration damping. Available in unisex lengths, the only thing missing is a perfectly coifed mohawk.",
+    "name": "Elan Ripstick Tour 104 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/217820/882127/elan-ripstick-tour-104-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",\"data:,\",,",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/aBuT2IwThetqF6UMyI33i9CsOPTyS5QaadOubYpNbPA/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/aBuT2IwThetqF6UMyI33i9CsOPTyS5QaadOubYpNbPA/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/aBuT2IwThetqF6UMyI33i9CsOPTyS5QaadOubYpNbPA/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/aBuT2IwThetqF6UMyI33i9CsOPTyS5QaadOubYpNbPA/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/aBuT2IwThetqF6UMyI33i9CsOPTyS5QaadOubYpNbPA/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

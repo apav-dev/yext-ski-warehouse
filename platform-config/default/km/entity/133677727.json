@@ -1,0 +1,54 @@
+{
+  "$id": "133677727",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "699.99",
+    "c_terrain": [
+      "7200013882251703847"
+    ],
+    "description": "By now you\u0027re no doubt seen Markus Eder\u0027s Ultimate video and marvelled at his ability to stomp monster lines and line up those huge crevasse-spanning airs. Sure, Markus has next-level skills most of us can only dream of, but a big part of the puzzle is his equipment, and as pretty much everyone is aware, his skis for both filming and FWT events are the Völkl Revolt 121 Skis. When you aim big, and neither you nor your skis can afford a moment of hesitation or weakness, the Revolt 121 will always step up. Tons of float, no real speed limit to hinder you, and a sick new graphic add up to a quiver essential.",
+    "name": "Völkl Revolt 121 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227091/928909/volkl-revolt-121-skis-2023-.jpg",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/kS9pGwhfCZIyzjhcsEL3ePrbVrI0_AA5orM1jXvY0Jk/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/kS9pGwhfCZIyzjhcsEL3ePrbVrI0_AA5orM1jXvY0Jk/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/kS9pGwhfCZIyzjhcsEL3ePrbVrI0_AA5orM1jXvY0Jk/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/kS9pGwhfCZIyzjhcsEL3ePrbVrI0_AA5orM1jXvY0Jk/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/kS9pGwhfCZIyzjhcsEL3ePrbVrI0_AA5orM1jXvY0Jk/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

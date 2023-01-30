@@ -1,0 +1,69 @@
+{
+  "$id": "7200013882251703847",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_icon": {
+      "image": {
+        "height": 16,
+        "thumbnails": [
+          {
+            "height": 16,
+            "url": "https://a.mktgcdn.com/p/LiA5E0Ik3j2hgd7B9DE0Vh4QfZ5gcrMSvh3plFCkb8o/16x16.png",
+            "width": 16
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/LiA5E0Ik3j2hgd7B9DE0Vh4QfZ5gcrMSvh3plFCkb8o/16x16.png",
+        "width": 16
+      }
+    },
+    "c_skisByTerrain": [
+      "133700001",
+      "133677727",
+      "133699984",
+      "133672395",
+      "133700009",
+      "133672722",
+      "133700010"
+    ],
+    "description": "Big Mountain terrain refers to vast, open slopes that offer a variety of challenges, including steeps, moguls, cliffs, and powder. Skiers who enjoy Big Mountain terrain typically have advanced or expert level skills and are comfortable tackling a wide range of challenging runs.",
+    "name": "Big Mountain",
+    "primaryPhoto": {
+      "image": {
+        "height": 1380,
+        "sourceUrl": "https://images.unsplash.com/photo-1556796213-670fed2755ec?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2070\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 1380,
+            "url": "https://a.mktgcdn.com/p/H1zE6QP9CCySocKw0wVSfj2bpz7Vz6WHF-HRf9hP5GA/2070x1380.jpg",
+            "width": 2070
+          },
+          {
+            "height": 1267,
+            "url": "https://a.mktgcdn.com/p/H1zE6QP9CCySocKw0wVSfj2bpz7Vz6WHF-HRf9hP5GA/1900x1267.jpg",
+            "width": 1900
+          },
+          {
+            "height": 413,
+            "url": "https://a.mktgcdn.com/p/H1zE6QP9CCySocKw0wVSfj2bpz7Vz6WHF-HRf9hP5GA/619x413.jpg",
+            "width": 619
+          },
+          {
+            "height": 400,
+            "url": "https://a.mktgcdn.com/p/H1zE6QP9CCySocKw0wVSfj2bpz7Vz6WHF-HRf9hP5GA/600x400.jpg",
+            "width": 600
+          },
+          {
+            "height": 131,
+            "url": "https://a.mktgcdn.com/p/H1zE6QP9CCySocKw0wVSfj2bpz7Vz6WHF-HRf9hP5GA/196x131.jpg",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/H1zE6QP9CCySocKw0wVSfj2bpz7Vz6WHF-HRf9hP5GA/2070x1380.jpg",
+        "width": 2070
+      }
+    }
+  },
+  "entityType": "ce_terrain",
+  "labels": []
+}

@@ -21,19 +21,10 @@
           "visibleOnAdd": true
         },
         {
-          "id": "logo"
+          "id": "c_primaryLogo"
         },
         {
-          "id": "c_header"
-        },
-        {
-          "id": "c_footer"
-        },
-        {
-          "id": "instagramHandle"
-        },
-        {
-          "id": "twitterHandle"
+          "id": "c_navBar"
         }
       ]
     },

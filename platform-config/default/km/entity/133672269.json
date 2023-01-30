@@ -1,0 +1,54 @@
+{
+  "$id": "133672269",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "6490805738900090466"
+    ],
+    "c_price": "749.99",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "We\u0027re not sure why they keep using this name, because the word\u0027s out. The Völkl Secret 96 Skis are the ripper skier\u0027s best friend, and the closest thing to a race ski that\u0027ll easily handle every snow condition on the mountain. The previous version of this ski was no slouch, but with the addition of the Tailored Titanal tip and Tailored Carbon Tips the Secret becomes calmer and more manageable without losing any of its inner strength or ability to track cleanly at speed. An amazing ski that responds best to a confident driver, the Secret 96 belongs in your quiver even if it\u0027s a quiver of one.",
+    "name": "Völkl Secret 96 Skis - Women\u0027s 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/227102/915727/volkl-secret-96-skis-women-s-2023-.jpg",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/nNKa-dUyS72dFLHPcxZtm1F1Uhx8im8Jcz74fFsy4NA/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/nNKa-dUyS72dFLHPcxZtm1F1Uhx8im8Jcz74fFsy4NA/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/nNKa-dUyS72dFLHPcxZtm1F1Uhx8im8Jcz74fFsy4NA/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/nNKa-dUyS72dFLHPcxZtm1F1Uhx8im8Jcz74fFsy4NA/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/nNKa-dUyS72dFLHPcxZtm1F1Uhx8im8Jcz74fFsy4NA/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

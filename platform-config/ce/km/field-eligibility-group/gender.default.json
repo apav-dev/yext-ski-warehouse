@@ -1,0 +1,13 @@
+{
+  "$id": "ce_gender.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Gender-default",
+  "entityType": "ce_gender",
+  "fields": [
+    "c_categoryFilterId",
+    "c_collection",
+    "c_skisByGender",
+    "primaryPhoto"
+  ],
+  "required": []
+}

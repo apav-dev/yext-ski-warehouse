@@ -1,0 +1,54 @@
+{
+  "$id": "133673126",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "4422719013200450384"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "649.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "Built as an all around platform for park skiing and playful riding, the Line Skis Blend Skis will help you expand your trick game whether you\u0027re a seasoned vet or an up-and-comer. The flex is smooth and pliable, but with plenty of snap and rebound. They\u0027re a freestyle staple for a reason, and you\u0027re sure to find your own favorite way to pop, press, spin, and slide the Blends through your local park.",
+    "name": "Line Skis Blend Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/221773/906616/line-skis-blend-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/_9SS5JVKMgBK5IpSeU1o-JlZSaJdMoogTQavl-pRwMI/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/_9SS5JVKMgBK5IpSeU1o-JlZSaJdMoogTQavl-pRwMI/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/_9SS5JVKMgBK5IpSeU1o-JlZSaJdMoogTQavl-pRwMI/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/_9SS5JVKMgBK5IpSeU1o-JlZSaJdMoogTQavl-pRwMI/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/_9SS5JVKMgBK5IpSeU1o-JlZSaJdMoogTQavl-pRwMI/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

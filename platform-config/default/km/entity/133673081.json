@@ -1,0 +1,54 @@
+{
+  "$id": "133673081",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "399.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "From the homemade PVC pipe feature in your backyard to the hefty halfpipe, technical tricks and the K2 Sight Skis go together like milk \u0027n cookies. With creativity and progression at the forefront of this design, K2\u0027s Carbon Boost tech gives them the agility and pop needed to get schwifty on the slopes - aka let loose and throw down. Drum roll, please!",
+    "name": "K2 Sight Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/221704/905925/k2-sight-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/Mor64A8PRZmNXWHeOCBZyJ27atS4ZzmNuId7irY72eE/700x700.jpg",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/Mor64A8PRZmNXWHeOCBZyJ27atS4ZzmNuId7irY72eE/619x619.jpg",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/Mor64A8PRZmNXWHeOCBZyJ27atS4ZzmNuId7irY72eE/450x450.jpg",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/Mor64A8PRZmNXWHeOCBZyJ27atS4ZzmNuId7irY72eE/196x196.jpg",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/Mor64A8PRZmNXWHeOCBZyJ27atS4ZzmNuId7irY72eE/700x700.jpg",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

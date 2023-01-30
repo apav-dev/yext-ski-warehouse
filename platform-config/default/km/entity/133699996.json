@@ -1,0 +1,54 @@
+{
+  "$id": "133699996",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "999.95",
+    "c_terrain": [
+      "1295894924104146377"
+    ],
+    "description": "The Black Crows Corvus Skis are at the heart of what the iconic French ski manufacturer is all about. Defined by their unique juxtaposition of a reverse camber shape with two plates of titanal and versatile big mountain waist width, these skis are freeride chargers with a twist. They\u0027re damp, expressive, nimble, and forceful - graceful on both technical lines and cruiser resort runs. By blending serious materials with playful design cues, the Corvus is a fresh alternative to the traditional 108 charger, delivering the same aggressive performance but with a bit of free-spirited soul injected into every turn.",
+    "name": "Black Crows Corvus Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/224539/930782/black-crows-corvus-skis-2023-.jpg,\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/Y9mrljTdAEE3PmkqIOMHxPcJUzHavT3WFntkx7kqWYs/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/Y9mrljTdAEE3PmkqIOMHxPcJUzHavT3WFntkx7kqWYs/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/Y9mrljTdAEE3PmkqIOMHxPcJUzHavT3WFntkx7kqWYs/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/Y9mrljTdAEE3PmkqIOMHxPcJUzHavT3WFntkx7kqWYs/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/Y9mrljTdAEE3PmkqIOMHxPcJUzHavT3WFntkx7kqWYs/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

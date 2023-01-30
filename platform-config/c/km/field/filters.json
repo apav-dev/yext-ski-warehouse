@@ -1,0 +1,14 @@
+{
+  "$id": "c_filters",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Filters",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "c_filterSection",
+      "maxLength": 5000
+    }
+  },
+  "typeId": "list"
+}

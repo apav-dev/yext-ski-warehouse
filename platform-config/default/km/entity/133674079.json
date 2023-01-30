@@ -1,0 +1,54 @@
+{
+  "$id": "133674079",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_abilityLevel": [
+      "5195394095823606585"
+    ],
+    "c_gender": [
+      "5929891552541128688"
+    ],
+    "c_price": "849.95",
+    "c_terrain": [
+      "7096784237424891914"
+    ],
+    "description": "We\u0027ve been dreaming for years of a lighter Rustler 11 that will do dual duty as a freeride ripper and backcountry slayer. The dream becomes reality this season with the introduction of the Blizzard Hustle 11 Skis. Built in the same molds but with a lighter TrueBlend Free Core and a modified Carbon D.R.T. insert instead of the Titanal one, the Hustle 11 kills it on powdery descents without killing you on the skin up. Mount this puppy up with a hybrid tech binding and light the fuse - the fireworks will be a thing of beauty.",
+    "name": "Blizzard Hustle 11 Skis 2023",
+    "photoGallery": [
+      {
+        "image": {
+          "height": 700,
+          "sourceUrl": "https://images.evo.com/imgp/700/223103/906212/blizzard-hustle-11-skis-2023-.jpg,\"data:,\",\"data:,\",\"data:,\",\"data:,\",",
+          "thumbnails": [
+            {
+              "height": 700,
+              "url": "http://a.mktgcdn.com/p/wV9m4Z9pUrq0vmyz_2UsRoBZvz8AJ6KURGotok9u6C8/700x700.png",
+              "width": 700
+            },
+            {
+              "height": 619,
+              "url": "http://a.mktgcdn.com/p/wV9m4Z9pUrq0vmyz_2UsRoBZvz8AJ6KURGotok9u6C8/619x619.png",
+              "width": 619
+            },
+            {
+              "height": 450,
+              "url": "http://a.mktgcdn.com/p/wV9m4Z9pUrq0vmyz_2UsRoBZvz8AJ6KURGotok9u6C8/450x450.png",
+              "width": 450
+            },
+            {
+              "height": 196,
+              "url": "http://a.mktgcdn.com/p/wV9m4Z9pUrq0vmyz_2UsRoBZvz8AJ6KURGotok9u6C8/196x196.png",
+              "width": 196
+            }
+          ],
+          "url": "http://a.mktgcdn.com/p/wV9m4Z9pUrq0vmyz_2UsRoBZvz8AJ6KURGotok9u6C8/700x700.png",
+          "width": 700
+        }
+      }
+    ],
+    "slug": "skis/[[entityId]]"
+  },
+  "entityType": "ce_skis",
+  "labels": []
+}

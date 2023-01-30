@@ -1,0 +1,265 @@
+{
+  "$id": "5929891552541128688",
+  "$schema": "https://schema.yext.com/config/km/entity/v1",
+  "primaryLocale": "en",
+  "content": {
+    "c_collection": {
+      "filterID": "c_productType",
+      "filters": [
+        {
+          "image": {
+            "image": {
+              "alternateText": "Men\u0027s Skis",
+              "height": 1380,
+              "sourceUrl": "https://images.unsplash.com/photo-1612221075041-fcac94648403?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2070\u0026q\u003d80",
+              "thumbnails": [
+                {
+                  "height": 1380,
+                  "url": "https://a.mktgcdn.com/p/UJd8AJb8U_GY3PIQfrOyYXltWbl0wkv9MMeGsw5UypU/2070x1380.jpg",
+                  "width": 2070
+                },
+                {
+                  "height": 1267,
+                  "url": "https://a.mktgcdn.com/p/UJd8AJb8U_GY3PIQfrOyYXltWbl0wkv9MMeGsw5UypU/1900x1267.jpg",
+                  "width": 1900
+                },
+                {
+                  "height": 413,
+                  "url": "https://a.mktgcdn.com/p/UJd8AJb8U_GY3PIQfrOyYXltWbl0wkv9MMeGsw5UypU/619x413.jpg",
+                  "width": 619
+                },
+                {
+                  "height": 400,
+                  "url": "https://a.mktgcdn.com/p/UJd8AJb8U_GY3PIQfrOyYXltWbl0wkv9MMeGsw5UypU/600x400.jpg",
+                  "width": 600
+                },
+                {
+                  "height": 131,
+                  "url": "https://a.mktgcdn.com/p/UJd8AJb8U_GY3PIQfrOyYXltWbl0wkv9MMeGsw5UypU/196x131.jpg",
+                  "width": 196
+                }
+              ],
+              "url": "https://a.mktgcdn.com/p/UJd8AJb8U_GY3PIQfrOyYXltWbl0wkv9MMeGsw5UypU/2070x1380.jpg",
+              "width": 2070
+            }
+          },
+          "value": "Skis"
+        },
+        {
+          "image": {
+            "image": {
+              "height": 1380,
+              "sourceUrl": "https://images.unsplash.com/photo-1645999140947-db7546fecb30?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2070\u0026q\u003d80",
+              "thumbnails": [
+                {
+                  "height": 1380,
+                  "url": "https://a.mktgcdn.com/p/VrvPkzI5lJ5J2GINsqBC99ffOWojhs3NWSs5UCIlbMA/2070x1380.jpg",
+                  "width": 2070
+                },
+                {
+                  "height": 1267,
+                  "url": "https://a.mktgcdn.com/p/VrvPkzI5lJ5J2GINsqBC99ffOWojhs3NWSs5UCIlbMA/1900x1267.jpg",
+                  "width": 1900
+                },
+                {
+                  "height": 413,
+                  "url": "https://a.mktgcdn.com/p/VrvPkzI5lJ5J2GINsqBC99ffOWojhs3NWSs5UCIlbMA/619x413.jpg",
+                  "width": 619
+                },
+                {
+                  "height": 400,
+                  "url": "https://a.mktgcdn.com/p/VrvPkzI5lJ5J2GINsqBC99ffOWojhs3NWSs5UCIlbMA/600x400.jpg",
+                  "width": 600
+                },
+                {
+                  "height": 131,
+                  "url": "https://a.mktgcdn.com/p/VrvPkzI5lJ5J2GINsqBC99ffOWojhs3NWSs5UCIlbMA/196x131.jpg",
+                  "width": 196
+                }
+              ],
+              "url": "https://a.mktgcdn.com/p/VrvPkzI5lJ5J2GINsqBC99ffOWojhs3NWSs5UCIlbMA/2070x1380.jpg",
+              "width": 2070
+            }
+          },
+          "label": "Men\u0027s Boots",
+          "value": "Boots"
+        },
+        {
+          "image": {
+            "image": {
+              "height": 428,
+              "sourceUrl": "https://www.salomon.com/en-us/shop/media/catalog/product/L/4/L47038800__da27b57274ae14a00d476a2a5b787957.jpg?auto\u003dwebp\u0026bg-color\u003df5f5f5\u0026dpr\u003d1\u0026fit\u003dcover\u0026format\u003dpjpg\u0026optimize\u003dlow\u0026orient\u003d1\u0026pad\u003d0\u0026width\u003d428",
+              "thumbnails": [
+                {
+                  "height": 428,
+                  "url": "https://a.mktgcdn.com/p/yPpK7tx7Egsuvw77G4Ay9-zTK5p9vw2P6gQCKyhufKo/428x428.jpg",
+                  "width": 428
+                },
+                {
+                  "height": 196,
+                  "url": "https://a.mktgcdn.com/p/yPpK7tx7Egsuvw77G4Ay9-zTK5p9vw2P6gQCKyhufKo/196x196.jpg",
+                  "width": 196
+                }
+              ],
+              "url": "https://a.mktgcdn.com/p/yPpK7tx7Egsuvw77G4Ay9-zTK5p9vw2P6gQCKyhufKo/428x428.jpg",
+              "width": 428
+            }
+          },
+          "label": "Men\u0027s Bindings",
+          "value": "Helmets"
+        },
+        {
+          "image": {
+            "image": {
+              "height": 1380,
+              "sourceUrl": "https://images.unsplash.com/photo-1493668068984-ac1a19928fdf?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto\u003dformat\u0026fit\u003dcrop\u0026w\u003d2070\u0026q\u003d80",
+              "thumbnails": [
+                {
+                  "height": 1380,
+                  "url": "https://a.mktgcdn.com/p/L9Uyg9lRc2tdQKhkTRuSmahH0E3h97TFgCD_1mXtbxw/2070x1380.jpg",
+                  "width": 2070
+                },
+                {
+                  "height": 1267,
+                  "url": "https://a.mktgcdn.com/p/L9Uyg9lRc2tdQKhkTRuSmahH0E3h97TFgCD_1mXtbxw/1900x1267.jpg",
+                  "width": 1900
+                },
+                {
+                  "height": 413,
+                  "url": "https://a.mktgcdn.com/p/L9Uyg9lRc2tdQKhkTRuSmahH0E3h97TFgCD_1mXtbxw/619x413.jpg",
+                  "width": 619
+                },
+                {
+                  "height": 400,
+                  "url": "https://a.mktgcdn.com/p/L9Uyg9lRc2tdQKhkTRuSmahH0E3h97TFgCD_1mXtbxw/600x400.jpg",
+                  "width": 600
+                },
+                {
+                  "height": 131,
+                  "url": "https://a.mktgcdn.com/p/L9Uyg9lRc2tdQKhkTRuSmahH0E3h97TFgCD_1mXtbxw/196x131.jpg",
+                  "width": 196
+                }
+              ],
+              "url": "https://a.mktgcdn.com/p/L9Uyg9lRc2tdQKhkTRuSmahH0E3h97TFgCD_1mXtbxw/2070x1380.jpg",
+              "width": 2070
+            }
+          },
+          "label": "Men\u0027s Poles",
+          "value": "Poles"
+        }
+      ]
+    },
+    "c_skisByGender": [
+      "133672723",
+      "133700009",
+      "133672967",
+      "133672354",
+      "133700011",
+      "133672989",
+      "133672949",
+      "133673223",
+      "133672296",
+      "133672866",
+      "133672717",
+      "133673446",
+      "133672968",
+      "133700001",
+      "133674079",
+      "133674156",
+      "133700003",
+      "133672363",
+      "133673021",
+      "133673434",
+      "133672272",
+      "133672847",
+      "133672364",
+      "133673440",
+      "133699996",
+      "133699284",
+      "133699997",
+      "133673054",
+      "133700007",
+      "133699192",
+      "133679310",
+      "133673431",
+      "133679142",
+      "133673428",
+      "133673516",
+      "133677727",
+      "133672317",
+      "133699984",
+      "133673430",
+      "133672995",
+      "133672336",
+      "133672306",
+      "133673429",
+      "133672281",
+      "133673086",
+      "133699110",
+      "133672376",
+      "133673438",
+      "133672726",
+      "133699985",
+      "133673084",
+      "133673026",
+      "133672374",
+      "133672401",
+      "133673002",
+      "133673439",
+      "133672860",
+      "133672358",
+      "133673526",
+      "133700378",
+      "133699988",
+      "133672312",
+      "133673436",
+      "133673126",
+      "133672268",
+      "133700377",
+      "133672359",
+      "133673082",
+      "133673081",
+      "133677900",
+      "133672303",
+      "133672357",
+      "133672722",
+      "133700010",
+      "133672724",
+      "133673080",
+      "133699983"
+    ],
+    "name": "Men",
+    "primaryPhoto": {
+      "image": {
+        "height": 667,
+        "sourceUrl": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib\u003drb-4.0.3\u0026ixid\u003dMnwxMjA3fDB8MHxzZWFyY2h8M3x8c2tpaW5nfGVufDB8fDB8fA%3D%3D\u0026w\u003d1000\u0026q\u003d80",
+        "thumbnails": [
+          {
+            "height": 667,
+            "url": "https://a.mktgcdn.com/p/5TRi1fT6cJBtGRZMxzeAN8SVZu9_Z1yQBcWEHuUIzuw/1000x667.png",
+            "width": 1000
+          },
+          {
+            "height": 413,
+            "url": "https://a.mktgcdn.com/p/5TRi1fT6cJBtGRZMxzeAN8SVZu9_Z1yQBcWEHuUIzuw/619x413.png",
+            "width": 619
+          },
+          {
+            "height": 400,
+            "url": "https://a.mktgcdn.com/p/5TRi1fT6cJBtGRZMxzeAN8SVZu9_Z1yQBcWEHuUIzuw/600x400.png",
+            "width": 600
+          },
+          {
+            "height": 131,
+            "url": "https://a.mktgcdn.com/p/5TRi1fT6cJBtGRZMxzeAN8SVZu9_Z1yQBcWEHuUIzuw/196x131.png",
+            "width": 196
+          }
+        ],
+        "url": "https://a.mktgcdn.com/p/5TRi1fT6cJBtGRZMxzeAN8SVZu9_Z1yQBcWEHuUIzuw/1000x667.png",
+        "width": 1000
+      }
+    }
+  },
+  "entityType": "ce_gender",
+  "labels": []
+}
