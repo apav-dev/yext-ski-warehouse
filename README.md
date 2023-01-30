@@ -1,6 +1,6 @@
-# Pages Empty Starter
+# Yext Ski Warehouse
 
-This repository provides an empty starter template for Yext Pages. This starter is recommended if you want to build from scratch or are following a track that requires the empty starter.
+This repository provides the Yext account configuration and UI code for a guided ecommerce experience powered by Yext Knowledge Graph, Pages, and Search.
 
 ## Getting Started
 
@@ -14,9 +14,17 @@ This repository provides an empty starter template for Yext Pages. This starter 
 
 1. Have a Yext account. You can sign up for a free account here: https://hitchhikers.yext.com/create-playground-account
 
+### Setup Search
 
-### _Recommended_: Set up with `pages new` 
-Once you have the prerequisites installed, we recommend running `yext pages new` which will guide you through the setup flow. Alternatively, you can clone this repo directly by following the directions below. 
+The `platform-config` folder in this repo contains all the configuration that needs to be uploaded to a Yext account to run this Pages site. However, when the configuration is applied, a new Search API Key (unique to your account will be generated). For this site to work, you need to copy the Search API Key from your Yext account and add it to a `.env` file as follows:
+
+`YEXT_PUBLIC_SEARCH_API_KEY=YOUR_API_KEY`
+
+Check out this [reference page](https://hitchhikers.yext.com/docs/pages/environment-variables/) on Pages environment variables.
+
+### _Recommended_: Set up with `pages new`
+
+Once you have the prerequisites installed, we recommend running `yext pages new` which will guide you through the setup flow. Alternatively, you can clone this repo directly by following the directions below.
 
 ### Clone this repo and install dependencies
 
@@ -25,7 +33,6 @@ git clone https://github.com/yext/empty-starter
 cd empty-starter
 npm install
 ```
-
 
 ### Recommended Development Flow
 
@@ -37,22 +44,23 @@ npm run dev
 
 This command will start a Vite-powered dev server that will enable hot-reloading. Additionally, the command will generate a `localData` directory that contains a subset of your Knowledge Graph data. This command is automatically in "dynamic" mode, which means it will pull data updates automatically from your Knowledge graph, so real-time data changes in your Yext account will be reflected in your local dev site.
 
-NOTE: Whenever you make changes to your stream definitions, you must re-run `npm run dev` for the system to update the `features.json` and the required entities to power your site. 
+NOTE: Whenever you make changes to your stream definitions, you must re-run `npm run dev` for the system to update the `features.json` and the required entities to power your site.
 
 _Before committing_ your code, we recommend running the following command:
+
 ```
 npm run build:serve
-``` 
+```
 
 This command will generate a production build of your site, so you can ensure there are no build errors or unexpected behavior. This build step replicates the production build environment used in the Yext system, and serves your data at `localhost:8000`.
 
-In practice, development builds (via `npm run dev`) and production builds compile and bundle assets differently. For local development, ES Modules are loaded directly by the browser, allowing fast iteration during local development and also allows for hot module replacement (HMR). Other things like CSS are also loaded directly by the browser, including linking to sourcemaps. During a production build all of the different files are compiled (via ESBuild for jsx/tsx) and minified, creating assets as small as possible so that the final html files load quickly when served to a user. Tree-shaking also occurs during the build step, in which any unused dependencies are removed from your final build. 
+In practice, development builds (via `npm run dev`) and production builds compile and bundle assets differently. For local development, ES Modules are loaded directly by the browser, allowing fast iteration during local development and also allows for hot module replacement (HMR). Other things like CSS are also loaded directly by the browser, including linking to sourcemaps. During a production build all of the different files are compiled (via ESBuild for jsx/tsx) and minified, creating assets as small as possible so that the final html files load quickly when served to a user. Tree-shaking also occurs during the build step, in which any unused dependencies are removed from your final build.
 
 ### Other Useful commands
 
 `yext init` - Authenticates the Yext CLI with your Yext account
 
-`yext pages generate-test-data` - pull an example set of `localData` from your account. This command is packaged within `npm run dev'. 
+`yext pages generate-test-data` - pull an example set of `localData` from your account. This command is packaged within `npm run dev'.
 
 `npm run build` - Runs a production build against your `localData`: part one of `npm run build:serve`
 
