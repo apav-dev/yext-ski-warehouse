@@ -63,7 +63,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 const searcher = provideHeadless({
-  apiKey: import.meta.env.YEXT_PUBLIC_SEARCH_API_KEY,
+  apiKey: import.meta.env.YEXT_PUBLIC_SEARCH_API_KEY || "",
   experienceKey: "yext-ski-warehouse",
   locale: "en",
   verticalKey: "skis",
