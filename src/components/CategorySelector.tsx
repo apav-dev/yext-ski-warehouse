@@ -146,6 +146,7 @@ const ScrollingSelector = ({
                       <Image
                         className="rounded-lg object-cover object-center  shadow-lg"
                         image={item.primaryPhoto}
+                        loading="eager"
                       />
                     </div>
                     <div className="space-y-2">

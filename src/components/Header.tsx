@@ -56,7 +56,13 @@ const Header = ({ logo, navigation }: HeaderProps) => {
                     <div className="hidden lg:flex lg:flex-1 lg:items-center">
                       <a href="#">
                         <span className="sr-only">Yext Ski Warehouse</span>
-                        {logo && <Image className="h-8 w-auto" image={logo} />}
+                        {logo && (
+                          <Image
+                            className="h-8 w-auto"
+                            image={logo}
+                            loading="eager"
+                          />
+                        )}
                       </a>
                     </div>
                   )}

@@ -17,6 +17,7 @@ const SkiCard = ({ result }: CardProps<Ce_skis>) => {
             <Image
               className="h-full w-full object-cover object-center"
               image={image}
+              loading="eager"
             />
           )}
         </div>
