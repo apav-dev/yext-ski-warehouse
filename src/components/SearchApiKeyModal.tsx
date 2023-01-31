@@ -5,7 +5,7 @@ import { Fragment, useState } from "react";
 const searchApiKey = import.meta.env.YEXT_PUBLIC_SEARCH_API_KEY;
 
 const SearchApiKeyModal = () => {
-  const [isOpen, setIsOpen] = useState(searchApiKey !== undefined);
+  const [isOpen, setIsOpen] = useState(searchApiKey === undefined);
 
   function closeModal() {
     setIsOpen(false);
