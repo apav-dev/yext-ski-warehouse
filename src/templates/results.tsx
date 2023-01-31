@@ -41,11 +41,9 @@ export const getPath: GetPath<TemplateRenderProps> = () => {
   return `results`;
 };
 
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
-  document,
-}): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<
+  TemplateRenderProps
+> = (): HeadConfig => {
   return {
     title: "Yext Ski Warehouse - Ski Finder Results",
     charset: "UTF-8",

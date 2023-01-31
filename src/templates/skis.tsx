@@ -41,8 +41,6 @@ export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
   document,
 }): HeadConfig => {
   return {

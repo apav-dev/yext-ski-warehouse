@@ -2,8 +2,8 @@ import * as React from "react";
 import { Fragment } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { NavItem } from "./Header";
-import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { ComplexImageType, ImageType, Image } from "@yext/pages/components";
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import { Image } from "@yext/pages/components";
 import { twMerge } from "tailwind-merge";
 
 type MobileMenuProps = {
@@ -12,10 +12,6 @@ type MobileMenuProps = {
   navigation?: NavItem[];
 };
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const MobileMenu = ({
   mobileMenuOpen,
   setMobileMenuOpen,
@@ -23,11 +19,7 @@ const MobileMenu = ({
 }: MobileMenuProps) => {
   return (
     <Transition.Root show={mobileMenuOpen} as={Fragment}>
-      <Dialog
-        as="div"
-        className="relative z-40 lg:hidden"
-        onClose={setMobileMenuOpen}
-      >
+      <Dialog className="relative z-40 lg:hidden" onClose={setMobileMenuOpen}>
         <Transition.Child
           as={Fragment}
           enter="transition-opacity ease-linear duration-300"
@@ -63,7 +55,7 @@ const MobileMenu = ({
               </div>
 
               {/* Links */}
-              <Tab.Group as="div" className="mt-2">
+              <Tab.Group className="mt-2">
                 <div className="border-b border-gray-200">
                   <Tab.List className="-mb-px flex space-x-8 px-4">
                     {navigation?.map((item) => (

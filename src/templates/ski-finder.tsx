@@ -43,11 +43,9 @@ export const getPath: GetPath<TemplateRenderProps> = () => {
   return `index.html`;
 };
 
-export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
-  relativePrefixToRoot,
-  path,
-  document,
-}): HeadConfig => {
+export const getHeadConfig: GetHeadConfig<
+  TemplateRenderProps
+> = (): HeadConfig => {
   return {
     title: "Yext Ski Warehouse - Ski Finder",
     charset: "UTF-8",
@@ -105,7 +103,10 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
               aria-hidden="true"
               className="absolute inset-x-0 bottom-0 top-16 overflow-hidden"
             >
-              <Image image={c_coverPhoto} />
+              <Image
+                className="h-full w-full object-cover object-center"
+                image={c_coverPhoto}
+              />
             </div>
           )}
           <div className="relative mx-auto flex max-w-3xl flex-col items-center py-32 px-6 text-center sm:py-64 lg:px-0">

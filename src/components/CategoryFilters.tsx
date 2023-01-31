@@ -100,7 +100,7 @@ const CategoryFilters = ({
     <div className="bg-gray-50">
       {/* Mobile filter dialog */}
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-40 sm:hidden" onClose={setOpen}>
+        <Dialog className="relative z-40 sm:hidden" onClose={setOpen}>
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -140,11 +140,10 @@ const CategoryFilters = ({
                 <form className="mt-4">
                   {filters.map((section) => (
                     <Disclosure
-                      as="div"
                       key={section.title}
                       className="border-t border-gray-200 px-4 py-6"
                     >
-                      {({ open }) => (
+                      {({ open }: { open: boolean }) => (
                         <>
                           <h3 className="-mx-2 -my-3 flow-root">
                             <Disclosure.Button className="flex w-full items-center justify-between bg-white px-2 py-3 text-sm text-gray-400">
@@ -234,7 +233,6 @@ const CategoryFilters = ({
             <Popover.Group className="hidden sm:flex sm:items-baseline sm:space-x-8">
               {filters.map((section, sectionIdx) => (
                 <Popover
-                  as="div"
                   key={section.title}
                   id={`desktop-menu-${sectionIdx}`}
                   className="relative inline-block text-left"

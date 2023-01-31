@@ -23,6 +23,7 @@ export default interface Ce_skis {
   name: string;
   c_price?: number;
   photoGallery?: ComplexImage[];
+  slug: string;
   c_abilityLevel?: {
     name: string;
     c_icon?: ComplexImage;

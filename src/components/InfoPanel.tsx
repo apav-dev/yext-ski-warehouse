@@ -5,23 +5,15 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Section } from "./CategorySelector";
 
 type InfoPanelProps = {
-  title?: string;
-  description?: string;
   infoPanelOpen: boolean;
   setPanelOpen: (open: boolean) => void;
   data?: Section;
 };
 
-const InfoPanel = ({
-  infoPanelOpen,
-  setPanelOpen,
-  data,
-  title,
-  description,
-}: InfoPanelProps) => {
+const InfoPanel = ({ infoPanelOpen, setPanelOpen, data }: InfoPanelProps) => {
   return (
     <Transition.Root show={infoPanelOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-40 " onClose={setPanelOpen}>
+      <Dialog className="relative z-40 " onClose={setPanelOpen}>
         <Transition.Child
           as={Fragment}
           enter="transition-opacity ease-linear duration-300"
