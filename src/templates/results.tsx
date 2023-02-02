@@ -26,6 +26,7 @@ export const config: TemplateConfig = {
       "c_filters.filterItems.name",
       "c_filters.filterItems.description",
       "c_filters.filterItems.primaryPhoto",
+      "slug"
     ],
     filter: {
       entityIds: ["search_results"],
@@ -37,8 +38,8 @@ export const config: TemplateConfig = {
   },
 };
 
-export const getPath: GetPath<TemplateRenderProps> = () => {
-  return `results`;
+export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
+  return document.slug ?? "results";
 };
 
 export const getHeadConfig: GetHeadConfig<
@@ -61,7 +62,7 @@ export const getHeadConfig: GetHeadConfig<
 };
 
 const searcher = provideHeadless({
-  apiKey: import.meta.env.YEXT_PUBLIC_SEARCH_API_KEY || "",
+  apiKey: YEXT_PUBLIC_SEARCH_API_KEY || "",
   experienceKey: "yext-ski-warehouse",
   locale: "en",
   verticalKey: "skis",
