@@ -6,7 +6,7 @@
   "license": "BSD-3-Clause",
   "type": "module",
   "scripts": {
-    "dev": "npm run build:local && yext pages generate-test-data && pages dev",
+    "dev": "source .yextrc && yext init $BUSINESS_ID && npm run build:local && yext pages generate-test-data && pages dev",
     "build:local": "vite build",
     "build": "yext pages build && yext pages generate-test-data && yext pages render",
     "build:serve": "npm run build && yext pages serve",
