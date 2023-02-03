@@ -2,7 +2,7 @@ import * as React from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 
-const searchApiKey = import.meta.env.YEXT_PUBLIC_SEARCH_API_KEY;
+const searchApiKey = YEXT_PUBLIC_SEARCH_API_KEY;
 
 const SearchApiKeyModal = () => {
   const [isOpen, setIsOpen] = useState(searchApiKey === undefined);

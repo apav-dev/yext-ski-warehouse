@@ -28,6 +28,7 @@ export const config: TemplateConfig = {
       "c_filters.filterItems.name",
       "c_filters.filterItems.description",
       "c_filters.filterItems.primaryPhoto",
+      "slug"
     ],
     filter: {
       entityIds: ["ski_finder"],
@@ -39,8 +40,8 @@ export const config: TemplateConfig = {
   },
 };
 
-export const getPath: GetPath<TemplateRenderProps> = () => {
-  return `index.html`;
+export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
+  return document.slug ?? "index.html";
 };
 
 export const getHeadConfig: GetHeadConfig<
@@ -86,9 +87,8 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     // add each filter to the url and redirect to the results page
     let url = "/results";
     filters.forEach((filter, index) => {
-      url += `${index === 0 ? "?" : "&"}${filter.filterId}=${
-        filter.filterValue
-      }`;
+      url += `${index === 0 ? "?" : "&"}${filter.filterId}=${filter.filterValue
+        }`;
     });
     window.location.href = url;
   };
