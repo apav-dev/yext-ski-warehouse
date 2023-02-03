@@ -20,15 +20,13 @@ export const config: TemplateConfig = {
       "c_coverPhoto",
       "c_headingText",
       "c_subHeadingText",
-      "c_finderHeadingText",
-      "c_finderDescriptionText",
       "c_filters.title",
       "c_filters.description",
       "c_filters.filterId",
       "c_filters.filterItems.name",
       "c_filters.filterItems.description",
       "c_filters.filterItems.primaryPhoto",
-      "slug"
+      "slug",
     ],
     filter: {
       entityIds: ["ski_finder"],
@@ -64,15 +62,8 @@ export const getHeadConfig: GetHeadConfig<
 };
 
 const SkiFinder = ({ document }: TemplateRenderProps) => {
-  const {
-    c_coverPhoto,
-    c_headingText,
-    c_subHeadingText,
-    c_finderHeadingText,
-    c_finderDescriptionText,
-    c_filters,
-    _site,
-  } = document;
+  const { c_coverPhoto, c_headingText, c_subHeadingText, c_filters, _site } =
+    document;
   const logo = _site?.c_primaryLogo;
   const navBar = _site?.c_navBar;
 
@@ -87,8 +78,9 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     // add each filter to the url and redirect to the results page
     let url = "/results";
     filters.forEach((filter, index) => {
-      url += `${index === 0 ? "?" : "&"}${filter.filterId}=${filter.filterValue
-        }`;
+      url += `${index === 0 ? "?" : "&"}${filter.filterId}=${
+        filter.filterValue
+      }`;
     });
     window.location.href = url;
   };
@@ -123,8 +115,6 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
           </div>
         </div>
         <ScrollingSelector
-          title={c_finderHeadingText}
-          description={c_finderDescriptionText}
           sections={c_filters}
           scrollToStart={started}
           onComplete={handleComplete}
