@@ -19,8 +19,6 @@ export type Section = {
 };
 
 type ScrollingSelectorProps = {
-  title: string;
-  description: string;
   sections: Section[];
   scrollToStart: boolean;
   onComplete?: (
@@ -32,8 +30,6 @@ type ScrollingSelectorProps = {
 };
 
 const ScrollingSelector = ({
-  title,
-  description,
   sections,
   scrollToStart = false,
   onComplete,
@@ -102,12 +98,6 @@ const ScrollingSelector = ({
   return (
     <>
       <div ref={containerRef} className="container mx-auto py-4 ">
-        <div className="text-center py-4">
-          <h1 className="text-4xl font-bold tracking-tight text-sky-400 lg:text-6xl">
-            {title}
-          </h1>
-          <p className="mt-4 text-xl text-sky-400">{description}</p>
-        </div>
         {sections?.map((section, sectionIndex) => (
           <section
             key={sectionIndex}
