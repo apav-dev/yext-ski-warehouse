@@ -37,7 +37,7 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
-  return document.slug;
+  return document.slug ?? "skis/" + document.name;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
