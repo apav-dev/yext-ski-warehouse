@@ -19,7 +19,11 @@ const MobileMenu = ({
 }: MobileMenuProps) => {
   return (
     <Transition.Root show={mobileMenuOpen} as={Fragment}>
-      <Dialog className="relative z-40 lg:hidden" onClose={setMobileMenuOpen}>
+      <Dialog
+        as="div"
+        className="relative z-40 lg:hidden"
+        onClose={setMobileMenuOpen}
+      >
         <Transition.Child
           as={Fragment}
           enter="transition-opacity ease-linear duration-300"
@@ -55,7 +59,7 @@ const MobileMenu = ({
               </div>
 
               {/* Links */}
-              <Tab.Group className="mt-2">
+              <Tab.Group as="div" className="mt-2">
                 <div className="border-b border-gray-200">
                   <Tab.List className="-mb-px flex space-x-8 px-4">
                     {navigation?.map((item) => (
