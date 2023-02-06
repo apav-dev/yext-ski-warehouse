@@ -15,11 +15,11 @@ export type Section = {
   title: string;
   filterId: string;
   description?: string;
-  filterItems: SectionItem[];
+  filterItems?: SectionItem[];
 };
 
 type ScrollingSelectorProps = {
-  sections: Section[];
+  sections?: Section[];
   scrollToStart: boolean;
   onComplete?: (
     filters: {
@@ -52,32 +52,37 @@ const ScrollingSelector = ({
   }, [scrollToStart]);
 
   const handleButtonClick = (itemIndex: number, sectionIndex: number) => {
-    if (autoScrollOn && sectionsRef.current[sectionIndex + 1]) {
-      setTimeout(() => {
-        sectionsRef.current[sectionIndex + 1].scrollIntoView({
-          behavior: "smooth",
-        });
-      }, 300);
+    if (sections) {
+      if (autoScrollOn && sectionsRef.current[sectionIndex + 1]) {
+        setTimeout(() => {
+          sectionsRef.current[sectionIndex + 1].scrollIntoView({
+            behavior: "smooth",
+          });
+        }, 300);
+      }
+
+      if (sections[sectionIndex].filterItems) {
+        let newSelectedFilters = {
+          ...selectedFilters,
+          [sectionIndex]:
+            sections[sectionIndex].filterItems?.[itemIndex].name || "",
+        };
+
+        if (
+          !newSelectedFilters[sectionIndex + 1] &&
+          sectionIndex < sections.length - 1
+        ) {
+          newSelectedFilters = {
+            ...newSelectedFilters,
+            [sectionIndex + 1]: "",
+          };
+        }
+
+        if (sectionIndex === sections.length - 2) setAutoScrollOn(false);
+
+        setSelectedFilters(newSelectedFilters);
+      }
     }
-
-    let newSelectedFilters = {
-      ...selectedFilters,
-      [sectionIndex]: sections[sectionIndex].filterItems[itemIndex].name,
-    };
-
-    if (
-      !newSelectedFilters[sectionIndex + 1] &&
-      sectionIndex < sections.length - 1
-    ) {
-      newSelectedFilters = {
-        ...newSelectedFilters,
-        [sectionIndex + 1]: "",
-      };
-    }
-
-    if (sectionIndex === sections.length - 2) setAutoScrollOn(false);
-
-    setSelectedFilters(newSelectedFilters);
   };
 
   const handleLearnMoreClick = (section: Section) => {
@@ -86,12 +91,16 @@ const ScrollingSelector = ({
   };
 
   const handleNextClick = () => {
-    if (onComplete) {
-      const selectedFiltersArray = Object.keys(selectedFilters).map((key) => ({
-        filterId: sections[parseInt(key)].filterId,
-        filterValue: selectedFilters[parseInt(key)],
-      }));
-      onComplete(selectedFiltersArray);
+    if (sections) {
+      if (onComplete) {
+        const selectedFiltersArray = Object.keys(selectedFilters).map(
+          (key) => ({
+            filterId: sections[parseInt(key)].filterId,
+            filterValue: selectedFilters[parseInt(key)],
+          })
+        );
+        onComplete(selectedFiltersArray);
+      }
     }
   };
 
@@ -120,7 +129,7 @@ const ScrollingSelector = ({
               role="list"
               className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8"
             >
-              {section.filterItems.map((item, itemIndex) => (
+              {section.filterItems?.map((item, itemIndex) => (
                 <li
                   key={item.name}
                   onClick={() => handleButtonClick(itemIndex, sectionIndex)}
@@ -149,7 +158,7 @@ const ScrollingSelector = ({
               ))}
             </ul>
             {/* if any of the category items have a description show the button */}
-            {section.filterItems.some((item) => item.description) && (
+            {section.filterItems?.some((item) => item.description) && (
               <div className="flex justify-center">
                 <button
                   className={twMerge(
@@ -173,10 +182,10 @@ const ScrollingSelector = ({
         ))}
         <div className="flex justify-center">
           <button
-            disabled={Object.keys(selectedFilters).length !== sections.length}
+            disabled={Object.keys(selectedFilters).length !== sections?.length}
             className={twMerge(
               "mx-auto flex mt-8 items-center rounded-full border border-sky-400  py-3 px-16 text-base font-medium text-white bg-sky-400 ",
-              Object.keys(selectedFilters).length !== sections.length
+              Object.keys(selectedFilters).length !== sections?.length
                 ? "opacity-50"
                 : "hover:bg-sky-200 hover:text-blue-400"
             )}
