@@ -5,7 +5,7 @@ import CategoryFilters from "./CategoryFilters";
 import { Section } from "./CategorySelector";
 
 type SearchResultsProps = {
-  filters: Section[];
+  filters?: Section[];
   headingText?: string;
   subheadingText?: string;
 };

@@ -17,7 +17,7 @@ import { getRuntime } from "@yext/pages/util";
 type CategoryFiltersProps = {
   headingText?: string;
   subheadingText?: string;
-  filters: Section[];
+  filters?: Section[];
 };
 
 const CategoryFilters = ({
@@ -138,7 +138,7 @@ const CategoryFilters = ({
 
                 {/* Filters */}
                 <form className="mt-4">
-                  {filters.map((section) => (
+                  {filters?.map((section) => (
                     <Disclosure
                       key={section.title}
                       className="border-t border-gray-200 px-4 py-6"
@@ -163,7 +163,7 @@ const CategoryFilters = ({
                           </h3>
                           <Disclosure.Panel className="pt-6">
                             <div className="space-y-6">
-                              {section.filterItems.map((option, optionIdx) => (
+                              {section.filterItems?.map((option, optionIdx) => (
                                 <div
                                   key={option.name}
                                   className="flex items-center"
@@ -231,7 +231,7 @@ const CategoryFilters = ({
             </button>
 
             <Popover.Group className="hidden sm:flex sm:items-baseline sm:space-x-8">
-              {filters.map((section, sectionIdx) => (
+              {filters?.map((section, sectionIdx) => (
                 <Popover
                   key={section.title}
                   id={`desktop-menu-${sectionIdx}`}
@@ -247,7 +247,7 @@ const CategoryFilters = ({
                       ).length > 0 ? (
                         <span className="ml-1.5 rounded bg-gray-200 py-0.5 px-1.5 text-xs font-semibold tabular-nums text-gray-700">
                           {
-                            section.filterItems.filter((item) =>
+                            section.filterItems?.filter((item) =>
                               activeFiltersValues.includes(item.name)
                             ).length
                           }
@@ -271,7 +271,7 @@ const CategoryFilters = ({
                   >
                     <Popover.Panel className="absolute right-0 z-10 mt-2 origin-top-right rounded-md bg-white p-4 shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                       <form className="space-y-4">
-                        {section.filterItems.map((option, optionIdx) => (
+                        {section.filterItems?.map((option, optionIdx) => (
                           <div key={option.name} className="flex items-center">
                             <input
                               id={`filter-${section.filterId}-${optionIdx}`}
