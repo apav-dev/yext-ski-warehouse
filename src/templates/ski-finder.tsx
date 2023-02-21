@@ -12,7 +12,7 @@ import Header from "../components/Header";
 import ScrollingSelector from "../components/CategorySelector";
 import { useState } from "react";
 import SearchApiKeyModal from "../components/SearchApiKeyModal";
-import { Main } from "../layouts/main";
+import Main from "../layouts/Main";
 
 export const config: TemplateConfig = {
   stream: {

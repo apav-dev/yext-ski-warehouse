@@ -11,7 +11,7 @@ import Header from "../components/Header";
 import { CheckIcon, StarIcon } from "@heroicons/react/20/solid";
 import { twMerge } from "tailwind-merge";
 import { Image } from "@yext/pages/components";
-import { Main } from "../layouts/main";
+import Main from "../layouts/Main";
 
 export const config: TemplateConfig = {
   stream: {
