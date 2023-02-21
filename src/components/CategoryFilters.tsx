@@ -12,7 +12,6 @@ import {
   useSearchState,
 } from "@yext/search-headless-react";
 import { Section } from "./CategorySelector";
-import { getRuntime } from "@yext/pages/util";
 
 type CategoryFiltersProps = {
   headingText?: string;
@@ -26,15 +25,21 @@ const CategoryFilters = ({
   filters,
 }: CategoryFiltersProps) => {
   const [open, setOpen] = useState(false);
+  const [heading, setHeading] = useState(headingText || "");
+  const [subheading, setSubheading] = useState(subheadingText || "");
 
   const searchActions = useSearchActions();
   const staticFilters = useSearchState((state) => state.filters.static) || [];
 
   useEffect(() => {
-    if (!getRuntime().isServerSide) {
-      const urlParams = new URLSearchParams(window.location.search);
-      const filters: SelectableStaticFilter[] = [];
-      urlParams.forEach((value, fieldId) => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const filters: SelectableStaticFilter[] = [];
+    urlParams.forEach((value, fieldId) => {
+      if (fieldId === "query") {
+        searchActions.setQuery(value);
+        setHeading(`Results for "${value}"`);
+        setSubheading("");
+      } else {
         filters.push({
           selected: true,
           filter: {
@@ -44,10 +49,10 @@ const CategoryFilters = ({
             value,
           },
         });
-      });
-      searchActions.setStaticFilters(filters);
-      searchActions.executeVerticalQuery();
-    }
+      }
+    });
+    searchActions.setStaticFilters(filters);
+    searchActions.executeVerticalQuery();
   }, []);
 
   useEffect(() => {
@@ -206,11 +211,13 @@ const CategoryFilters = ({
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="py-24">
           <h1 className="text-4xl font-bold tracking-tight text-sky-400">
-            {headingText}
+            {heading}
           </h1>
-          <p className="mx-auto mt-4 max-w-3xl text-base text-sky-400">
-            {subheadingText}
-          </p>
+          {subheading && (
+            <p className="mx-auto mt-4 max-w-3xl text-base text-sky-400">
+              {subheadingText}
+            </p>
+          )}
         </div>
 
         <section

@@ -11,6 +11,7 @@ import Header from "../components/Header";
 import { CheckIcon, StarIcon } from "@heroicons/react/20/solid";
 import { twMerge } from "tailwind-merge";
 import { Image } from "@yext/pages/components";
+import { Main } from "../layouts/main";
 
 export const config: TemplateConfig = {
   stream: {
@@ -67,7 +68,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
   const terrain = c_terrain?.[0];
 
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <Main>
       <div className="relative">
         <Header logo={logo} navigation={navBar} />
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
@@ -188,7 +189,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
           )}
         </div>
       </div>
-    </div>
+    </Main>
   );
 };
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Fragment } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
-import { NavItem } from "./Header";
+import { NavItem } from "../Header";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Image } from "@yext/pages/components";
 import { twMerge } from "tailwind-merge";
