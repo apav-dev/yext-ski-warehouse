@@ -23,4 +23,4 @@ const Main = (props: MainProps) => {
   );
 };
 
-export { Main };
+export default Main;

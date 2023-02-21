@@ -9,7 +9,7 @@ import {
 } from "@yext/pages";
 import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
-import { Main } from "../layouts/main";
+import Main from "../layouts/Main";
 
 export const config: TemplateConfig = {
   stream: {
