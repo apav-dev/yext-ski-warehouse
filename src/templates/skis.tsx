@@ -28,7 +28,8 @@ export const config: TemplateConfig = {
       "c_terrain.c_icon",
     ],
     filter: {
-      savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
+      // savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
+      entityTypes: ["ce_skis"],
     },
     localization: {
       locales: ["en"],
@@ -38,7 +39,7 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
-  return document.slug ?? "skis/" + document.name;
+  return document.slug ?? document.id;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({

@@ -22,12 +22,6 @@ const entityPreviewSearcher = provideHeadless(
 );
 
 const SearchBar = ({ customCssClasses }: SearchBarProps) => {
-  const handleSkisClick = (slug?: string) => {
-    if (slug) {
-      window.location.href = slug;
-    }
-  };
-
   const renderEntityPreviews = (
     autocompleteLoading: boolean,
     verticalKeyToResults: Record<string, VerticalResults>,
@@ -50,7 +44,6 @@ const SearchBar = ({ customCssClasses }: SearchBarProps) => {
         {skiResults.slice(0, 3).map((result) => {
           const skis = result.rawData;
           const image = skis.photoGallery?.[0];
-          console.log(skis.slug);
           return (
             <Link
               key={result.id}
