@@ -6,10 +6,12 @@ import {
   HeadConfig,
   TemplateRenderProps,
   TemplateConfig,
+  TransformProps,
 } from "@yext/pages";
-import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
 import Main from "../layouts/Main";
+import Header from "../components/Header";
+import { transformSiteData } from "../utils/transformSiteData";
 
 export const config: TemplateConfig = {
   stream: {
@@ -33,6 +35,20 @@ export const config: TemplateConfig = {
       primary: false,
     },
   },
+};
+
+export const transformProps: TransformProps<TemplateRenderProps> = async (
+  data
+) => {
+  const { _site } = data.document;
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      _site: transformSiteData(_site),
+    },
+  };
 };
 
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
@@ -60,14 +76,11 @@ export const getHeadConfig: GetHeadConfig<
 
 const SkiFinder = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText, c_filters } = document;
-  const logo = _site?.c_primaryLogo;
-
-  const navBar = _site?.c_navBar;
 
   return (
     <Main>
       <div className="relative">
-        <Header logo={logo} navigation={navBar} />
+        <Header directory={_site} />
       </div>
       <SearchResults
         filters={c_filters}

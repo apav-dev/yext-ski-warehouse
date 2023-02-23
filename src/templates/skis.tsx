@@ -6,12 +6,14 @@ import {
   HeadConfig,
   TemplateRenderProps,
   TemplateConfig,
+  TransformProps,
 } from "@yext/pages";
 import Header from "../components/Header";
 import { CheckIcon, StarIcon } from "@heroicons/react/20/solid";
 import { twMerge } from "tailwind-merge";
 import { Image } from "@yext/pages/components";
 import Main from "../layouts/Main";
+import { transformSiteData } from "../utils/transformSiteData";
 
 export const config: TemplateConfig = {
   stream: {
@@ -38,6 +40,20 @@ export const config: TemplateConfig = {
   },
 };
 
+export const transformProps: TransformProps<TemplateRenderProps> = async (
+  data
+) => {
+  const { _site } = data.document;
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      _site: transformSiteData(_site),
+    },
+  };
+};
+
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
   return document.slug ?? document.id;
 };
@@ -62,8 +78,6 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     c_abilityLevel,
     c_terrain,
   } = document;
-  const logo = _site?.c_primaryLogo;
-  const navBar = _site?.c_navBar;
   const image = photoGallery?.[0];
   const abilityLevel = c_abilityLevel?.[0];
   const terrain = c_terrain?.[0];
@@ -71,7 +85,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
   return (
     <Main>
       <div className="relative">
-        <Header logo={logo} navigation={navBar} />
+        <Header directory={_site} />
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
           {/* Product details */}
           <div className="lg:max-w-lg lg:self-end">
@@ -115,8 +129,9 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
               </h2>
 
               <div className="flex items-center">
-                <p className="text-lg text-gray-900 sm:text-xl">{`$${c_price}`}</p>
-
+                {c_price && (
+                  <p className="text-lg text-gray-900 sm:text-xl">{`$${c_price}`}</p>
+                )}
                 <div className="ml-4 border-l border-gray-300 pl-4">
                   <h2 className="sr-only">Reviews</h2>
                   <div className="flex items-center">

@@ -6,6 +6,7 @@ import {
   HeadConfig,
   TemplateRenderProps,
   TemplateConfig,
+  TransformProps,
 } from "@yext/pages";
 import { Image } from "@yext/pages/components";
 import Header from "../components/Header";
@@ -13,6 +14,7 @@ import ScrollingSelector from "../components/CategorySelector";
 import { useState } from "react";
 import SearchApiKeyModal from "../components/SearchApiKeyModal";
 import Main from "../layouts/Main";
+import { transformSiteData } from "../utils/transformSiteData";
 
 export const config: TemplateConfig = {
   stream: {
@@ -37,6 +39,20 @@ export const config: TemplateConfig = {
       primary: false,
     },
   },
+};
+
+export const transformProps: TransformProps<TemplateRenderProps> = async (
+  data
+) => {
+  const { _site } = data.document;
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      _site: transformSiteData(_site),
+    },
+  };
 };
 
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
@@ -65,9 +81,6 @@ export const getHeadConfig: GetHeadConfig<
 const SkiFinder = ({ document }: TemplateRenderProps) => {
   const { c_coverPhoto, c_headingText, c_subHeadingText, c_filters, _site } =
     document;
-  const logo = _site?.c_primaryLogo;
-  const navBar = _site?.c_navBar;
-
   const [started, getStarted] = useState(false);
 
   const handleComplete = (
@@ -89,7 +102,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
   return (
     <Main>
       <div className="relative">
-        <Header logo={logo} navigation={navBar} />
+        <Header directory={_site} />
         {c_coverPhoto && (
           <div
             aria-hidden="true"
