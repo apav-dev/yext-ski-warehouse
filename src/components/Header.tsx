@@ -47,7 +47,7 @@ const Header = ({ directory }: HeaderProps) => {
       <header className="relative z-10">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-sky-600 opacity-40"
+          className="absolute inset-0 bg-sky-400 opacity-60"
         />
         <nav aria-label="Top">
           {/* Secondary navigation */}

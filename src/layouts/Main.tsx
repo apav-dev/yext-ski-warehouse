@@ -16,7 +16,7 @@ const Main = (props: MainProps) => {
 
   return (
     <SearchHeadlessProvider searcher={searcher}>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="min-h-screen">
         <div className="relative">{children}</div>
       </div>
     </SearchHeadlessProvider>

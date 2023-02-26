@@ -31,6 +31,7 @@ const CategoryFilters = ({
   const searchActions = useSearchActions();
   const staticFilters = useSearchState((state) => state.filters.static) || [];
 
+  // TODO: extract this into a hook
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const filters: SelectableStaticFilter[] = [];
@@ -102,7 +103,7 @@ const CategoryFilters = ({
   };
 
   return (
-    <div className="bg-gray-50">
+    <div className="">
       {/* Mobile filter dialog */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog className="relative z-40 sm:hidden" onClose={setOpen}>
