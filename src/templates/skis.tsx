@@ -14,18 +14,22 @@ import { twMerge } from "tailwind-merge";
 import { Image } from "@yext/pages/components";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
-import { RadioGroup, Tab } from "@headlessui/react";
+import { RadioGroup } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import ProductImageSelector from "../components/ProductImageSelector";
 import { Matcher, SelectableStaticFilter } from "@yext/search-headless-react";
 import { SimilarItems } from "../components/SimilarItems";
 import { Table } from "../components/Table";
 import { Breadcrumbs } from "../components/Breadcrumbs";
+import { fetchReviewsFromYext } from "../utils/fetchReviewsForEntity";
+import { Reviews } from "../components/Reviews";
+import { ReviewProfile } from "../types/reviews";
 
 export const config: TemplateConfig = {
   stream: {
     $id: "skis",
     fields: [
+      "id",
       "name",
       "description",
       "photoGallery",
@@ -102,8 +106,10 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
   const [similarItemsFilters, setSimilarItemsFilters] = useState<
     SelectableStaticFilter[]
   >([]);
+  const [reviews, setReviews] = useState<ReviewProfile[]>([]);
 
   useEffect(() => {
+    console.log(document);
     const filters: SelectableStaticFilter[] = [];
     c_abilityLevel?.[0] &&
       filters.push({
@@ -136,6 +142,16 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
         },
       });
     setSimilarItemsFilters(filters);
+
+    fetchReviewsFromYext(document.id)
+      .then((reviewResponse) => {
+        setReviews(reviewResponse.docs);
+      })
+      .catch((e) => {
+        console.error(
+          `Failed to fetch reviews for entity ${document.id}. Error: ${e}`
+        );
+      });
   }, []);
 
   return (
@@ -275,6 +291,12 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
           {c_specs && c_specs.length > 0 && (
             <div className="col-span-2 mt-16 sm:mt-24">
               <Table items={c_specs} title="Specs" />
+            </div>
+          )}
+          {reviews.length > 0 && (
+            <div className="col-span-2 mt-16 sm:mt-24">
+              {/* TODO: pass real reviews count */}
+              <Reviews reviews={reviews} reviewsCount={5} />
             </div>
           )}
         </div>
