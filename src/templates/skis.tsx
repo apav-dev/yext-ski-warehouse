@@ -6,16 +6,30 @@ import {
   HeadConfig,
   TemplateRenderProps,
   TemplateConfig,
+  TransformProps,
 } from "@yext/pages";
 import Header from "../components/Header";
 import { CheckIcon, StarIcon } from "@heroicons/react/20/solid";
 import { twMerge } from "tailwind-merge";
 import { Image } from "@yext/pages/components";
+import Main from "../layouts/Main";
+import { transformSiteData } from "../utils/transformSiteData";
+import { RadioGroup } from "@headlessui/react";
+import { useEffect, useState } from "react";
+import ProductImageSelector from "../components/ProductImageSelector";
+import { Matcher, SelectableStaticFilter } from "@yext/search-headless-react";
+import { SimilarItems } from "../components/SimilarItems";
+import { Table } from "../components/Table";
+import { Breadcrumbs } from "../components/Breadcrumbs";
+import { fetchReviewsFromYext } from "../utils/fetchReviewsForEntity";
+import { Reviews } from "../components/Reviews";
+import { ReviewProfile } from "../types/reviews";
 
 export const config: TemplateConfig = {
   stream: {
     $id: "skis",
     fields: [
+      "id",
       "name",
       "description",
       "photoGallery",
@@ -25,9 +39,16 @@ export const config: TemplateConfig = {
       "c_abilityLevel.c_icon",
       "c_terrain.name",
       "c_terrain.c_icon",
+      "c_sizes",
+      "c_genderName",
+      "c_specs.name",
+      "c_specs.value",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
     ],
     filter: {
-      savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
+      // savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
+      entityTypes: ["ce_skis"],
     },
     localization: {
       locales: ["en"],
@@ -36,8 +57,22 @@ export const config: TemplateConfig = {
   },
 };
 
+export const transformProps: TransformProps<TemplateRenderProps> = async (
+  data
+) => {
+  const { _site } = data.document;
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      _site: transformSiteData(_site),
+    },
+  };
+};
+
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
-  return document.slug ?? "skis/" + document.name;
+  return document.slug ?? document.id;
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
@@ -59,48 +94,74 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     c_price,
     c_abilityLevel,
     c_terrain,
+    c_sizes,
+    c_genderName,
+    c_specs,
+    dm_directoryParents,
   } = document;
-  const logo = _site?.c_primaryLogo;
-  const navBar = _site?.c_navBar;
-  const image = photoGallery?.[0];
   const abilityLevel = c_abilityLevel?.[0];
   const terrain = c_terrain?.[0];
 
+  const [selectedSize, setSelectedSize] = useState<string>(c_sizes?.[0] || "");
+  const [similarItemsFilters, setSimilarItemsFilters] = useState<
+    SelectableStaticFilter[]
+  >([]);
+  const [reviews, setReviews] = useState<ReviewProfile[]>([]);
+
+  useEffect(() => {
+    console.log(document);
+    const filters: SelectableStaticFilter[] = [];
+    c_abilityLevel?.[0] &&
+      filters.push({
+        selected: true,
+        filter: {
+          kind: "fieldValue",
+          matcher: Matcher.Equals,
+          fieldId: "c_abilityLevel.name",
+          value: c_abilityLevel[0].name,
+        },
+      });
+    c_terrain?.[0] &&
+      filters.push({
+        selected: true,
+        filter: {
+          kind: "fieldValue",
+          matcher: Matcher.Equals,
+          fieldId: "c_terrain.name",
+          value: c_terrain?.[0].name,
+        },
+      });
+    c_genderName &&
+      filters.push({
+        selected: true,
+        filter: {
+          kind: "fieldValue",
+          matcher: Matcher.Equals,
+          fieldId: "c_gender.name",
+          value: c_genderName,
+        },
+      });
+    setSimilarItemsFilters(filters);
+
+    fetchReviewsFromYext(document.id)
+      .then((reviewResponse) => {
+        setReviews(reviewResponse.docs);
+      })
+      .catch((e) => {
+        console.error(
+          `Failed to fetch reviews for entity ${document.id}. Error: ${e}`
+        );
+      });
+  }, []);
+
   return (
-    <div className="bg-gray-50 min-h-screen">
+    <Main>
       <div className="relative">
-        <Header logo={logo} navigation={navBar} />
+        <Header directory={_site} />
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-          {/* Product details */}
-          <div className="lg:max-w-lg lg:self-end">
-            {/* <nav aria-label="Breadcrumb">
-                <ol role="list" className="flex items-center space-x-2">
-                  {product.breadcrumbs.map((breadcrumb, breadcrumbIdx) => (
-                    <li key={breadcrumb.id}>
-                      <div className="flex items-center text-sm">
-                        <a
-                          href={breadcrumb.href}
-                          className="font-medium text-gray-500 hover:text-gray-900"
-                        >
-                          {breadcrumb.name}
-                        </a>
-                        {breadcrumbIdx !== product.breadcrumbs.length - 1 ? (
-                          <svg
-                            viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            aria-hidden="true"
-                            className="ml-2 h-5 w-5 flex-shrink-0 text-gray-300"
-                          >
-                            <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
-                          </svg>
-                        ) : null}
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </nav>
- */}
+          <div className="lg:max-w-lg">
+            <Breadcrumbs breadcrumbs={dm_directoryParents} />
+
             <div className="mt-4">
               <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 {name}
@@ -113,8 +174,9 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
               </h2>
 
               <div className="flex items-center">
-                <p className="text-lg text-gray-900 sm:text-xl">{`$${c_price}`}</p>
-
+                {c_price && (
+                  <p className="text-lg text-gray-900 sm:text-xl">{`$${c_price}`}</p>
+                )}
                 <div className="ml-4 border-l border-gray-300 pl-4">
                   <h2 className="sr-only">Reviews</h2>
                   <div className="flex items-center">
@@ -174,21 +236,72 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
                 </div>
               )}
             </section>
-          </div>
-
-          {image && (
-            <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
-              <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg">
-                <Image
-                  image={image}
-                  className="h-full w-full object-cover object-center"
-                />
+            {/* Size picker */}
+            <div className="mt-8">
+              <div className="flex items-center justify-between">
+                <h2 className="text-sm font-medium text-gray-900">
+                  Ski length (cm)
+                </h2>
               </div>
+
+              {c_sizes && c_sizes.length > 0 && (
+                <RadioGroup
+                  value={selectedSize}
+                  onChange={setSelectedSize}
+                  className="mt-2"
+                >
+                  <RadioGroup.Label className="sr-only">
+                    Choose a Ski length (cm)
+                  </RadioGroup.Label>
+                  <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
+                    {c_sizes.map((size) => (
+                      <RadioGroup.Option
+                        key={size.name}
+                        value={size}
+                        className={({ active, checked }) =>
+                          twMerge(
+                            active ? "ring-2 ring-offset-2 ring-sky-400" : "",
+                            checked
+                              ? "bg-sky-400 border-transparent text-white hover:bg-sky-600"
+                              : "bg-white border-gray-700 text-gray-900 hover:bg-gray-50",
+                            "border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 opacity-60"
+                          )
+                        }
+                      >
+                        <RadioGroup.Label>{size}</RadioGroup.Label>
+                      </RadioGroup.Option>
+                    ))}
+                  </div>
+                </RadioGroup>
+              )}
+              <button
+                type="submit"
+                className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-sky-400 py-3 px-8 text-base font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 opacity-60"
+              >
+                Add to cart
+              </button>
+            </div>
+          </div>
+          {photoGallery && photoGallery.length > 0 && (
+            <ProductImageSelector images={photoGallery} />
+          )}
+          <div className="col-span-2">
+            <SimilarItems filters={similarItemsFilters} />
+          </div>
+          {c_specs && c_specs.length > 0 && (
+            <div className="col-span-2 mt-16 sm:mt-24">
+              <Table items={c_specs} title="Specs" />
+            </div>
+          )}
+          {reviews.length > 0 && (
+            <div className="col-span-2 mt-16 sm:mt-24">
+              {/* TODO: pass real reviews count */}
+              <Reviews reviews={reviews} reviewsCount={5} />
             </div>
           )}
         </div>
       </div>
-    </div>
+    </Main>
   );
 };
 

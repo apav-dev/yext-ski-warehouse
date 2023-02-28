@@ -1,10 +1,21 @@
 {
   "$id": "site-entity",
   "filter": {
-    "entityIds": ["526885978650491783"]
+    "entityIds": ["warehouse"]
   },
   "source": "knowledgeGraph",
-  "fields": ["c_primaryLogo", "name", "c_navBar.name", "c_navBar.c_collection"],
+  "fields": [
+    "c_primaryLogo",
+    "dm_directoryChildren.name",
+    "dm_directoryChildren.slug",
+    "dm_directoryChildren.c_featuredCollections.name",
+    "dm_directoryChildren.c_featuredCollections.slug",
+    "dm_directoryChildren.c_featuredCollections.c_coverPhoto",
+    "dm_directoryChildren.dm_directoryChildren.name",
+    "dm_directoryChildren.dm_directoryChildren.slug",
+    "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.name",
+    "dm_directoryChildren.dm_directoryChildren.dm_directoryChildren.slug"
+  ],
   "localization": {
     "locales": ["en"],
     "primary": false

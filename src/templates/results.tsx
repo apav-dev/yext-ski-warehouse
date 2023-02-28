@@ -6,13 +6,12 @@ import {
   HeadConfig,
   TemplateRenderProps,
   TemplateConfig,
+  TransformProps,
 } from "@yext/pages";
-import {
-  provideHeadless,
-  SearchHeadlessProvider,
-} from "@yext/search-headless-react";
-import Header from "../components/Header";
 import SearchResults from "../components/SearchResults";
+import Main from "../layouts/Main";
+import Header from "../components/Header";
+import { transformSiteData } from "../utils/transformSiteData";
 
 export const config: TemplateConfig = {
   stream: {
@@ -26,7 +25,7 @@ export const config: TemplateConfig = {
       "c_filters.filterItems.name",
       "c_filters.filterItems.description",
       "c_filters.filterItems.primaryPhoto",
-      "slug"
+      "slug",
     ],
     filter: {
       entityIds: ["search_results"],
@@ -36,6 +35,20 @@ export const config: TemplateConfig = {
       primary: false,
     },
   },
+};
+
+export const transformProps: TransformProps<TemplateRenderProps> = async (
+  data
+) => {
+  const { _site } = data.document;
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      _site: transformSiteData(_site),
+    },
+  };
 };
 
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
@@ -61,32 +74,20 @@ export const getHeadConfig: GetHeadConfig<
   };
 };
 
-const searcher = provideHeadless({
-  apiKey: YEXT_PUBLIC_SEARCH_API_KEY || "",
-  experienceKey: "yext-ski-warehouse",
-  locale: "en",
-  verticalKey: "skis",
-});
-
 const SkiFinder = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText, c_filters } = document;
-  const logo = _site?.c_primaryLogo;
-
-  const navBar = _site?.c_navBar;
 
   return (
-    <SearchHeadlessProvider searcher={searcher}>
-      <div className="bg-gray-50 min-h-screen">
-        <div className="relative ">
-          <Header logo={logo} navigation={navBar} />
-          <SearchResults
-            filters={c_filters}
-            headingText={c_headingText}
-            subheadingText={c_subHeadingText}
-          />
-        </div>
+    <Main>
+      <div className="relative">
+        <Header directory={_site} />
       </div>
-    </SearchHeadlessProvider>
+      <SearchResults
+        filters={c_filters}
+        headingText={c_headingText}
+        subheadingText={c_subHeadingText}
+      />
+    </Main>
   );
 };
 

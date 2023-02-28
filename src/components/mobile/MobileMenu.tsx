@@ -1,29 +1,25 @@
 import * as React from "react";
 import { Fragment } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
-import { NavItem } from "./Header";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Image } from "@yext/pages/components";
 import { twMerge } from "tailwind-merge";
+import { SkiWarehouseDirectory } from "../../utils/transformSiteData";
 
 type MobileMenuProps = {
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
-  navigation?: NavItem[];
+  directory?: SkiWarehouseDirectory;
 };
 
 const MobileMenu = ({
   mobileMenuOpen,
   setMobileMenuOpen,
-  navigation,
+  directory,
 }: MobileMenuProps) => {
   return (
     <Transition.Root show={mobileMenuOpen} as={Fragment}>
-      <Dialog
-        as="div"
-        className="relative z-40 lg:hidden"
-        onClose={setMobileMenuOpen}
-      >
+      <Dialog className="relative z-40 lg:hidden" onClose={setMobileMenuOpen}>
         <Transition.Child
           as={Fragment}
           enter="transition-opacity ease-linear duration-300"
@@ -62,9 +58,9 @@ const MobileMenu = ({
               <Tab.Group as="div" className="mt-2">
                 <div className="border-b border-gray-200">
                   <Tab.List className="-mb-px flex space-x-8 px-4">
-                    {navigation?.map((item) => (
+                    {directory?.genders?.map((gender) => (
                       <Tab
-                        key={item.name}
+                        key={gender.name}
                         className={({ selected }) =>
                           twMerge(
                             selected
@@ -74,36 +70,73 @@ const MobileMenu = ({
                           )
                         }
                       >
-                        {item.name}
+                        {gender.name}
                       </Tab>
                     ))}
                   </Tab.List>
                 </div>
                 <Tab.Panels as={Fragment}>
-                  {navigation?.map((item) => (
-                    <Tab.Panel key={item.name} className="space-y-12 px-4 py-6">
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-10">
-                        {item.c_collection.filters.map((filter) => (
+                  {directory?.genders?.map((gender) => (
+                    <Tab.Panel
+                      key={gender.name}
+                      className="space-y-10 px-4 pt-10 pb-8"
+                    >
+                      <div className="grid grid-cols-2 gap-x-4">
+                        {gender.featuredCollections?.map((collection) => (
                           <div
-                            key={filter.label || filter.value}
-                            className="group relative"
+                            key={collection.name}
+                            className="group relative text-sm"
                           >
-                            <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-md bg-gray-100 group-hover:opacity-75">
-                              {filter.image && <Image image={filter.image} />}
-                            </div>
+                            {collection.c_coverPhoto && (
+                              <div className="aspect-w-1 aspect-h-1 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                                <Image
+                                  image={collection.c_coverPhoto}
+                                  className="object-cover object-center"
+                                />
+                              </div>
+                            )}
                             <a
-                              href={filter.href}
-                              className="mt-6 block text-sm font-medium text-sky-400"
+                              href={collection.slug}
+                              className="mt-6 block font-medium text-gray-900"
                             >
                               <span
                                 className="absolute inset-0 z-10"
                                 aria-hidden="true"
                               />
-                              {filter.label || filter.value}
+                              {collection.name}
                             </a>
+                            <p aria-hidden="true" className="mt-1">
+                              Shop now
+                            </p>
                           </div>
                         ))}
                       </div>
+                      {gender.productTypes?.map((productType) => (
+                        <div key={productType.name}>
+                          <p
+                            id={`${gender.name}-${productType.name}-heading-mobile`}
+                            className="font-medium text-gray-900"
+                          >
+                            {productType.name}
+                          </p>
+                          <ul
+                            role="list"
+                            aria-labelledby={`${gender.name}-${productType.name}-heading-mobile`}
+                            className="mt-6 flex flex-col space-y-6"
+                          >
+                            {productType.categories?.map((item) => (
+                              <li key={item.name} className="flow-root">
+                                <a
+                                  // href={item.href}
+                                  className="-m-2 block p-2 text-gray-500"
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
                     </Tab.Panel>
                   ))}
                 </Tab.Panels>

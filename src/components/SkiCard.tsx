@@ -50,9 +50,11 @@ const SkiCard = ({ result }: CardProps<Ce_skis>) => {
               aria-hidden="true"
               className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-60"
             />
-            <p className="relative text-lg font-semibold text-white">
-              {`$${skis.c_price}`}
-            </p>
+            {skis.c_price && (
+              <p className="relative text-lg font-semibold text-white">
+                {`$${skis.c_price}`}
+              </p>
+            )}
           </div>
         </div>
       </div>
