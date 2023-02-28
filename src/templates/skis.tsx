@@ -145,7 +145,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
 
     fetchReviewsFromYext(document.id)
       .then((reviewResponse) => {
-        setReviews(reviewResponse.docs);
+        setReviews(reviewResponse.docs || []);
       })
       .catch((e) => {
         console.error(
