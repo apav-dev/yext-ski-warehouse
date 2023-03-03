@@ -21,9 +21,14 @@ import { Matcher, SelectableStaticFilter } from "@yext/search-headless-react";
 import { SimilarItems } from "../components/SimilarItems";
 import { Table } from "../components/Table";
 import { Breadcrumbs } from "../components/Breadcrumbs";
+import EditTool from "../components/EditTool";
 import { fetchReviewsFromYext } from "../utils/fetchReviewsForEntity";
 import { Reviews } from "../components/Reviews";
 import { ReviewProfile } from "../types/reviews";
+// import ReactMarkdown from 'react-markdown';
+import Markdown from 'markdown-to-jsx';
+// import { isProduction } from "@yext/pages/util";
+
 
 export const config: TemplateConfig = {
   stream: {
@@ -37,6 +42,7 @@ export const config: TemplateConfig = {
       "slug",
       "c_abilityLevel.name",
       "c_abilityLevel.c_icon",
+      "richTextDescription",
       "c_terrain.name",
       "c_terrain.c_icon",
       "c_sizes",
@@ -98,6 +104,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     c_genderName,
     c_specs,
     dm_directoryParents,
+    richTextDescription,
   } = document;
   const abilityLevel = c_abilityLevel?.[0];
   const terrain = c_terrain?.[0];
@@ -205,7 +212,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
               </div>
 
               <div className="mt-4 space-y-6">
-                <p className="text-base text-gray-500">{description}</p>
+                {richTextDescription ? <Markdown>{richTextDescription}</Markdown> : <p className="text-base text-gray-500">{description}</p>}
               </div>
 
               <div className="mt-6 flex items-center">
@@ -301,6 +308,8 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
           )}
         </div>
       </div>
+      {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
+      {<EditTool data={document} />}
     </Main>
   );
 };
