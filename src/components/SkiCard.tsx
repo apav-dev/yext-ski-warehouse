@@ -10,7 +10,7 @@ const SkiCard = ({ result }: CardProps<Ce_skis>) => {
   const terrain = skis.c_terrain?.[0];
 
   return (
-    <Link href={skis.slug}>
+    <Link href={"/" + skis.slug}>
       <div key={result.id}>
         <div className="relative">
           <div className="relative h-96 w-full overflow-hidden rounded-lg">
