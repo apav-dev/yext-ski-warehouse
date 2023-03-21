@@ -40,16 +40,6 @@ const CategoryFilters = ({
         searchActions.setQuery(value);
         setHeading(`Results for "${value}"`);
         setSubheading("");
-      } else {
-        filters.push({
-          selected: true,
-          filter: {
-            kind: "fieldValue",
-            matcher: Matcher.Equals,
-            fieldId,
-            value,
-          },
-        });
       }
     });
     searchActions.setStaticFilters(filters);
