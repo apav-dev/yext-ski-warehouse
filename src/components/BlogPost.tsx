@@ -1,7 +1,8 @@
-import { ComplexImageType, Image } from "@yext/pages/components";
-import React from "react";
-import ReactMarkdown from "react-markdown";
+import React, { Suspense, useEffect, useState } from "react";
 import { StyledComponents } from "./StyledComponents";
+import { ComplexImageType, Image } from "@yext/pages/components";
+// Import reactmarkdown lazily
+const ReactMarkdown = React.lazy(() => import("react-markdown"));
 
 export type BlogPostProps = {
   title?: string;
@@ -19,6 +20,8 @@ export const BlogPost = ({
   author,
   content,
 }: BlogPostProps) => {
+  const [showContent, setShowContent] = useState(false);
+
   // format date as "Month Day, Year"
   const formatDate = (date?: string) => {
     if (!date) {
@@ -32,6 +35,12 @@ export const BlogPost = ({
       year: "numeric",
     });
   };
+
+  useEffect(() => {
+    if (window) {
+      setShowContent(true);
+    }
+  }, []);
 
   return (
     <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-4xl lg:gap-x-8 lg:px-8">
@@ -49,7 +58,9 @@ export const BlogPost = ({
           </div>
         </div>
       </div>
-      <ReactMarkdown components={StyledComponents}>{content}</ReactMarkdown>
+      <Suspense fallback="">
+        <ReactMarkdown components={StyledComponents}>{content}</ReactMarkdown>
+      </Suspense>
     </div>
   );
 };
