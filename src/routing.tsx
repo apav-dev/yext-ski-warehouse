@@ -3,6 +3,7 @@ import {
   SearchActions,
   Matcher,
   SelectableStaticFilter,
+  FilterCombinator,
 } from "@yext/search-headless-react";
 
 export interface Router {
@@ -45,38 +46,16 @@ export const defaultRouter: Router = {
       staticFilters.push({
         selected: true,
         filter: {
-          matcher: Matcher.Equals,
-          fieldId: "dm_directoryParents.name",
-          value: categories[0],
-          kind: "fieldValue",
+          combinator: FilterCombinator.AND,
+          kind: "conjunction",
+          filters: categories.map((category) => ({
+            matcher: Matcher.Equals,
+            fieldId: "dm_directoryParents.name",
+            value: category,
+            kind: "fieldValue",
+          })),
         },
       });
-
-      if (categories[1]) {
-        staticFilters.push({
-          selected: true,
-          filter: {
-            matcher: Matcher.Equals,
-            fieldId: "c_productType",
-            value: categories[1],
-            kind: "fieldValue",
-          },
-        });
-      }
-
-      // TODO: Search Core "ORs" when there are 2 of the same static filter. The above is a workaround
-      // add a static filter for each category
-      // categories.forEach((category) => {
-      //   staticFilters.push({
-      //     selected: true,
-      //     filter: {
-      //       matcher: Matcher.Equals,
-      //       fieldId: "dm_directoryParents.name",
-      //       value: category,
-      //       kind: "fieldValue",
-      //     },
-      //   });
-      // });
     }
 
     if (staticFilters.length > 0) {

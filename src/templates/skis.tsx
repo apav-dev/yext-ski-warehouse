@@ -26,9 +26,8 @@ import { fetchReviewsFromYext } from "../utils/fetchReviewsForEntity";
 import { Reviews } from "../components/Reviews";
 import { ReviewProfile } from "../types/reviews";
 // import ReactMarkdown from 'react-markdown';
-import Markdown from 'markdown-to-jsx';
+import Markdown from "markdown-to-jsx";
 // import { isProduction } from "@yext/pages/util";
-
 
 export const config: TemplateConfig = {
   stream: {
@@ -212,7 +211,11 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
               </div>
 
               <div className="mt-4 space-y-6">
-                {richTextDescription ? <Markdown>{richTextDescription}</Markdown> : <p className="text-base text-gray-500">{description}</p>}
+                {richTextDescription ? (
+                  <Markdown>{richTextDescription}</Markdown>
+                ) : (
+                  <p className="text-base text-gray-500">{description}</p>
+                )}
               </div>
 
               <div className="mt-6 flex items-center">
