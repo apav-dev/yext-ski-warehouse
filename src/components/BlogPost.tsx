@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { StyledComponents } from "./StyledComponents";
 import { ComplexImageType, Image } from "@yext/pages/components";
+import NoSsr from "@mui/base/NoSsr";
 // Import reactmarkdown lazily
 const ReactMarkdown = React.lazy(() => import("react-markdown"));
 
@@ -58,9 +59,11 @@ export const BlogPost = ({
           </div>
         </div>
       </div>
-      <Suspense fallback="">
-        <ReactMarkdown components={StyledComponents}>{content}</ReactMarkdown>
-      </Suspense>
+      <NoSsr>
+        <Suspense fallback="">
+          <ReactMarkdown components={StyledComponents}>{content}</ReactMarkdown>
+        </Suspense>
+      </NoSsr>
     </div>
   );
 };
