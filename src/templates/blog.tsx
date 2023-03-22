@@ -56,7 +56,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 const Blog = ({ document }: TemplateRenderProps) => {
-  const { _site, name, c_author, c_blogContent } = document;
+  const { _site, name, c_author, c_blogContent, datePosted } = document;
 
   return (
     <Main>
@@ -67,7 +67,7 @@ const Blog = ({ document }: TemplateRenderProps) => {
         title={name}
         content={c_blogContent.markdown}
         author={c_author}
-        datePosted={document.datePosted}
+        datePosted={datePosted}
       />
     </Main>
   );
