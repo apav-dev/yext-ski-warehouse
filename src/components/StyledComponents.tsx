@@ -1,5 +1,6 @@
 import React from "react";
 import { FaSnowflake } from "react-icons/fa";
+import { buildImageUrl } from "./Image";
 
 export const StyledComponents = {
   h1: ({ children }: { children: React.ReactNode }) => (
@@ -37,9 +38,14 @@ export const StyledComponents = {
   strong: ({ children }: { children: React.ReactNode }) => (
     <strong className="font-bold">{children}</strong>
   ),
-  img: ({ ...props }) => (
-    <img className="w-full my-4 rounded-lg sm:px-16 h-[600px]" {...props} />
-  ),
+  img: ({ ...props }) => {
+    const src = props.src as string;
+    const modifiedImageSrc = buildImageUrl(src, {
+      fit: "cover",
+    });
+    props.src = modifiedImageSrc;
+    return <img className=" my-4 rounded-lg sm:px-16 h-96 w-full" {...props} />;
+  },
 };
 
 const SnowflakeIcon = () => (

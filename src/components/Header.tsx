@@ -182,7 +182,7 @@ const Header = ({ directory }: HeaderProps) => {
                       </div>
                       <div className="flex items-center">
                         <Link
-                          href="/about"
+                          href="/blogs"
                           className="text-sm font-medium text-white hover:text-sky-700"
                         >
                           Blog

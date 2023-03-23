@@ -16,7 +16,15 @@ import BlogPost from "../components/BlogPost";
 export const config: TemplateConfig = {
   stream: {
     $id: "blogs",
-    fields: ["id", "name", "c_blogContent", "c_author", "datePosted", "slug"],
+    fields: [
+      "id",
+      "name",
+      "c_blogContent",
+      "c_author",
+      "datePosted",
+      "slug",
+      "c_coverPhoto",
+    ],
     filter: {
       entityTypes: ["ce_blog"],
     },
