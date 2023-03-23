@@ -55,6 +55,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
+// TODO: add cover photo
 const Blog = ({ document }: TemplateRenderProps) => {
   const { _site, name, c_author, c_blogContent, datePosted } = document;
 

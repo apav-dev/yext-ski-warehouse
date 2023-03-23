@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import { StyledComponents } from "./StyledComponents";
 import { ComplexImageType, Image } from "@yext/pages/components";
 import NoSsr from "@mui/base/NoSsr";
@@ -21,8 +21,6 @@ export const BlogPost = ({
   author,
   content,
 }: BlogPostProps) => {
-  const [showContent, setShowContent] = useState(false);
-
   // format date as "Month Day, Year"
   const formatDate = (date?: string) => {
     if (!date) {
@@ -36,12 +34,6 @@ export const BlogPost = ({
       year: "numeric",
     });
   };
-
-  useEffect(() => {
-    if (window) {
-      setShowContent(true);
-    }
-  }, []);
 
   return (
     <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-4xl lg:gap-x-8 lg:px-8">

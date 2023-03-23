@@ -6,7 +6,7 @@ import {
   MagnifyingGlassIcon,
   ShoppingBagIcon,
 } from "@heroicons/react/24/outline";
-import { Image } from "@yext/pages/components";
+import { Image, Link } from "@yext/pages/components";
 import MobileMenu from "./mobile/MobileMenu";
 import { twMerge } from "tailwind-merge";
 import MobileSearchPanel from "./mobile/MobileSearchPanel";
@@ -176,6 +176,18 @@ const Header = ({ directory }: HeaderProps) => {
                           )}
                         </Popover>
                       ))}
+
+                      <div className="flex items-center">
+                        <div className="h-8 py-4 w-px bg-white my-auto" />
+                      </div>
+                      <div className="flex items-center">
+                        <Link
+                          href="/about"
+                          className="text-sm font-medium text-white hover:text-sky-700"
+                        >
+                          Blog
+                        </Link>
+                      </div>
                     </div>
                   </Popover.Group>
 
