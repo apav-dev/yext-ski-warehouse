@@ -2,7 +2,7 @@ import * as React from "react";
 import { Fragment } from "react";
 import { Dialog, Tab, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import { Image } from "@yext/pages/components";
+import { Image, Link } from "@yext/pages/components";
 import { twMerge } from "tailwind-merge";
 import { SkiWarehouseDirectory } from "../../utils/transformSiteData";
 
@@ -137,6 +137,18 @@ const MobileMenu = ({
                           </ul>
                         </div>
                       ))}
+
+                      <div className="space-y-6">
+                        <div className="border-t border-gray-200 my-8" />
+                        <div>
+                          <Link
+                            href="/blogs"
+                            className="text-gray-900 font-medium"
+                          >
+                            Blog
+                          </Link>
+                        </div>
+                      </div>
                     </Tab.Panel>
                   ))}
                 </Tab.Panels>
