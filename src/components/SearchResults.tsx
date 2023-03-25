@@ -17,11 +17,11 @@ const SearchResults = ({
 }: SearchResultsProps) => {
   return (
     <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
-      <CategoryFilters
+      {/* <CategoryFilters
         headingText={headingText}
         subheadingText={subheadingText}
         filters={filters}
-      />
+      /> */}
       <VerticalResults
         customCssClasses={{
           verticalResultsContainer:

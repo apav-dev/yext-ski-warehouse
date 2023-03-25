@@ -7,7 +7,7 @@ import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
 
 type SectionItem = {
   name: string;
-  primaryPhoto: ComplexImageType;
+  primaryPhoto?: ComplexImageType;
   description?: string;
 };
 
@@ -141,13 +141,16 @@ const ScrollingSelector = ({
                         "border-sky-400"
                     )}
                   >
-                    <div className="aspect-w-3 aspect-h-2 max-w-[300px] mx-auto">
-                      <Image
-                        className="rounded-lg object-cover object-center  shadow-lg"
-                        image={item.primaryPhoto}
-                        loading="eager"
-                      />
-                    </div>
+                    {item.primaryPhoto && (
+                      <div className="aspect-w-3 aspect-h-2 max-w-[300px] mx-auto">
+                        <Image
+                          className="rounded-lg object-cover object-center  shadow-lg"
+                          image={item.primaryPhoto}
+                          loading="eager"
+                        />
+                      </div>
+                    )}
+
                     <div className="space-y-2">
                       <div className="space-y-1 text-lg font-medium leading-6">
                         <h3 className="text-sky-400">{item.name}</h3>

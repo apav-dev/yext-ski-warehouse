@@ -12,7 +12,6 @@ import { Image } from "@yext/pages/components";
 import Header from "../components/Header";
 import ScrollingSelector from "../components/CategorySelector";
 import { useState } from "react";
-import SearchApiKeyModal from "../components/SearchApiKeyModal";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 
@@ -132,8 +131,6 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
         scrollToStart={started}
         onComplete={handleComplete}
       />
-      {/* Once you have added your Search API Key, you can remove this component */}
-      <SearchApiKeyModal />
     </Main>
   );
 };

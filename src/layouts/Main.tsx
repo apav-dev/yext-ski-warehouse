@@ -3,7 +3,9 @@ import {
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
 import * as React from "react";
+import HeadlessProvider from "../components/HeadlessProvider";
 import { getSearchProviderConfig } from "../config";
+import { defaultRouter } from "../routing";
 
 interface MainProps {
   children?: React.ReactNode;
@@ -15,11 +17,13 @@ const Main = (props: MainProps) => {
   const { children } = props;
 
   return (
-    <SearchHeadlessProvider searcher={searcher}>
-      <div className="min-h-screen">
+    // <SearchHeadlessProvider searcher={searcher}>
+    <HeadlessProvider searcher={searcher} routing={defaultRouter}>
+      <div className="min-h-screen text-gray-900">
         <div className="relative">{children}</div>
       </div>
-    </SearchHeadlessProvider>
+    </HeadlessProvider>
+    // </SearchHeadlessProvider>
   );
 };
 
