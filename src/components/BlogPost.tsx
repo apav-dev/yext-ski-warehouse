@@ -7,6 +7,8 @@ const ReactMarkdown = React.lazy(() => import("react-markdown"));
 
 export type BlogPostProps = {
   title?: string;
+  subtitle?: string;
+  coverPhoto?: ComplexImageType;
   datePosted?: string;
   author?: {
     name: string;
@@ -17,6 +19,8 @@ export type BlogPostProps = {
 
 export const BlogPost = ({
   title,
+  subtitle,
+  coverPhoto,
   datePosted,
   author,
   content,
@@ -38,18 +42,43 @@ export const BlogPost = ({
   return (
     <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-4xl lg:gap-x-8 lg:px-8">
       <h1 className="prose text-7xl text-sky-400 font-bold my-6">{title}</h1>
-      <div className="flex items-center">
+      <p className="prose text-2xl text-gray-500 my-6">{subtitle}</p>
+      <div className="flex items-center mb-4">
         <div className="flex-shrink-0">
-          {author?.headshot && (
-            <Image className="h-10 w-10 rounded-full" image={author.headshot} />
+          {author?.headshot ? (
+            <Image
+              className="inline-block h-10 w-10 rounded-full"
+              image={author.headshot}
+              layout="aspect"
+              aspectRatio={1}
+            />
+          ) : (
+            <img
+              className="inline-block h-10 w-10 rounded-full aspect-1"
+              src="/src/assets/images/max.jpeg"
+              alt=""
+            />
           )}
         </div>
         <div className="ml-3">
-          <p className="text-sm font-medium prose">{author?.name}</p>
+          <p className="text-sm font-medium prose">
+            {author?.name || "Max S."}
+          </p>
           <div className="flex space-x-1 text-sm text-gray-500">
-            <p>{formatDate(datePosted)}</p>
+            {formatDate(datePosted)}
           </div>
         </div>
+      </div>
+      <div className="relative w-full h-96">
+        {coverPhoto ? (
+          <Image className="w-full h-full object-cover" image={coverPhoto} />
+        ) : (
+          <img
+            className="w-full h-full object-cover"
+            src="/src/assets/images/ski-lift.jpeg"
+            alt=""
+          />
+        )}
       </div>
       <NoSsr>
         <Suspense fallback="">

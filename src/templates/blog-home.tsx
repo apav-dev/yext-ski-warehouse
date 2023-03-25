@@ -8,11 +8,10 @@ import {
   TemplateConfig,
   TransformProps,
 } from "@yext/pages";
-import { Image, Link } from "@yext/pages/components";
 import Header from "../components/Header";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
-import { formatDate } from "../utils/formatDate";
+import BlogResults from "../components/search/BlogResults";
 
 export const config: TemplateConfig = {
   stream: {
@@ -68,7 +67,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 };
 
 const BlogHome = ({ document }: TemplateRenderProps) => {
-  const { _site, c_headingText, c_subHeadingText, c_blogs } = document;
+  const { _site, c_headingText, c_subHeadingText } = document;
 
   return (
     <Main>
@@ -85,59 +84,7 @@ const BlogHome = ({ document }: TemplateRenderProps) => {
               {c_subHeadingText}
             </p>
           </div>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-y-20 gap-x-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {c_blogs.map((blog) => (
-              <article
-                key={blog.id}
-                className="flex flex-col items-start justify-between"
-              >
-                <div className="relative w-full">
-                  {blog.c_coverPhoto && (
-                    <Image
-                      image={blog.c_coverPhoto}
-                      aspectRatio={16 / 9}
-                      className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                    />
-                  )}
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-                </div>
-                <div className="max-w-xl">
-                  <div className="mt-8 flex items-center gap-x-4 text-xs">
-                    <time dateTime={blog.datePosted} className="text-gray-500">
-                      {formatDate(blog.datePosted)}
-                    </time>
-                  </div>
-                  <div className="group relative">
-                    <h3 className="mt-3 text-lg font-semibold leading-6 text-sky-400 group-hover:text-sky-700">
-                      <Link href={blog.slug}>
-                        <span className="absolute inset-0" />
-                        {blog.name}
-                      </Link>
-                    </h3>
-                    <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
-                      {blog.c_summary}
-                    </p>
-                  </div>
-                  <div className="relative mt-8 flex items-center gap-x-4">
-                    {blog.c_author.headshot && (
-                      <Image
-                        className="inline-block h-10 w-10 rounded-full"
-                        image={blog.c_author.headshot}
-                        layout="aspect"
-                        aspectRatio={1}
-                      />
-                    )}
-                    <div className="text-sm leading-6">
-                      <p className="font-semibold text-gray-900">
-                        <span className="absolute inset-0" />
-                        {blog.c_author.name}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+          <BlogResults />
         </div>
       </div>
     </Main>

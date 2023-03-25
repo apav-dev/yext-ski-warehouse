@@ -20,6 +20,10 @@ export const config: TemplateConfig = {
       "id",
       "name",
       "c_blogContent",
+      "c_generatedBlogContent",
+      "c_keywords",
+      "c_metaDescription",
+      "c_subtitle",
       "c_author",
       "datePosted",
       "slug",
@@ -60,24 +64,56 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     title: document.name,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
+    tags: [
+      {
+        type: "meta",
+        attributes: {
+          name: "description",
+          content: document.c_metaDescription,
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "keywords",
+          content: document.c_keywords,
+        },
+      },
+    ],
   };
 };
 
-// TODO: add cover photo
 const Blog = ({ document }: TemplateRenderProps) => {
-  const { _site, name, c_author, c_blogContent, datePosted } = document;
+  const {
+    _site,
+    name,
+    c_author,
+    c_blogContent,
+    c_generatedBlogContent,
+    datePosted,
+    c_coverPhoto,
+    c_subtitle,
+  } = document;
+
+  const markdown = c_generatedBlogContent?.markdown || c_blogContent?.markdown;
+
+  console.log("document", document);
 
   return (
     <Main>
       <div className="relative">
         <Header directory={_site} />
       </div>
-      <BlogPost
-        title={name}
-        content={c_blogContent.markdown}
-        author={c_author}
-        datePosted={datePosted}
-      />
+      {markdown && (
+        <BlogPost
+          title={name}
+          subtitle={c_subtitle}
+          content={markdown}
+          author={c_author}
+          datePosted={datePosted}
+          coverPhoto={c_coverPhoto}
+        />
+      )}
     </Main>
   );
 };

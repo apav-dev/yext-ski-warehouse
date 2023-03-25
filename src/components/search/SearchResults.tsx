@@ -1,8 +1,8 @@
 import * as React from "react";
 import { VerticalResults } from "@yext/search-ui-react";
 import SkiCard from "./SkiCard";
-import CategoryFilters from "./CategoryFilters";
-import { Section } from "./CategorySelector";
+import CategoryFilters from "../CategoryFilters";
+import { Section } from "../CategorySelector";
 
 type SearchResultsProps = {
   filters?: Section[];

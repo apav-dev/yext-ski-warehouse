@@ -5,7 +5,7 @@ import {
 import { VerticalResults } from "@yext/search-ui-react";
 import * as React from "react";
 import { useEffect } from "react";
-import SkiCard from "./SkiCard";
+import SkiCard from "./search/SkiCard";
 
 type SimilarItemsProps = {
   filters?: SelectableStaticFilter[];
