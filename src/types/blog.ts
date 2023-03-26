@@ -19,15 +19,23 @@ export interface ComplexImage {
 	clickthroughUrl?: string,
 }
 
-export interface Ce_skiBoot {
+export interface C_author {
 	name: string,
-	c_price?: number,
-	photoGallery?: ComplexImage[],
+	headshot?: ComplexImage,
 }
 
-export interface Ce_skis {
+export default interface Ce_blog {
+	datePosted?: string,
 	slug?: string,
 	name: string,
-	c_price?: number,
-	photoGallery?: ComplexImage[],
+	c_author?: C_author,
+	c_blogContent?: any,
+	c_blogContentPlaintext?: string,
+	c_coverPhoto?: ComplexImage,
+	c_generatedBlogContent?: any,
+	c_keywords?: string,
+	c_metaDescription?: string,
+	c_subtitle?: string,
+	c_summary?: string,
+	id: string,
 }

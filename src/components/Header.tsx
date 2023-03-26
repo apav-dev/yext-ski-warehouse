@@ -10,7 +10,7 @@ import { Image, Link } from "@yext/pages/components";
 import MobileMenu from "./mobile/MobileMenu";
 import { twMerge } from "tailwind-merge";
 import MobileSearchPanel from "./mobile/MobileSearchPanel";
-import SearchBar from "./SearchBar";
+import SearchBar from "./search/SearchBar";
 import { useSearchActions } from "@yext/search-headless-react";
 import { SkiWarehouseDirectory } from "../utils/transformSiteData";
 

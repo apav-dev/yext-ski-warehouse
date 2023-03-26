@@ -3,7 +3,7 @@ import {
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
 import * as React from "react";
-import HeadlessProvider from "../components/HeadlessProvider";
+import HeadlessProvider from "../components/search/HeadlessProvider";
 import { getSearchProviderConfig } from "../config";
 import { defaultRouter } from "../routing";
 

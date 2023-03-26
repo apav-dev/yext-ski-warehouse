@@ -1,7 +1,7 @@
 import { Image, Link } from "@yext/pages/components";
 import { CardProps } from "@yext/search-ui-react";
 import * as React from "react";
-import Ce_skis from "../types/skis";
+import Ce_skis from "../../types/skis";
 
 const SkiCard = ({ result }: CardProps<Ce_skis>) => {
   const skis = result.rawData;

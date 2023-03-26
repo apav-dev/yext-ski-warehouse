@@ -13,7 +13,7 @@ import { transformSiteData } from "../utils/transformSiteData";
 import Header from "../components/Header";
 import { Image, Link } from "@yext/pages/components";
 import { twMerge } from "tailwind-merge";
-import SearchResults from "../components/SearchResults";
+import SearchResults from "../components/search/SearchResults";
 
 export const config: TemplateConfig = {
   stream: {

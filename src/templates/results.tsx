@@ -8,7 +8,7 @@ import {
   TemplateConfig,
   TransformProps,
 } from "@yext/pages";
-import SearchResults from "../components/SearchResults";
+import SearchResults from "../components/search/SearchResults";
 import Main from "../layouts/Main";
 import Header from "../components/Header";
 import { transformSiteData } from "../utils/transformSiteData";

@@ -9,8 +9,8 @@ import {
   Result,
   VerticalResults,
 } from "@yext/search-headless-react";
-import { getSearchProviderConfig } from "../config";
-import Ce_skis from "../types/skis";
+import { getSearchProviderConfig } from "../../config";
+import Ce_skis from "../../types/skis";
 import { Image, Link } from "@yext/pages/components";
 
 type SearchBarProps = {
