@@ -4,6 +4,8 @@ import { ComplexImageType, Image } from "@yext/pages/components";
 import NoSsr from "@mui/base/NoSsr";
 // Import reactmarkdown lazily
 const ReactMarkdown = React.lazy(() => import("react-markdown"));
+import skiLiftUrl from "../../assets/images/ski-lift.jpeg";
+import headshotUrl from "../../assets/images/max.jpeg";
 
 export type BlogPostProps = {
   title?: string;
@@ -55,7 +57,7 @@ export const BlogPost = ({
           ) : (
             <img
               className="inline-block h-10 w-10 rounded-full aspect-1"
-              src="/src/assets/images/max.jpeg"
+              src={headshotUrl}
               alt=""
             />
           )}
@@ -73,11 +75,7 @@ export const BlogPost = ({
         {coverPhoto ? (
           <Image className="w-full h-full object-cover" image={coverPhoto} />
         ) : (
-          <img
-            className="w-full h-full object-cover"
-            src="/src/assets/images/ski-lift.jpeg"
-            alt=""
-          />
+          <img className="w-full h-full object-cover" src={skiLiftUrl} alt="" />
         )}
       </div>
       <NoSsr>

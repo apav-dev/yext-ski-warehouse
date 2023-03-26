@@ -3,6 +3,8 @@ import Ce_blog from "../../types/blog";
 import { CardProps } from "@yext/search-ui-react";
 import { Image } from "@yext/pages/components";
 import { formatDate } from "../../utils/formatDate";
+import skiLiftUrl from "../../assets/images/ski-lift.jpeg";
+import headshotUrl from "../../assets/images/max.jpeg";
 
 const BlogCard = ({ result }: CardProps<Ce_blog>) => {
   const blog = result.rawData;
@@ -18,7 +20,7 @@ const BlogCard = ({ result }: CardProps<Ce_blog>) => {
           />
         ) : (
           <img
-            src="/src/assets/images/ski-lift.jpeg"
+            src={skiLiftUrl}
             alt=""
             className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
           />
@@ -53,7 +55,7 @@ const BlogCard = ({ result }: CardProps<Ce_blog>) => {
           ) : (
             <img
               className="inline-block h-10 w-10 rounded-full aspect-1"
-              src="/src/assets/images/max.jpeg"
+              src={headshotUrl}
               alt=""
             />
           )}
