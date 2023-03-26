@@ -97,8 +97,6 @@ const Blog = ({ document }: TemplateRenderProps) => {
 
   const markdown = c_generatedBlogContent?.markdown || c_blogContent?.markdown;
 
-  console.log("document", document);
-
   return (
     <Main>
       <div className="relative">
