@@ -57,7 +57,7 @@ const Header = ({ directory }: HeaderProps) => {
                 <div className="flex h-16 items-center justify-between">
                   {/* Logo (lg+) */}
                   <a href="/" className="hidden lg:block">
-                    <span className="sr-only">Yext Ski Warehouse</span>
+                    <span className="sr-only">Ski Warehouse</span>
                     {directory?.logo && (
                       <Image className="h-8 w-auto" image={directory.logo} />
                     )}

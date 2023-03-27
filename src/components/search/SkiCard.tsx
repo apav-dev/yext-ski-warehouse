@@ -1,7 +1,7 @@
 import { Image, Link } from "@yext/pages/components";
 import { CardProps } from "@yext/search-ui-react";
 import * as React from "react";
-import Ce_skis from "../../types/skis";
+import { Ce_skis } from "../../types/skis";
 
 const SkiCard = ({ result }: CardProps<Ce_skis>) => {
   const skis = result.rawData;
@@ -13,7 +13,7 @@ const SkiCard = ({ result }: CardProps<Ce_skis>) => {
     <Link href={`/${skis.slug}`}>
       <div key={result.id}>
         <div className="relative">
-          <div className="relative h-96 w-full overflow-hidden rounded-lg">
+          <div className="relative h-72 lg:h-96 w-full overflow-hidden rounded-lg">
             {image && (
               <Image
                 className="h-full w-full object-cover object-center"
@@ -45,7 +45,7 @@ const SkiCard = ({ result }: CardProps<Ce_skis>) => {
               </div>
             )}
           </div>
-          <div className="absolute inset-x-0 top-0 flex h-96 items-end justify-end overflow-hidden rounded-lg p-4">
+          <div className="absolute inset-x-0 top-0 flex h-72 lg:h-96 items-end justify-end overflow-hidden rounded-lg p-4">
             <div
               aria-hidden="true"
               className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-60"

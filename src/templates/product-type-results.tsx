@@ -99,7 +99,7 @@ const ProductType = ({ document }: TemplateRenderProps) => {
           </div>
         )}
         <div className="flex justify-center py-4">
-          <div className="flex justify-center border-b border-gray-300 px-44 space-x-8 sm:space-x-16">
+          <div className="flex justify-center border-b border-gray-300 px-20 sm:px-44 space-x-8 sm:space-x-16">
             {productTypes.map((productType) => {
               return (
                 <Link

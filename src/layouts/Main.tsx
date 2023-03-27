@@ -11,7 +11,7 @@ interface MainProps {
   children?: React.ReactNode;
 }
 
-const searcher = provideHeadless(getSearchProviderConfig("skis"));
+const searcher = provideHeadless(getSearchProviderConfig("products"));
 
 const Main = (props: MainProps) => {
   const { children } = props;
