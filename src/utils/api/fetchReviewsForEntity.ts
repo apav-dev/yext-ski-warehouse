@@ -1,8 +1,8 @@
-import { ReviewProfile } from "../types/reviews";
+import { ReviewProfile } from "../../types/reviews";
 import { fetch } from "@yext/pages/util";
 
 const reviewsPath =
-  "https://streams.yext.com/v2/accounts/me/api/fetchReviewsForEntity";
+  "https://cdn.yextapis.com/v2/accounts/me/content/fetchReviewsForEntity";
 
 // TODO: check typing
 export const fetchReviewsFromYext = async (
