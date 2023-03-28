@@ -188,6 +188,14 @@ const Header = ({ directory }: HeaderProps) => {
                           Blog
                         </Link>
                       </div>
+                      <div className="flex items-center">
+                        <Link
+                          href="/articles"
+                          className="text-sm font-medium text-white hover:text-sky-700"
+                        >
+                          Learn
+                        </Link>
+                      </div>
                     </div>
                   </Popover.Group>
 

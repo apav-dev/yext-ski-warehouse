@@ -1,14 +1,14 @@
 import React from "react";
 import { Pagination, VerticalResults } from "@yext/search-ui-react";
-import BlogCard from "./BlogCard";
+import ArticleCard from "./ArticleCard";
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect } from "react";
 
-const BlogResults = () => {
+const ArticleResults = () => {
   const searchActions = useSearchActions();
 
   useEffect(() => {
-    searchActions.setVertical("blog");
+    searchActions.setVertical("help_articles");
     searchActions.setVerticalLimit(12);
     searchActions.executeVerticalQuery();
   }, []);
@@ -20,11 +20,11 @@ const BlogResults = () => {
           verticalResultsContainer:
             "grid grid-cols-1 gap-y-10 gap-x-6 py-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8",
         }}
-        CardComponent={BlogCard}
+        CardComponent={ArticleCard}
       />
       <Pagination />
     </>
   );
 };
 
-export default BlogResults;
+export default ArticleResults;
