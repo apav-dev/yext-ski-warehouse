@@ -12,6 +12,12 @@ import {
 
 const sortingOptions: { label: string; sortBy: SortBy }[] = [
   {
+    label: "Relevance",
+    sortBy: {
+      type: SortType.Relevance,
+    },
+  },
+  {
     label: "Name (A-Z)",
     sortBy: {
       field: "name",

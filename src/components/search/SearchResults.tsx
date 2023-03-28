@@ -1,5 +1,9 @@
 import * as React from "react";
-import { Pagination, VerticalResults } from "@yext/search-ui-react";
+import {
+  Pagination,
+  ResultsCount,
+  VerticalResults,
+} from "@yext/search-ui-react";
 import SkiCard from "./SkiCard";
 import { Section } from "../CategorySelector";
 import { useState } from "react";
@@ -8,6 +12,7 @@ import MobileFilters from "../mobile/MobileFilters";
 import { useSearchState } from "@yext/search-headless-react";
 import Facets from "./Facets";
 import SortDropdown from "./SortDropdown";
+import LoadingSnowflakes from "./LoadingSnowflakes";
 
 type SearchResultsProps = {
   filters?: Section[];
@@ -15,52 +20,77 @@ type SearchResultsProps = {
   subheadingText?: string;
 };
 
+type InitialSearchStatus = "notStarted" | "inProgress" | "complete";
+
 const SearchResults = ({
   headingText,
   subheadingText,
   filters,
 }: SearchResultsProps) => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [initialSearchStatus, setInitialSearchStatus] =
+    useState<InitialSearchStatus>("notStarted");
 
   const resultsCount =
     useSearchState((state) => state.vertical.resultsCount) || 0;
+  const searchLoading = useSearchState((state) => state.searchStatus.isLoading);
 
   const handleFiltersClick = () => {
     setMobileFiltersOpen(!mobileFiltersOpen);
   };
 
+  React.useEffect(() => {
+    if (initialSearchStatus === "notStarted" && searchLoading) {
+      setInitialSearchStatus("inProgress");
+    }
+    if (initialSearchStatus === "inProgress" && !searchLoading) {
+      setInitialSearchStatus("complete");
+    }
+  }, [searchLoading]);
+
   return (
     <>
-      <MobileFilters open={mobileFiltersOpen} setOpen={setMobileFiltersOpen} />
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
         {/* <CategoryFilters
         headingText={headingText}
         subheadingText={subheadingText}
         filters={filters}
       /> */}
-        <div className="flex justify-between lg:justify-end py-8">
-          <button
-            type="button"
-            className="rounded py-1 px-2 text-sky-400 font-semibold lg:hidden"
-            onClick={handleFiltersClick}
-          >
-            <div className="flex">
-              Filters
-              <AdjustmentsHorizontalIcon className="h-5 w-5 ml-1.5" />
+        {resultsCount > 0 && initialSearchStatus === "complete" && (
+          <>
+            <div className="flex justify-between lg:justify-end pt-4">
+              <MobileFilters
+                open={mobileFiltersOpen}
+                setOpen={setMobileFiltersOpen}
+              />
+
+              <button
+                type="button"
+                className="rounded px-2 text-sky-400 font-semibold py-2 lg:hidden flex flex-col justify-start"
+                onClick={handleFiltersClick}
+              >
+                <div className="flex">
+                  Filters
+                  <AdjustmentsHorizontalIcon className="h-5 w-5 ml-1.5" />
+                </div>
+              </button>
+              <div className="flex flex-col items-end">
+                <SortDropdown />
+                <ResultsCount
+                  customCssClasses={{
+                    resultsCountContainer: "text-gray-500 text-sm py-0",
+                  }}
+                />
+              </div>
             </div>
-          </button>
-          <SortDropdown />
-        </div>
-        <div className="flex">
-          <div className="hidden lg:block w-52 shrink-0 mr-8">
-            <h2 className="text-left mb-4 text-2xl font-semibold text-sky-400">
-              Filters
-            </h2>
-            <Facets />
-          </div>
-          <div className="flex-grow">
-            {resultsCount > 0 ? (
-              <>
+            <div className="flex">
+              <div className="hidden lg:block w-52 shrink-0 mr-8">
+                <h2 className="text-left mb-4 text-2xl font-semibold text-sky-400">
+                  Filters
+                </h2>
+                <Facets />
+              </div>
+              <div className="flex-grow">
                 <VerticalResults
                   customCssClasses={{
                     verticalResultsContainer:
@@ -68,12 +98,11 @@ const SearchResults = ({
                   }}
                   CardComponent={SkiCard}
                 />
-              </>
-            ) : (
-              <div className="text-center py-8">No results found</div>
-            )}
-          </div>
-        </div>
+              </div>
+            </div>
+          </>
+        )}
+        {initialSearchStatus === "inProgress" && <LoadingSnowflakes />}
       </div>
       <div className="lg:pl-52">
         <Pagination

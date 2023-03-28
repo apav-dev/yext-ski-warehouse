@@ -108,11 +108,11 @@ const Home = ({ document }: TemplateRenderProps) => {
                 <div className="absolute inset-0 overflow-hidden">
                   <Image
                     image={c_coverPhoto}
-                    className="h-full w-full  object-center"
+                    className="h-full w-full object-center"
                   />
                 </div>
 
-                <div className="absolute inset-0 bg-gray-900 opacity-20" />
+                <div className="absolute inset-0 bg-gray-900 opacity-80" />
               </div>
             )}
             <div className="h-32 w-full bg-white md:h-40 lg:h-48" />
