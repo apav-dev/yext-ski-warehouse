@@ -17,7 +17,7 @@ import { transformSiteData } from "../utils/transformSiteData";
 
 export const config: TemplateConfig = {
   stream: {
-    $id: "home",
+    $id: "ski-finder",
     fields: [
       "c_coverPhoto",
       "c_headingText",
@@ -55,14 +55,14 @@ export const transformProps: TransformProps<TemplateRenderProps> = async (
 };
 
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
-  return document.slug ?? "index.html";
+  return document.slug ?? document.id;
 };
 
 export const getHeadConfig: GetHeadConfig<
   TemplateRenderProps
 > = (): HeadConfig => {
   return {
-    title: "Yext Ski Warehouse - Ski Finder",
+    title: "Ski Warehouse - Ski Finder",
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [

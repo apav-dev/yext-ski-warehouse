@@ -14,6 +14,7 @@ import Header from "../components/Header";
 import { Image, Link } from "@yext/pages/components";
 import { twMerge } from "tailwind-merge";
 import SearchResults from "../components/search/SearchResults";
+import { FilterCombinator, Matcher } from "@yext/search-headless-react";
 
 export const config: TemplateConfig = {
   stream: {
@@ -28,7 +29,16 @@ export const config: TemplateConfig = {
       "dm_directoryParents.dm_directoryChildren.slug",
     ],
     filter: {
-      entityTypes: ["ce_productType"],
+      entityIds: [
+        "warehouse_men_ski_ski_boot",
+        "warehouse_women_ski_ski_boot",
+        "warehouse_men_ski_skis",
+        "warehouse_women_ski_skis",
+        "warehouse_men_ski_binding",
+        "warehouse_women_ski_binding",
+        "warehouse_men_ski_poles",
+        "warehouse_women_ski_poles",
+      ],
     },
     localization: {
       locales: ["en"],
@@ -65,16 +75,50 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-const ProductType = ({ document }: TemplateRenderProps) => {
+const CategorySearch = ({ document }: TemplateRenderProps) => {
   const { name, _site, c_coverPhoto, dm_directoryParents } = document;
 
   // const gender equals the last item in the dm_directoryParents array
-  const gender = dm_directoryParents?.[dm_directoryParents.length - 1].name;
+  const gender = dm_directoryParents?.[1].name;
   const productTypes =
     dm_directoryParents?.[dm_directoryParents.length - 1].dm_directoryChildren;
+  const productTypeName =
+    dm_directoryParents?.[dm_directoryParents.length - 1].name;
+
+  const filters = [
+    {
+      matcher: Matcher.Equals,
+      fieldId: "dm_directoryParents.name",
+      value: gender,
+      kind: "fieldValue",
+    },
+    {
+      matcher: Matcher.Equals,
+      fieldId: "dm_directoryParents.name",
+      value: name,
+      kind: "fieldValue",
+    },
+    {
+      matcher: Matcher.Equals,
+      fieldId: "dm_directoryParents.name",
+      value: productTypeName,
+      kind: "fieldValue",
+    },
+  ];
+
+  const initialFilters = [
+    {
+      selected: true,
+      filter: {
+        combinator: FilterCombinator.AND,
+        kind: "conjunction",
+        filters,
+      },
+    },
+  ];
 
   return (
-    <Main>
+    <Main initialFilters={initialFilters}>
       <div className="relative">
         <Header directory={_site} />
         {c_coverPhoto && (
@@ -124,4 +168,4 @@ const ProductType = ({ document }: TemplateRenderProps) => {
   );
 };
 
-export default ProductType;
+export default CategorySearch;

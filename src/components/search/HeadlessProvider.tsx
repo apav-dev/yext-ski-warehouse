@@ -4,6 +4,7 @@ import {
   SearchActions,
   SearchHeadless,
   SearchHeadlessProvider,
+  SelectableStaticFilter,
   State,
 } from "@yext/search-headless-react";
 import { useSearchActions, useSearchState } from "@yext/search-headless-react";
@@ -16,11 +17,13 @@ export interface HeadlessProviderProps {
     serializeState: (state: State) => URLSearchParams;
     deserializeParams: (
       params: URLSearchParams,
-      actions: SearchActions
+      actions: SearchActions,
+      initialFilters?: SelectableStaticFilter[]
     ) => void;
     updateCadence: "onStateChange" | "onSearch";
   };
   children: React.ReactNode;
+  initialFilters?: SelectableStaticFilter[];
 }
 
 type InternalRouterProps = Omit<HeadlessProviderProps, "searcher">;
@@ -31,6 +34,7 @@ const InternalRouter = ({
   onSearch,
   onLoad,
   children,
+  initialFilters,
 }: InternalRouterProps): JSX.Element => {
   const searchActions = useSearchActions();
   const searchState = useSearchState((s) => s);
@@ -40,8 +44,7 @@ const InternalRouter = ({
     if (routing) {
       const { deserializeParams } = routing;
       const params = new URLSearchParams(window.location.search);
-      console.log("deserializing params:", params);
-      deserializeParams(params, searchActions);
+      deserializeParams(params, searchActions, initialFilters);
     }
   }, []);
 
@@ -54,7 +57,6 @@ const InternalRouter = ({
         valueAccessor: (s) => s,
         callback: (state) => {
           if (serializeState) {
-            console.log("serializing state");
             const params = serializeState(state);
             window.history.pushState(
               {},
@@ -83,6 +85,7 @@ const HeadlessProvider = ({
   onSearch,
   onLoad,
   children,
+  initialFilters,
 }: HeadlessProviderProps): JSX.Element => {
   const newSearcher = cloneDeep(searcher);
 
@@ -90,7 +93,6 @@ const HeadlessProvider = ({
     const { serializeState } = routing;
     newSearcher.executeVerticalQuery = async () => {
       const params = serializeState(searcher.state);
-      console.log("serializing state", params);
       window.history.pushState({}, "", `?${params.toString()}`);
       return searcher.executeVerticalQuery();
     };
@@ -106,7 +108,12 @@ const HeadlessProvider = ({
 
   return (
     <SearchHeadlessProvider searcher={newSearcher}>
-      <InternalRouter onLoad={onLoad} onSearch={onSearch} routing={routing}>
+      <InternalRouter
+        onLoad={onLoad}
+        onSearch={onSearch}
+        routing={routing}
+        initialFilters={initialFilters}
+      >
         {children}
       </InternalRouter>
     </SearchHeadlessProvider>
