@@ -25,10 +25,7 @@ import EditTool from "../components/EditTool";
 import { fetchReviewsFromYext } from "../utils/fetchReviewsForEntity";
 import { Reviews } from "../components/Reviews";
 import { ReviewProfile } from "../types/reviews";
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
-// import ReactMarkdown from 'react-markdown';
 import Markdown from "markdown-to-jsx";
-// import { isProduction } from "@yext/pages/util";
 
 export const config: TemplateConfig = {
   stream: {
@@ -51,7 +48,7 @@ export const config: TemplateConfig = {
       "c_specs.value",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
-      "c_supportingDocument",
+      "c_sizingGuide.c_sizingGuidePDF",
     ],
     filter: {
       // savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
@@ -92,7 +89,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-const SkiFinder = ({ document }: TemplateRenderProps) => {
+const Skis = ({ document }: TemplateRenderProps) => {
   const {
     _site,
     name,
@@ -105,8 +102,8 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
     c_genderName,
     c_specs,
     dm_directoryParents,
-    c_supportingDocument,
     richTextDescription,
+    c_sizingGuide,
   } = document;
   const abilityLevel = c_abilityLevel?.[0];
   const terrain = c_terrain?.[0];
@@ -117,10 +114,9 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
   >([]);
   const [reviews, setReviews] = useState<ReviewProfile[]>([]);
 
-  console.log(document);
+  const sizingGuidePdfUrl = c_sizingGuide?.[0].c_sizingGuidePDF?.url;
 
   useEffect(() => {
-    console.log(document);
     const filters: SelectableStaticFilter[] = [];
     c_abilityLevel?.[0] &&
       filters.push({
@@ -257,10 +253,10 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
                 <h2 className="text-sm font-medium text-gray-900">
                   Ski length (cm)
                 </h2>
-                {c_supportingDocument && (
+                {sizingGuidePdfUrl && (
                   <Link
                     className="text-sm underline text-sky-400 hover:text-sky-700"
-                    href={c_supportingDocument.url}
+                    href={sizingGuidePdfUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -331,4 +327,4 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
   );
 };
 
-export default SkiFinder;
+export default Skis;
