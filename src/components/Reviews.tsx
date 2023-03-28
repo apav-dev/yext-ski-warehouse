@@ -6,6 +6,7 @@ import { twMerge } from "tailwind-merge";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { useEffect, useState } from "react";
 import { fetchReviewsFromYext } from "../utils/api/fetchReviewsForEntity";
+import { useQuery } from "@tanstack/react-query";
 
 type ReviewProps = {
   entityId: string;
@@ -21,14 +22,14 @@ const fetchReviewsForEntity = async (entityId: string) => {
 export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
   const [reviews, setReviews] = useState<ReviewProfile[]>([]);
 
-  const info = useQuery({
-    queryKey: ["entityReviews"],
-    queryFn: fetchReviewsForEntity(entityId),
+  const reviewsResponse = useQuery({
+    queryKey: ["reviewsForEntity", entityId],
+    queryFn: () => fetchReviewsForEntity(entityId),
   });
 
   useEffect(() => {
-    console.log(info);
-  }, [info]);
+    console.log(reviewsResponse);
+  }, [reviewsResponse]);
 
   useEffect(() => {
     fetchReviewsFromYext(entityId)
@@ -186,6 +187,3 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
     <></>
   );
 };
-function useQuery(arg0: { queryKey: string[]; queryFn: Promise<any> }) {
-  throw new Error("Function not implemented.");
-}
