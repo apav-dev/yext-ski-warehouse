@@ -12,22 +12,23 @@ type ReviewProps = {
   reviewsCount: number;
 };
 
+const fetchReviewsForEntity = async (entityId: string) => {
+  const response = await fetch("reviews?entityId=" + entityId);
+  const data = await response.json();
+  return data;
+};
+
 export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
   const [reviews, setReviews] = useState<ReviewProfile[]>([]);
 
+  const info = useQuery({
+    queryKey: ["entityReviews"],
+    queryFn: fetchReviewsForEntity(entityId),
+  });
+
   useEffect(() => {
-    // fetch from endpoint called reviews with param of entityId
-    fetch("reviews?entityId=" + entityId)
-      .then((reviewResponse) => {
-        // setReviews(reviewResponse.docs || []);
-        console.log(reviewResponse);
-      })
-      .catch((e) => {
-        console.error(
-          `Failed to fetch reviews for entity ${entityId}. Error: ${e}`
-        );
-      });
-  }, []);
+    console.log(info);
+  }, [info]);
 
   useEffect(() => {
     fetchReviewsFromYext(entityId)
@@ -185,3 +186,6 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
     <></>
   );
 };
+function useQuery(arg0: { queryKey: string[]; queryFn: Promise<any> }) {
+  throw new Error("Function not implemented.");
+}
