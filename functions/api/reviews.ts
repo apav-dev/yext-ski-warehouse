@@ -22,26 +22,34 @@ const main = async (argumentJson) => {
     )
   );
 
-  console.log(reviewsByRating);
+  // total reviews for each star rating
+  const totalReviewsByRating = reviewsByRating.map((review) => review.count);
+  console.log(`totalReviewsByRating: ${totalReviewsByRating}`);
 
-  const ratingsSum = reviewsByRating.reduce(
-    (acc, review) => acc + review.count * review.docs[0].rating,
+  // sum totalReviewsByRating
+  const ratingsSum = totalReviewsByRating.reduce(
+    (acc, reviewCount) => acc + reviewCount,
     0
   );
+  console.log(`ratingsSum: ${ratingsSum}`);
 
   const totalReviews = reviewsByRating.reduce(
     (acc, review) => acc + review.count,
     0
   );
+  console.log(`totalReviews: ${totalReviews}`);
+
+  const averageReview = ratingsSum / totalReviews;
+  console.log(`averageReview: ${averageReview}`);
 
   // return the average review and the reviews for each star rating, the total number of reviews, and the total number of reviews for each star rating
   return {
     statusCode: 200,
     body: JSON.stringify({
-      averageReview: ratingsSum / totalReviews,
+      averageReview,
       reviews,
       totalReviews,
-      totalReviewsByRating: reviewsByRating.map((review) => review.count),
+      totalReviewsByRating,
     }),
     Headers: {},
   };
