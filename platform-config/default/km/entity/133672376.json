@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "949.95",
-    "c_terrain": [
-      "1312210429080442948"
-    ],
+    "c_terrain": ["1312210429080442948"],
     "description": "Sammy C\u0027s Whitewalker Skis have quickly gone from experimental offering to freestyle staple, and now they have a big brother. The Armada Whitewalker 121 Skis feature the same pintail, twin tip design as the the originals, but with an even wider waist width for the deepest days. These skis are the ultimate playful powder tool. They\u0027re nimble, surfy, easy to spin, easy stomp, and ski just about as well backwards as they do forwards. And with a respectably lightweight build, they\u0027re an awesome choice to pair with a hybrid binding for a 50/50 powder ski.",
     "name": "Armada Whitewalker 121 Skis 2023",
     "photoGallery": [

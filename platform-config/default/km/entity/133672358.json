@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.95",
-    "c_terrain": [
-      "7096784237424891914"
-    ],
+    "c_terrain": ["7096784237424891914"],
     "description": "The Atomic Bent Chetler 120 Skis have been going strong for 14 years with no sign of slowing down. As the big brother of the newly expanded Bent family, they continue to set the standard for powder hungry freeriders seeking a more progressive - but no less capable - shape. Light, nimble, impossibly floaty, and stacked with enough guts to stomp every landing from here to Hokkaido, the Bent Chetler 120s are built to nurture your creativity and stoke the fire within.",
     "name": "Atomic Bent Chetler 120 Skis 2023",
     "photoGallery": [

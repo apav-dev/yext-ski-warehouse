@@ -3,9 +3,6 @@
   "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
   "name": "Site-default",
   "entityType": "ce_site",
-  "fields": [
-    "c_navBar",
-    "c_primaryLogo"
-  ],
+  "fields": ["c_navBar", "c_primaryLogo"],
   "required": []
 }

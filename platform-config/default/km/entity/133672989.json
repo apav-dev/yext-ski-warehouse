@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "3726456647343833499"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["3726456647343833499"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "349.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Just getting into park riding, but still need a quality ski to get around the whole mountain? Check out the Völkl Revolt 81 Skis and call it good. A full twin rocker with a slightly directional shape for \"all-mountain\" capability, the Revolt 81 gets it done whether you\u0027re cruising the groomed with your buds or getting slappy on features.",
     "name": "Völkl Revolt 81 Skis 2023",
     "photoGallery": [

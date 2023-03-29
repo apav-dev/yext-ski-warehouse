@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "699.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "You like your skiing hard, lightning fast, and razor precise. You expect your skis to mirror your outlook. You want the Völkl Kenja 88 Skis on your feet, no question about it. Always a winner, the new Kenja 88 gets the Tailored Titanal Frame and Carbon tip treatment for this season, making a good thing even better - the new ski is smoother going into the turn and less hooky in sub-optimal snow. Get on the Kenja this season and make your groomer days something special.",
     "name": "Völkl Kenja 88 Skis - Women\u0027s 2023",
     "photoGallery": [

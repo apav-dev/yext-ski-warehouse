@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "749.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Sure, hard and fast groomers are in the forecast but there\u0027s an outside chance of 8\" of fresh on Friday night — what ski do you bring? It\u0027s hard to argue with the Blizzard Bonafide 97 Skis as one of the best and most versatile choices on the market. Bomber edgehold, virtually no speed limit and limo-smooth ride quality are the attributes that go toward making the Bonafide the \"REAL DEAL.\"",
     "name": "Blizzard Bonafide 97 Skis 2023",
     "photoGallery": [

@@ -17,9 +17,7 @@
         "width": 16
       }
     },
-    "c_skisByTerrain": [
-      "133672376"
-    ],
+    "c_skisByTerrain": ["133672376"],
     "description": "Powder refers to fresh, deep snow that has not been skied on or groomed. Skiers who enjoy powder typically look for resorts or areas with a good snowfall and may prefer wider skis to help them float on top of the snow.",
     "name": "Powder",
     "primaryPhoto": {

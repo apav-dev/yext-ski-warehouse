@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Nordica Enforcer 104 Free Skis are built for the uninhibited. For the rider who sees corduroy as a straight-jacket, and who finds the flowing pathways through moguls and trees to be a bit more friendly on the mind. These freeride sticks bring you all of the power and versatility of the fabled Enforcer line, but with a touch more rocker and a touch less metal, which helps them bend past the rules prescribed by traditional ski shaping, and find surfy lines through powder and off piste terrain. If you love the Enforcer 100s but wish they were a little more progressive and playful, this is your ski.",
     "name": "Nordica Enforcer 104 Free Skis 2023",
     "photoGallery": [

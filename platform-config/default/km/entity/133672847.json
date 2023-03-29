@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "599.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Atomic Maverick 88 TI Skis were developed after an extensive testing program in North America which targeted the type of skiing North American skiers got after (ie, not just \"faux racing\" on groomers). They came up with the Maverick lineup in response to testers who wanted more stability at speed and better performance in fresh and cut up snow, and they came up with a winner. Not only do the Maverick 88 TI\u0027s feel more solid and planted on firm snow, they yield better float and directional confidence off-piste. The new Flow Profile is a mashup of previous Atomic technologies like the HRZN Tech Tip plus deeper sidecuts and longer rocker profiles, and the new OMatic cores are a further evolution of Atomic\u0027s poplar cores but more finely tuned to individual skier weights and ski lengths.",
     "name": "Atomic Maverick 88 Ti Skis 2023",
     "photoGallery": [

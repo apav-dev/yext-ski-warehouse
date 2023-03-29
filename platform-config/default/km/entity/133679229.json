@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "649.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Blizzard Sheeva 9 Skis went largely undiscovered for the first few years of their existence. Then something amazing happened. It didn\u0027t snow in much of North America, and the powder oriented Sheeva 11 disciples discovered its little 92-waisted sister could rip a carve turned as well as many flat-tailed \"carver\" skis and still not humble you in bumps, re-frozen corn, and tight trees. The migration was on, and many hard chargers (including many of the evo crew) found the Sheeva 9 was the ideal tool for everyday good times.",
     "name": "Blizzard Sheeva 9 Skis - Women\u0027s 2023",
     "photoGallery": [

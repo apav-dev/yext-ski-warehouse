@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "799.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Black Crows Camox Birdie Skis embody the soul of all-mountain resort riding. These skis are meant to enable fun, stylish skiing all across any resort in any conditions. They do this with a versatile 97mm waist width, a smooth yet stable flex profile, and a perfectly honed directional rocker profile with camber underfoot and rocker on either end. It\u0027s a ski that\u0027s playful, poppy, poised, and very easy to get along with.",
     "name": "Black Crows Camox Birdie Skis - Women\u0027s 2023",
     "photoGallery": [

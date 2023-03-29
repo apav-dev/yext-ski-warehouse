@@ -26,6 +26,7 @@ import { fetchReviewsFromYext } from "../utils/fetchReviewsForEntity";
 import { Reviews } from "../components/Reviews";
 import { ReviewProfile } from "../types/reviews";
 import Markdown from "markdown-to-jsx";
+import { ProductSchema } from "../components/ProductSchema";
 
 export const config: TemplateConfig = {
   stream: {
@@ -163,6 +164,12 @@ const Skis = ({ document }: TemplateRenderProps) => {
 
   return (
     <Main>
+      <ProductSchema
+        name={name}
+        description={description}
+        photoGallery={photoGallery}
+        price={c_price}
+      />
       <div className="relative">
         <Header directory={_site} />
         <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">

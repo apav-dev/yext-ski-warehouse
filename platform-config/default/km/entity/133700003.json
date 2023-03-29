@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "849.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Ask anyone on the skin track what their favorite touring skis are, and there\u0027s a very good chance that something in the Zero G family will get a mention. Blizzard have been honing the recipe for years, tweaking and perfecting both shape and construction until juuust right. The proof, as they say, is in the pudding, and the Blizzard Zero G 105 Skis taste damn good. The cool carbon cats get an update with the latest iteration of Blizzard\u0027s Carbon Drive Technology, but the overall philosophy remains the same. They eat up vert like few other 105 waisted skis can, and rip downhill like few touring skis could dream of. As the most downhill oriented ski in a decidedly uphill oriented family, the Zero G 105s have earned a place in the hearts of adventurous freeriders everywhere, and it\u0027s well deserved. The Blizzard Zero G 105 Skis are still right up there with the best in the game.",
     "name": "Blizzard Zero G 105 Skis 2023",
     "photoGallery": [

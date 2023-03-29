@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "399.95",
-    "c_terrain": [
-      "463117075052872663"
-    ],
+    "c_terrain": ["463117075052872663"],
     "description": "With entry level pricing and pro level performance, these a whole lot of reasons to be buzzing about the Line Skis Honey Bee Skis. If they\u0027re sweet enough for Taylor Lundquist to throw down on, they\u0027ve surely got more than enough bumble for the rest of us. These things are fast, nimble, and extremely boostable. Plus, they\u0027re built with Line\u0027s Fatty bases and edges, not to mention a cap construction that makes them borderline indestructible. There\u0027s no sweeter sting than that.",
     "name": "Line Skis Honey Bee Skis 2023",
     "photoGallery": [

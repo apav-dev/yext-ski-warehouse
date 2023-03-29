@@ -3,15 +3,9 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
+    "c_terrain": ["1295894924104146377"],
     "description": "When people think Black Crows, they think of the Black Crows Corvus Skis. Stable, decisive freeride skis with a mid-fat waist, a hard charging mentality, a couple sheets of metal, and a cheeky dose of style. These are the everyday ski of choice for big mountain skiers everywhere, capable of handling the spiciest lines with commanding grace. They pivot easily to allow for a playful flair in your riding, but the Corvus really excels when being driven hard down the fall line, showcasing its power and dampness.",
     "name": "Black Crows Corvus Skis 2022",
     "photoGallery": [

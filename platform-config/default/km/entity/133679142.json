@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "699.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "When you\u0027re going to a knife fight, bring a knife. Hard snow and speed require just such an implement, and the Blizzard Brahma 88 Skis are as good as they get. Two sheets of Titanal sandwiching a Beech and Poplar TrueBlend core give the Brahma 88 the grip and power to slice and dice those groomers as well as anything not currently being used on the World Cup circuit, but aren\u0027t too demanding for those without World Cup legs. This ski is legendary, and the legend continues to grow year by year.",
     "name": "Blizzard Brahma 88 Skis 2023",
     "photoGallery": [

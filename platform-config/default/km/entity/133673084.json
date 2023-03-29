@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "649.95",
-    "c_terrain": [
-      "463117075052872663"
-    ],
+    "c_terrain": ["463117075052872663"],
     "description": "Henrik Harlaut is a bonafide ski legend, and his pro model skis are legendary in their own right. Just as he has pushed the envelope of what\u0027s possible on skis over the years, his pro model has pushed the envelope of what defines a modern park ski. The Armada Edollo Skis have a silky smooth medium flex, a bit more tip rocker than you\u0027d expect out of a sub-100 waisted ski, and are built to crush everything in the park. They\u0027re stable, nimble, and can boost to the moon. Wu-tang is for the children, but the Edollo skis are for you.",
     "name": "Armada Edollo Skis 2023",
     "photoGallery": [

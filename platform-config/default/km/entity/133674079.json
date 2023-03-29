@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "849.95",
-    "c_terrain": [
-      "7096784237424891914"
-    ],
+    "c_terrain": ["7096784237424891914"],
     "description": "We\u0027ve been dreaming for years of a lighter Rustler 11 that will do dual duty as a freeride ripper and backcountry slayer. The dream becomes reality this season with the introduction of the Blizzard Hustle 11 Skis. Built in the same molds but with a lighter TrueBlend Free Core and a modified Carbon D.R.T. insert instead of the Titanal one, the Hustle 11 kills it on powdery descents without killing you on the skin up. Mount this puppy up with a hybrid tech binding and light the fuse - the fireworks will be a thing of beauty.",
     "name": "Blizzard Hustle 11 Skis 2023",
     "photoGallery": [

@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "499.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Atomic Maven 86 C Skis are a nimble and versatile front-side tool aimed at improving all mountain performance (read, not perfect groomers). Whereas Austrians love to don the Spandex and see what kind of edge angles they can generate, North American skiers tend to go all over the place, whether it be steep bumps, tight trees, or fresh powder. If you\u0027re the kind of skier who revels in the full range of mountain conditions the Atomic Maven 86 C Skis will suit you just fine.",
     "name": "Atomic Maven 86 C Skis - Women\u0027s 2023",
     "photoGallery": [

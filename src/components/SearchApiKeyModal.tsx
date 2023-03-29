@@ -50,7 +50,7 @@ const SearchApiKeyModal = () => {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      You need to add a Search API Key to a .env file. To find your Search API Key, go to Search > Experience Details in the Yext Platform UI. Once you add your Search API Key, restart your dev server.
+                      You need to add a Search API Key to a .env file. To find your Search API Key, go to Search then Experience Details in the Yext Platform UI. Once you add your Search API Key, restart your dev server.
                     </p>
                   </div>
 

@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "499.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Atomic Maverick 86 C Skis offer all mountain magic in a lightweight package. The smooth directional design takes cues from Atomic\u0027s big mountain shapes as well as their frontside models, making a ski that carves extremely well, handles itself off piste, and bends to a wide variety of turn shapes. It has a nimble feel edge to edge and makes all mountain exploration that much easier.",
     "name": "Atomic Maverick 86 C Skis 2023",
     "photoGallery": [

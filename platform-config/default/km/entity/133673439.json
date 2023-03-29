@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "599.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Built to fly higher, spin like a top, and butter like a breadknife, the Völkl Revolt 90 Skis are fully cambered, fully symmetrical tools for all your freestyle needs. With a new Light Swingweight Woodcore, tough sandwich construction and smooth smooth flexing tip and tail, this ski is built to take a beating without giving you one.",
     "name": "Völkl Revolt 90 Skis 2023",
     "photoGallery": [

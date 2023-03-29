@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Perhaps one of the best-balanced daily drivers of all time, the Völkl Mantra 102 Skis took the winning Mantra platform and made it wide enough to excel on a powder day without losing the famous smooth ride or laser-sharp edgehold Völkl is famous for. This 100+ category is a tough one, but you\u0027ll have no problem finding expert skiers who love the Mantra 102 more than any ski in their quiver.",
     "name": "Völkl Mantra 102 Skis 2023",
     "photoGallery": [

@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "299.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Tips up, gnar out! The K2 Reckoner 92 Skis are a twin-tip park pony that bucks around on features with ease and still packs enough power to gallop into the steeps, race around bumps, and circle back for end-of-day victory laps in the park. The women\u0027s specific, all-terrain twin rocker stays light underfoot but rigid and rowdy enough for all-mountain riding. Time to giddy-up to the slopes to take these girls for a spin!",
     "name": "K2 Reckoner 92 Skis - Women\u0027s 2023",
     "photoGallery": [

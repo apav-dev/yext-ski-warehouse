@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "749.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Elan Ripstick 94 Black Edition Skis are like an emotionally mature partner: powerful, controlled, and great at challenging your skiing without ever wavering in their support. Constructed with a full wood core reinforced with carbon QuadRods, these skis are so powerful, groomers will gasp in awe when they see you ripping down the hill. Their asymmetrical flex design provides targeted control and edge precision, delighting your thigh muscles and cutting perfectly into groomed snow and variable terrain. For the boot benders looking for something that\u0027ll make them reach for a stiffer power strap, the Elan Ripstick 94 Black Edition Skis are the whole package. Get them a ring asap!",
     "name": "Elan Ripstick 94 Black Edition Skis - Women\u0027s 2023",
     "photoGallery": [

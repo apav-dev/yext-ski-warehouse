@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { ComplexImageType, ImageType } from "@yext/pages/components";
 
 const MKTGCDN_URL_REGEX =
@@ -32,12 +32,6 @@ type CloudflareOptions = {
   sharpen?: number;
 };
 
-type ImageProps = {
-  image: ComplexImageType | ImageType;
-  placeholder?: React.ReactNode;
-  options?: CloudflareOptions;
-  className?: string;
-};
 
 export const buildImageUrl = (
   imageUrl: string,
@@ -86,7 +80,6 @@ export const buildImageUrl = (
   }
 
   let baseUrl = imageUrl;
-  const uuid = getImageUUID(baseUrl);
 
   // change the a.mktgcdn.com in the url to dyn.mktgcdn.com and drop the dimensions and extension from the end of the url
   baseUrl = baseUrl.replace("a.mktgcdn.com", "dyn.mktgcdn.com");

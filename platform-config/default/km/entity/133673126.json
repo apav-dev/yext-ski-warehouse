@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "649.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Built as an all around platform for park skiing and playful riding, the Line Skis Blend Skis will help you expand your trick game whether you\u0027re a seasoned vet or an up-and-comer. The flex is smooth and pliable, but with plenty of snap and rebound. They\u0027re a freestyle staple for a reason, and you\u0027re sure to find your own favorite way to pop, press, spin, and slide the Blends through your local park.",
     "name": "Line Skis Blend Skis 2023",
     "photoGallery": [

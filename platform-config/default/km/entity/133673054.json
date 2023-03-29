@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "699.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Just like sending a Rottweiler to obedience school and your dog coming back with a veneer of civility until he really needs to use his teeth, the storied Völkl Kendo 88 Skis get an update that makes them a tad more forgiving at slower speeds without losing any of their grit when the chips are down. That means better slow and mid speed performance, less hookiness at the tip, and still with the tenacious edge grip you expect when you lay the ski over. Völkl gets it done with the addition of Tailored Technology - the Titanal laminate has been sculpted - and Tailored Carbon Tips, and you\u0027re the beneficiary.",
     "name": "Völkl Kendo 88 Skis 2023",
     "photoGallery": [

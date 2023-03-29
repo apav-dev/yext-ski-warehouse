@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "3726456647343833499"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["3726456647343833499"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "399.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Whether you\u0027re just getting started in the park, or just getting started on the mountain, the Armada ARV 84 Skis are a perfect first step. They\u0027re made with a lightweight, highly durable composite core, plus semi-cap sidewalls and oversized edges for maximum durability. They\u0027re soft and easy to press into a variety of turn shapes, which makes them perfect for mastering the art of the turn, or bashing against rails on your way to your first stomp.",
     "name": "Armada ARV 84 Skis 2023",
     "photoGallery": [

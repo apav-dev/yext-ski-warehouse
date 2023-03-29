@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "499.95",
-    "c_terrain": [
-      "463117075052872663"
-    ],
+    "c_terrain": ["463117075052872663"],
     "description": "The Line Skis Tom Wallisch Pro Skis are where you go if you need the highest level of performance in the park. Deigned to be competition-ready, these sticks will help you push yourself to get around that one extra rotation, or to stomp that one trick you\u0027ve been trying all year. They\u0027re quick, balanced, and super poppy - perfect for pushing the boundaries of freestyle skiing.",
     "name": "Line Skis Tom Wallisch Pro Skis 2023",
     "photoGallery": [

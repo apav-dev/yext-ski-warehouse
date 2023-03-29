@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The QST line has been the stuff of freeride legend since its inception. Now, it welcomes a new member. Looking to fill in a slot between the pow-specific 118 and the all-mountain 106, Salomon turned to their stacked roster of pro skiers and gave them a blank slate to design the best freeride sticks possible. The result is the aptly named Salomon QST Blank Skis. With a 112mm waist, a snappy and stable feel, and a bomber construction, these skis are as well rounded as they come. They excel in soft snow, thrive on speed, and are as comfortable weaving trees and spinning off side hits as they are gunning lines and stomping big drops. They\u0027re accessible, powerful, and simply excellent for any skilled jack-of-all-trades skier.",
     "name": "Salomon QST Blank Skis 2023",
     "photoGallery": [

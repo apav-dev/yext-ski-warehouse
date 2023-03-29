@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.95",
-    "c_terrain": [
-      "7096784237424891914"
-    ],
+    "c_terrain": ["7096784237424891914"],
     "description": "The Black Crows Camox Freebird Skis make the backcountry more accessible than ever before. These super light touring skis offer easier handling that almost any touring ski on the market, with a smooth directional design and moderate flex. The 95mm waist width is versatile and nimble through the varied conditions you\u0027re likely to find beyond the reach of groomers and ski patrollers, making this an awesome choice for experienced riders to expand their repertoire. They pair well with sturdy touring bindings, a well-rounded avalanche education, and a knowledgeable ski partner.",
     "name": "Black Crows Camox Freebird Skis 2023",
     "photoGallery": [

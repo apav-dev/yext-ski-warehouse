@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "649.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The moment you click into the Völkl Yumi 84 Skis, you\u0027ll see what people mean when they say Völkl\u0027s frontside skis have no peer. Rock solid on firm snow with their full sidewall glass frame construction, forgiving when they need to be but powerful when you demand it courtesy of the dial-in 3D Radius sidecut, and with Völkl quality evident at every step of the construction process, the Yumi is one of the most versatile groomer skis out there.",
     "name": "Völkl Yumi 84 Skis - Women\u0027s 2023",
     "photoGallery": [

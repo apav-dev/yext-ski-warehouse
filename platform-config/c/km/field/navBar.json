@@ -10,9 +10,7 @@
       "maxLength": 5000,
       "type": {
         "entityReferenceType": {
-          "supportedEntityTypeIds": [
-            "ce_gender"
-          ],
+          "supportedEntityTypeIds": ["ce_gender"],
           "type": "ONE_WAY"
         }
       }

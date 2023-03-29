@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "549.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Once you\u0027ve got a taste of the Salomon QST Lux 92 Skis, your days on the mountain will never be the same. From East Coast groomers to Northwest volcanoes, these skis can handle and type of terrain with style, fun, and flair. They\u0027re made with the highest quality materials available and shaped for smooth edge transfer, tons of pop, and lightweight pivotability.",
     "name": "Salomon QST Lux 92 Skis - Women\u0027s 2023",
     "photoGallery": [

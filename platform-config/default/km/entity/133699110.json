@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "999.95",
-    "c_terrain": [
-      "7096784237424891914"
-    ],
+    "c_terrain": ["7096784237424891914"],
     "description": "Often imitated, but never replicated, the Black Crows Corvus Freebird Skis are an OG all dressed in pink. These skis are standard-setting backcountry freeriders, with a sturdy waist width, a traditional directional cambered design, and a powerful ride. They\u0027re lightweight enough for full-on touring missions, but optimized to perform on the way down, offering bomber suspension the likes of which you wouldn\u0027t be upset to find on a dedicated inbounds ski. Equipped with titanal binding plates, the pink crows are built with heavy duty hybrid bindings in mind. Set them up with some Kingpins or the like, and go jump off something for crying out loud!",
     "name": "Black Crows Corvus Freebird Skis 2023",
     "photoGallery": [

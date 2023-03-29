@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "749.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Salomon QST 106 Skis are a masterclass in ski design. Smooth taper into the tips, just the right amount of heft around the middle, and purposeful blunted tails. They\u0027re elegant and directional, meant to balance the demands for fun and practicality in a snow sliding device. They\u0027re lightweight and highly technical, but use a blend of natural materials like cork and flax fiber to counterbalance those that could lead to a twitchy feel when left alone, like carbon and ABS. They\u0027re a perfect synergy of art and science, nature and artifice, and the smooth S turns they leave across snow-swept landscapes are a testament to their success.",
     "name": "Salomon QST 106 Skis 2023",
     "photoGallery": [

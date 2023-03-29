@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "549.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Völkl Blaze 86 Skis come in hot with an unbeatable combination of light weight and confident performance. Touring ski weight without taking the hit of sloppy and weak downhill performance is the name of the game, and Völkl nails it in the Blaze series. The combination of 3D Radius sidecut, traditional full sidewall construction, and reasonably stiff torsional flex gets it done and makes this a perfect \"light\" alpine ski choice or quiver of one for those who tour part time.",
     "name": "Völkl Blaze 86 Skis 2023",
     "photoGallery": [

@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.95",
-    "c_terrain": [
-      "7200013882251703847"
-    ],
+    "c_terrain": ["7200013882251703847"],
     "description": "Not every ski is capable of satisfying everyone from budding big mountain skiers to bona fide pros, but then the Rustler 11 ain\u0027t just any ski. Blizzard have blurred the lines between \"approachable\" and \"badass\" with a light yet capable Carbon Flipcore layup, reinforced with metal in all the right places. The Rustlers are stable charger one moment, and just plain fun the next. Slash \u0027em, rail, \u0027em, point \u0027em straight down the fall line, the Blizzard Rustler 11 Skis are ready to rumble.",
     "name": "Blizzard Rustler 11 Skis 2023",
     "photoGallery": [

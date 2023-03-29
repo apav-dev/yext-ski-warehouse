@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "699.00",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The new \"everyday\" width in the Mana Series is going to turn some heads and convert a few non-believers this season - we\u0027re talking about the Faction Mana 2 Skis, and you\u0027d be advised to check out their lightweight twin-tip design that rips both resort and backcountry with equal ease. Amazingly precise for a \"freestyle\" shape, the Mana 2 also spins and butters with the best of them, so there\u0027s no limit to what you can do on these things day in and day out.",
     "name": "Faction Mana 2 Skis 2023",
     "photoGallery": [

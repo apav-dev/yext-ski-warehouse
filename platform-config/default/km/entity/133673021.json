@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "449.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "When it comes to blending high level trickery and big time amplitude, there\u0027s nothing better than the quality and stability of theVölkl Revolt 95 Skis. Here\u0027s a park ride you can confidently take anywhere on the mountain from sketchy steeps to blower pow and feel totally at ease. Full sidewall construction with a Mini Cap at the tips and tails for durability and a classic Völkl Multilayer Woodcore mean the Revolt 95 will still be kicking years down the road.",
     "name": "Völkl Revolt 95 Skis 2023",
     "photoGallery": [

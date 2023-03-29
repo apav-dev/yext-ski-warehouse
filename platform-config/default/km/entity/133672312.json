@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The man, the legend, the ski. It\u0027s hard to believe the Elan Ripstick Tour 104 Skis are Glen Plake\u0027s first signature model, but we can\u0027t think of a better candidate. Elan have paid tribute to Plake\u0027s mold-breaking style with a ski that combines raw freeride power with incredible agility and maneuverability, all at a touring friendly weight you can take to the skin track. They come with Elan\u0027s legendary Amphibio Profile, a light, snappy Tubelite Wood Core, and all new Carbon Bridge Technology for stability and vibration damping. Available in unisex lengths, the only thing missing is a perfectly coifed mohawk.",
     "name": "Elan Ripstick Tour 104 Skis 2023",
     "photoGallery": [
