@@ -8,6 +8,8 @@ import { fetch } from "@yext/pages/util";
 import ReviewSubmissionForm from "./ReviewSubmissionForm";
 import { useState } from "react";
 import { ComplexImageType } from "@yext/pages/components";
+import { Pagination } from "@yext/search-ui-react";
+import ReviewSortDropdown from "./ReviewSortDropdown";
 
 type ReviewProps = {
   entityId: string;
@@ -170,13 +172,9 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
                 <h3 className="sr-only">Recent reviews</h3>
                 <div className="flow-root">
                   <div className="-my-12 divide-y divide-gray-200">
-                    {/* <div className="flex justify-end">
-                <SortingDropdown<{ key: string; value: string }>
-                  customCssClasses={{ menu: "py-12" }}
-                  options={reviewSortConfig}
-                  onSortChange={handleDropdownChange}
-                />
-              </div> */}
+                    <div className="flex justify-end">
+                      <ReviewSortDropdown />
+                    </div>
                     {reviewsResponse.data?.reviews.docs.map((review) => (
                       <div key={uuid()} className="py-12">
                         <div className="flex items-center">
@@ -208,6 +206,7 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
                         />
                       </div>
                     ))}
+                    <Pagination />
                   </div>
                 </div>
               </>

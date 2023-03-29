@@ -22,24 +22,21 @@ const main = async (argumentJson) => {
     )
   );
 
+  const ratingsSum = reviewsByRating.reduce(
+    (acc, review) => acc + review.count * review.docs[0].rating,
+    0
+  );
+
   const totalReviews = reviewsByRating.reduce(
     (acc, review) => acc + review.count,
     0
   );
 
-  // get the average review by summing the ratings and dividing by the number of reviews
-  const averageRating =
-    reviewsByRating.reduce(
-      (acc, review) =>
-        acc + review.docs.reduce((acc, review) => acc + review.rating, 0),
-      0
-    ) / totalReviews;
-
   // return the average review and the reviews for each star rating, the total number of reviews, and the total number of reviews for each star rating
   return {
     statusCode: 200,
     body: JSON.stringify({
-      averageRating,
+      averageReview: ratingsSum / totalReviews,
       reviews,
       totalReviews,
       totalReviewsByRating: reviewsByRating.map((review) => review.count),
@@ -58,6 +55,7 @@ const fetchReviewsFromYext = async (
 ): Promise<{
   count: number;
   docs: ReviewProfile[];
+  nextPageToken?: string;
 }> => {
   let requestString = `${reviewsPath}?api_key=1316c9fafd65fd4518e69100166461a7&v=20221114&entity.id=${entityId}`;
   if (pageToken) {
