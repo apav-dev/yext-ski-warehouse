@@ -10,6 +10,8 @@ const main = async (argumentJson) => {
     });
   const entityId = searchParams.get("entityId");
   const reviewSort = searchParams.get("reviewSortOption");
+  console.log(`entityId: ${entityId}`);
+  console.log(`reviewSort: ${reviewSort}`);
 
   if (entityId === null) {
     return {
