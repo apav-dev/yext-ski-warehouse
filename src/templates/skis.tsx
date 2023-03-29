@@ -22,7 +22,7 @@ import { SimilarItems } from "../components/SimilarItems";
 import { Table } from "../components/Table";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import EditTool from "../components/EditTool";
-import { Reviews } from "../components/Reviews";
+import { Reviews } from "../components/reviews/Reviews";
 import Markdown from "markdown-to-jsx";
 
 export const config: TemplateConfig = {
@@ -302,12 +302,11 @@ const Skis = ({ document }: TemplateRenderProps) => {
               <Table items={c_specs} title="Specs" />
             </div>
           )}
-          {/* {reviews.length > 0 && (
-            <div className="col-span-2 mt-16 sm:mt-24"> */}
-          {/* TODO: pass real reviews count */}
-          <Reviews entityId={id} reviewsCount={123} />
-          {/* </div> */}
-          {/* )} */}
+          <Reviews
+            entityId={id}
+            entityName={name}
+            entityImage={photoGallery[0]}
+          />
         </div>
       </div>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}

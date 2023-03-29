@@ -1,14 +1,18 @@
 import * as React from "react";
 import { v4 as uuid } from "uuid";
-import { Stars } from "./Stars";
+import { Stars } from "../Stars";
 import { twMerge } from "tailwind-merge";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { useQuery } from "@tanstack/react-query";
 import { fetch } from "@yext/pages/util";
+import ReviewSubmissionForm from "./ReviewSubmissionForm";
+import { useState } from "react";
+import { ComplexImageType } from "@yext/pages/components";
 
 type ReviewProps = {
   entityId: string;
-  reviewsCount: number;
+  entityName?: string;
+  entityImage?: ComplexImageType;
 };
 
 type EntityReviewAggregate = {
@@ -41,8 +45,9 @@ const fetchReviewsForEntity = async (
   return data;
 };
 
-export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
-  // const [reviewData, setReviewData] = useState<EntityReviewAggregate | undefined>();
+export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
+  const [showReviewSubmissionForm, setShowReviewSubmissionForm] =
+    useState(false);
 
   const reviewsResponse = useQuery({
     queryKey: ["reviewsForEntity", entityId],
@@ -57,7 +62,7 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
     return `${month}/${day}/${year}`;
   };
 
-  return (reviewsResponse.data?.totalReviews || 0) > 0 ? (
+  return (
     <div className="col-span-2 mt-16 sm:mt-24">
       <div className="bg-white">
         <div className="mx-auto max-w-2xl lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-x-8">
@@ -69,13 +74,13 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
             <div className="mt-3 flex items-center">
               <div>
                 <div className="flex items-center">
-                  <Stars rating={5} />
+                  <Stars rating={reviewsResponse.data?.averageRating || 0} />
                 </div>
                 <p className="sr-only">{5} out of 5 stars</p>
               </div>
-              {reviewsCount && (
+              {reviewsResponse.data?.totalReviews && (
                 <p className="ml-2 text-sm text-gray-900">
-                  Based on {reviewsCount} reviews
+                  Based on {reviewsResponse.data?.totalReviews || 0} reviews
                 </p>
               )}
             </div>
@@ -84,7 +89,9 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
               <h3 className="sr-only">Review data</h3>
 
               <dl className="space-y-3">
-                {reviewsResponse.data?.totalReviewsByRating.map((count, i) => (
+                {(
+                  reviewsResponse.data?.totalReviewsByRating || [0, 0, 0, 0, 0]
+                ).map((count, i) => (
                   <div key={uuid()} className="flex items-center text-sm">
                     <dt className="flex flex-1 items-center">
                       <p className="w-3 font-medium text-gray-900">
@@ -110,7 +117,7 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
                             <div
                               className="absolute inset-y-0 rounded-full border border-yellow-400 bg-yellow-400"
                               style={{
-                                width: `calc(${count} / ${reviewsCount} * 100%)`,
+                                width: `calc(${count} / ${reviewsResponse.data?.totalReviews} * 100%)`,
                               }}
                             />
                           ) : null}
@@ -118,78 +125,101 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
                       </div>
                     </dt>
                     <dd className="ml-3 w-10 text-right text-sm tabular-nums text-gray-900">
-                      {count > 0 ? Math.round((count / reviewsCount) * 100) : 0}
+                      {count > 0
+                        ? Math.round(
+                            (count / reviewsResponse.data?.totalReviews) * 100
+                          )
+                        : 0}
                       %
                     </dd>
                   </div>
                 ))}
               </dl>
             </div>
-            {/* 
-          <div className="mt-10">
-            <h3 className="text-lg font-medium text-gray-900">
-              Share your thoughts
-            </h3>
-            <p className="mt-1 text-sm text-gray-600">
-              If you’ve used this product, share your thoughts with other
-              customers
-            </p>
 
-            <a
-              href="#"
-              className="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full"
-            >
-              Write a review
-            </a>
-          </div> */}
+            <div className="mt-10">
+              <h3 className="text-lg font-medium text-gray-900">
+                Share your thoughts
+              </h3>
+              <p className="mt-1 text-sm text-gray-600">
+                If you’ve used this product, share your thoughts with other
+                customers
+              </p>
+
+              <button
+                type="button"
+                className="mt-6 inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white py-2 px-8 text-sm font-medium text-gray-900 hover:bg-gray-50 sm:w-auto lg:w-full"
+                onClick={() => setShowReviewSubmissionForm(true)}
+              >
+                Write a review
+              </button>
+            </div>
+            <ReviewSubmissionForm
+              entityId={entityId}
+              open={showReviewSubmissionForm}
+              setOpen={setShowReviewSubmissionForm}
+              entityName={entityName}
+              entityImage={entityImage}
+            />
           </div>
 
           <div className="mt-16 lg:col-span-7 lg:col-start-6 lg:mt-0">
-            <h3 className="sr-only">Recent reviews</h3>
-            <div className="flow-root">
-              <div className="-my-12 divide-y divide-gray-200">
-                {/* <div className="flex justify-end">
+            {(reviewsResponse.data?.totalReviews || 0) > 0 ? (
+              <>
+                <h3 className="sr-only">Recent reviews</h3>
+                <div className="flow-root">
+                  <div className="-my-12 divide-y divide-gray-200">
+                    {/* <div className="flex justify-end">
                 <SortingDropdown<{ key: string; value: string }>
                   customCssClasses={{ menu: "py-12" }}
                   options={reviewSortConfig}
                   onSortChange={handleDropdownChange}
                 />
               </div> */}
-                {reviewsResponse.data?.reviews.docs.map((review) => (
-                  <div key={uuid()} className="py-12">
-                    <div className="flex items-center">
-                      <div className="">
+                    {reviewsResponse.data?.reviews.docs.map((review) => (
+                      <div key={uuid()} className="py-12">
                         <div className="flex items-center">
-                          <h4 className="text-sm font-bold text-gray-900">
-                            {review.authorName}
-                          </h4>
-                          <p className="pl-4 text-xs font-normal">
-                            {formatDate(review.reviewDate)}
-                          </p>
+                          <div className="">
+                            <div className="flex items-center">
+                              <h4 className="text-sm font-bold text-gray-900">
+                                {review.authorName}
+                              </h4>
+                              <p className="pl-4 text-xs font-normal">
+                                {formatDate(review.reviewDate)}
+                              </p>
+                            </div>
+                            <div className="mt-1 -ml-1 flex items-center">
+                              <Stars
+                                aria-hidden="true"
+                                rating={review.rating}
+                              />
+                            </div>
+                            <p className="sr-only">
+                              {review.rating} out of 5 stars
+                            </p>
+                          </div>
                         </div>
-                        <div className="mt-1 -ml-1 flex items-center">
-                          <Stars aria-hidden="true" rating={review.rating} />
-                        </div>
-                        <p className="sr-only">
-                          {review.rating} out of 5 stars
-                        </p>
-                      </div>
-                    </div>
 
-                    <div
-                      className="mt-4 space-y-6 text-base italic text-gray-600"
-                      // TODO: remove dangerouslySetInnerHTML
-                      dangerouslySetInnerHTML={{ __html: review.content }}
-                    />
+                        <div
+                          className="mt-4 space-y-6 text-base italic text-gray-600"
+                          // TODO: remove dangerouslySetInnerHTML
+                          dangerouslySetInnerHTML={{ __html: review.content }}
+                        />
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
+                </div>
+              </>
+            ) : (
+              // <div className="pt-16">
+              <p className="text-center w-full text-lg font-medium pt-16">
+                Be the first to review this product!
+              </p>
+              // </div>
+            )}
           </div>
         </div>
       </div>
     </div>
-  ) : (
-    <></>
   );
 };
