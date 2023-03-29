@@ -14,7 +14,7 @@ type ReviewProps = {
 };
 
 const fetchReviewsForEntity = async (entityId: string) => {
-  const response = await fetch("reviews?entityId=" + entityId);
+  const response = await fetch("/reviews?entityId=" + entityId);
   const data = await response.json();
   return data;
 };
