@@ -1,5 +1,4 @@
 import * as React from "react";
-import { ReviewProfile } from "../types/reviews";
 import { v4 as uuid } from "uuid";
 import { Stars } from "./Stars";
 import { twMerge } from "tailwind-merge";
@@ -14,7 +13,22 @@ type ReviewProps = {
 
 type EntityReviewAggregate = {
   averageRating: number;
-  reviews: ReviewProfile[];
+  reviews: {
+    count: number;
+    docs: {
+      $key: {
+        locale: string;
+        primaryKey: string;
+      };
+      authorName: string;
+      content: string;
+      rating: number;
+      reviewDate: string;
+      entity: {
+        id: string;
+      };
+    }[];
+  };
   totalReviews: number;
   totalReviewsByRating: number[];
 };
@@ -141,7 +155,7 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
                   onSortChange={handleDropdownChange}
                 />
               </div> */}
-                {reviewsResponse.data?.reviews.map((review) => (
+                {reviewsResponse.data?.reviews.docs.map((review) => (
                   <div key={uuid()} className="py-12">
                     <div className="flex items-center">
                       <div className="">
@@ -164,6 +178,7 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
 
                     <div
                       className="mt-4 space-y-6 text-base italic text-gray-600"
+                      // TODO: remove dangerouslySetInnerHTML
                       dangerouslySetInnerHTML={{ __html: review.content }}
                     />
                   </div>
