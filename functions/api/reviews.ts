@@ -9,9 +9,9 @@ const main = async (argumentJson) => {
       searchParams.append(key, value);
     });
   const entityId = searchParams.get("entityId");
-  const reviewSort = searchParams.get("reviewSortOption");
+  const reviewSort = searchParams.get("sort");
   console.log(`entityId: ${entityId}`);
-  console.log(`reviewSort: ${reviewSort}`);
+  console.log(`sort: ${reviewSort}`);
 
   if (entityId === null) {
     return {
