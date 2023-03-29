@@ -22,6 +22,8 @@ const main = async (argumentJson) => {
     )
   );
 
+  console.log(reviewsByRating);
+
   const ratingsSum = reviewsByRating.reduce(
     (acc, review) => acc + review.count * review.docs[0].rating,
     0
