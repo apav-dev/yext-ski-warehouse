@@ -22,9 +22,7 @@ import { SimilarItems } from "../components/SimilarItems";
 import { Table } from "../components/Table";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import EditTool from "../components/EditTool";
-import { fetchReviewsFromYext } from "../utils/fetchReviewsForEntity";
-import { Reviews } from "../components/Reviews";
-import { ReviewProfile } from "../types/reviews";
+import { Reviews } from "../components/reviews/Reviews";
 import Markdown from "markdown-to-jsx";
 
 export const config: TemplateConfig = {
@@ -92,6 +90,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 const Skis = ({ document }: TemplateRenderProps) => {
   const {
     _site,
+    id,
     name,
     description,
     photoGallery,
@@ -112,10 +111,10 @@ const Skis = ({ document }: TemplateRenderProps) => {
   const [similarItemsFilters, setSimilarItemsFilters] = useState<
     SelectableStaticFilter[]
   >([]);
-  const [reviews, setReviews] = useState<ReviewProfile[]>([]);
 
   const sizingGuidePdfUrl = c_sizingGuide?.[0].c_sizingGuidePDF?.url;
 
+  // TODO: change to use combinator filter
   useEffect(() => {
     const filters: SelectableStaticFilter[] = [];
     c_abilityLevel?.[0] &&
@@ -149,16 +148,6 @@ const Skis = ({ document }: TemplateRenderProps) => {
         },
       });
     setSimilarItemsFilters(filters);
-
-    fetchReviewsFromYext(document.id)
-      .then((reviewResponse) => {
-        setReviews(reviewResponse.docs || []);
-      })
-      .catch((e) => {
-        console.error(
-          `Failed to fetch reviews for entity ${document.id}. Error: ${e}`
-        );
-      });
   }, []);
 
   return (
@@ -313,12 +302,11 @@ const Skis = ({ document }: TemplateRenderProps) => {
               <Table items={c_specs} title="Specs" />
             </div>
           )}
-          {reviews.length > 0 && (
-            <div className="col-span-2 mt-16 sm:mt-24">
-              {/* TODO: pass real reviews count */}
-              <Reviews reviews={reviews} reviewsCount={5} />
-            </div>
-          )}
+          <Reviews
+            entityId={id}
+            entityName={name}
+            entityImage={photoGallery[0]}
+          />
         </div>
       </div>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
