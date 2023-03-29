@@ -6,10 +6,10 @@ import { StarIcon } from "@heroicons/react/24/solid";
 import { useQuery } from "@tanstack/react-query";
 import { fetch } from "@yext/pages/util";
 import ReviewSubmissionForm from "./ReviewSubmissionForm";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ComplexImageType } from "@yext/pages/components";
-import { Pagination } from "@yext/search-ui-react";
 import ReviewSortDropdown from "./ReviewSortDropdown";
+import ReviewSkeleton from "./ReviewSkeleton";
 
 type ReviewProps = {
   entityId: string;
@@ -19,24 +19,25 @@ type ReviewProps = {
 
 type EntityReviewAggregate = {
   averageRating: number;
-  reviews: {
-    count: number;
-    docs: {
-      $key: {
-        locale: string;
-        primaryKey: string;
-      };
-      authorName: string;
-      content: string;
-      rating: number;
-      reviewDate: string;
-      entity: {
-        id: string;
-      };
-    }[];
-  };
   totalReviews: number;
   totalReviewsByRating: number[];
+};
+
+type ReviewsResponse = {
+  count: number;
+  docs: {
+    $key: {
+      locale: string;
+      primaryKey: string;
+    };
+    authorName: string;
+    content: string;
+    rating: number;
+    reviewDate: string;
+    entity: {
+      id: string;
+    };
+  }[];
 };
 
 export type ReviewSort =
@@ -45,17 +46,54 @@ export type ReviewSort =
   | "ratingDesc"
   | "ratingAsc";
 
-const fetchReviewsForEntity = async (
-  entityId: string,
-  sort?: ReviewSort
+const reviewSortOptions: Record<ReviewSort, { key: string; value: string }> = {
+  reviewDateDesc: {
+    key: "$sortBy__desc",
+    value: "reviewDate",
+  },
+  reviewDateAsc: {
+    key: "$sortBy__asc",
+    value: "reviewDate",
+  },
+  ratingDesc: {
+    key: "$sortBy__desc",
+    value: "rating",
+  },
+  ratingAsc: {
+    key: "$sortBy__asc",
+    value: "rating",
+  },
+};
+
+const REVIEWS_LIMIT = 5;
+
+const fetchReviewsAggForEntity = async (
+  entityId: string
 ): Promise<EntityReviewAggregate> => {
-  let requestUrl = "/reviews?entityId=" + entityId;
-  if (sort) {
-    requestUrl += "&sort=" + sort;
-  }
+  const requestUrl = "/reviewsAgg?entityId=" + entityId;
+
   const response = await fetch(requestUrl);
   const data = await response.json();
   return data;
+};
+
+const reviewStreamUrl =
+  "https://streams.yext.com/v2/accounts/me/api/fetchReviewsForEntity?api_key=1316c9fafd65fd4518e69100166461a7&v=20221114";
+
+const fetchReviews = async (
+  entityId: string,
+  sort?: ReviewSort
+  // limit?: number
+): Promise<ReviewsResponse> => {
+  let requestUrl = reviewStreamUrl + "&entity.id=" + entityId;
+  if (sort) {
+    requestUrl += `&${reviewSortOptions[sort].key}=${reviewSortOptions[sort].value}`;
+  }
+  requestUrl += "&limit=" + REVIEWS_LIMIT;
+
+  const response = await fetch(requestUrl);
+  const data = await response.json();
+  return data.response;
 };
 
 export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
@@ -63,9 +101,15 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
     useState(false);
   const [sort, setSort] = useState<ReviewSort>("reviewDateDesc");
 
+  const reviewsAggResponse = useQuery({
+    queryKey: ["reviewsForEntity", entityId],
+    queryFn: () => fetchReviewsAggForEntity(entityId),
+    retry: 0,
+  });
+
   const reviewsResponse = useQuery({
-    queryKey: ["reviewsForEntity", entityId, sort],
-    queryFn: () => fetchReviewsForEntity(entityId, sort),
+    queryKey: ["reviews", entityId, sort],
+    queryFn: () => fetchReviews(entityId, sort),
     retry: 0,
   });
 
@@ -76,6 +120,13 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
     const year = newDate.getFullYear();
     return `${month}/${day}/${year}`;
   };
+
+  useEffect(() => {
+    if (!showReviewSubmissionForm) {
+      reviewsAggResponse.refetch();
+      reviewsResponse.refetch();
+    }
+  }, [showReviewSubmissionForm]);
 
   return (
     <div className="col-span-2 mt-16 sm:mt-24">
@@ -89,13 +140,13 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
             <div className="mt-3 flex items-center">
               <div>
                 <div className="flex items-center">
-                  <Stars rating={reviewsResponse.data?.averageRating || 0} />
+                  <Stars rating={reviewsAggResponse.data?.averageRating || 0} />
                 </div>
                 <p className="sr-only">{5} out of 5 stars</p>
               </div>
-              {reviewsResponse.data?.totalReviews && (
+              {reviewsAggResponse.data?.totalReviews && (
                 <p className="ml-2 text-sm text-gray-900">
-                  Based on {reviewsResponse.data?.totalReviews || 0} reviews
+                  Based on {reviewsAggResponse.data?.totalReviews || 0} reviews
                 </p>
               )}
             </div>
@@ -105,7 +156,9 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
 
               <dl className="space-y-3">
                 {(
-                  reviewsResponse.data?.totalReviewsByRating || [0, 0, 0, 0, 0]
+                  reviewsAggResponse.data?.totalReviewsByRating || [
+                    0, 0, 0, 0, 0,
+                  ]
                 ).map((count, i) => (
                   <div key={uuid()} className="flex items-center text-sm">
                     <dt className="flex flex-1 items-center">
@@ -132,7 +185,7 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
                             <div
                               className="absolute inset-y-0 rounded-full border border-yellow-400 bg-yellow-400"
                               style={{
-                                width: `calc(${count} / ${reviewsResponse.data?.totalReviews} * 100%)`,
+                                width: `calc(${count} / ${reviewsAggResponse.data?.totalReviews} * 100%)`,
                               }}
                             />
                           ) : null}
@@ -142,7 +195,9 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
                     <dd className="ml-3 w-10 text-right text-sm tabular-nums text-gray-900">
                       {count > 0
                         ? Math.round(
-                            (count / reviewsResponse.data?.totalReviews) * 100
+                            (count /
+                              (reviewsAggResponse.data?.totalReviews ?? 0)) *
+                              100
                           )
                         : 0}
                       %
@@ -178,60 +233,66 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
             />
           </div>
 
-          <div className="mt-16 lg:col-span-7 lg:col-start-6 lg:mt-0">
-            {(reviewsResponse.data?.totalReviews || 0) > 0 ? (
-              <>
-                <h3 className="sr-only">Recent reviews</h3>
-                <div className="flow-root">
-                  <div className="my-12 divide-y divide-gray-200">
-                    <div className="flex justify-end">
-                      <ReviewSortDropdown
-                        selectedSort={sort}
-                        setSelectedSort={(s) => setSort(s)}
-                      />
-                    </div>
-                    {reviewsResponse.data?.reviews.docs.map((review) => (
-                      <div key={uuid()} className="py-12">
-                        <div className="flex items-center">
-                          <div className="">
-                            <div className="flex items-center">
-                              <h4 className="text-sm font-bold text-gray-900">
-                                {review.authorName}
-                              </h4>
-                              <p className="pl-4 text-xs font-normal">
-                                {formatDate(review.reviewDate)}
-                              </p>
-                            </div>
-                            <div className="mt-1 -ml-1 flex items-center">
-                              <Stars
-                                aria-hidden="true"
-                                rating={review.rating}
-                              />
-                            </div>
-                            <p className="sr-only">
-                              {review.rating} out of 5 stars
-                            </p>
-                          </div>
-                        </div>
-
-                        <div
-                          className="mt-4 space-y-6 text-base italic text-gray-600"
-                          // TODO: remove dangerouslySetInnerHTML
-                          dangerouslySetInnerHTML={{ __html: review.content }}
+          <div className="lg:col-span-7 lg:col-start-6 lg:mt-0">
+            <>
+              <h3 className="sr-only">Recent reviews</h3>
+              <div className="flow-root -my-12">
+                <div className="my-12 divide-y divide-gray-200">
+                  {reviewsResponse.isLoading && // create REVIEW_LIMIT number of skeleton cards
+                    [...Array(REVIEWS_LIMIT)].map((_, i) => (
+                      <ReviewSkeleton key={i} />
+                    ))}
+                  {reviewsResponse.isSuccess && reviewsResponse.data.docs && (
+                    <>
+                      <div className="flex justify-end">
+                        <ReviewSortDropdown
+                          selectedSort={sort}
+                          setSelectedSort={(s) => setSort(s)}
                         />
                       </div>
-                    ))}
-                    <Pagination />
-                  </div>
+                      {reviewsResponse.data.docs.map((review) => (
+                        <div key={uuid()} className="py-12">
+                          <div className="flex items-center">
+                            <div className="">
+                              <div className="flex items-center">
+                                <h4 className="text-sm font-bold text-gray-900">
+                                  {review.authorName}
+                                </h4>
+                                <p className="pl-4 text-xs font-normal">
+                                  {formatDate(review.reviewDate)}
+                                </p>
+                              </div>
+                              <div className="mt-1 -ml-1 flex items-center">
+                                <Stars
+                                  aria-hidden="true"
+                                  rating={review.rating}
+                                />
+                              </div>
+                              <p className="sr-only">
+                                {review.rating} out of 5 stars
+                              </p>
+                            </div>
+                          </div>
+
+                          <div
+                            className="mt-4 space-y-6 text-base italic text-gray-600"
+                            // TODO: remove dangerouslySetInnerHTML
+                            dangerouslySetInnerHTML={{ __html: review.content }}
+                          />
+                        </div>
+                      ))}
+                    </>
+                  )}
+                  {reviewsResponse.isSuccess && !reviewsResponse.data.docs && (
+                    <div className="pt-16">
+                      <p className="text-center w-full text-lg font-medium pt-16">
+                        Be the first to review this product!
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </>
-            ) : (
-              // <div className="pt-16">
-              <p className="text-center w-full text-lg font-medium pt-16">
-                Be the first to review this product!
-              </p>
-              // </div>
-            )}
+              </div>
+            </>
           </div>
         </div>
       </div>

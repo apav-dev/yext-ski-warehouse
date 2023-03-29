@@ -9,9 +9,6 @@ const main = async (argumentJson) => {
       searchParams.append(key, value);
     });
   const entityId = searchParams.get("entityId");
-  const reviewSort = searchParams.get("sort");
-  console.log(`entityId: ${entityId}`);
-  console.log(`sort: ${reviewSort}`);
 
   if (entityId === null) {
     return {
@@ -20,23 +17,6 @@ const main = async (argumentJson) => {
       Headers: {},
     };
   }
-
-  let reviewSortOption = reviewSortOptions.reviewDateDesc;
-  if (reviewSort) {
-    reviewSortOption = reviewSortOptions[reviewSort];
-    if (!reviewSortOption) {
-      return {
-        statusCode: 400,
-        body: "Invalid review sort option",
-        Headers: {},
-      };
-    }
-  }
-
-  // fetch reviews for yext
-  const reviews = await fetchReviewsFromYext(entityId, undefined, undefined, {
-    [reviewSortOption.key]: reviewSortOption.value,
-  });
 
   // use Promise.all to fetch reviews for yext for 1, 2, 3, 4, 5 stars
   const reviewsByRating = await Promise.all(
@@ -73,7 +53,7 @@ const main = async (argumentJson) => {
     statusCode: 200,
     body: JSON.stringify({
       averageRating,
-      reviews,
+      // reviews,
       totalReviews,
       totalReviewsByRating,
     }),
@@ -126,22 +106,3 @@ interface ReviewProfile {
 }
 
 export default main;
-
-const reviewSortOptions = {
-  reviewDateDesc: {
-    key: "$sortBy__desc",
-    value: "reviewDate",
-  },
-  reviewDateAsc: {
-    key: "$sortBy__asc",
-    value: "reviewDate",
-  },
-  ratingDesc: {
-    key: "$sortBy__desc",
-    value: "rating",
-  },
-  ratingAsc: {
-    key: "$sortBy__asc",
-    value: "rating",
-  },
-};
