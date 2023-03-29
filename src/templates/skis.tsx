@@ -26,7 +26,7 @@ import { fetchReviewsFromYext } from "../utils/fetchReviewsForEntity";
 import { Reviews } from "../components/Reviews";
 import { ReviewProfile } from "../types/reviews";
 import Markdown from "markdown-to-jsx";
-import { Product, ProductSchema } from "../components/ProductSchema";
+import { ProductSchema } from "../components/ProductSchema";
 
 export const config: TemplateConfig = {
   stream: {
