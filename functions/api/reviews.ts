@@ -11,10 +11,10 @@ export const main = async (argumentJson) => {
   }
 
   // fetch reviews for yext
-  const yextReviews = await fetchReviewsFromYext(entityId);
+  const reviews = await fetchReviewsFromYext(entityId);
 
   // use Promise.all to fetch reviews for yext for 1, 2, 3, 4, 5 stars
-  const reviews = await Promise.all(
+  const reviewsByRating = await Promise.all(
     [1, 2, 3, 4, 5].map((rating) =>
       fetchReviewsFromYext(entityId, undefined, undefined, {
         rating,
@@ -23,22 +23,26 @@ export const main = async (argumentJson) => {
   );
 
   // get the average review by summing the ratings and dividing by the number of reviews
-  const averageReview = yextReviews.docs.reduce(
+  const averageReview = reviews.docs.reduce(
     (acc, review) => acc + review.rating,
+    0
+  );
+
+  const totalReviews = reviewsByRating.reduce(
+    (acc, review) => acc + review.count,
     0
   );
 
   // return the average review and the reviews for each star rating, the total number of reviews, and the total number of reviews for each star rating
   return {
     statusCode: 200,
-    body: {
-      averageReview,
+    body: JSON.stringify({
+      averageReview: averageReview / totalReviews,
       reviews,
-      // totalReviews: yextReviews.count,
-      // total reviews is the sum of the number of reviews for each star rating
-      totalReviews: reviews.reduce((acc, review) => acc + review.count, 0),
-      totalReviewsByRating: reviews.map((review) => review.count),
-    },
+      totalReviews,
+      totalReviewsByRating: reviewsByRating.map((review) => review.count),
+    }),
+    Headers: {},
   };
 };
 
