@@ -4,44 +4,36 @@ import { v4 as uuid } from "uuid";
 import { Stars } from "./Stars";
 import { twMerge } from "tailwind-merge";
 import { StarIcon } from "@heroicons/react/24/solid";
-import { useEffect, useState } from "react";
-import { fetchReviewsFromYext } from "../utils/api/fetchReviewsForEntity";
 import { useQuery } from "@tanstack/react-query";
+import { fetch } from "@yext/pages/util";
 
 type ReviewProps = {
   entityId: string;
   reviewsCount: number;
 };
 
-const fetchReviewsForEntity = async (entityId: string) => {
+type EntityReviewAggregate = {
+  averageRating: number;
+  reviews: ReviewProfile[];
+  totalReviews: number;
+  totalReviewsByRating: number[];
+};
+
+const fetchReviewsForEntity = async (
+  entityId: string
+): Promise<EntityReviewAggregate> => {
   const response = await fetch("/reviews?entityId=" + entityId);
   const data = await response.json();
   return data;
 };
 
 export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
-  const [reviews, setReviews] = useState<ReviewProfile[]>([]);
+  // const [reviewData, setReviewData] = useState<EntityReviewAggregate | undefined>();
 
   const reviewsResponse = useQuery({
     queryKey: ["reviewsForEntity", entityId],
     queryFn: () => fetchReviewsForEntity(entityId),
   });
-
-  useEffect(() => {
-    console.log(reviewsResponse);
-  }, [reviewsResponse]);
-
-  useEffect(() => {
-    fetchReviewsFromYext(entityId)
-      .then((reviewResponse) => {
-        setReviews(reviewResponse.docs || []);
-      })
-      .catch((e) => {
-        console.error(
-          `Failed to fetch reviews for entity ${entityId}. Error: ${e}`
-        );
-      });
-  }, [entityId]);
 
   const formatDate = (date: string) => {
     const newDate = new Date(date);
@@ -51,7 +43,7 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
     return `${month}/${day}/${year}`;
   };
 
-  return reviews.length > 0 ? (
+  return (reviewsResponse.data?.totalReviews || 0) > 0 ? (
     <div className="col-span-2 mt-16 sm:mt-24">
       <div className="bg-white">
         <div className="mx-auto max-w-2xl lg:grid lg:max-w-7xl lg:grid-cols-12 lg:gap-x-8">
@@ -78,8 +70,7 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
               <h3 className="sr-only">Review data</h3>
 
               <dl className="space-y-3">
-                {/* TODO: replace with reviews by score*/}
-                {[4, 1, 0, 0, 0]?.map((count, i) => (
+                {reviewsResponse.data?.totalReviewsByRating.map((count, i) => (
                   <div key={uuid()} className="flex items-center text-sm">
                     <dt className="flex flex-1 items-center">
                       <p className="w-3 font-medium text-gray-900">
@@ -150,7 +141,7 @@ export const Reviews = ({ entityId, reviewsCount }: ReviewProps) => {
                   onSortChange={handleDropdownChange}
                 />
               </div> */}
-                {reviews.map((review) => (
+                {reviewsResponse.data?.reviews.map((review) => (
                   <div key={uuid()} className="py-12">
                     <div className="flex items-center">
                       <div className="">

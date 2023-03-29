@@ -15,7 +15,7 @@ export const main = async (argumentJson) => {
 
   // use Promise.all to fetch reviews for yext for 1, 2, 3, 4, 5 stars
   const reviewsByRating = await Promise.all(
-    [1, 2, 3, 4, 5].map((rating) =>
+    [5, 4, 3, 2, 1].map((rating) =>
       fetchReviewsFromYext(entityId, undefined, undefined, {
         rating,
       })
