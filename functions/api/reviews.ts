@@ -1,17 +1,40 @@
 const main = async (argumentJson) => {
   const requestURL = argumentJson["requestUrl"];
-  const params = new URLSearchParams(requestURL.split("?")[1]);
-  const entityId = params.get("entityId");
+  const searchParams = new URLSearchParams();
+  requestURL
+    .split("?")[1]
+    .split("&")
+    .forEach((pair) => {
+      const [key, value] = pair.split("=");
+      searchParams.append(key, value);
+    });
+  const entityId = searchParams.get("entityId");
+  const reviewSort = searchParams.get("reviewSortOption");
 
   if (entityId === null) {
     return {
       statusCode: 400,
       body: "Entity ID is required",
+      Headers: {},
     };
   }
 
+  let reviewSortOption = reviewSortOptions.reviewDateDesc;
+  if (reviewSort) {
+    reviewSortOption = reviewSortOptions[reviewSort];
+    if (!reviewSortOption) {
+      return {
+        statusCode: 400,
+        body: "Invalid review sort option",
+        Headers: {},
+      };
+    }
+  }
+
   // fetch reviews for yext
-  const reviews = await fetchReviewsFromYext(entityId);
+  const reviews = await fetchReviewsFromYext(entityId, undefined, undefined, {
+    [reviewSortOption.key]: reviewSortOption.value,
+  });
 
   // use Promise.all to fetch reviews for yext for 1, 2, 3, 4, 5 stars
   const reviewsByRating = await Promise.all(
@@ -27,10 +50,11 @@ const main = async (argumentJson) => {
   console.log(`totalReviewsByRating: ${totalReviewsByRating}`);
 
   // sum totalReviewsByRating
-  const ratingsSum = totalReviewsByRating.reduce(
-    (acc, reviewCount) => acc + reviewCount,
-    0
-  );
+  const ratingsSum = [5, 4, 3, 2, 1].reduce((acc, rating, index) => {
+    acc += rating * totalReviewsByRating[index];
+    return acc;
+  }, 0);
+
   console.log(`ratingsSum: ${ratingsSum}`);
 
   const totalReviews = reviewsByRating.reduce(
@@ -39,14 +63,14 @@ const main = async (argumentJson) => {
   );
   console.log(`totalReviews: ${totalReviews}`);
 
-  const averageReview = ratingsSum / totalReviews;
-  console.log(`averageReview: ${averageReview}`);
+  const averageRating = ratingsSum / totalReviews;
+  console.log(`averageReview: ${averageRating}`);
 
   // return the average review and the reviews for each star rating, the total number of reviews, and the total number of reviews for each star rating
   return {
     statusCode: 200,
     body: JSON.stringify({
-      averageReview,
+      averageRating,
       reviews,
       totalReviews,
       totalReviewsByRating,
@@ -100,3 +124,22 @@ interface ReviewProfile {
 }
 
 export default main;
+
+const reviewSortOptions = {
+  reviewDateDesc: {
+    key: "$sortBy__desc",
+    value: "reviewDate",
+  },
+  reviewDateAsc: {
+    key: "$sortBy__asc",
+    value: "reviewDate",
+  },
+  ratingDesc: {
+    key: "$sortBy__desc",
+    value: "rating",
+  },
+  ratingAsc: {
+    key: "$sortBy__asc",
+    value: "rating",
+  },
+};

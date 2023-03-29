@@ -39,10 +39,21 @@ type EntityReviewAggregate = {
   totalReviewsByRating: number[];
 };
 
+export type ReviewSort =
+  | "reviewDateDesc"
+  | "reviewDateAsc"
+  | "ratingDesc"
+  | "ratingAsc";
+
 const fetchReviewsForEntity = async (
-  entityId: string
+  entityId: string,
+  sort?: ReviewSort
 ): Promise<EntityReviewAggregate> => {
-  const response = await fetch("/reviews?entityId=" + entityId);
+  let requestUrl = "/reviews?entityId=" + entityId;
+  if (sort) {
+    requestUrl += "&sort=" + sort;
+  }
+  const response = await fetch(requestUrl);
   const data = await response.json();
   return data;
 };
@@ -50,10 +61,11 @@ const fetchReviewsForEntity = async (
 export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
   const [showReviewSubmissionForm, setShowReviewSubmissionForm] =
     useState(false);
+  const [sort, setSort] = useState<ReviewSort>("reviewDateDesc");
 
   const reviewsResponse = useQuery({
-    queryKey: ["reviewsForEntity", entityId],
-    queryFn: () => fetchReviewsForEntity(entityId),
+    queryKey: ["reviewsForEntity", entityId, sort],
+    queryFn: () => fetchReviewsForEntity(entityId, sort),
     retry: 0,
   });
 
@@ -171,9 +183,12 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
               <>
                 <h3 className="sr-only">Recent reviews</h3>
                 <div className="flow-root">
-                  <div className="-my-12 divide-y divide-gray-200">
+                  <div className="my-12 divide-y divide-gray-200">
                     <div className="flex justify-end">
-                      <ReviewSortDropdown />
+                      <ReviewSortDropdown
+                        selectedSort={sort}
+                        setSelectedSort={(s) => setSort(s)}
+                      />
                     </div>
                     {reviewsResponse.data?.reviews.docs.map((review) => (
                       <div key={uuid()} className="py-12">
