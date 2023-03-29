@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.00",
-    "c_terrain": [
-      "7200013882251703847"
-    ],
+    "c_terrain": ["7200013882251703847"],
     "description": "The Mana series thrives in the grey area between backcountry and freestyle, and the Faction Mana 3 Skis rule this domain. At 112mm in the waist, this is the ski for creative powder riders to realize their dreams on, whether they be in the area or somewhere outside it. If you\u0027re looking for a vehicle to shred to the limits of your imagination, the new Mana 3 just may be the one.",
     "name": "Faction Mana 3 Skis 2023",
     "photoGallery": [

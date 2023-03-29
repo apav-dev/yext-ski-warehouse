@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "749.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Nordica Santa Ana 98 Skis might just be the most versatile women\u0027s skis ever made. It\u0027s hard to make something so universally beloved by pros and everyday skiers alike, but Nordica has done it. The middle child of the Santa Ana family is a blend of lightweight and powerful, with tons of grip and drive for confidence down the fall line, but a surprisingly quick and intuitive feel when carving turns at slower speeds. It rewards good technique without punishing the occasional lapse in form, and performs well in the full spectrum of snow conditions, making it an ideal one-ski quiver for skiers that want to ride it all.",
     "name": "Nordica Santa Ana 98 Skis - Women\u0027s 2023",
     "photoGallery": [

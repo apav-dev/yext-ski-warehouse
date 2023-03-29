@@ -12,6 +12,7 @@ import Header from "../components/Header";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import BlogPost from "../components/BlogPost";
+import { BlogSchema } from "../components/BlogSchema";
 
 export const config: TemplateConfig = {
   stream: {
@@ -99,6 +100,12 @@ const Blog = ({ document }: TemplateRenderProps) => {
 
   return (
     <Main>
+      <BlogSchema
+        title={name}
+        subtitle={c_subtitle}
+        datePosted={datePosted}
+        author={c_author}
+      ></BlogSchema>
       <div className="relative">
         <Header directory={_site} />
       </div>

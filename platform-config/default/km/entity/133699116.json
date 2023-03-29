@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "599.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Lib Tech Libstick 88 Skis is an everyday resort ripper with a penchant for playful rides down firm snow. Whatever that means to you, the Libstick 88 is happy to oblige. It is fast and energetic on groomers, lively on jibs and sidehits, and poised through mogul fields and tracked out tree runs. It combines a directional shape with a less directional mount point, making it perform beautifully in soft snow for a ski of it\u0027s size as well. If you need one ski that will inspire fun all season long, you can\u0027t go wrong with this one.",
     "name": "Lib Tech Libstick 88 Skis - Women\u0027s 2023",
     "photoGallery": [

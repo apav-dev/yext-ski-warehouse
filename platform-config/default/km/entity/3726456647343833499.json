@@ -17,10 +17,7 @@
         "width": 18
       }
     },
-    "c_skisByAbility": [
-      "133672949",
-      "133672989"
-    ],
+    "c_skisByAbility": ["133672949", "133672989"],
     "description": "Beginner-Intermediate skiers are still developing their skills and are typically more comfortable on groomed runs and easier slopes. They may still be working on their parallel turns and stopping techniques, and may feel more comfortable skiing at slower speeds. These skiers are still learning to navigate the mountain and may benefit from taking lessons to improve their technique and build confidence.",
     "name": "Beginner-Intermediate",
     "primaryPhoto": {

@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "699.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Finding the right metaphor to describe the Elan Ripstick 102 Skis is almost impossible, because they embody everything a hard ripper needs to have their best day of the season. Constructed with a Tubelite wood core that\u0027s light enough to flick around with ease, these sticks are reinforced with carbon for extra power and response. The Ripstick slays the hardpack and floats like a dream over the fluffy stuff. For everyone looking to dig deep and ski hard, the Elan Ripstick 102 Skis are your ticket to a high energy day packed with stoke. Treat yourself this season, get a Ripstick.",
     "name": "Elan Ripstick 102 Skis - Women\u0027s 2023",
     "photoGallery": [

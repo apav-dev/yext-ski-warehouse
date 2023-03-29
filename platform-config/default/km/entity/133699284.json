@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "899.95",
-    "c_terrain": [
-      "7096784237424891914"
-    ],
+    "c_terrain": ["7096784237424891914"],
     "description": "The Black Crows Navis Freebird Skis are all-around excellent tools for any human powered mission. Built for versatility, this 102-waisted ski is exactly what most riders are looking for in an all season touring ski. It\u0027s built with a directional freeride shape, plenty of camber underfoot, and just enough rocker in the tip to plane over mixed snow surfaces. Pair that do-everything design with a featherweight layup that\u0027s designed for hybrid binding compatibility, and it\u0027s easy to see why so many skiers look to the Navis anytime they hit the skin track.",
     "name": "Black Crows Navis Freebird Skis 2023",
     "photoGallery": [

@@ -10,9 +10,7 @@
       "maxLength": 5000,
       "type": {
         "entityReferenceType": {
-          "supportedEntityTypeIds": [
-            "ce_abilityLevel"
-          ],
+          "supportedEntityTypeIds": ["ce_abilityLevel"],
           "type": "ONE_WAY"
         }
       }

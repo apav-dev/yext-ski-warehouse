@@ -16,12 +16,7 @@ import ArticleResults from "../components/search/ArticleResults";
 export const config: TemplateConfig = {
   stream: {
     $id: "article-home",
-    fields: [
-      "id",
-      "slug",
-      "c_headingText",
-      "c_subHeadingText",
-    ],
+    fields: ["id", "slug", "c_headingText", "c_subHeadingText"],
     filter: {
       entityIds: ["article_home"],
     },

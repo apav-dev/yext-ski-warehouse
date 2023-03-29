@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "749.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Salomon QST Stella 106 Skis are refined perfection in a soft snow freeride tool. They\u0027re nimble, lightweight, and directional, perfect for crushing around the resort or dancing through trees in the side country. They\u0027re dependable and fun, and the level of technical detail put into them is simply astounding. Cutout sections in the tips are filled with cork for lightweight dampening, and a blend of flax and carbon fiber is placed underfoot. The full poplar core lends the stability and power needed for high speed performance, and the tapered tips and twin rocker profile keeps them loose and bouncy. Find out why so many skiers of all levels turn to the Stella 106 when there\u0027s fresh snow to be slayed!",
     "name": "Salomon QST Stella 106 Skis - Women\u0027s 2023",
     "photoGallery": [

@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "849.95",
-    "c_terrain": [
-      "7200013882251703847"
-    ],
+    "c_terrain": ["7200013882251703847"],
     "description": "Born from the demands of hard charging gals who need a ski that can keep on steep descents in variable conditions, the titanal injected Rossignol Rallybird 104 Ti Skis deliver! With a 104mm waist width, these skis straddle the line between powder-worthy float and the everyday edge control you need to carve confidently both off-piste and on groomers. If you\u0027re in the market for a strong, stable ski that won\u0027t leave you longing for more whether conditions are firm or soft, look to the ladies specific Rossignol Rallybird 104 Ti Skis.",
     "name": "Rossignol Rallybird 104 Ti Skis - Women\u0027s 2023",
     "photoGallery": [

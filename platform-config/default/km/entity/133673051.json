@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "649.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Looking for a light platform to mount up with a tech or hybrid binding and go hunting for some distant pow turns? Take a hard look at the Völkl Blaze 106 W Skis, a lightweight option that doesn\u0027t forget you sometimes need edgehold to get to and from those pow turns unscathed. Or mount the Blaze 106 with an alpine binding and revel in the nimble capabilities of a ski that knows more mass doesn\u0027t always equal more fun. Either way, the 3D Radius sidecut and full sidewall construction get the job done, making sure you\u0027ve got the security you demand when it gets dicey and easy turn initiation when snow conditions get funky.",
     "name": "Völkl Blaze 106 W Skis - Women\u0027s 2023",
     "photoGallery": [

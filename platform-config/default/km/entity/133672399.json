@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "649.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Blizzard Black Pearl 88 Skis have been a fan favorite for many years, and there\u0027s no sign of a letup. Smooth, balanced, and supremely capable in variable conditions, they offer a versatile ride that won\u0027t let you down on firmer snow, or at faster speeds. And that\u0027s not all. This year the Black Pearl 88 has been redesigned with input from Blizzard\u0027s trailblazing Women 2 Women project, engineered with a women\u0027s specific TrueBlend Flipcore layup that allows you to squeeze the juice out of every run.",
     "name": "Blizzard Black Pearl 88 Skis - Women\u0027s 2023",
     "photoGallery": [

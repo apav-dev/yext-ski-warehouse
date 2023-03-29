@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.95",
-    "c_terrain": [
-      "7096784237424891914"
-    ],
+    "c_terrain": ["7096784237424891914"],
     "description": "Let\u0027s face it. Most people just don\u0027t have enough time, money, or garage space for a whole quiver of resort skis AND a whole quiver of touring skis. You might have some powder planks and a hard snow setup for the inbounds, but when it comes to touring skis, you\u0027re probably looking for one ski that can do it all. But doing it all in a place like the backcountry, which can grant you the deepest snow, the longest climbs, and the mankiest crud, sometimes all in the same lap, is no small feat. And that\u0027s exactly what the Armada Locator 104 Skis are built to do. Coming in at less than 1500 grams per ski, they\u0027re insanely lightweight for their size. Pair that with versatile waist width, burly construction, and playful-yet-serious shape, and these things are an incredible jack of all trades for the backcountry. Whether your touring day is long or short, deep or shallow, the Locator 104 is up for the challenge.",
     "name": "Armada Locator 104 Skis 2023",
     "photoGallery": [

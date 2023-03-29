@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "649.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "For the all-mountain skier extraordinaire, we present the Lib Tech Libstick 98 Skis. These skis blend the best of both worlds when it comes to all-mountain riding. With the directional shape and sturdy edge hold of a big mountain ski, they provide poised descents down any terrain and smooth tracking across groomers. With the more forward mount point and medium flex of a freestyle ski, they offer tons of pop and lively energy. They\u0027re fun and nimble, rocketing out of turns and snaking through sneaky tree lines, yet steadfast and dependable when you just need to get to the bottom in one piece.",
     "name": "Lib Tech Libstick 98 Skis - Women\u0027s 2023",
     "photoGallery": [

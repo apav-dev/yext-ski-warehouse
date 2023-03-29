@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "749.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "With a versatile 100mm+ waist and balanced Carbon Flipcore construction, the Blizzard Rustler 10 Skis live in the Goldilocks zone where anything is possible. Firm groomers? No problem, the Rustlers will lay trenches. 8 inches of fresh overnight? Great, the Rustlers can surf with the best of \u0027em. Chop and chunder? Please, the Rustlers eat those for breakfast. If you\u0027re after a setup that\u0027s capable of handling anything you put in front of it no questions asked, look no further than the Blizzard Rustler 10 Skis.",
     "name": "Blizzard Rustler 10 Skis 2023",
     "photoGallery": [

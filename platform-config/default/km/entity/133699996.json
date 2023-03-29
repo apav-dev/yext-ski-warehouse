@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "999.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Black Crows Corvus Skis are at the heart of what the iconic French ski manufacturer is all about. Defined by their unique juxtaposition of a reverse camber shape with two plates of titanal and versatile big mountain waist width, these skis are freeride chargers with a twist. They\u0027re damp, expressive, nimble, and forceful - graceful on both technical lines and cruiser resort runs. By blending serious materials with playful design cues, the Corvus is a fresh alternative to the traditional 108 charger, delivering the same aggressive performance but with a bit of free-spirited soul injected into every turn.",
     "name": "Black Crows Corvus Skis 2023",
     "photoGallery": [

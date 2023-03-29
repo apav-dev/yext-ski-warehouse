@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "549.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Light as a feather at 1290 grams in the 152cm size, the Völkl Blaze 86 W Skis are a great choice for quick bump runs, slashing through the trees, and mounting up with a touring or hybrid binding to head out touring. Yes, it is possible to get all of that in one ski, and Völkl\u0027s decades of experience makes the difference. A Multilayer Woodcore Light construction with 3D Radius Sidecut and full sidewalls contribute to make this one of the most versatile and dependable light skis out there.",
     "name": "Völkl Blaze 86 W Skis - Women\u0027s 2023",
     "photoGallery": [

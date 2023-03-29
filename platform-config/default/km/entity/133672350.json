@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "749.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Armada ARW 106 UL Skis are versatile, lightweight, and fun. For a great many skiers, this is the fabled one ski quiver. Wide enough for powder, narrow enough for groomers, sturdy enough for business, and playful enough for pleasure. They have Armada\u0027s freestyle twist on the all-mountain twin in the way of Smear Teach beveled tips for extra surfy buttery goodness, and they\u0027re made with an ultralight layup with that makes them very amenable to pairing with a sturdy set of touring bindings and taking to the the backcountry as well.",
     "name": "Armada ARW 106 UL Skis 2023",
     "photoGallery": [

@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "799.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Up the ante on your every day with the all new Fischer Ranger 102 Skis. Designed to be agile, stable, and easy to steer, these lovingly developed planks feature Fischer\u0027s Freeski Rocker profile and a Titanal reinforced wood core. If you\u0027re ripping nooks and crannies in the West or Sailing through a fluffy day everywhere else, the Ranger 102 is the tool you need to ski more and worry less.",
     "name": "Fischer Ranger 102 Skis 2023",
     "photoGallery": [

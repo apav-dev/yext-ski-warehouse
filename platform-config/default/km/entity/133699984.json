@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "5195394095823606585"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["5195394095823606585"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "999.95",
-    "c_terrain": [
-      "7200013882251703847"
-    ],
+    "c_terrain": ["7200013882251703847"],
     "description": "The Black Crows Anima Skis are wild things. Anyone seeking to tame them should simply look for a different ski. This is a ski that needs to be let loose, and laughs at attempts to simmer it down. But if you can prove yourself to be as fearsome, as bold, and as uncouth as the Anima, you\u0027ll never find a more reliable partner in crime. This big mountain ski is designed for Freeride World Tour descents, with the blend of soft snow handling, firm snow precision, balance in the air, and power through crud that you need to send huge lines and ride out the other side.",
     "name": "Black Crows Anima Skis 2023",
     "photoGallery": [

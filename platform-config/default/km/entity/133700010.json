@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "949.00",
-    "c_terrain": [
-      "7200013882251703847"
-    ],
+    "c_terrain": ["7200013882251703847"],
     "description": "The fattest of the fats in the Faction paddock at 119 millimeters underfoot, the Faction Mana 4 Skis are surprisingly nimble underfoot considering their girth, and lend themselves to the most creative and playful styles in the deepest conditions. The Mana 4 is laid up around a Paulownia-Poplar core with a full Carbon Weave construction for a light but poppy feel and easy handling in variable snow. Face it, a powder day is a rare gift, and \"Mana from Heaven\" should be on your menu on such a day.",
     "name": "Faction Mana 4 Skis 2023",
     "photoGallery": [

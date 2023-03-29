@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "899.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "For too long, all new ski tech has been made only for the deepest powder, the steepest lines, and the biggest stomps. But over the past few years, a new trend has started. Crazy new shapes are coming out designed specifically for the average day. And we\u0027re all about it. The Black Crows Mirus Cor Skis are the wacky French ski manufacturers take on a wacky ski designed to have the funnest, wackiest time possible ripping around the resort on an otherwise unremarkable snow day. It has skinny waist, a short length, a super tight turn radius, an eye-catching swallow tail, a single plate of titanal, and a nearly symmetrical twin shape. If this sounds like a crazy mishmash of carving features and park features, you\u0027re right. If you think this sounds like a crazy amount of fun, you\u0027re right again.",
     "name": "Black Crows Mirus Cor Skis 2023",
     "photoGallery": [

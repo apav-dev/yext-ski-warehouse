@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "6490805738900090466"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["6490805738900090466"],
     "c_price": "449.95",
-    "c_terrain": [
-      "463117075052872663"
-    ],
+    "c_terrain": ["463117075052872663"],
     "description": "From switch landings on big booters to frontside switch ups on the rails, your skiing demands style and perfection at every turn. The Armada ARW 86 Skis are designed to provide all that and more for your freestyle exploits. They\u0027re tried and true park warriors with burly bases, oversized edges, a springy core, and a pressable flex so your and boost, butter, and slide your way through the season.",
     "name": "Armada ARW 86 Skis - Women\u0027s 2023",
     "photoGallery": [

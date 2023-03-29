@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "699.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "The Atomic Maverick 95 TI Skis are outstanding piste performers with a healthy dose of off-trail capability. Strong and smooth in just about any conceivable set of conditions, the Mavericks utilize a new OMatic core construction that expertly balances stiffness and flex over the length of the ski for top-notch riding through variable snow. Whether you find yourself laying trenches in fresh groomers or dipping into the trees for some leftover freshies, the Atomic Maverick 95 TI Skis make the transition seamless.",
     "name": "Atomic Maverick 95 Ti Skis 2023",
     "photoGallery": [

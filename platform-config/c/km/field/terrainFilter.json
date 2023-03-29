@@ -10,9 +10,7 @@
       "maxLength": 5000,
       "type": {
         "entityReferenceType": {
-          "supportedEntityTypeIds": [
-            "ce_terrain"
-          ],
+          "supportedEntityTypeIds": ["ce_terrain"],
           "type": "ONE_WAY"
         }
       }

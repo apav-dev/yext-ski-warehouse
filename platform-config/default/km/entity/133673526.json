@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "699.00",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Candide may be gone, but that means there\u0027s a spot for you on top of the Faction Prodigy 3 Skis this season. This all-mountain, all-snow twinnish-tipped freeride monster is still out there, ready to kill it for the right skier, and itching to stomp some big lines. Classic Poplar wood core construction with Multi-axial fiberglass and plenty of rocker at both ends mean hard charging goodness going both ways.",
     "name": "Faction Prodigy 3 Skis 2023",
     "photoGallery": [

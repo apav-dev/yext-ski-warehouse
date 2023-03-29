@@ -6,10 +6,7 @@
     "c_filters": [
       {
         "filterId": "c_gender.name",
-        "filterItems": [
-          "5929891552541128688",
-          "6490805738900090466"
-        ],
+        "filterItems": ["5929891552541128688", "6490805738900090466"],
         "title": "Gender"
       },
       {

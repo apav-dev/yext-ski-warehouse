@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "699.99",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "Get your carve on with the Elan Ripstick 96 Skis, an every day ripper that excels on hard stuff and still delivers when it gets soft and creamy. From carving corduroy to hitting your fave stash, these bombers are made for heavy hitters who cut turns all the way across the run and don\u0027t mess around. Their asymmetrical amphibio profile gives you targeted precision exactly where you need it, while a Tubelite wood core with carbon keeps things light, agile, and ready to send side hits. Elan skis always deliver, and the Ripstick 96 is no exception.",
     "name": "Elan Ripstick 96 Skis 2023",
     "photoGallery": [

@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "749.00",
-    "c_terrain": [
-      "7200013882251703847"
-    ],
+    "c_terrain": ["7200013882251703847"],
     "description": "Big lines and hero snow call for a ski with heart, and the Faction Prodigy 4 Skis are as good as they come. Serious float with a 140mm wide tip and 116mm waist, along with huge rocker lines at both tip and tail mean unparalleled float in the deep stuff, while stout construction and a bomber Poplar wood core keep these things planted and headed down the fall line no matter what.",
     "name": "Faction Prodigy 4 Skis 2023",
     "photoGallery": [

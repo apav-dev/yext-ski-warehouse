@@ -3,16 +3,10 @@
   "$schema": "https://schema.yext.com/config/km/entity/v1",
   "primaryLocale": "en",
   "content": {
-    "c_abilityLevel": [
-      "4422719013200450384"
-    ],
-    "c_gender": [
-      "5929891552541128688"
-    ],
+    "c_abilityLevel": ["4422719013200450384"],
+    "c_gender": ["5929891552541128688"],
     "c_price": "649.95",
-    "c_terrain": [
-      "1295894924104146377"
-    ],
+    "c_terrain": ["1295894924104146377"],
     "description": "A funny thing happened in the winter of \u002721-22. Winter went dry for months in most of North America, and the wide ski powder maniacs were stuck for a low tide answer. A few of them got out on the Blizzard Rustler 9 Skis and were blown away. Who woulda thought, with that rocker line and limited edge contact, but here is ski that can rail with the best of the flat-tailed carvers and not punish the rider in bumps and re-frozen slop! The Titanal D.R.T. laminate does just what it was intended to do, namely smooth out the ride and make the ski feel uber-confident at speed, and the tail rocker means the Rustler doesn\u0027t lock in and take you for a ride. Do yourself a favor and check these out.",
     "name": "Blizzard Rustler 9 Skis 2023",
     "photoGallery": [
