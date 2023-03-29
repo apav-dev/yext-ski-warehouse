@@ -1,6 +1,6 @@
 import {
   provideHeadless,
-  SearchHeadlessProvider,
+  SelectableStaticFilter,
 } from "@yext/search-headless-react";
 import * as React from "react";
 import HeadlessProvider from "../components/search/HeadlessProvider";
@@ -9,16 +9,19 @@ import { defaultRouter } from "../routing";
 
 interface MainProps {
   children?: React.ReactNode;
+  initialFilters?: SelectableStaticFilter[];
 }
 
-const searcher = provideHeadless(getSearchProviderConfig("skis"));
+const searcher = provideHeadless(getSearchProviderConfig("products"));
 
-const Main = (props: MainProps) => {
-  const { children } = props;
-
+const Main = ({ children, initialFilters }: MainProps) => {
   return (
     // <SearchHeadlessProvider searcher={searcher}>
-    <HeadlessProvider searcher={searcher} routing={defaultRouter}>
+    <HeadlessProvider
+      searcher={searcher}
+      routing={defaultRouter}
+      initialFilters={initialFilters}
+    >
       <div className="min-h-screen text-gray-900">
         <div className="relative">{children}</div>
       </div>

@@ -22,6 +22,9 @@ module.exports = {
       borderRadius: {
         cta: "var(--cta-border-radius, 1rem)",
       },
+      animation: {
+        snowflakes: "snowflakes 2s infinite linear",
+      },
       keyframes: {
         rotate: {
           "100%": { transform: "rotate(360deg)" },
@@ -30,6 +33,14 @@ module.exports = {
           "0%": { transform: "rotate(0deg)", "stroke-dashoffset": 204 },
           "50%": { transform: "rotate(45deg)", "stroke-dashoffset": 52 },
           "100%": { transform: "rotate(360deg)", "stroke-dashoffset": 204 },
+        },
+        snowflakes: {
+          "0%": {
+            transform: "translateY(-100%)",
+          },
+          "100%": {
+            transform: "translateY(100%)",
+          },
         },
       },
     },

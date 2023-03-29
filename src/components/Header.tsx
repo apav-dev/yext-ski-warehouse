@@ -45,10 +45,7 @@ const Header = ({ directory }: HeaderProps) => {
         setSearchPanelOpen={toggleMobileSearch}
       />
       <header className="relative z-10">
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-sky-400 opacity-60"
-        />
+        <div aria-hidden="true" className="absolute inset-0 bg-sky-400 " />
         <nav aria-label="Top">
           {/* Secondary navigation */}
           <div className="bg-white/10 backdrop-blur-md backdrop-filter">
@@ -57,7 +54,7 @@ const Header = ({ directory }: HeaderProps) => {
                 <div className="flex h-16 items-center justify-between">
                   {/* Logo (lg+) */}
                   <a href="/" className="hidden lg:block">
-                    <span className="sr-only">Yext Ski Warehouse</span>
+                    <span className="sr-only">Ski Warehouse</span>
                     {directory?.logo && (
                       <Image className="h-8 w-auto" image={directory.logo} />
                     )}
@@ -154,7 +151,7 @@ const Header = ({ directory }: HeaderProps) => {
                                                         className="flex"
                                                       >
                                                         <a
-                                                          // href={category.href}
+                                                          href={`/${category.slug}`}
                                                           className="hover:text-gray-800"
                                                         >
                                                           {category.name}
@@ -226,7 +223,7 @@ const Header = ({ directory }: HeaderProps) => {
 
                   {/* Logo (lg-) */}
                   <a href="/" className="lg:hidden">
-                    <span className="sr-only">Yext Ski Warehouse</span>
+                    <span className="sr-only">Ski Warehouse</span>
                     {directory?.logo && (
                       <Image className="h-8 w-auto" image={directory.logo} />
                     )}

@@ -10,7 +10,7 @@ import {
   VerticalResults,
 } from "@yext/search-headless-react";
 import { getSearchProviderConfig } from "../../config";
-import Ce_skis from "../../types/skis";
+import { Ce_skis } from "../../types/skis";
 import { Image, Link } from "@yext/pages/components";
 
 type SearchBarProps = {
@@ -35,7 +35,7 @@ const SearchBar = ({ customCssClasses }: SearchBarProps) => {
       ariaLabel: (value: string) => string;
     }
   ) => {
-    const skiResults = verticalKeyToResults["skis"]?.results as unknown as
+    const skiResults = verticalKeyToResults["products"]?.results as unknown as
       | Result<Ce_skis>[]
       | undefined;
 
@@ -92,7 +92,7 @@ const SearchBar = ({ customCssClasses }: SearchBarProps) => {
       visualAutocompleteConfig={{
         renderEntityPreviews,
         entityPreviewSearcher,
-        includedVerticals: ["skis"],
+        includedVerticals: ["products"],
       }}
     />
   );
