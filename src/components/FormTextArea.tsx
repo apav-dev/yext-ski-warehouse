@@ -1,29 +1,55 @@
-import { Container } from "@mui/material";
 import React from "react";
 
 type FormTextAreaProps = {
+  id: string;
+  value: string;
+  onChange: (value: string) => void;
   label?: string;
   customCssClasses?: {
     formTextAreaContainer?: string;
   };
+  rows?: number;
+  cols?: number;
+  required?: boolean;
 };
 
-const FormTextArea = ({ label, customCssClasses }: FormTextAreaProps) => {
+const FormTextArea = ({
+  id,
+  label,
+  customCssClasses,
+  rows,
+  cols,
+  required,
+  onChange,
+}: FormTextAreaProps) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    // if (validation) {
+    //   setInputValid(validation(value));
+    // }
+    if (onChange) {
+      onChange(value);
+    }
+  };
+
   return (
     <div className={customCssClasses?.formTextAreaContainer}>
       <label
-        htmlFor="comment"
+        htmlFor={id}
         className="block text-sm font-medium leading-6 text-gray-900 text-left"
       >
         {label}
       </label>
       <div className="mt-2">
         <textarea
-          rows={4}
-          name="comment"
-          id="comment"
+          required={required}
+          rows={rows || 4}
+          cols={cols || 50}
+          name={id}
+          id={id}
           className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-400 sm:py-1.5 sm:text-sm sm:leading-6"
           defaultValue={""}
+          onChange={handleOnChange}
         />
       </div>
     </div>

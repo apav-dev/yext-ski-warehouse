@@ -52,6 +52,7 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
   const reviewsResponse = useQuery({
     queryKey: ["reviewsForEntity", entityId],
     queryFn: () => fetchReviewsForEntity(entityId),
+    retry: 0,
   });
 
   const formatDate = (date: string) => {
