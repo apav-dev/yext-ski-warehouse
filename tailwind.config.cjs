@@ -23,7 +23,7 @@ module.exports = {
         cta: "var(--cta-border-radius, 1rem)",
       },
       animation: {
-        snowflakes: "snowflakes 2s infinite linear",
+        snowflakes: "snowflakes 3s infinite linear",
       },
       keyframes: {
         rotate: {
@@ -36,7 +36,7 @@ module.exports = {
         },
         snowflakes: {
           "0%": {
-            transform: "translateY(-100%)",
+            transform: "translateY(0%)",
           },
           "100%": {
             transform: "translateY(100%)",
