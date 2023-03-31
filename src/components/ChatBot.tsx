@@ -100,7 +100,7 @@ export function ChatBot({ configId }: { configId: string }) {
       </Transition>
       <button
         onClick={() => setShowChat(!showChat)}
-        className="border border-white shadow-xl hover:shadow-2xl bottom-10 right-10 w-12 h-12 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-green-800 to-green-1100 hover:-translate-y-2 transition-all duration-150"
+        className="border border-white shadow-xl hover:shadow-2xl bottom-10 right-10 w-12 h-12 lg:w-20 lg:h-20 rounded-full bg-gradient-to-br from-blue-600 to-blue-600 hover:-translate-y-2 transition-all duration-150"
       >
         <div className="flex flex-col justify-center items-center h-full w-full text-white">
           {showChat ? (
