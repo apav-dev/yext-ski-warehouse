@@ -214,16 +214,28 @@ const Home = ({ document }: TemplateRenderProps) => {
         <section>
           <div className="mx-auto max-w-7xl sm:px-6 sm:py-8 lg:px-8">
             <div className="relative overflow-hidden px-6 py-24 sm:rounded-lg sm:px-16 min-h-[600px]">
-              <a href="/ski-finder">
-                <img
-                  src={GuidedSearchCover}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </a>
-              <div className="absolute inset-x-0 bottom-0 flex items-end  overflow-hidden sm:rounded-lg p-4 h-96">
+              <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">
+                {"Find the skis of your dreams today!"}
+              </h1>
+              <p className="mt-4 text-xl text-white">
+                {"Picking the right skis is tough. but we're here to help."}
+              </p>
+              <button
+                className="mt-8 inline-block rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100"
+                onClick={() => {
+                  window.location.href = "/ski-finder";
+                }}
+              >
+                Get Started
+              </button>
+              <img
+                src={GuidedSearchCover}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-end  overflow-hidden sm:rounded-lg p-4">
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-black opacity-60"
+                  className="absolute inset-0 bg-gray-900 opacity-60"
                 />
               </div>
             </div>

@@ -55,7 +55,6 @@ export const defaultRouter: Router = {
     if (filtersFromUrl.length > 0) {
       actions.setStaticFilters(filtersFromUrl);
     }
-    debugger;
     if (
       query ||
       (initialFilters && initialFilters.length > 0) ||
