@@ -19,16 +19,16 @@ export interface ComplexImage {
 	clickthroughUrl?: string,
 }
 
-export default interface Ce_helpArticle {
-	datePosted?: string,
+export default interface Faq {
+	answer?: string,
+	landingPageUrl?: string,
+	nudgeEnabled?: boolean,
+	primaryConversationContact?: any,
+	question: string,
 	slug?: string,
+	logo?: ComplexImage,
 	name: string,
-	c_coverPhoto?: ComplexImage,
-	c_generatedQuestion?: string,
-	c_helpArticleContent?: any,
-	c_keywords?: string,
-	c_metaDescription?: string,
-	c_subtitle?: string,
-	c_summary?: string,
+	keywords?: string[],
 	id: string,
+	timezone?: any,
 }
