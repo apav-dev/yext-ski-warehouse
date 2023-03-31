@@ -187,10 +187,10 @@ const Header = ({ directory }: HeaderProps) => {
                       </div>
                       <div className="flex items-center">
                         <Link
-                          href="/articles"
+                          href="/support"
                           className="text-sm font-medium text-white hover:text-sky-700"
                         >
-                          Learn
+                          Support
                         </Link>
                       </div>
                     </div>
