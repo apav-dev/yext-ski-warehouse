@@ -19,11 +19,12 @@ const VideoCard = ({ result }: CardProps<Ce_video>) => {
       </div>
       <div className="max-w-xl">
         <div className="group relative">
-          {/* TODO:  add link to video */}
-          <h3 className="mt-3 text-lg font-semibold leading-6 text-sky-400 group-hover:text-sky-700">
-            <span className="absolute inset-0" />
-            {video.name}
-          </h3>
+          <a href={`https://www.youtube.com/watch?v=${video.id}`}>
+            <h3 className="mt-3 text-lg font-semibold leading-6 text-sky-400 group-hover:text-sky-700">
+              <span className="absolute inset-0" />
+              {video.name}
+            </h3>
+          </a>
           <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
             {video.c_videoDescription}
           </p>

@@ -1,16 +1,16 @@
 import React from "react";
 import {
   DirectAnswer,
-  Pagination,
   SearchBar,
   SectionProps,
   UniversalResults,
 } from "@yext/search-ui-react";
-import { useSearchActions } from "@yext/search-headless-react";
+import { useSearchActions, useSearchState } from "@yext/search-headless-react";
 import { useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 import VideoCard from "./VideoCard";
 import FaqCard from "./FaqCard";
+import LoadingSnowflakes from "./LoadingSnowflakes";
 
 const GridSection = ({ results, CardComponent, header }: SectionProps<T>) => {
   if (!CardComponent) {
@@ -49,6 +49,8 @@ const ListSection = ({ results, CardComponent, header }: SectionProps<T>) => {
 const SupportResults = () => {
   const searchActions = useSearchActions();
 
+  const searchLoading = useSearchState((state) => state.searchStatus.isLoading);
+
   useEffect(() => {
     searchActions.setUniversal();
     searchActions.setUniversalLimit({
@@ -64,59 +66,67 @@ const SupportResults = () => {
   return (
     <>
       <div className="py-8">
-        <SearchBar />
+        <SearchBar placeholder="Search for articles and other helpful resources" />
       </div>
-      <DirectAnswer />
-      {/* TODO: ask Slapshot about this interface */}
-      <UniversalResults
-        verticalConfigMap={{
-          help_articles: {
-            SectionComponent: ({ results, verticalKey }) => (
-              <GridSection
-                results={results}
-                CardComponent={ArticleCard}
-                verticalKey={verticalKey}
-                header={
-                  <h2 className="text-2xl font-semibold text-sky-400">
-                    Articles
-                  </h2>
-                }
-              />
-            ),
-            CardComponent: ArticleCard,
-          },
-          videos: {
-            label: "Videos",
-            SectionComponent: ({ results, verticalKey }) => (
-              <GridSection
-                results={results}
-                CardComponent={VideoCard}
-                verticalKey={verticalKey}
-                header={
-                  <h2 className="text-2xl font-semibold text-sky-400">
-                    Videos
-                  </h2>
-                }
-              />
-            ),
-            CardComponent: VideoCard,
-          },
-          faqs: {
-            label: "Faqs",
-            SectionComponent: ({ results, verticalKey }) => (
-              <ListSection
-                results={results}
-                CardComponent={FaqCard}
-                verticalKey={verticalKey}
-                header={
-                  <h2 className="text-2xl font-semibold text-sky-400">FAQs</h2>
-                }
-              />
-            ),
-            CardComponent: FaqCard,
-          },
-        }}
-      />
+      {searchLoading ? (
+        <LoadingSnowflakes />
+      ) : (
+        <>
+          <DirectAnswer />
+          {/* TODO: ask Slapshot about this interface */}
+          <UniversalResults
+            verticalConfigMap={{
+              help_articles: {
+                SectionComponent: ({ results, verticalKey }) => (
+                  <GridSection
+                    results={results}
+                    CardComponent={ArticleCard}
+                    verticalKey={verticalKey}
+                    header={
+                      <h2 className="text-2xl font-semibold text-sky-400">
+                        Articles
+                      </h2>
+                    }
+                  />
+                ),
+                CardComponent: ArticleCard,
+              },
+              videos: {
+                label: "Videos",
+                SectionComponent: ({ results, verticalKey }) => (
+                  <GridSection
+                    results={results}
+                    CardComponent={VideoCard}
+                    verticalKey={verticalKey}
+                    header={
+                      <h2 className="text-2xl font-semibold text-sky-400">
+                        Videos
+                      </h2>
+                    }
+                  />
+                ),
+                CardComponent: VideoCard,
+              },
+              faqs: {
+                label: "Faqs",
+                SectionComponent: ({ results, verticalKey }) => (
+                  <ListSection
+                    results={results}
+                    CardComponent={FaqCard}
+                    verticalKey={verticalKey}
+                    header={
+                      <h2 className="text-2xl font-semibold text-sky-400">
+                        FAQs
+                      </h2>
+                    }
+                  />
+                ),
+                CardComponent: FaqCard,
+              },
+            }}
+          />
+        </>
+      )}
     </>
   );
 };
