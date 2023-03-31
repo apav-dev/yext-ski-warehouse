@@ -2,6 +2,7 @@ import {
   State,
   SearchActions,
   SelectableStaticFilter,
+  Matcher,
 } from "@yext/search-headless-react";
 
 export interface Router {
@@ -35,7 +36,30 @@ export const defaultRouter: Router = {
       actions.setStaticFilters(initialFilters);
     }
 
-    if (query || (initialFilters && initialFilters.length > 0)) {
+    //grab the search params from the url
+    const searchParams = new URLSearchParams(window.location.search);
+    const filtersFromUrl: SelectableStaticFilter[] = [];
+    // set each as a fieldValue static filter
+    searchParams.forEach((value, key) => {
+      if (key === "query") return;
+      filtersFromUrl.push({
+        selected: true,
+        filter: {
+          kind: "fieldValue",
+          matcher: Matcher.Equals,
+          fieldId: key,
+          value,
+        },
+      });
+    });
+    if (filtersFromUrl.length > 0) {
+      actions.setStaticFilters(filtersFromUrl);
+    }
+    if (
+      query ||
+      (initialFilters && initialFilters.length > 0) ||
+      filtersFromUrl.length > 0
+    ) {
       actions.executeVerticalQuery();
     }
   },

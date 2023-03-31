@@ -12,6 +12,7 @@ import SearchResults from "../components/search/SearchResults";
 import Main from "../layouts/Main";
 import Header from "../components/Header";
 import { transformSiteData } from "../utils/transformSiteData";
+import { useEffect, useState } from "react";
 
 export const config: TemplateConfig = {
   stream: {
@@ -77,10 +78,24 @@ export const getHeadConfig: GetHeadConfig<
 const SkiFinder = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText, c_filters } = document;
 
+  const [resultsHeading, setResultsHeading] = useState("Results");
+
+  useEffect(() => {
+    // check if a query param exists and set the heading text accordingly
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get("query");
+    if (query) {
+      setResultsHeading(`Results for "${query}"`);
+    }
+  }, []);
+
   return (
     <Main>
       <div className="relative">
         <Header directory={_site} />
+      </div>
+      <div className="flex justify-center py-8 text-2xl font-semibold text-sky-400 sm:text-4xl">
+        <h1>{resultsHeading}</h1>
       </div>
       <SearchResults
         filters={c_filters}

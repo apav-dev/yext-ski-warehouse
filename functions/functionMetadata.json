@@ -1,5 +1,5 @@
 {
-  "functions/api/reviews.ts": {
+  "functions/api/reviewsAgg.ts": {
     "entrypoint": "main"
   }
 }
