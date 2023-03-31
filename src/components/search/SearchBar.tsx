@@ -89,6 +89,7 @@ const SearchBar = ({ customCssClasses }: SearchBarProps) => {
       hideRecentSearches
       customCssClasses={customCssClasses}
       onSearch={handleSearch}
+      placeholder="Search for skis and more..."
       visualAutocompleteConfig={{
         renderEntityPreviews,
         entityPreviewSearcher,

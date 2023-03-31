@@ -21,7 +21,7 @@ export const config: TemplateConfig = {
       "id",
       "name",
       "c_blogContent",
-      "c_generatedBlogContent",
+      "c_body",
       "c_keywords",
       "c_metaDescription",
       "c_subtitle",
@@ -90,13 +90,13 @@ const Blog = ({ document }: TemplateRenderProps) => {
     name,
     c_author,
     c_blogContent,
-    c_generatedBlogContent,
+    c_body,
     datePosted,
     c_coverPhoto,
     c_subtitle,
   } = document;
 
-  const markdown = c_generatedBlogContent?.markdown || c_blogContent?.markdown;
+  const markdown = c_body?.markdown || c_blogContent?.markdown;
 
   return (
     <Main>
