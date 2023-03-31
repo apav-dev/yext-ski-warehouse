@@ -212,8 +212,17 @@ const Home = ({ document }: TemplateRenderProps) => {
 
         {/* TODO: fetch data from home page entity rather than hard code */}
         <section>
-          <div className="mx-auto max-w-7xl sm:px-6 sm:py-8 lg:px-8">
-            <div className="relative overflow-hidden px-6 py-24 sm:rounded-lg sm:px-16 min-h-[600px]">
+          <div className="relative">
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 bottom-0 overflow-hidden"
+            >
+              <img
+                className="h-full w-full object-cover object-center p-8 rounded-lg"
+                src={GuidedSearchCover}
+              />
+            </div>
+            <div className="relative mx-auto flex max-w-3xl flex-col items-center py-32 px-6 text-center sm:py-44 lg:px-0">
               <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">
                 {"Find the skis of your dreams today!"}
               </h1>
@@ -228,16 +237,6 @@ const Home = ({ document }: TemplateRenderProps) => {
               >
                 Get Started
               </button>
-              <img
-                src={GuidedSearchCover}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 flex items-end  overflow-hidden sm:rounded-lg p-4">
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gray-900 opacity-60"
-                />
-              </div>
             </div>
           </div>
         </section>
