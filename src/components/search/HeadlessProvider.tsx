@@ -92,8 +92,8 @@ const HeadlessProvider = ({
   if (routing && routing.updateCadence === "onSearch") {
     const { serializeState } = routing;
     newSearcher.executeVerticalQuery = async () => {
-      const params = serializeState(searcher.state);
-      window.history.pushState({}, "", `?${params.toString()}`);
+      // const params = serializeState(searcher.state);
+      // window.history.pushState({}, "", `?${params.toString()}`);
       return searcher.executeVerticalQuery();
     };
   }

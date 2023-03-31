@@ -95,6 +95,8 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
         filter.filterValue
       }`;
     });
+    // add one more filter for the dm_directoryParents.name=Skis
+    url += "&dm_directoryParents.name=Skis";
     window.location.href = url;
   };
 
