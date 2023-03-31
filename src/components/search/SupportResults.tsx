@@ -19,7 +19,7 @@ const GridSection = ({ results, CardComponent, header }: SectionProps<T>) => {
 
   return (
     <>
-      <header />
+      {header}
       <div className="grid grid-cols-1 gap-y-10 gap-x-6 py-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
         {results.map((r) => (
           <CardComponent key={r.id} result={r} />
@@ -36,8 +36,8 @@ const ListSection = ({ results, CardComponent, header }: SectionProps<T>) => {
 
   return (
     <>
-      <header />
-      <div className="">
+      {header}
+      <div className="space-y-4">
         {results.map((r) => (
           <CardComponent key={r.id} result={r} />
         ))}
@@ -106,7 +106,7 @@ const SupportResults = () => {
             SectionComponent: ({ results, verticalKey }) => (
               <ListSection
                 results={results}
-                CardComponent={VideoCard}
+                CardComponent={FaqCard}
                 verticalKey={verticalKey}
                 header={
                   <h2 className="text-2xl font-semibold text-sky-400">FAQs</h2>
@@ -117,7 +117,6 @@ const SupportResults = () => {
           },
         }}
       />
-      <Pagination />
     </>
   );
 };
