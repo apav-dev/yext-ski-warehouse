@@ -8,27 +8,14 @@ import {
   TemplateConfig,
   TransformProps,
 } from "@yext/pages";
-import Header from "../components/Header";
-import { CheckIcon, StarIcon } from "@heroicons/react/20/solid";
-import { twMerge } from "tailwind-merge";
-import { Image, Link } from "@yext/pages/components";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
-import { RadioGroup } from "@headlessui/react";
-import { useEffect, useState } from "react";
-import ProductImageSelector from "../components/ProductImageSelector";
-import { Matcher, SelectableStaticFilter } from "@yext/search-headless-react";
-import { SimilarItems } from "../components/SimilarItems";
-import { Table } from "../components/Table";
-import { Breadcrumbs } from "../components/Breadcrumbs";
-import EditTool from "../components/EditTool";
-import { Reviews } from "../components/reviews/Reviews";
-import Markdown from "markdown-to-jsx";
-import { ProductSchema } from "../components/ProductSchema";
 import Banner from "../components/Banner";
+import Header from "../components/Header";
 import Details from "../components/Details";
 import Hours from "../components/Hours";
 import About from "../components/About";
+import StaticMap from "../components/StaticMap";
 
 export const config: TemplateConfig = {
   stream: {
@@ -101,7 +88,9 @@ const Skis = ({ document }: TemplateRenderProps) => {
     hours,
     services,
     photoGallery,
+    geocodedCoordinate
   } = document;
+  const image = photoGallery[0];
 
 
 
@@ -109,13 +98,18 @@ const Skis = ({ document }: TemplateRenderProps) => {
     <Main>
       <div className="relative">
         <Header directory={_site} />
-        <Banner name={name} address={address} />
+        <Banner name={name} address={address} image={image} />
         <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
           <Details address={address} phone={mainPhone} services={services} />
           {hours && <Hours title={"Store Hours"} hours={hours} />}
           {description && <About name={name} description={description} />}
+          {geocodedCoordinate && (
+            <StaticMap
+              latitude={geocodedCoordinate.latitude}
+              longitude={geocodedCoordinate.longitude}
+            ></StaticMap>
+          )}
         </div>
-        <h1>{name}</h1>
       </div>
     </Main>
 

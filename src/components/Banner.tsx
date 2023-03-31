@@ -1,10 +1,13 @@
 import * as React from "react";
 import { Address } from "../types/Address";
 import Cta from "./Cta";
+import { Image } from "@yext/pages/components";
+
 
 export interface BannerProps {
     name?: string;
     address?: Address;
+    image?: any;
 }
 
 const renderPrettyAddress = (address?: Address) => {
@@ -20,13 +23,21 @@ const renderPrettyAddress = (address?: Address) => {
 };
 
 const Banner = (props: BannerProps) => {
-    const { name, address } = props;
+    const { name, address, image } = props;
+    console.log("photoUrl", image)
 
     return (
         <>
             <div
-                className={`relative z-10 w-full bg-cover bg-center h-96 bg-[url(/src/assets/images/tacos-1.avif)] `}
+                className={`relative z-10 w-full bg-cover bg-center h-96 bg-[${image.url}]}]`}
+
             >
+                <Image
+                    image={image}
+                    className="h-full w-full object-center"
+                />
+                <div className="absolute inset-0 overflow-hidden">
+                </div>
                 <div className="absolute left-0 right-0 flex flex-col items-center">
                     <div className="w-96 my-8 rounded-xl bg-amber-500 border-8 shadow-xl border-amber-600 px-4 py-2 text-center">
                         <div>
