@@ -211,14 +211,15 @@ const Home = ({ document }: TemplateRenderProps) => {
         </section>
 
         {/* TODO: fetch data from home page entity rather than hard code */}
-        <section>
-          <div className="relative">
+        <section className="mb-16">
+          <div className="relative max-w-7xl mx-auto rounded-lg">
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 overflow-hidden"
+              className="absolute inset-x-0 overflow-hidden"
             >
+              <div className="bg-gray-900 opacity-60 inset-0 absolute"></div>
               <img
-                className="h-full w-full object-cover object-center p-8 rounded-lg"
+                className="h-full w-full object-cover object-center rounded-lg"
                 src={GuidedSearchCover}
               />
             </div>
