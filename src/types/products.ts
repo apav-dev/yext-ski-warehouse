@@ -19,19 +19,6 @@ export interface ComplexImage {
 	clickthroughUrl?: string,
 }
 
-export interface Ce_skiBoot {
-	name: string,
-	c_price?: number,
-	photoGallery?: ComplexImage[],
-}
-
-export interface Ce_skiPole {
-	slug?: string,
-	name: string,
-	c_price?: number,
-	photoGallery?: ComplexImage[],
-}
-
 export interface Ce_skis {
 	slug?: string,
 	name: string,
@@ -40,6 +27,19 @@ export interface Ce_skis {
 }
 
 export interface Ce_skiBinding {
+	slug?: string,
+	name: string,
+	c_price?: number,
+	photoGallery?: ComplexImage[],
+}
+
+export interface Ce_skiBoot {
+	name: string,
+	c_price?: number,
+	photoGallery?: ComplexImage[],
+}
+
+export interface Ce_skiPole {
 	slug?: string,
 	name: string,
 	c_price?: number,

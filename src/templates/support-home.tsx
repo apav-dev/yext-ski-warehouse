@@ -12,13 +12,18 @@ import Header from "../components/Header";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import SupportResults from "../components/search/SupportResults";
+import { getSearchProviderConfig } from "../config";
+import {
+  provideHeadless,
+  SearchHeadlessProvider,
+} from "@yext/search-headless-react";
 
 export const config: TemplateConfig = {
   stream: {
     $id: "support-home",
     fields: ["id", "slug", "c_headingText", "c_subHeadingText"],
     filter: {
-      entityIds: ["article_home"],
+      entityIds: ["support_home"],
     },
     localization: {
       locales: ["en"],
@@ -55,6 +60,10 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
+const searcher = provideHeadless(
+  getSearchProviderConfig("", "support-searcher")
+);
+
 const SupportHome = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText } = document;
 
@@ -73,7 +82,9 @@ const SupportHome = ({ document }: TemplateRenderProps) => {
               {c_subHeadingText}
             </p>
           </div>
-          <SupportResults />
+          <SearchHeadlessProvider searcher={searcher}>
+            <SupportResults />
+          </SearchHeadlessProvider>
         </div>
       </div>
     </Main>

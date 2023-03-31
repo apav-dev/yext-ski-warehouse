@@ -4,14 +4,13 @@ import {
   Pagination,
   SearchBar,
   SectionProps,
-  StandardCard,
-  StandardSection,
   UniversalResults,
 } from "@yext/search-ui-react";
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 import VideoCard from "./VideoCard";
+import FaqCard from "./FaqCard";
 
 const GridSection = ({ results, CardComponent, header }: SectionProps<T>) => {
   if (!CardComponent) {
@@ -19,14 +18,31 @@ const GridSection = ({ results, CardComponent, header }: SectionProps<T>) => {
   }
 
   return (
-    <div>
-      <div>{header}</div>
+    <>
+      <header />
       <div className="grid grid-cols-1 gap-y-10 gap-x-6 py-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
         {results.map((r) => (
           <CardComponent key={r.id} result={r} />
         ))}
       </div>
-    </div>
+    </>
+  );
+};
+
+const ListSection = ({ results, CardComponent, header }: SectionProps<T>) => {
+  if (!CardComponent) {
+    return <div>Missing Card Component</div>;
+  }
+
+  return (
+    <>
+      <header />
+      <div className="">
+        {results.map((r) => (
+          <CardComponent key={r.id} result={r} />
+        ))}
+      </div>
+    </>
   );
 };
 
@@ -41,6 +57,7 @@ const SupportResults = () => {
       products: 0,
       blog: 0,
       locations: 0,
+      faqs: 3,
     });
   }, []);
 
@@ -50,23 +67,54 @@ const SupportResults = () => {
         <SearchBar />
       </div>
       <DirectAnswer />
+      {/* TODO: ask Slapshot about this interface */}
       <UniversalResults
         verticalConfigMap={{
           help_articles: {
-            label: "Articles",
-            SectionComponent: GridSection,
+            SectionComponent: ({ results, verticalKey }) => (
+              <GridSection
+                results={results}
+                CardComponent={ArticleCard}
+                verticalKey={verticalKey}
+                header={
+                  <h2 className="text-2xl font-semibold text-sky-400">
+                    Articles
+                  </h2>
+                }
+              />
+            ),
             CardComponent: ArticleCard,
           },
           videos: {
             label: "Videos",
-            SectionComponent: GridSection,
+            SectionComponent: ({ results, verticalKey }) => (
+              <GridSection
+                results={results}
+                CardComponent={VideoCard}
+                verticalKey={verticalKey}
+                header={
+                  <h2 className="text-2xl font-semibold text-sky-400">
+                    Videos
+                  </h2>
+                }
+              />
+            ),
             CardComponent: VideoCard,
           },
-          // help_articles: {
-          //   label: "Our Products",
-          //   SectionComponent: StandardSection,
-          //   CardComponent: StandardCard,
-          // },
+          faqs: {
+            label: "Faqs",
+            SectionComponent: ({ results, verticalKey }) => (
+              <ListSection
+                results={results}
+                CardComponent={VideoCard}
+                verticalKey={verticalKey}
+                header={
+                  <h2 className="text-2xl font-semibold text-sky-400">FAQs</h2>
+                }
+              />
+            ),
+            CardComponent: FaqCard,
+          },
         }}
       />
       <Pagination />
