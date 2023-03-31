@@ -14,6 +14,7 @@ import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import SkiCard from "../components/search/SkiCard";
 import { v4 as uuid } from "uuid";
+import GuidedSearchCover from "../assets/images/guided-search-cover.jpeg";
 
 export const config: TemplateConfig = {
   stream: {
@@ -205,6 +206,26 @@ const Home = ({ document }: TemplateRenderProps) => {
               {featuredProducts?.map((product) => (
                 <SkiCard key={uuid()} result={product} />
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TODO: fetch data from home page entity rather than hard code */}
+        <section>
+          <div className="mx-auto max-w-7xl sm:px-6 sm:py-8 lg:px-8">
+            <div className="relative overflow-hidden px-6 py-24 sm:rounded-lg sm:px-16 min-h-[600px]">
+              <a href="/ski-finder">
+                <img
+                  src={GuidedSearchCover}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </a>
+              <div className="absolute inset-x-0 bottom-0 flex items-end  overflow-hidden sm:rounded-lg p-4 h-96">
+                <div
+                  aria-hidden="true"
+                  className="absolute inset-0 bg-gradient-to-t from-black opacity-60"
+                />
+              </div>
             </div>
           </div>
         </section>
