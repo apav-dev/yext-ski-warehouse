@@ -50,6 +50,7 @@ const SupportResults = () => {
   const searchActions = useSearchActions();
 
   const searchLoading = useSearchState((state) => state.searchStatus.isLoading);
+  const directAnswer = useSearchState((state) => state.directAnswer.result.value);
 
   useEffect(() => {
     searchActions.setUniversal();
