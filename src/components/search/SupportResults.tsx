@@ -11,6 +11,9 @@ import ArticleCard from "./ArticleCard";
 import VideoCard from "./VideoCard";
 import FaqCard from "./FaqCard";
 import LoadingSnowflakes from "./LoadingSnowflakes";
+import Faq from "../../types/faqs";
+import Ce_video from "../../types/videos";
+import Ce_helpArticle from "../../types/help_articles";
 
 const GridSection = ({ results, CardComponent, header }: SectionProps<T>) => {
   if (!CardComponent) {
@@ -77,7 +80,10 @@ const SupportResults = () => {
           <UniversalResults
             verticalConfigMap={{
               help_articles: {
-                SectionComponent: ({ results, verticalKey }) => (
+                SectionComponent: ({
+                  results,
+                  verticalKey,
+                }: SectionProps<Ce_helpArticle>) => (
                   <GridSection
                     results={results}
                     CardComponent={ArticleCard}
@@ -93,7 +99,10 @@ const SupportResults = () => {
               },
               videos: {
                 label: "Videos",
-                SectionComponent: ({ results, verticalKey }) => (
+                SectionComponent: ({
+                  results,
+                  verticalKey,
+                }: SectionProps<Ce_video>) => (
                   <GridSection
                     results={results}
                     CardComponent={VideoCard}
@@ -109,7 +118,10 @@ const SupportResults = () => {
               },
               faqs: {
                 label: "Faqs",
-                SectionComponent: ({ results, verticalKey }) => (
+                SectionComponent: ({
+                  results,
+                  verticalKey,
+                }: SectionProps<Faq>) => (
                   <ListSection
                     results={results}
                     CardComponent={FaqCard}
