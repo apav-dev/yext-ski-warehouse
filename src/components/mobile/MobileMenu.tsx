@@ -127,7 +127,7 @@ const MobileMenu = ({
                             {productType.categories?.map((item) => (
                               <li key={item.name} className="flow-root">
                                 <a
-                                  // href={item.href}
+                                  href={item.slug}
                                   className="-m-2 block p-2 text-gray-500"
                                 >
                                   {item.name}

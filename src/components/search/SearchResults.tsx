@@ -4,9 +4,9 @@ import {
   ResultsCount,
   VerticalResults,
 } from "@yext/search-ui-react";
-import SkiCard from "./SkiCard";
+import ProductCard from "./ProductCard";
 import { Section } from "../CategorySelector";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
 import MobileFilters from "../mobile/MobileFilters";
 import { useSearchState } from "@yext/search-headless-react";
@@ -39,7 +39,7 @@ const SearchResults = ({
     setMobileFiltersOpen(!mobileFiltersOpen);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (initialSearchStatus === "notStarted" && searchLoading) {
       setInitialSearchStatus("inProgress");
     }
@@ -51,57 +51,50 @@ const SearchResults = ({
   return (
     <>
       <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
-        {/* <CategoryFilters
-        headingText={headingText}
-        subheadingText={subheadingText}
-        filters={filters}
-      /> */}
-        {resultsCount > 0 && initialSearchStatus === "complete" && (
-          <>
-            <div className="flex justify-between lg:justify-end pt-4">
-              <MobileFilters
-                open={mobileFiltersOpen}
-                setOpen={setMobileFiltersOpen}
-              />
+        <>
+          <div className="flex justify-between lg:justify-end pt-4">
+            <MobileFilters
+              open={mobileFiltersOpen}
+              setOpen={setMobileFiltersOpen}
+            />
 
-              <button
-                type="button"
-                className="rounded px-2 text-sky-400 font-semibold py-2 lg:hidden flex flex-col justify-start"
-                onClick={handleFiltersClick}
-              >
-                <div className="flex">
-                  Filters
-                  <AdjustmentsHorizontalIcon className="h-5 w-5 ml-1.5" />
-                </div>
-              </button>
-              <div className="flex flex-col items-end">
-                <SortDropdown />
-                <ResultsCount
-                  customCssClasses={{
-                    resultsCountContainer: "text-gray-500 text-sm py-0",
-                  }}
-                />
+            <button
+              type="button"
+              className="rounded px-2 text-sky-400 font-semibold py-2 lg:hidden flex flex-col justify-start"
+              onClick={handleFiltersClick}
+            >
+              <div className="flex">
+                Filters
+                <AdjustmentsHorizontalIcon className="h-5 w-5 ml-1.5" />
               </div>
+            </button>
+            <div className="flex flex-col items-end">
+              <SortDropdown />
+              <ResultsCount
+                customCssClasses={{
+                  resultsCountContainer: "text-gray-500 text-sm py-0",
+                }}
+              />
             </div>
-            <div className="flex">
-              <div className="hidden lg:block w-52 shrink-0 mr-8">
-                <h2 className="text-left mb-4 text-2xl font-semibold text-sky-400">
-                  Filters
-                </h2>
-                <Facets />
-              </div>
-              <div className="flex-grow">
-                <VerticalResults
-                  customCssClasses={{
-                    verticalResultsContainer:
-                      "grid grid-cols-1 gap-y-10 gap-x-6 py-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8",
-                  }}
-                  CardComponent={SkiCard}
-                />
-              </div>
+          </div>
+          <div className="flex">
+            <div className="hidden lg:block w-52 shrink-0 mr-8">
+              <h2 className="text-left mb-4 text-2xl font-semibold text-sky-400">
+                Filters
+              </h2>
+              <Facets />
             </div>
-          </>
-        )}
+            <div className="flex-grow">
+              <VerticalResults
+                customCssClasses={{
+                  verticalResultsContainer:
+                    "grid grid-cols-1 gap-y-10 gap-x-6 py-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8",
+                }}
+                CardComponent={ProductCard}
+              />
+            </div>
+          </div>
+        </>
         {initialSearchStatus === "inProgress" && <LoadingSnowflakes />}
       </div>
       <div className="lg:pl-52">

@@ -23,22 +23,20 @@ import { Table } from "../components/Table";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import EditTool from "../components/EditTool";
 import { Reviews } from "../components/reviews/Reviews";
-import Markdown from "markdown-to-jsx";
 import { ProductSchema } from "../components/ProductSchema";
 
 export const config: TemplateConfig = {
   stream: {
-    $id: "skis",
+    $id: "product",
     fields: [
       "id",
       "name",
-      "description",
+      "c_productDescription",
       "photoGallery",
       "c_price",
       "slug",
       "c_abilityLevel.name",
       "c_abilityLevel.c_icon",
-      "richTextDescription",
       "c_terrain.name",
       "c_terrain.c_icon",
       "c_sizes",
@@ -51,7 +49,7 @@ export const config: TemplateConfig = {
     ],
     filter: {
       // savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
-      entityTypes: ["ce_skis"],
+      entityTypes: ["ce_product"],
     },
     localization: {
       locales: ["en"],
@@ -88,13 +86,13 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-const Skis = ({ document }: TemplateRenderProps) => {
+const Product = ({ document }: TemplateRenderProps) => {
   const {
     _site,
     id,
     name,
-    description,
     photoGallery,
+    c_productDescription,
     c_price,
     c_abilityLevel,
     c_terrain,
@@ -102,7 +100,6 @@ const Skis = ({ document }: TemplateRenderProps) => {
     c_genderName,
     c_specs,
     dm_directoryParents,
-    richTextDescription,
     c_sizingGuide,
   } = document;
   const abilityLevel = c_abilityLevel?.[0];
@@ -144,7 +141,7 @@ const Skis = ({ document }: TemplateRenderProps) => {
         filter: {
           kind: "fieldValue",
           matcher: Matcher.Equals,
-          fieldId: "c_gender.name",
+          fieldId: "c_genderName",
           value: c_genderName,
         },
       });
@@ -155,7 +152,7 @@ const Skis = ({ document }: TemplateRenderProps) => {
     <Main>
       <ProductSchema
         name={name}
-        description={description}
+        description={c_productDescription}
         photoGallery={photoGallery}
         price={c_price}
       />
@@ -206,15 +203,11 @@ const Skis = ({ document }: TemplateRenderProps) => {
                   </div>
                 </div>
               </div>
-
               <div className="mt-4 space-y-6">
-                {richTextDescription ? (
-                  <Markdown>{richTextDescription}</Markdown>
-                ) : (
-                  <p className="text-base text-gray-500">{description}</p>
-                )}
+                <p className="text-base text-gray-500">
+                  {c_productDescription}
+                </p>
               </div>
-
               <div className="mt-6 flex items-center">
                 <CheckIcon
                   className="h-5 w-5 flex-shrink-0 text-green-500"
@@ -322,4 +315,4 @@ const Skis = ({ document }: TemplateRenderProps) => {
   );
 };
 
-export default Skis;
+export default Product;

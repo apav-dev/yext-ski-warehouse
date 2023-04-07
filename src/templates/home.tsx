@@ -12,8 +12,9 @@ import { Image } from "@yext/pages/components";
 import Header from "../components/Header";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
-import SkiCard from "../components/search/SkiCard";
+import ProductCard from "../components/search/ProductCard";
 import { v4 as uuid } from "uuid";
+import GuidedSearchCover from "../assets/images/guided-search-cover.jpeg";
 
 export const config: TemplateConfig = {
   stream: {
@@ -203,8 +204,40 @@ const Home = ({ document }: TemplateRenderProps) => {
 
             <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
               {featuredProducts?.map((product) => (
-                <SkiCard key={uuid()} result={product} />
+                <ProductCard key={uuid()} result={product} />
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* TODO: fetch data from home page entity rather than hard code */}
+        <section className="mb-16">
+          <div className="relative max-w-7xl mx-auto rounded-lg">
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 overflow-hidden"
+            >
+              <div className="bg-gray-900 opacity-60 inset-0 absolute"></div>
+              <img
+                className="h-full w-full object-cover object-center rounded-lg"
+                src={GuidedSearchCover}
+              />
+            </div>
+            <div className="relative mx-auto flex max-w-3xl flex-col items-center py-32 px-6 text-center sm:py-44 lg:px-0">
+              <h1 className="text-4xl font-bold tracking-tight text-white lg:text-6xl">
+                {"Find the skis of your dreams today!"}
+              </h1>
+              <p className="mt-4 text-xl text-white">
+                {"Picking the right skis is tough. but we're here to help."}
+              </p>
+              <button
+                className="mt-8 inline-block rounded-md border border-transparent bg-white py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100"
+                onClick={() => {
+                  window.location.href = "/ski-finder";
+                }}
+              >
+                Get Started
+              </button>
             </div>
           </div>
         </section>

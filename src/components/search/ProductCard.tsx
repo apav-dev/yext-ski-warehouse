@@ -1,9 +1,9 @@
 import { Image, Link } from "@yext/pages/components";
 import { CardProps } from "@yext/search-ui-react";
 import * as React from "react";
-import { Ce_skis } from "../../types/skis";
+import Ce_product from "../../types/products";
 
-const SkiCard = ({ result }: CardProps<Ce_skis>) => {
+const ProductCard = ({ result }: CardProps<Ce_product>) => {
   const skis = result.rawData;
   const image = skis.photoGallery?.[0];
   const abilityLevel = skis.c_abilityLevel?.[0];
@@ -62,4 +62,4 @@ const SkiCard = ({ result }: CardProps<Ce_skis>) => {
   );
 };
 
-export default SkiCard;
+export default ProductCard;

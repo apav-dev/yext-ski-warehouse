@@ -5,7 +5,7 @@ import {
 import { VerticalResults } from "@yext/search-ui-react";
 import * as React from "react";
 import { useEffect } from "react";
-import SkiCard from "./search/SkiCard";
+import ProductCard from "./search/ProductCard";
 
 type SimilarItemsProps = {
   filters?: SelectableStaticFilter[];
@@ -33,7 +33,7 @@ export const SimilarItems = ({ filters }: SimilarItemsProps) => {
             verticalResultsContainer:
               "mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8",
           }}
-          CardComponent={SkiCard}
+          CardComponent={ProductCard}
         />
       </section>
     </>

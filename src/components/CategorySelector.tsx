@@ -187,7 +187,7 @@ const ScrollingSelector = ({
           <button
             disabled={Object.keys(selectedFilters).length !== sections?.length}
             className={twMerge(
-              "mx-auto flex mt-8 items-center rounded-full border border-sky-400  py-3 px-16 text-base font-medium text-white bg-sky-400 ",
+              "mx-auto flex mt-8 items-center rounded-full border border-sky-400 py-3 px-16 text-base font-medium text-white bg-sky-400 ",
               Object.keys(selectedFilters).length !== sections?.length
                 ? "opacity-50"
                 : "hover:bg-sky-200 hover:text-blue-400"

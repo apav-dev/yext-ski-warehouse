@@ -33,14 +33,12 @@ const Facets = () => {
   return (
     <>
       <StandardFacets
-        defaultExpanded={false}
         customCssClasses={{
           optionInput: "focus:ring-sky-400 text-sky-400 w-6 h-6",
           optionLabel: "text-base text-left",
         }}
       />
       <NumericalFacets
-        defaultExpanded={false}
         customCssClasses={{
           optionInput: "focus:ring-sky-400 text-sky-400 w-6 h-6",
           optionLabel: "text-base",
