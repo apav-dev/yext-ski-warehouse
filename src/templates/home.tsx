@@ -12,7 +12,7 @@ import { Image } from "@yext/pages/components";
 import Header from "../components/Header";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
-import SkiCard from "../components/search/SkiCard";
+import ProductCard from "../components/search/ProductCard";
 import { v4 as uuid } from "uuid";
 import GuidedSearchCover from "../assets/images/guided-search-cover.jpeg";
 
@@ -204,7 +204,7 @@ const Home = ({ document }: TemplateRenderProps) => {
 
             <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
               {featuredProducts?.map((product) => (
-                <SkiCard key={uuid()} result={product} />
+                <ProductCard key={uuid()} result={product} />
               ))}
             </div>
           </div>

@@ -4,7 +4,7 @@ import {
   ResultsCount,
   VerticalResults,
 } from "@yext/search-ui-react";
-import SkiCard from "./SkiCard";
+import ProductCard from "./ProductCard";
 import { Section } from "../CategorySelector";
 import { useEffect, useState } from "react";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
@@ -90,7 +90,7 @@ const SearchResults = ({
                   verticalResultsContainer:
                     "grid grid-cols-1 gap-y-10 gap-x-6 py-8 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8",
                 }}
-                CardComponent={SkiCard}
+                CardComponent={ProductCard}
               />
             </div>
           </div>
