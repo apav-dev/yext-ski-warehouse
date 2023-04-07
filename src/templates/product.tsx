@@ -27,7 +27,7 @@ import { ProductSchema } from "../components/ProductSchema";
 
 export const config: TemplateConfig = {
   stream: {
-    $id: "skis",
+    $id: "product",
     fields: [
       "id",
       "name",
@@ -49,7 +49,7 @@ export const config: TemplateConfig = {
     ],
     filter: {
       // savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
-      entityTypes: ["ce_skis"],
+      entityTypes: ["ce_product"],
     },
     localization: {
       locales: ["en"],
@@ -86,7 +86,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   };
 };
 
-const Skis = ({ document }: TemplateRenderProps) => {
+const Product = ({ document }: TemplateRenderProps) => {
   const {
     _site,
     id,
@@ -315,4 +315,4 @@ const Skis = ({ document }: TemplateRenderProps) => {
   );
 };
 
-export default Skis;
+export default Product;
