@@ -51,7 +51,7 @@ const StoreLocator = (): JSX.Element => {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-0 h-[600px] mt-2 mb-8 sm:px-4 sm:h-[1100px]">
+    <div className="mx-auto mt-2 mb-8 h-[600px] max-w-7xl px-0 sm:h-[900px] sm:px-4 ">
       <FilterSearch
         onSelect={handleFilterSelect}
         placeholder="Find Locations Near You"
@@ -62,14 +62,14 @@ const StoreLocator = (): JSX.Element => {
           },
         ]}
       />
-      <div className="border h-full">
-        <div className="relative w-full h-2/3 sm:w-2/3">
+      <div className="h-full border sm:flex sm:flex-row-reverse">
+        <div className="relative h-2/3 w-full sm:h-full sm:w-2/3">
           <MapboxMap
             mapboxAccessToken={import.meta.env.YEXT_PUBLIC_MAPBOX_API_KEY || ""}
             PinComponent={PinComponent}
           />
         </div>
-        <div className="h-1/3 overflow-y-auto">
+        <div className="h-1/3 overflow-y-auto sm:h-full sm:w-1/3">
           <VerticalResults
             customCssClasses={{ verticalResultsContainer: "overflow-y-auto" }}
             CardComponent={LocationCard}

@@ -81,6 +81,42 @@ const Home = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText, dm_directoryChildren } =
     document;
 
+  const renderRegionColumn = (regions: any) => {
+    return (
+      <div>
+        {regions.map((region) => {
+          return (
+            <div key={uuid()} className="py-4">
+              <div className="w-52">
+                <h2 className="mb-4 text-left text-3xl font-bold tracking-tight text-sky-400 sm:text-4xl">
+                  {region.name}
+                </h2>
+                <ul role="list" className="space-y-3">
+                  {region.dm_directoryChildren.map((store) => {
+                    return (
+                      <li key={uuid()}>
+                        <a
+                          href={store.slug}
+                          className="text-lg font-semibold text-sky-400 hover:text-sky-500"
+                        >
+                          {store.address.city}
+                        </a>
+                        <p className="text-gray-400">{store.address.line1}</p>
+                        <p className="text-gray-400">
+                          {formatPhoneNumber(store.mainPhone)}
+                        </p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    );
+  };
+
   return (
     <Main>
       <div className="relative">
@@ -99,38 +135,18 @@ const Home = ({ document }: TemplateRenderProps) => {
           <div className="py-4">
             <StoreLocator />
           </div>
-          <div className="grid grid-cols-1 pl-8 sm:justify-items-center sm:grid-cols-2 sm:pl-0">
-            {dm_directoryChildren.map((region) => {
-              return (
-                <div key={uuid()} className="py-4">
-                  <div className="w-52">
-                    <h2 className="text-3xl font-bold tracking-tight text-sky-400 text-left sm:text-4xl mb-4">
-                      {region.name}
-                    </h2>
-                    <ul role="list" className="space-y-3">
-                      {region.dm_directoryChildren.map((store) => {
-                        return (
-                          <li key={uuid()}>
-                            <a
-                              href={store.slug}
-                              className="text-sky-400 text-lg font-semibold hover:text-sky-500"
-                            >
-                              {store.address.city}
-                            </a>
-                            <p className="text-gray-400">
-                              {store.address.line1}
-                            </p>
-                            <p className="text-gray-400">
-                              {formatPhoneNumber(store.mainPhone)}
-                            </p>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                </div>
-              );
-            })}
+          <div className="mx-auto mt-16 max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-sky-400 sm:text-4xl">
+              All Stores
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 pl-8 sm:grid-cols-2 sm:justify-items-center sm:pl-0">
+            {renderRegionColumn(
+              dm_directoryChildren.slice(0, dm_directoryChildren.length / 2)
+            )}
+            {renderRegionColumn(
+              dm_directoryChildren.slice(dm_directoryChildren.length / 2)
+            )}
           </div>
         </div>
       </div>
