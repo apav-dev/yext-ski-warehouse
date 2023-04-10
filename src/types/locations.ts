@@ -158,8 +158,8 @@ export interface ComplexImage {
 }
 
 export interface Coordinate {
-  latitude?: number;
-  longitude?: number;
+  latitude: number;
+  longitude: number;
 }
 
 export interface EntityReference {

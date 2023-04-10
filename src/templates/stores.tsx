@@ -6,35 +6,38 @@ import {
   HeadConfig,
   TemplateRenderProps,
   TransformProps,
+  TemplateConfig,
 } from "@yext/pages";
 import Header from "../components/Header";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import StoreLocator from "../components/search/Locator";
+import { v4 as uuid } from "uuid";
+import { formatPhoneNumber } from "../utils/formatPhoneNumber";
 
-// export const config: TemplateConfig = {
-//   stream: {
-//     $id: "home",
-//     fields: [
-//       "name",
-//       "c_coverPhoto",
-//       "slug",
-//       "c_headingText",
-//       "c_featuredLinks",
-//       "c_featuredProducts.name",
-//       "c_featuredProducts.c_price",
-//       "c_featuredProducts.photoGallery",
-//       "c_featuredProducts.slug",
-//     ],
-//     filter: {
-//       entityIds: ["warehouse_home"],
-//     },
-//     localization: {
-//       locales: ["en"],
-//       primary: false,
-//     },
-//   },
-// };
+export const config: TemplateConfig = {
+  stream: {
+    $id: "stores",
+    fields: [
+      "name",
+      "slug",
+      "c_headingText",
+      "c_subHeadingText",
+      "dm_directoryChildren.name",
+      "dm_directoryChildren.dm_directoryChildren.name",
+      "dm_directoryChildren.dm_directoryChildren.address",
+      "dm_directoryChildren.dm_directoryChildren.mainPhone",
+      "dm_directoryChildren.dm_directoryChildren.slug",
+    ],
+    filter: {
+      entityIds: ["stores"],
+    },
+    localization: {
+      locales: ["en"],
+      primary: false,
+    },
+  },
+};
 
 export const transformProps: TransformProps<TemplateRenderProps> = async (
   data
@@ -75,15 +78,61 @@ export const getHeadConfig: GetHeadConfig<
 };
 
 const Home = ({ document }: TemplateRenderProps) => {
-  const { _site } = document;
+  const { _site, c_headingText, c_subHeadingText, dm_directoryChildren } =
+    document;
 
   return (
     <Main>
       <div className="relative">
         <Header directory={_site} />
       </div>
-      <div>
-        <StoreLocator />
+      <div className="bg-white py-8 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-sky-400 sm:text-4xl">
+              {c_headingText}
+            </h2>
+            <p className="mt-2 text-sm text-gray-600 sm:text-lg sm:leading-8">
+              {c_subHeadingText}
+            </p>
+          </div>
+          <div className="py-4">
+            <StoreLocator />
+          </div>
+          <div className="grid grid-cols-1 pl-8 sm:justify-items-center sm:grid-cols-2 sm:pl-0">
+            {dm_directoryChildren.map((region) => {
+              return (
+                <div key={uuid()} className="py-4">
+                  <div className="w-52">
+                    <h2 className="text-3xl font-bold tracking-tight text-sky-400 text-left sm:text-4xl mb-4">
+                      {region.name}
+                    </h2>
+                    <ul role="list" className="space-y-3">
+                      {region.dm_directoryChildren.map((store) => {
+                        return (
+                          <li key={uuid()}>
+                            <a
+                              href={store.slug}
+                              className="text-sky-400 text-lg font-semibold hover:text-sky-500"
+                            >
+                              {store.address.city}
+                            </a>
+                            <p className="text-gray-400">
+                              {store.address.line1}
+                            </p>
+                            <p className="text-gray-400">
+                              {formatPhoneNumber(store.mainPhone)}
+                            </p>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </Main>
   );

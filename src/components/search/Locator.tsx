@@ -4,7 +4,6 @@ import {
   FilterSearch,
   OnSelectParams,
   VerticalResults,
-  StandardCard,
 } from "@yext/search-ui-react";
 import {
   Matcher,
@@ -14,12 +13,27 @@ import {
 // Mapbox CSS bundle
 import "mapbox-gl/dist/mapbox-gl.css";
 import { useEffect } from "react";
+import LocationCard from "./LocationCard";
+import PinComponent from "./PinComponent";
 
 const StoreLocator = (): JSX.Element => {
   const searchActions = useSearchActions();
 
   useEffect(() => {
     searchActions.setVertical("locations");
+
+    searchActions.setUserLocation({
+      latitude: 39.7392358,
+      longitude: -104.990251,
+    });
+
+    // set location for taos new mexico
+    searchActions.setUserLocation({
+      latitude: 36.407249,
+      longitude: -105.573066,
+    });
+
+    searchActions.executeVerticalQuery();
   }, []);
 
   const handleFilterSelect = (params: OnSelectParams) => {
@@ -37,7 +51,7 @@ const StoreLocator = (): JSX.Element => {
   };
 
   return (
-    <div className="mx-auto max-w-7xl px-0 sm:px-4 h-[calc(100vh-64px)]">
+    <div className="mx-auto max-w-7xl px-0 h-[600px] mt-2 mb-8 sm:px-4 sm:h-[1100px]">
       <FilterSearch
         onSelect={handleFilterSelect}
         placeholder="Find Locations Near You"
@@ -52,12 +66,13 @@ const StoreLocator = (): JSX.Element => {
         <div className="relative w-full h-2/3 sm:w-2/3">
           <MapboxMap
             mapboxAccessToken={import.meta.env.YEXT_PUBLIC_MAPBOX_API_KEY || ""}
+            PinComponent={PinComponent}
           />
         </div>
         <div className="h-1/3 overflow-y-auto">
           <VerticalResults
             customCssClasses={{ verticalResultsContainer: "overflow-y-auto" }}
-            CardComponent={StandardCard}
+            CardComponent={LocationCard}
           />
         </div>
       </div>
