@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import {
   MapboxMap,
   FilterSearch,
@@ -65,7 +65,7 @@ const StoreLocator = (): JSX.Element => {
       <div className="h-full border sm:flex sm:flex-row-reverse">
         <div className="relative h-2/3 w-full sm:h-full sm:w-2/3">
           <MapboxMap
-            mapboxAccessToken={import.meta.env.YEXT_PUBLIC_MAPBOX_API_KEY || ""}
+            mapboxAccessToken={YEXT_PUBLIC_MAPBOX_API_KEY || ""}
             PinComponent={PinComponent}
           />
         </div>

@@ -21,10 +21,8 @@ const LocationCard: CardComponent<Location> = ({
       <div className="flex text-gray-400">
         <div>
           <a
-            target={"_blank"}
             href={location.slug}
             className="font-semibold text-sky-400 text-sm"
-            rel="noreferrer"
           >
             {location.address.city}
           </a>

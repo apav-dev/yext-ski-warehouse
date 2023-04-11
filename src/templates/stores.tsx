@@ -17,7 +17,7 @@ import { formatPhoneNumber } from "../utils/formatPhoneNumber";
 
 export const config: TemplateConfig = {
   stream: {
-    $id: "stores",
+    $id: "stores-locator",
     fields: [
       "name",
       "slug",
