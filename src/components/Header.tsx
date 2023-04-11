@@ -175,7 +175,15 @@ const Header = ({ directory }: HeaderProps) => {
                       ))}
 
                       <div className="flex items-center">
-                        <div className="h-8 py-4 w-px bg-white my-auto" />
+                        <div className="my-auto h-8 w-px bg-white py-4" />
+                      </div>
+                      <div className="flex items-center">
+                        <Link
+                          href="/stores"
+                          className="text-sm font-medium text-white hover:text-sky-700"
+                        >
+                          Stores
+                        </Link>
                       </div>
                       <div className="flex items-center">
                         <Link
@@ -230,7 +238,7 @@ const Header = ({ directory }: HeaderProps) => {
                   </a>
 
                   <div className="flex flex-1 items-center justify-end">
-                    <div className="w-80 hidden lg:block">
+                    <div className="hidden w-80 lg:block">
                       <SearchBar
                         customCssClasses={{
                           searchBarContainer: "hidden lg:block mb-0",
