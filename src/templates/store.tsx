@@ -137,10 +137,12 @@ const Store: Template<TemplateRenderProps> = ({
                 </div>
               </div>
             )}
-            <StaticMap
-              latitude={geocodedCoordinate.latitude}
-              longitude={geocodedCoordinate.longitude}
-            />
+            {geocodedCoordinate?.latitude && geocodedCoordinate?.longitude && (
+              <StaticMap
+                latitude={geocodedCoordinate.latitude}
+                longitude={geocodedCoordinate.longitude}
+              />
+            )}
           </div>
         </div>
       </Main>
