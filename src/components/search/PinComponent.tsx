@@ -11,7 +11,7 @@ import { formatPhoneNumber } from "../../utils/formatPhoneNumber";
 const PinPopup = (location: Location) => {
   return (
     <div className="flex flex-col items-center ">
-      <div className="flex text-gray-400">
+      <div className="flex text-gray-5000">
         <div>
           <a
             target={"_blank"}

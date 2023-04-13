@@ -8,6 +8,7 @@ import { getSearchProviderConfig } from "../config";
 import { defaultRouter } from "../routing";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChatBot } from "../components/ChatBot";
+import { CartProvider } from "../providers/CartProvider";
 
 interface MainProps {
   children?: React.ReactNode;
@@ -20,19 +21,19 @@ const searcher = provideHeadless(getSearchProviderConfig("products"));
 
 const Main = ({ children, initialFilters }: MainProps) => {
   return (
-    // <SearchHeadlessProvider searcher={searcher}>
     <QueryClientProvider client={queryClient}>
       <HeadlessProvider
         searcher={searcher}
         routing={defaultRouter}
         initialFilters={initialFilters}
       >
-        <div className="min-h-screen text-gray-900">
-          <div className="relative">{children}</div>
-        </div>
+        <CartProvider>
+          <div className="min-h-screen text-gray-900">
+            <div className="relative">{children}</div>
+          </div>
+        </CartProvider>
         <ChatBot configId="ski-shop-demo" />
       </HeadlessProvider>
-      {/* </SearchHeadlessProvider> */}
     </QueryClientProvider>
   );
 };

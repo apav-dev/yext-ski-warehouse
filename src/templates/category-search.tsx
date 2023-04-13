@@ -152,7 +152,7 @@ const CategorySearch = ({ document }: TemplateRenderProps) => {
                     "py-4 border-b-4 border-transparent hover:border-sky-400 font-semibold",
                     productType.name === name
                       ? "border-sky-400"
-                      : "text-gray-400 hover:text-gray-900"
+                      : "text-gray-500 hover:text-gray-900"
                   )}
                   href={`/${productType.slug}`}
                 >

@@ -159,7 +159,7 @@ const ReviewSubmissionForm = ({
                       </h1>
                       <button
                         type="button"
-                        className="text-gray-400 hover:text-gray-500"
+                        className="text-gray-500 hover:text-gray-500"
                         onClick={() => setOpen(false)}
                       >
                         <XMarkIcon className="h-8 w-8" />

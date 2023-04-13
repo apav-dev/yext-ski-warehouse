@@ -1,11 +1,7 @@
 import * as React from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import {
-  Bars3Icon,
-  MagnifyingGlassIcon,
-  ShoppingBagIcon,
-} from "@heroicons/react/24/outline";
+import { Bars3Icon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Image, Link } from "@yext/pages/components";
 import MobileMenu from "./mobile/MobileMenu";
 import { twMerge } from "tailwind-merge";
@@ -13,6 +9,7 @@ import MobileSearchPanel from "./mobile/MobileSearchPanel";
 import SearchBar from "./search/SearchBar";
 import { useSearchActions } from "@yext/search-headless-react";
 import { SkiWarehouseDirectory } from "../utils/transformSiteData";
+import CartPopover from "./CartPopover";
 
 type HeaderProps = {
   directory?: SkiWarehouseDirectory;
@@ -247,23 +244,7 @@ const Header = ({ directory }: HeaderProps) => {
                     </div>
                     <div className="flex items-center lg:ml-8">
                       {/* Cart */}
-                      <div className="ml-4 flow-root lg:ml-8">
-                        <a
-                          href="#"
-                          className="group -m-2 flex items-center p-2"
-                        >
-                          <ShoppingBagIcon
-                            className="h-6 w-6 flex-shrink-0 text-white"
-                            aria-hidden="true"
-                          />
-                          <span className="ml-2 text-sm font-medium text-white">
-                            0
-                          </span>
-                          <span className="sr-only">
-                            items in cart, view bag
-                          </span>
-                        </a>
-                      </div>
+                      <CartPopover />
                     </div>
                   </div>
                 </div>

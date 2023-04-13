@@ -24,6 +24,8 @@ import { Breadcrumbs } from "../components/Breadcrumbs";
 import EditTool from "../components/EditTool";
 import { Reviews } from "../components/reviews/Reviews";
 import { ProductSchema } from "../components/ProductSchema";
+import { useCartActions } from "../hooks/useCartActions";
+import AddToCartButton from "../components/AddToCartButton";
 
 export const config: TemplateConfig = {
   stream: {
@@ -46,6 +48,7 @@ export const config: TemplateConfig = {
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "c_sizingGuide.c_sizingGuidePDF",
+      // TODO: pull in review agg data
     ],
     filter: {
       // savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
@@ -92,6 +95,7 @@ const Product = ({ document }: TemplateRenderProps) => {
     id,
     name,
     photoGallery,
+    slug,
     c_productDescription,
     c_price,
     c_abilityLevel,
@@ -105,6 +109,7 @@ const Product = ({ document }: TemplateRenderProps) => {
   const abilityLevel = c_abilityLevel?.[0];
   const terrain = c_terrain?.[0];
 
+  // TODO: don't select a size by default
   const [selectedSize, setSelectedSize] = useState<string>(c_sizes?.[0] || "");
   const [similarItemsFilters, setSimilarItemsFilters] = useState<
     SelectableStaticFilter[]
@@ -147,6 +152,8 @@ const Product = ({ document }: TemplateRenderProps) => {
       });
     setSimilarItemsFilters(filters);
   }, []);
+
+  const cartActions = useCartActions();
 
   return (
     <Main>
@@ -283,12 +290,17 @@ const Product = ({ document }: TemplateRenderProps) => {
                   </div>
                 </RadioGroup>
               )}
-              <button
-                type="submit"
-                className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-sky-400 py-3 px-8 text-base font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 opacity-60"
-              >
-                Add to cart
-              </button>
+              <AddToCartButton
+                product={{
+                  id,
+                  name,
+                  slug,
+                  price: c_price,
+                  image: photoGallery[0],
+                  size: selectedSize,
+                  quantity: 1,
+                }}
+              />
             </div>
           </div>
           {photoGallery && photoGallery.length > 0 && (

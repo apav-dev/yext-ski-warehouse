@@ -101,8 +101,8 @@ const Home = ({ document }: TemplateRenderProps) => {
                         >
                           {store.address.city}
                         </a>
-                        <p className="text-gray-400">{store.address.line1}</p>
-                        <p className="text-gray-400">
+                        <p className="text-gray-500">{store.address.line1}</p>
+                        <p className="text-gray-500">
                           {formatPhoneNumber(store.mainPhone)}
                         </p>
                       </li>

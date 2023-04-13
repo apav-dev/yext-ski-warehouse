@@ -103,8 +103,6 @@ const Store: Template<TemplateRenderProps> = ({
     _site,
   } = document;
 
-  console.log("document", document);
-
   return (
     <>
       <Main>
