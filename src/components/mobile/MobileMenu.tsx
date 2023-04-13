@@ -96,7 +96,7 @@ const MobileMenu = ({
                               </div>
                             )}
                             <a
-                              href={collection.slug}
+                              href={`/${collection.slug}`}
                               className="mt-6 block font-medium text-gray-900"
                             >
                               <span
@@ -127,7 +127,7 @@ const MobileMenu = ({
                             {productType.categories?.map((item) => (
                               <li key={item.name} className="flow-root">
                                 <a
-                                  href={item.slug}
+                                  href={`/${item.slug}`}
                                   className="-m-2 block p-2 text-gray-500"
                                 >
                                   {item.name}

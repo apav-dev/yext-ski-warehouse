@@ -77,7 +77,7 @@ const CartPopover = () => {
                 href="#"
                 className="text-sm font-medium text-sky-400 hover:text-sky-700"
               >
-                View Shopping Bag
+                View Shopping Cart
               </a>
             </p>
           </form>
