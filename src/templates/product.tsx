@@ -17,15 +17,19 @@ import { transformSiteData } from "../utils/transformSiteData";
 import { RadioGroup } from "@headlessui/react";
 import { useEffect, useState } from "react";
 import ProductImageSelector from "../components/ProductImageSelector";
-import { Matcher, SelectableStaticFilter } from "@yext/search-headless-react";
+import {
+  FilterCombinator,
+  Matcher,
+  SelectableStaticFilter,
+  StaticFilter,
+} from "@yext/search-headless-react";
 import { SimilarItems } from "../components/SimilarItems";
 import { Table } from "../components/Table";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import EditTool from "../components/EditTool";
 import { Reviews } from "../components/reviews/Reviews";
 import { ProductSchema } from "../components/ProductSchema";
-import { useCartActions } from "../hooks/useCartActions";
-import AddToCartButton from "../components/AddToCartButton";
+import AddToCart from "../components/AddToCartButton";
 
 export const config: TemplateConfig = {
   stream: {
@@ -42,16 +46,20 @@ export const config: TemplateConfig = {
       "c_terrain.name",
       "c_terrain.c_icon",
       "c_sizes",
+      "c_sizeDescriptor",
+      "c_sizeRequired",
       "c_genderName",
+      "c_productType",
+      "c_categoryName",
       "c_specs.name",
       "c_specs.value",
       "dm_directoryParents.name",
       "dm_directoryParents.slug",
       "c_sizingGuide.c_sizingGuidePDF",
+
       // TODO: pull in review agg data
     ],
     filter: {
-      // savedFilterIds: [YEXT_PUBLIC_SKI_FILTER],
       entityTypes: ["ce_product"],
     },
     localization: {
@@ -101,7 +109,11 @@ const Product = ({ document }: TemplateRenderProps) => {
     c_abilityLevel,
     c_terrain,
     c_sizes,
+    c_sizeDescriptor,
+    c_sizeRequired,
     c_genderName,
+    c_productType,
+    c_categoryName,
     c_specs,
     dm_directoryParents,
     c_sizingGuide,
@@ -109,51 +121,46 @@ const Product = ({ document }: TemplateRenderProps) => {
   const abilityLevel = c_abilityLevel?.[0];
   const terrain = c_terrain?.[0];
 
-  // TODO: don't select a size by default
-  const [selectedSize, setSelectedSize] = useState<string>(c_sizes?.[0] || "");
-  const [similarItemsFilters, setSimilarItemsFilters] = useState<
-    SelectableStaticFilter[]
-  >([]);
+  const [similarItemsFilter, setSimilarItemsFilter] =
+    useState<SelectableStaticFilter>();
 
   const sizingGuidePdfUrl = c_sizingGuide?.[0].c_sizingGuidePDF?.url;
 
-  // TODO: change to use combinator filter
   useEffect(() => {
-    const filters: SelectableStaticFilter[] = [];
-    c_abilityLevel?.[0] &&
-      filters.push({
-        selected: true,
-        filter: {
-          kind: "fieldValue",
-          matcher: Matcher.Equals,
-          fieldId: "c_abilityLevel.name",
-          value: c_abilityLevel[0].name,
-        },
-      });
-    c_terrain?.[0] &&
-      filters.push({
-        selected: true,
-        filter: {
-          kind: "fieldValue",
-          matcher: Matcher.Equals,
-          fieldId: "c_terrain.name",
-          value: c_terrain?.[0].name,
-        },
-      });
+    const filters: StaticFilter[] = [];
     c_genderName &&
       filters.push({
-        selected: true,
-        filter: {
-          kind: "fieldValue",
-          matcher: Matcher.Equals,
-          fieldId: "c_genderName",
-          value: c_genderName,
-        },
+        kind: "fieldValue",
+        matcher: Matcher.Equals,
+        fieldId: "c_genderName",
+        value: c_genderName,
       });
-    setSimilarItemsFilters(filters);
-  }, []);
+    c_productType?.[0] &&
+      filters.push({
+        kind: "fieldValue",
+        matcher: Matcher.Equals,
+        fieldId: "c_productType",
+        value: c_productType,
+      });
+    c_categoryName &&
+      filters.push({
+        kind: "fieldValue",
+        matcher: Matcher.Equals,
+        fieldId: "c_categoryName",
+        value: c_categoryName,
+      });
 
-  const cartActions = useCartActions();
+    const andFilter: SelectableStaticFilter = {
+      selected: true,
+      filter: {
+        combinator: FilterCombinator.AND,
+        kind: "conjunction",
+        filters,
+      },
+    };
+
+    setSimilarItemsFilter(andFilter);
+  }, []);
 
   return (
     <Main>
@@ -245,61 +252,19 @@ const Product = ({ document }: TemplateRenderProps) => {
             </section>
             {/* Size picker */}
             <div className="mt-8">
-              <div className="flex items-center justify-between">
-                <h2 className="text-sm font-medium text-gray-900">
-                  Ski length (cm)
-                </h2>
-                {sizingGuidePdfUrl && (
-                  <Link
-                    className="text-sm underline text-sky-400 hover:text-sky-700"
-                    href={sizingGuidePdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Size guide
-                  </Link>
-                )}
-              </div>
-              {c_sizes && c_sizes.length > 0 && (
-                <RadioGroup
-                  value={selectedSize}
-                  onChange={setSelectedSize}
-                  className="mt-2"
-                >
-                  <RadioGroup.Label className="sr-only">
-                    Choose a Ski length (cm)
-                  </RadioGroup.Label>
-                  <div className="grid grid-cols-3 gap-3 sm:grid-cols-6">
-                    {c_sizes.map((size) => (
-                      <RadioGroup.Option
-                        key={size.name}
-                        value={size}
-                        className={({ active, checked }) =>
-                          twMerge(
-                            active ? "ring-2 ring-offset-2 ring-sky-400" : "",
-                            checked
-                              ? "bg-sky-400 border-transparent text-white hover:bg-sky-600"
-                              : "bg-white border-gray-700 text-gray-900 hover:bg-gray-50",
-                            "border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 opacity-60"
-                          )
-                        }
-                      >
-                        <RadioGroup.Label>{size}</RadioGroup.Label>
-                      </RadioGroup.Option>
-                    ))}
-                  </div>
-                </RadioGroup>
-              )}
-              <AddToCartButton
+              <AddToCart
                 product={{
                   id,
                   name,
                   slug,
                   price: c_price,
                   image: photoGallery[0],
-                  size: selectedSize,
                   quantity: 1,
                 }}
+                similarItemsFilter={similarItemsFilter}
+                sizes={c_sizes}
+                sizeDescriptor={c_sizeDescriptor}
+                sizingGuidePdfUrl={sizingGuidePdfUrl}
               />
             </div>
           </div>
@@ -307,7 +272,7 @@ const Product = ({ document }: TemplateRenderProps) => {
             <ProductImageSelector images={photoGallery} />
           )}
           <div className="col-span-2">
-            <SimilarItems filters={similarItemsFilters} />
+            <SimilarItems title="Similar Items" filter={similarItemsFilter} />
           </div>
           {c_specs && c_specs.length > 0 && (
             <div className="col-span-2 mt-16 sm:mt-24">

@@ -8,7 +8,7 @@ import { getSearchProviderConfig } from "../config";
 import { defaultRouter } from "../routing";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChatBot } from "../components/ChatBot";
-import { CartProvider } from "../providers/CartProvider";
+import { CartProvider } from "../components/cart/providers/CartProvider";
 
 interface MainProps {
   children?: React.ReactNode;

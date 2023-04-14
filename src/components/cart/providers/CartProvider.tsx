@@ -2,7 +2,8 @@ import { ComplexImageType, ImageType } from "@yext/pages/components";
 import { getRuntime } from "@yext/pages/util";
 import * as React from "react";
 import { createContext, useEffect, useReducer } from "react";
-import { deepEqual } from "../utils/deepEqual";
+import { deepEqual } from "../../../utils/deepEqual";
+import { SelectableStaticFilter } from "@yext/search-headless-react";
 
 export interface Product {
   id: string;
@@ -12,19 +13,18 @@ export interface Product {
   quantity: number;
   slug: string;
   image?: ImageType | ComplexImageType;
+  similarItemsFilter?: SelectableStaticFilter;
 }
 
 export interface CartState {
   products: Product[];
-  totalPrice: number;
 }
 
 export enum CartActionTypes {
   AddProduct,
   RemoveProduct,
-  IncrementProduct,
-  DecrementProduct,
   SetCartFromStorage,
+  SetProductQuantity,
 }
 
 export type CartActions =
@@ -34,8 +34,10 @@ export type CartActions =
       payload: Product;
     }
   | { type: CartActionTypes.RemoveProduct; payload: string }
-  | { type: CartActionTypes.IncrementProduct; payload: string }
-  | { type: CartActionTypes.DecrementProduct; payload: string };
+  | {
+      type: CartActionTypes.SetProductQuantity;
+      payload: { productId: string; quantity: number };
+    };
 
 export const cartReducer = (state: CartState, action: CartActions) => {
   switch (action.type) {
@@ -51,7 +53,7 @@ export const cartReducer = (state: CartState, action: CartActions) => {
       } else {
         state.products.push(action.payload);
       }
-      return { ...state, totalPrice: calculateTotalPrice(state.products) };
+      return { ...state };
 
     case CartActionTypes.RemoveProduct:
       // eslint-disable-next-line no-case-declarations
@@ -65,34 +67,24 @@ export const cartReducer = (state: CartState, action: CartActions) => {
             (product) => product.id !== action.payload
           );
         }
-        return { ...state, totalPrice: calculateTotalPrice(state.products) };
+        return { ...state };
       } else {
         return state;
       }
-    case CartActionTypes.IncrementProduct:
+    case CartActionTypes.SetProductQuantity:
       // eslint-disable-next-line no-case-declarations
-      const productToIncrement = state.products.find(
-        (product) => product.id === action.payload
+      const productToSet = state.products.find(
+        (product) => product.id === action.payload.productId
       );
-      if (productToIncrement) {
-        productToIncrement.quantity++;
-        return { ...state, totalPrice: calculateTotalPrice(state.products) };
-      } else {
-        return state;
-      }
-    case CartActionTypes.DecrementProduct:
-      // eslint-disable-next-line no-case-declarations
-      const productToDecrement = state.products.find(
-        (product) => product.id === action.payload
-      );
-      if (productToDecrement) {
-        productToDecrement.quantity--;
-        if (productToDecrement.quantity === 0) {
+      if (productToSet) {
+        if (action.payload.quantity === 0) {
           state.products = state.products.filter(
-            (product) => product.id !== action.payload
+            (product) => product.id !== action.payload.productId
           );
+        } else {
+          productToSet.quantity = action.payload.quantity;
         }
-        return { ...state, totalPrice: calculateTotalPrice(state.products) };
+        return { ...state };
       } else {
         return state;
       }
@@ -101,19 +93,8 @@ export const cartReducer = (state: CartState, action: CartActions) => {
   }
 };
 
-const calculateTotalPrice = (products: Product[]): number => {
-  return (
-    Math.round(
-      products
-        .map((product) => (Number(product.price) ?? 0) * product.quantity)
-        .reduce((a, b) => a + b, 0) * 100
-    ) / 100
-  );
-};
-
 export const initialState: CartState = {
   products: [],
-  totalPrice: 0,
 };
 
 export const CartContext = createContext<{

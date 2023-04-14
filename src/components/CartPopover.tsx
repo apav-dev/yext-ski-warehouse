@@ -2,7 +2,7 @@ import React from "react";
 import { Fragment } from "react";
 import { ShoppingBagIcon } from "@heroicons/react/24/outline";
 import { Popover, Transition } from "@headlessui/react";
-import { useCartState } from "../hooks/useCartState";
+import { useCartState } from "./cart/hooks/useCartState";
 import { Image } from "@yext/pages/components";
 
 const CartPopover = () => {
@@ -10,7 +10,10 @@ const CartPopover = () => {
 
   return (
     <Popover className="ml-4 flow-root text-sm lg:relative lg:ml-8">
-      <Popover.Button className="group -m-2 flex items-center p-2">
+      <Popover.Button
+        className="group -m-2 flex items-center p-2"
+        disabled={cartState.products.length === 0}
+      >
         <div className="ml-4 flow-root lg:ml-8">
           <a href="#" className="group -m-2 flex items-center p-2">
             <ShoppingBagIcon
@@ -57,6 +60,7 @@ const CartPopover = () => {
                     <h3>
                       <a href={product.slug}>{product.name}</a>
                     </h3>
+                    <p className="text-gray-500 mt-1 text-sm">{product.size}</p>
                     <p className="mt-1 text-sm text-gray-500">
                       {`$${product.price}`}
                     </p>
@@ -67,17 +71,16 @@ const CartPopover = () => {
             </ul>
             <button
               type="submit"
-              className="w-full rounded-md border border-transparent bg-sky-400 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2 focus:ring-offset-gray-50"
+              className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-sky-400 py-3 px-8 text-base font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2"
             >
               Checkout
             </button>
-
             <p className="mt-6 text-center">
               <a
-                href="#"
+                href="/cart"
                 className="text-sm font-medium text-sky-400 hover:text-sky-700"
               >
-                View Shopping Cart
+                View Cart
               </a>
             </p>
           </form>
