@@ -14,6 +14,8 @@ export const main = async (request) => {
 
   const data = await response.json();
 
+  console.log(data);
+
   // assuming the Stripe API response returns a "client_secret" field
   const clientSecret = data.client_secret;
 
