@@ -8,7 +8,7 @@ export const main = async (request) => {
     body: new URLSearchParams({
       amount: 1099,
       currency: "usd",
-      automatic_payment_methods: JSON.stringify({ enabled: true }),
+      "automatic_payment_methods[enabled]": true,
     }),
   });
 
