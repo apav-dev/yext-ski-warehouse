@@ -5,19 +5,28 @@ export const main = async (request) => {
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization: `Bearer ${YEXT_PUBLIC_STRIPE_SK_KEY}`,
     },
-    body: new URLSearchParams({
+    body: {
       amount: 1099,
       currency: "usd",
       "automatic_payment_methods[enabled]": true,
-    }),
+    },
   });
 
   const data = await response.json();
 
   console.log(data);
 
-  // assuming the Stripe API response returns a "client_secret" field
   const clientSecret = data.client_secret;
+
+  if (!clientSecret) {
+    return {
+      statusCode: 500,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ error: "Payment intent creation failed" }),
+    };
+  }
 
   return {
     statusCode: 200,
