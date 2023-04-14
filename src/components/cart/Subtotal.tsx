@@ -1,11 +1,6 @@
 import React from "react";
 import { useCartState } from "./hooks/useCartState";
-
-// format the subtotal to be a currency
-const formatter = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
+import { formatter } from "../../utils/formatCurrency";
 
 const Subtotal = () => {
   const cartState = useCartState();
@@ -26,12 +21,13 @@ const Subtotal = () => {
         </dd>
       </div>
       <div className="mt-6">
-        <button
+        <a
+          href="/checkout"
           type="submit"
           className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-sky-400 py-3 px-8 text-base font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2"
         >
           Checkout
-        </button>
+        </a>
       </div>
     </section>
   );

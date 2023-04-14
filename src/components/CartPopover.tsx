@@ -69,12 +69,13 @@ const CartPopover = () => {
                 </li>
               ))}
             </ul>
-            <button
+            <a
+              href="/checkout"
               type="submit"
               className="mt-8 flex w-full items-center justify-center rounded-md border border-transparent bg-sky-400 py-3 px-8 text-base font-medium text-white hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-600 focus:ring-offset-2"
             >
               Checkout
-            </button>
+            </a>
             <p className="mt-6 text-center">
               <a
                 href="/cart"

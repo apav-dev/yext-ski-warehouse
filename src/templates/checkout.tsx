@@ -10,9 +10,7 @@ import {
 import Main from "../layouts/Main";
 import Header from "../components/Header";
 import { transformSiteData } from "../utils/transformSiteData";
-import CartProducts from "../components/cart/CartProducts";
-import Subtotal from "../components/cart/Subtotal";
-import RelatedProducts from "../components/cart/RelatedProducts";
+import CheckoutForm from "../components/cart/CheckoutForm";
 
 export const transformProps: TransformProps<TemplateRenderProps> = async (
   data
@@ -29,20 +27,20 @@ export const transformProps: TransformProps<TemplateRenderProps> = async (
 };
 
 export const getPath: GetPath<TemplateRenderProps> = () => {
-  return "cart";
+  return "checkout";
 };
 
 export const getHeadConfig: GetHeadConfig<
   TemplateRenderProps
 > = (): HeadConfig => {
   return {
-    title: "Cart",
+    title: "Checkout",
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
   };
 };
 
-const Cart = ({ document }: TemplateRenderProps) => {
+const Checkout = ({ document }: TemplateRenderProps) => {
   const { _site } = document;
 
   return (
@@ -52,23 +50,12 @@ const Cart = ({ document }: TemplateRenderProps) => {
       </div>
       <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
         <h1 className="flex justify-center py-8 text-2xl font-semibold text-sky-400 sm:text-4xl">
-          Your Cart
+          Checkout
         </h1>
-
-        <form className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
-          <section aria-labelledby="cart-heading" className="lg:col-span-7">
-            <h2 id="cart-heading" className="sr-only">
-              Items in your shopping cart
-            </h2>
-            <CartProducts />
-          </section>
-          <Subtotal />
-        </form>
-        {/* Related products */}
-        <RelatedProducts />
+        <CheckoutForm />
       </div>
     </Main>
   );
 };
 
-export default Cart;
+export default Checkout;
