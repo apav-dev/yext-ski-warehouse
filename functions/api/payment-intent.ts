@@ -1,15 +1,24 @@
 export const main = async (request) => {
-  const response = await fetch("https://api.stripe.com/v1/payment_intents", {
+  const url = "https://api.stripe.com/v1/payment_intents";
+  const amount = "2000";
+  const currency = "usd";
+  const automaticPaymentMethodsEnabled = "true";
+
+  const formData = new URLSearchParams();
+  formData.append("amount", amount);
+  formData.append("currency", currency);
+  formData.append(
+    "automatic_payment_methods[enabled]",
+    automaticPaymentMethodsEnabled
+  );
+
+  const response = await fetch(url, {
     method: "POST",
     headers: {
+      Authorization: "Basic " + btoa(YEXT_PUBLIC_STRIPE_SK_KEY),
       "Content-Type": "application/x-www-form-urlencoded",
-      Authorization: `Bearer ${YEXT_PUBLIC_STRIPE_SK_KEY}`,
     },
-    body: {
-      amount: 1099,
-      currency: "usd",
-      "automatic_payment_methods[enabled]": true,
-    },
+    body: formData.toString(),
   });
 
   const data = await response.json();
@@ -24,7 +33,7 @@ export const main = async (request) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ error: "Payment intent creation failed" }),
+      body: "Payment intent creation failed",
     };
   }
 
