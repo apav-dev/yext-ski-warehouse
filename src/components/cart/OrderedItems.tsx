@@ -21,6 +21,12 @@ const OrderedItems = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
+    if (cartState.products.length > 0) {
+      setOrderedProducts(cartState.products);
+    }
+  }, [cartState.products]);
+
+  useEffect(() => {
     if (!stripe) {
       return;
     }
@@ -45,7 +51,6 @@ const OrderedItems = () => {
           switch (paymentIntent.status) {
             case "succeeded":
               setShippingInfo(paymentIntent.shipping);
-              setOrderedProducts(cartState.products);
               setSubtotal(
                 cartState.products.reduce(
                   (acc, item) => acc + Number(item.price) * item.quantity,
@@ -97,7 +102,6 @@ const OrderedItems = () => {
 
           {orderedProducts.length > 0 ? (
             <>
-              {" "}
               <ul
                 role="list"
                 className="mt-6 divide-y divide-gray-200 border-t border-gray-200 text-sm font-medium text-gray-500"
