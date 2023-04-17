@@ -10,7 +10,9 @@ type StripeProviderProps = {
 
 const stripePromise = loadStripe(YEXT_PUBLIC_STRIPE_PK_KEY);
 
-const fetchStripeClientSecret = async (amount: number): Promise<string> => {
+const fetchStripeClientSecret = async (
+  amount: number
+): Promise<{ client_secret: string }> => {
   const response = await fetch(`/payment-intent?amount=${amount}`);
   return response.json();
 };
@@ -32,7 +34,7 @@ export const StripeProvider = ({ children }: StripeProviderProps) => {
   });
 
   const options = {
-    clientSecret: data,
+    clientSecret: data.client_secret,
     loader: "auto",
     appearance: {
       theme: "stripe",
