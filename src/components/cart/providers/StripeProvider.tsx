@@ -25,8 +25,8 @@ export const StripeProvider = ({ children }: StripeProviderProps) => {
 
   const { data } = useQuery({
     queryKey: ["stripe-client-secret", subtotal],
-    // TODO: pass payment amount
-    queryFn: () => fetchStripeClientSecret(subtotal),
+    // amount is in cents
+    queryFn: () => fetchStripeClientSecret(subtotal * 100),
     retry: 0,
     enabled: subtotal > 0,
   });
