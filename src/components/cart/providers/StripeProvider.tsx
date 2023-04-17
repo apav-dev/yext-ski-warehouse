@@ -34,7 +34,7 @@ export const StripeProvider = ({ children }: StripeProviderProps) => {
   });
 
   const options = {
-    clientSecret: data.client_secret,
+    clientSecret: data?.client_secret,
     loader: "auto",
     appearance: {
       theme: "stripe",
