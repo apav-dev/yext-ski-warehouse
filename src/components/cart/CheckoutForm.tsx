@@ -48,8 +48,6 @@ const CheckoutForm = () => {
       },
     });
 
-    console.log(error.message);
-
     // TODO: handle errors
     // This point will only be reached if there is an immediate error when
     // confirming the payment. Otherwise, your customer will be redirected to

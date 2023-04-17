@@ -23,6 +23,7 @@ const OrderedItems = () => {
   useEffect(() => {
     if (cartState.products.length > 0) {
       setOrderedProducts(cartState.products);
+      cartActions.clearCart();
     }
   }, [cartState.products]);
 
@@ -58,7 +59,6 @@ const OrderedItems = () => {
                   0
                 )
               );
-              // cartActions.clearCart();
               break;
             case "processing":
               console.log("Payment processing");
