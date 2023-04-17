@@ -16,8 +16,12 @@ import {
 const taxes = 23.68;
 const shipping = 22.0;
 
+type CheckoutFormProps = {
+  domain: string;
+};
+
 // TODO: add edit and remove product functionality
-const CheckoutForm = () => {
+const CheckoutForm = ({ domain }: CheckoutFormProps) => {
   const cartState = useCartState();
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -43,7 +47,8 @@ const CheckoutForm = () => {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://localhost:5173/order-summary",
+        return_url:
+          "https://payments-commerce-skiware-us.preview.pagescdn.com/order-summary",
       },
     });
 

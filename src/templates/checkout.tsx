@@ -44,6 +44,11 @@ export const getHeadConfig: GetHeadConfig<
 const Checkout = ({ document }: TemplateRenderProps) => {
   const { _site } = document;
 
+  React.useEffect(() => {
+    console.log("Checkout page loaded");
+    console.log(document);
+  }, []);
+
   return (
     <Main>
       <div className="relative">
