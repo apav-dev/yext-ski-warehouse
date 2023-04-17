@@ -1,30 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import { Disclosure } from "@headlessui/react";
 import { LockClosedIcon } from "@heroicons/react/20/solid";
-import { useQuery } from "@tanstack/react-query";
 import { useCartState } from "./hooks/useCartState";
 import { Image } from "@yext/pages/components";
 import { formatter } from "../../utils/formatCurrency";
+import {
+  AddressElement,
+  LinkAuthenticationElement,
+  PaymentElement,
+  useElements,
+  useStripe,
+} from "@stripe/react-stripe-js";
 
 //TODO: get actual shipping and tax rates
 const taxes = 23.68;
 const shipping = 22.0;
 
-// TODO: submit payment intent to Stripe
 // TODO: add edit and remove product functionality
 const CheckoutForm = () => {
-  const stripeClientSecret = useQuery({
-    queryKey: ["stripe-key"],
-    // TODO: pass payment amount
-    queryFn: () => fetch("/payment-intent"),
-    retry: 0,
-  });
-
   const cartState = useCartState();
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const stripe = useStripe();
+  const elements = useElements();
+
   const subtotal = cartState.products.reduce(
     (acc, item) => acc + Number(item.price) * item.quantity,
     0
   );
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!stripe || !elements) {
+      return;
+    }
+
+    setIsLoading(true);
+
+    const { error } = await stripe.confirmPayment({
+      elements,
+      confirmParams: {
+        // Make sure to change this to your payment completion page
+        return_url: "http://localhost:5173/order-summary",
+      },
+    });
+
+    // TODO: handle errors
+    // This point will only be reached if there is an immediate error when
+    // confirming the payment. Otherwise, your customer will be redirected to
+    // your `return_url`. For some payment methods like iDEAL, your customer will
+    // be redirected to an intermediate site first to authorize the payment, then
+    // redirected to the `return_url`.
+    // if (error.type === "card_error" || error.type === "validation_error") {
+    //   setMessage(error.message);
+    // } else {
+    //   setMessage("An unexpected error occurred.");
+    // }
+
+    setIsLoading(false);
+  };
 
   return (
     <>
@@ -77,27 +113,19 @@ const CheckoutForm = () => {
                             <p className="text-gray-900">{`$${product.price}`}</p>
                             <p className="text-gray-500">{product.size}</p>
                           </div>
-                          <div className="flex space-x-4">
-                            <a
-                              type="button"
-                              className="text-sm font-medium text-sky-400 hover:text-sky-600"
-                              href={product.slug}
-                            >
-                              Edit
-                            </a>
-                            <div className="flex border-l border-gray-300 pl-4">
-                              <button
-                                type="button"
-                                className="text-sm font-medium text-sky-400 hover:text-sky-600"
-                              >
-                                Remove
-                              </button>
-                            </div>
-                          </div>
                         </div>
                       </li>
                     ))}
                   </ul>
+                  <div className="flex justify-center pt-2">
+                    <a
+                      type="button"
+                      className="text-sm font-medium text-sky-400 hover:text-sky-600"
+                      href="/cart"
+                    >
+                      Edit Cart
+                    </a>
+                  </div>
                   <dl className="mt-10 space-y-6 text-sm font-medium text-gray-500">
                     <div className="flex justify-between">
                       <dt>Subtotal</dt>
@@ -163,29 +191,20 @@ const CheckoutForm = () => {
                     </p>
                     <p className="text-gray-500">{product.size}</p>
                   </div>
-                  <div className="flex space-x-4">
-                    <a
-                      type="button"
-                      className="text-sm font-medium text-sky-400 hover:text-sky-600"
-                      href={product.slug}
-                    >
-                      Edit
-                    </a>
-                    <div className="flex border-l border-gray-300 pl-4">
-                      <button
-                        type="button"
-                        className="text-sm font-medium text-sky-400 hover:text-sky-600"
-                      >
-                        Remove
-                      </button>
-                    </div>
-                  </div>
                 </div>
               </li>
             ))}
           </ul>
-
           <div className="sticky bottom-0 flex-none border-t border-gray-200 bg-gray-50 p-6">
+            <div className="flex justify-center pt-2">
+              <a
+                type="button"
+                className="text-sm font-medium text-sky-400 hover:text-sky-600"
+                href="/cart"
+              >
+                Edit Cart
+              </a>
+            </div>
             <dl className="mt-10 space-y-6 text-sm font-medium text-gray-500">
               <div className="flex justify-between">
                 <dt>Subtotal</dt>
@@ -215,168 +234,30 @@ const CheckoutForm = () => {
           className="flex-auto overflow-y-auto px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-0"
         >
           <div className="mx-auto max-w-lg">
-            <form className="mt-6">
+            <form className="mt-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-12 gap-x-4 gap-y-6">
                 <div className="col-span-full">
-                  <label
-                    htmlFor="email-address"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Email address
-                  </label>
                   <div className="mt-1">
-                    <input
-                      type="email"
-                      id="email-address"
-                      name="email-address"
-                      autoComplete="email"
+                    <LinkAuthenticationElement
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </div>
                 </div>
-
                 <div className="col-span-full">
-                  <label
-                    htmlFor="name-on-card"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Name on card
-                  </label>
                   <div className="mt-1">
-                    <input
-                      type="text"
-                      id="name-on-card"
-                      name="name-on-card"
-                      autoComplete="cc-name"
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                    />
+                    <PaymentElement />
                   </div>
                 </div>
-
                 <div className="col-span-full">
-                  <label
-                    htmlFor="card-number"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Card number
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      id="card-number"
-                      name="card-number"
-                      autoComplete="cc-number"
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="col-span-8 sm:col-span-9">
-                  <label
-                    htmlFor="expiration-date"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Expiration date (MM/YY)
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      name="expiration-date"
-                      id="expiration-date"
-                      autoComplete="cc-exp"
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="col-span-4 sm:col-span-3">
-                  <label
-                    htmlFor="cvc"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    CVC
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      name="cvc"
-                      id="cvc"
-                      autoComplete="csc"
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="col-span-full">
-                  <label
-                    htmlFor="address"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Address
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      id="address"
-                      name="address"
-                      autoComplete="street-address"
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="col-span-full sm:col-span-4">
-                  <label
-                    htmlFor="city"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    City
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      id="city"
-                      name="city"
-                      autoComplete="address-level2"
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="col-span-full sm:col-span-4">
-                  <label
-                    htmlFor="region"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    State / Province
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      id="region"
-                      name="region"
-                      autoComplete="address-level1"
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                    />
-                  </div>
-                </div>
-
-                <div className="col-span-full sm:col-span-4">
-                  <label
-                    htmlFor="postal-code"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Postal code
-                  </label>
-                  <div className="mt-1">
-                    <input
-                      type="text"
-                      id="postal-code"
-                      name="postal-code"
-                      autoComplete="postal-code"
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                    />
-                  </div>
+                  <AddressElement
+                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
+                    options={{
+                      mode: "shipping",
+                      allowedCountries: ["US"],
+                      autocomplete: { mode: "automatic" },
+                    }}
+                  />
                 </div>
               </div>
               <button
