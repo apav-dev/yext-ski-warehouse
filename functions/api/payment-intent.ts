@@ -40,6 +40,7 @@ export const main = async (request) => {
   const clientSecret = data.client_secret;
 
   if (!clientSecret) {
+    console.error(data.error.message);
     return {
       statusCode: 500,
       headers: {
