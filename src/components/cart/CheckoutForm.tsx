@@ -16,12 +16,8 @@ import {
 const taxes = 23.68;
 const shipping = 22.0;
 
-type CheckoutFormProps = {
-  domain: string;
-};
-
 // TODO: add edit and remove product functionality
-const CheckoutForm = ({ domain }: CheckoutFormProps) => {
+const CheckoutForm = () => {
   const cartState = useCartState();
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -43,12 +39,13 @@ const CheckoutForm = ({ domain }: CheckoutFormProps) => {
 
     setIsLoading(true);
 
+    const domain = window.location.hostname;
+
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url:
-          "https://payments-commerce-skiware-us.preview.pagescdn.com/order-summary",
+        return_url: `${domain}/order-summary`,
       },
     });
 
@@ -115,7 +112,9 @@ const CheckoutForm = ({ domain }: CheckoutFormProps) => {
                         <div className="flex flex-col justify-between space-y-4">
                           <div className="space-y-1 text-sm font-medium">
                             <h3 className="text-gray-900">{product.name}</h3>
-                            <p className="text-gray-900">{`$${product.price}`}</p>
+                            <p className="text-gray-900">
+                              {formatter.format(product.price)}
+                            </p>
                             <p className="text-gray-500">{product.size}</p>
                           </div>
                         </div>
