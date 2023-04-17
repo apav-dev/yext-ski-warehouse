@@ -23,7 +23,6 @@ const OrderedItems = () => {
   useEffect(() => {
     if (cartState.products.length > 0) {
       setOrderedProducts(cartState.products);
-      cartActions.clearCart();
     }
   }, [cartState.products]);
 
