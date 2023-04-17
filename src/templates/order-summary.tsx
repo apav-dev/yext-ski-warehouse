@@ -11,6 +11,7 @@ import Main from "../layouts/Main";
 import Header from "../components/Header";
 import { transformSiteData } from "../utils/transformSiteData";
 import OrderedItems from "../components/cart/OrderedItems";
+import { StripeProvider } from "../components/cart/providers/StripeProvider";
 
 export const transformProps: TransformProps<TemplateRenderProps> = async (
   data
@@ -57,7 +58,9 @@ const OrderSummary = ({ document }: TemplateRenderProps) => {
             className="h-full w-full object-cover object-center"
           />
         </div>
-        <OrderedItems />
+        <StripeProvider>
+          <OrderedItems />
+        </StripeProvider>
       </main>
     </Main>
   );
