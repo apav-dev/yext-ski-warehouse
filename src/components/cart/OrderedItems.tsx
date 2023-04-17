@@ -50,6 +50,7 @@ const OrderedItems = () => {
         if (paymentIntent) {
           switch (paymentIntent.status) {
             case "succeeded":
+              console.log("Payment succeeded!");
               setShippingInfo(paymentIntent.shipping);
               setSubtotal(
                 cartState.products.reduce(
@@ -57,15 +58,17 @@ const OrderedItems = () => {
                   0
                 )
               );
-              cartActions.clearCart();
+              // cartActions.clearCart();
               break;
             case "processing":
+              console.log("Payment processing");
               setMessage(
                 "Payment processing. We'll update you when payment is received."
               );
               break;
 
             case "requires_payment_method":
+              console.log("Payment failed");
               // Redirect your user back to your payment page to attempt collecting
               // payment again
               setMessage("Payment failed. Please try another payment method.");

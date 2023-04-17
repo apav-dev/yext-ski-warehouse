@@ -54,17 +54,15 @@ export const StripeProvider = ({ children }: StripeProviderProps) => {
     },
   };
 
-  return data ? (
-    <Elements stripe={stripePromise} options={options}>
-      {children}
-    </Elements>
-  ) : (
-    <></>
-  );
-
-  // return (
+  // return data ? (
   //   <Elements stripe={stripePromise} options={options}>
   //     {children}
   //   </Elements>
   // );
+
+  return (
+    <Elements stripe={stripePromise} options={options}>
+      {children}
+    </Elements>
+  );
 };

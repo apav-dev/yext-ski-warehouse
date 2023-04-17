@@ -39,7 +39,6 @@ const CheckoutForm = () => {
 
     // return_url equals the current page protocol and host while the path is /order-summary
     const return_url = `${window.location.protocol}//${window.location.host}/order-summary`;
-    console.log(return_url);
 
     const { error } = await stripe.confirmPayment({
       elements,
