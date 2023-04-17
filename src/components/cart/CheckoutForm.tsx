@@ -16,10 +16,8 @@ import {
 const taxes = 23.68;
 const shipping = 22.0;
 
-// TODO: add edit and remove product functionality
 const CheckoutForm = () => {
   const cartState = useCartState();
-  const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const stripe = useStripe();
@@ -39,15 +37,19 @@ const CheckoutForm = () => {
 
     setIsLoading(true);
 
-    const domain = window.location.hostname;
+    // return_url equals the current page protocol and host while the path is /order-summary
+    const return_url = `${window.location.protocol}//${window.location.host}/order-summary`;
+    console.log(return_url);
 
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: `${domain}/order-summary`,
+        return_url,
       },
     });
+
+    console.log(error.message);
 
     // TODO: handle errors
     // This point will only be reached if there is an immediate error when
@@ -242,10 +244,7 @@ const CheckoutForm = () => {
               <div className="grid grid-cols-12 gap-x-4 gap-y-6">
                 <div className="col-span-full">
                   <div className="mt-1">
-                    <LinkAuthenticationElement
-                      className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm"
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
+                    <LinkAuthenticationElement className="block w-full rounded-md border-gray-300 shadow-sm focus:border-sky-400 focus:ring-sky-400 sm:text-sm" />
                   </div>
                 </div>
                 <div className="col-span-full">

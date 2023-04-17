@@ -25,6 +25,7 @@ export enum CartActionTypes {
   RemoveProduct,
   SetCartFromStorage,
   SetProductQuantity,
+  ClearCart,
 }
 
 export type CartActions =
@@ -37,7 +38,8 @@ export type CartActions =
   | {
       type: CartActionTypes.SetProductQuantity;
       payload: { productId: string; quantity: number };
-    };
+    }
+  | { type: CartActionTypes.ClearCart };
 
 export const cartReducer = (state: CartState, action: CartActions) => {
   switch (action.type) {
@@ -88,6 +90,8 @@ export const cartReducer = (state: CartState, action: CartActions) => {
       } else {
         return state;
       }
+    case CartActionTypes.ClearCart:
+      return { products: [] };
     default:
       return state;
   }

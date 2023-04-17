@@ -42,8 +42,15 @@ export const useCartActions = () => {
     });
   };
 
+  const clearCart = () => {
+    dispatch({
+      type: CartActionTypes.ClearCart,
+    });
+  };
+
   return {
     addProductToCart,
     setProductQuantity,
+    clearCart,
   };
 };
