@@ -10,8 +10,8 @@ type StripeProviderProps = {
 
 const stripePromise = loadStripe(YEXT_PUBLIC_STRIPE_PK_KEY);
 
-const fetchStripeClientSecret = async (): Promise<string> => {
-  const response = await fetch("/payment-intent");
+const fetchStripeClientSecret = async (amount: number): Promise<string> => {
+  const response = await fetch(`/payment-intent?amount=${amount}`);
   return response.json();
 };
 
@@ -26,7 +26,7 @@ export const StripeProvider = ({ children }: StripeProviderProps) => {
   const { data } = useQuery({
     queryKey: ["stripe-client-secret", subtotal],
     // TODO: pass payment amount
-    queryFn: fetchStripeClientSecret,
+    queryFn: () => fetchStripeClientSecret(subtotal),
     retry: 0,
     enabled: subtotal > 0,
   });
