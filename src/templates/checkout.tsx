@@ -46,17 +46,17 @@ const Checkout = ({ document }: TemplateRenderProps) => {
 
   return (
     <Main>
-      <StripeProvider>
-        <div className="relative">
-          <Header directory={_site} />
-        </div>
-        <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h1 className="flex justify-center py-8 text-2xl font-semibold text-sky-400 sm:text-4xl">
-            Checkout
-          </h1>
+      <div className="relative">
+        <Header directory={_site} />
+      </div>
+      <div className="mx-auto max-w-2xl px-4 pb-24 pt-16 sm:px-6 lg:max-w-7xl lg:px-8">
+        <h1 className="flex justify-center py-8 text-2xl font-semibold text-sky-400 sm:text-4xl">
+          Checkout
+        </h1>
+        <StripeProvider>
           <CheckoutForm />
-        </div>
-      </StripeProvider>
+        </StripeProvider>
+      </div>
     </Main>
   );
 };

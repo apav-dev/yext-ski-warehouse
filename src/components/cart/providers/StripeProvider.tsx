@@ -52,11 +52,11 @@ export const StripeProvider = ({ children }: StripeProviderProps) => {
     },
   };
 
-  return (
+  return data ? (
     <Elements stripe={stripePromise} options={options}>
       {children}
     </Elements>
+  ) : (
+    <></>
   );
 };
-
-// "-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif"
