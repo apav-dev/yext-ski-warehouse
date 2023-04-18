@@ -20,17 +20,18 @@ const fetchStripeClientSecret = async (
 export const StripeProvider = ({ children }: StripeProviderProps) => {
   const cartState = useCartState();
 
-  const subtotal = cartState.products.reduce(
-    (acc, item) => acc + Number(item.price) * item.quantity,
-    0
-  );
+  // const subtotal = cartState.products.reduce(
+  //   (acc, item) => acc + Number(item.price) * item.quantity,
+  //   0
+  // );
 
   const { data } = useQuery({
-    queryKey: ["stripe-client-secret", subtotal],
-    // amount is in cents
-    queryFn: () => fetchStripeClientSecret(subtotal * 100),
+    queryKey: ["stripe-client-secret"],
+    // amount is in cents. Stripe expects an integer.
+
+    queryFn: () => fetchStripeClientSecret(Math.round(100)),
     retry: 0,
-    enabled: subtotal > 0,
+    // enabled: subtotal > 0,
   });
 
   const options = {

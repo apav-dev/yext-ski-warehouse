@@ -76,10 +76,6 @@ const OrderedItems = () => {
   });
 
   useEffect(() => {
-    // Each productQuantity key is in the form of productId-size. Split the key to get the product id and size
-    // then find the product in the products array and set the quantity
-    // finally, setProducts to the new array of products with quantities
-
     if (data && productQuantities) {
       const products = Object.entries(productQuantities).map(
         ([key, quantity]) => {
@@ -127,7 +123,6 @@ const OrderedItems = () => {
             case "processing":
               console.log("Payment processing");
               break;
-
             case "requires_payment_method":
               console.log("Payment failed");
               break;
