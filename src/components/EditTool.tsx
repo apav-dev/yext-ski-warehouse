@@ -32,7 +32,7 @@ const EditTool = ({ data }: EditToolProps) => {
           Edit
         </a>
         <button
-          className="ml-8 text-gray-400 hover:text-gray-500"
+          className="ml-8 text-gray-500 hover:text-gray-500"
           onClick={onCloseClick}
         >
           <XMarkIcon className="h-5 w-5" />

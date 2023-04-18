@@ -40,7 +40,7 @@ const InfoPanel = ({ infoPanelOpen, setPanelOpen, data }: InfoPanelProps) => {
               <div className="flex px-4 pt-5 pb-2">
                 <button
                   type="button"
-                  className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                  className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-500"
                   onClick={() => setPanelOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
@@ -52,7 +52,7 @@ const InfoPanel = ({ infoPanelOpen, setPanelOpen, data }: InfoPanelProps) => {
               </h2>
               <p className="px-4">{data?.description}</p>
               <ul role="list">
-                {data?.filterItems.map((item) => (
+                {data?.filterItems?.map((item) => (
                   <li key={item.name} className="p-4">
                     <h3 className="font-bold text-sky-400 pb-1">{item.name}</h3>
                     <p>{item.description}</p>

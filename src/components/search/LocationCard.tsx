@@ -18,7 +18,7 @@ const LocationCard: CardComponent<Location> = ({
 
   return (
     <div className="flex justify-between border-y p-4">
-      <div className="flex text-gray-400">
+      <div className="flex text-gray-500">
         <div>
           <a
             href={location.slug}
