@@ -30,7 +30,7 @@ const Main = ({ children, initialFilters }: MainProps) => {
         <div className="min-h-screen text-gray-900">
           <div className="relative">{children}</div>
         </div>
-        <ChatBot configId="ski-shop-demo" />
+        <ChatBot configId="ski-warehouse-assistant" />
       </HeadlessProvider>
       {/* </SearchHeadlessProvider> */}
     </QueryClientProvider>
