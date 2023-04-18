@@ -12,7 +12,6 @@ import {
   useStripe,
 } from "@stripe/react-stripe-js";
 
-//TODO: get actual shipping and tax rates
 const taxes = 23.68;
 const shipping = 22.0;
 
@@ -38,7 +37,19 @@ const CheckoutForm = () => {
     setIsLoading(true);
 
     // return_url equals the current page protocol and host while the path is /order-summary
-    const return_url = `${window.location.protocol}//${window.location.host}/order-summary`;
+    let return_url = `${window.location.protocol}//${window.location.host}/order-summary`;
+
+    // create a product id to quantity map
+    const productQuantities = cartState.products.reduce((acc, item) => {
+      acc[item.id] = item.quantity;
+      return acc;
+    }, {});
+
+    // add the product id to quantity map to the return_url as a query param
+    return_url += `?productQuantities=${JSON.stringify(productQuantities)}`;
+
+    // add taxes and shipping to the return_url as query params
+    return_url += `&taxes=${taxes}&shipping=${shipping}`;
 
     const { error } = await stripe.confirmPayment({
       elements,
