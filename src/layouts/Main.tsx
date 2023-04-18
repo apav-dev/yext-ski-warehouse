@@ -27,12 +27,10 @@ const Main = ({ children, initialFilters }: MainProps) => {
         routing={defaultRouter}
         initialFilters={initialFilters}
       >
-        <CartProvider>
-          <div className="min-h-screen text-gray-900">
-            <div className="relative">{children}</div>
-          </div>
-        </CartProvider>
-        <ChatBot configId="ski-shop-demo" />
+        <div className="min-h-screen text-gray-900">
+          <div className="relative">{children}</div>
+        </div>
+        <ChatBot configId="ski-warehouse-assistant" />
       </HeadlessProvider>
     </QueryClientProvider>
   );
