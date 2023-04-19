@@ -9,6 +9,9 @@ type BreadcrumbsProps = {
 };
 
 export const Breadcrumbs = ({ breadcrumbs }: BreadcrumbsProps) => {
+  // since there aren't pages for the top level categories, we route to the last category in the breadcrumbs
+  const lastBreadcrumb = breadcrumbs[breadcrumbs.length - 1].slug;
+
   return (
     <nav aria-label="Breadcrumb">
       <ol role="list" className="flex items-center space-x-2">
@@ -17,13 +20,13 @@ export const Breadcrumbs = ({ breadcrumbs }: BreadcrumbsProps) => {
             <div className="flex items-center text-sm">
               {breadcrumbIdx !== 0 ? (
                 <a
-                  // href={breadcrumb.slug}
+                  href={`/${lastBreadcrumb}`}
                   className="font-medium text-gray-500 hover:text-gray-900"
                 >
                   {breadcrumb.name}
                 </a>
               ) : (
-                <a>
+                <a href="/">
                   <HomeIcon className="h-4 w-4 text-gray-600" />
                 </a>
               )}
