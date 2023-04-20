@@ -8,7 +8,7 @@ import {
   TransformProps,
   TemplateConfig,
 } from "@yext/pages";
-simport Main from "../layouts/Main";
+import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import StoreLocator from "../components/search/Locator";
 import { v4 as uuid } from "uuid";
