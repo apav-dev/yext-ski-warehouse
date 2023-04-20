@@ -41,7 +41,7 @@ const Header = ({ directory }: HeaderProps) => {
         searchPanelOpen={mobileSearchOpen}
         setSearchPanelOpen={toggleMobileSearch}
       />
-      <header className="relative z-10">
+      <header className="relative z-10 shadow-md">
         <div aria-hidden="true" className="absolute inset-0 bg-sky-400 " />
         <nav aria-label="Top">
           {/* Secondary navigation */}

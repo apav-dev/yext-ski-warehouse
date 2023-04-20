@@ -1,4 +1,4 @@
-import { ComplexImage } from "../types/skis";
+import { ComplexImage } from "../types/products";
 
 export type FeaturedCollection = {
   name?: string;
@@ -19,11 +19,13 @@ export type DirectoryChild = {
 
 export type Site = {
   c_primaryLogo?: ComplexImage;
+  c_secondaryLogo?: ComplexImage;
   dm_directoryChildren: DirectoryChild[];
 };
 
 export type SkiWarehouseDirectory = {
   logo?: ComplexImage;
+  secondaryLogo?: ComplexImage;
   genders?: {
     name?: string;
     slug?: string;
@@ -118,5 +120,9 @@ export function transformSiteData(site: Site): SkiWarehouseDirectory {
     genders.push(genderObj);
   });
 
-  return { genders, logo: site.c_primaryLogo };
+  return {
+    genders,
+    logo: site.c_primaryLogo,
+    secondaryLogo: site.c_secondaryLogo,
+  };
 }

@@ -9,17 +9,21 @@ import { defaultRouter } from "../routing";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ChatBot } from "../components/ChatBot";
 import { CartProvider } from "../components/cart/providers/CartProvider";
+import { SkiWarehouseDirectory } from "../utils/transformSiteData";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 interface MainProps {
   children?: React.ReactNode;
   initialFilters?: SelectableStaticFilter[];
+  directory?: SkiWarehouseDirectory;
 }
 
 const queryClient = new QueryClient();
 
 const searcher = provideHeadless(getSearchProviderConfig("products"));
 
-const Main = ({ children, initialFilters }: MainProps) => {
+const Main = ({ children, initialFilters, directory }: MainProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <HeadlessProvider
@@ -29,7 +33,11 @@ const Main = ({ children, initialFilters }: MainProps) => {
       >
         <CartProvider>
           <div className="min-h-screen text-gray-900">
-            <div className="relative">{children}</div>
+            <div className="relative">
+              <Header directory={directory} />
+              {children}
+              <Footer directory={directory} />
+            </div>
           </div>
           <ChatBot configId="ski-warehouse-assistant" />
         </CartProvider>

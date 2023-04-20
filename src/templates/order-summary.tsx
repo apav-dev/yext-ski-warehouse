@@ -8,7 +8,6 @@ import {
   TransformProps,
 } from "@yext/pages";
 import Main from "../layouts/Main";
-import Header from "../components/Header";
 import { transformSiteData } from "../utils/transformSiteData";
 import OrderedItems from "../components/cart/OrderedItems";
 import { StripeProvider } from "../components/cart/providers/StripeProvider";
@@ -45,11 +44,7 @@ const OrderSummary = ({ document }: TemplateRenderProps) => {
   const { _site } = document;
 
   return (
-    <Main>
-      <div className="relative">
-        <Header directory={_site} />
-      </div>
-
+    <Main directory={_site}>
       <main className="relative lg:min-h-[calc(100vh-64px)]">
         <div className="h-80 overflow-hidden lg:absolute lg:h-full lg:w-1/2 lg:pr-4 xl:pr-12">
           <img

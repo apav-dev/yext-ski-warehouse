@@ -6,6 +6,7 @@
   "source": "knowledgeGraph",
   "fields": [
     "c_primaryLogo",
+    "c_secondaryLogo",
     "dm_directoryChildren.name",
     "dm_directoryChildren.slug",
     "dm_directoryChildren.c_featuredCollections.name",

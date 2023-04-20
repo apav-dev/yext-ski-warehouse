@@ -8,7 +8,6 @@ import {
   TemplateConfig,
   TransformProps,
 } from "@yext/pages";
-import Header from "../components/Header";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import BlogPost from "../components/BlogPost";
@@ -99,16 +98,13 @@ const Blog = ({ document }: TemplateRenderProps) => {
   const markdown = c_body?.markdown || c_blogContent?.markdown;
 
   return (
-    <Main>
+    <Main directory={_site}>
       <BlogSchema
         title={name}
         subtitle={c_subtitle}
         datePosted={datePosted}
         author={c_author}
       ></BlogSchema>
-      <div className="relative">
-        <Header directory={_site} />
-      </div>
       {markdown && (
         <BlogPost
           title={name}

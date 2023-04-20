@@ -8,8 +8,7 @@ import {
   TransformProps,
   TemplateConfig,
 } from "@yext/pages";
-import Header from "../components/Header";
-import Main from "../layouts/Main";
+simport Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import StoreLocator from "../components/search/Locator";
 import { v4 as uuid } from "uuid";
@@ -118,10 +117,7 @@ const Home = ({ document }: TemplateRenderProps) => {
   };
 
   return (
-    <Main>
-      <div className="relative">
-        <Header directory={_site} />
-      </div>
+    <Main directory={_site}>
       <div className="bg-white py-8 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">

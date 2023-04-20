@@ -32,10 +32,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({
   const { _site } = document;
 
   return (
-    <Main>
-      <div className="relative">
-        <Header directory={_site} />
-      </div>
+    <Main directory={_site}>
       <div className="h-[calc(100vh-64px)]">
         <div className="grid min-h-full grid-cols-1 grid-rows-[1fr,auto,1fr] bg-white lg:grid-cols-[max(50%,36rem),1fr]">
           <main className="mx-auto w-full max-w-7xl px-6 py-24 sm:py-32 lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:px-8">

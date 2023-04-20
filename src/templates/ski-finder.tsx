@@ -9,7 +9,6 @@ import {
   TransformProps,
 } from "@yext/pages";
 import { Image } from "@yext/pages/components";
-import Header from "../components/Header";
 import ScrollingSelector from "../components/CategorySelector";
 import { useState } from "react";
 import Main from "../layouts/Main";
@@ -101,13 +100,12 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
   };
 
   return (
-    <Main>
+    <Main directory={_site}>
       <div className="relative">
-        <Header directory={_site} />
         {c_coverPhoto && (
           <div
             aria-hidden="true"
-            className="absolute inset-x-0 bottom-0 top-16 overflow-hidden"
+            className="absolute inset-x-0 bottom-0 top-0 overflow-hidden"
           >
             <Image
               className="h-full w-full object-cover object-center"
