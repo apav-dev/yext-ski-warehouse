@@ -108,7 +108,7 @@ const Home = ({ document }: TemplateRenderProps) => {
       <main>
         {/* Category section */}
 
-        <Section>
+        <Section backgroundColor="bg-gray-50">
           <SectionHeader title="Featured Categories" />
           <GridContainer>
             {c_featuredCategories?.[0] && (
