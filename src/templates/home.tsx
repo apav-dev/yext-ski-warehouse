@@ -34,7 +34,7 @@ export const config: TemplateConfig = {
       "c_saleHero",
     ],
     filter: {
-      entityIds: ["6173449864930251582"],
+      entityIds: ["home_page"],
     },
     localization: {
       locales: ["en"],
@@ -108,7 +108,7 @@ const Home = ({ document }: TemplateRenderProps) => {
       <main>
         {/* Category section */}
 
-        <Section backgroundColor="bg-gray-50">
+        <Section>
           <SectionHeader title="Featured Categories" />
           <GridContainer>
             {c_featuredCategories?.[0] && (
@@ -147,18 +147,19 @@ const Home = ({ document }: TemplateRenderProps) => {
         </Section>
 
         {/* Favorites section */}
-        <Section>
+        <Section backgroundColor="bg-gray-50">
           <SectionHeader title="Featured Products" />
-          <GridContainer colCount={3}>
+          {/* <GridContainer> */}
+          <div className="mt-6 grid grid-cols-1 gap-y-6 sm:gap-x-6 sm:grid-cols-3 lg:gap-8">
             {featuredProducts?.map((product) => (
               <ProductCard key={product.id} result={product} />
             ))}
-          </GridContainer>
+          </div>
         </Section>
 
         {/* CTA section */}
         {/* TODO: Studiotize */}
-        <section aria-labelledby="sale-heading">
+        <Section aria-labelledby="sale-heading">
           <div className="overflow-hidden pt-32 sm:pt-14">
             <div className="bg-sky-400">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -204,7 +205,7 @@ const Home = ({ document }: TemplateRenderProps) => {
                           {c_saleHero.images?.[2] && (
                             <Image
                               image={c_saleHero.images[2]}
-                              className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 shadow-xl"
+                              className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72 shadow-3xl -top"
                             />
                           )}
                         </div>
@@ -241,7 +242,7 @@ const Home = ({ document }: TemplateRenderProps) => {
               </div>
             </div>
           </div>
-        </section>
+        </Section>
       </main>
     </Main>
   );

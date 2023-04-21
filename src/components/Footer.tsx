@@ -2,7 +2,7 @@ import React from "react";
 import { SkiWarehouseDirectory } from "../utils/transformSiteData";
 import { Image } from "@yext/pages/components";
 
-interface FooterProps {
+export interface FooterProps {
   directory?: SkiWarehouseDirectory;
 }
 
@@ -28,37 +28,39 @@ const Footer = ({ directory }: FooterProps) => {
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
                   {directory?.genders?.[0].name}
                 </h3>
-                {/* TODO: uncomment when there are more product types for each gender  */}
-                {/* <ul role="list" className="mt-6 space-y-4">
-                  {directory?.genders?.[0].productTypes?.map((productType) => (
-                    <li key={productType.name}>
-                      <a
-                        href={`/${productType.slug}`}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
-                      >
-                        {productType.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul> */}
+                <ul role="list" className="mt-6 space-y-4">
+                  {directory?.genders?.[0].productTypes?.[0].categories?.map(
+                    (category) => (
+                      <li key={category.name}>
+                        <a
+                          href={`/${category.slug}`}
+                          className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        >
+                          {category.name}
+                        </a>
+                      </li>
+                    )
+                  )}
+                </ul>
               </div>
               <div className="mt-10 md:mt-0">
                 <h3 className="text-sm font-semibold leading-6 text-gray-900">
                   {directory?.genders?.[1].name}
                 </h3>
-                {/* TODO: uncomment when there are more product types for each gender  */}
-                {/* <ul role="list" className="mt-6 space-y-4">
-                  {directory?.genders?.[1].productTypes?.map((productType) => (
-                    <li key={productType.name}>
-                      <a
-                        href={`/${productType.slug}`}
-                        className="text-sm leading-6 text-gray-600 hover:text-gray-900"
-                      >
-                        {productType.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul> */}
+                <ul role="list" className="mt-6 space-y-4">
+                  {directory?.genders?.[0].productTypes?.[0].categories?.map(
+                    (productType) => (
+                      <li key={productType.name}>
+                        <a
+                          href={`/${productType.slug}`}
+                          className="text-sm leading-6 text-gray-600 hover:text-gray-900"
+                        >
+                          {productType.name}
+                        </a>
+                      </li>
+                    )
+                  )}
+                </ul>
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">

@@ -53,7 +53,6 @@ export const transformProps: TransformProps<TemplateRenderProps> = async (
 };
 
 export const getPath: GetPath<TemplateRenderProps> = ({ document }) => {
-  // return document.slug ?? "index.html";
   return "stores";
 };
 
