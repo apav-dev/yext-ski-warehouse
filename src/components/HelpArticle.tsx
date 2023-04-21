@@ -5,13 +5,13 @@ import NoSsr from "@mui/base/NoSsr";
 // Import reactmarkdown lazily
 const ReactMarkdown = React.lazy(() => import("react-markdown"));
 
-export type HelpArticleProps = {
+export interface HelpArticleProps {
   title?: string;
   subtitle?: string;
   coverPhoto?: ComplexImageType;
   datePosted?: string;
   content: string;
-};
+}
 
 export const HelpArticle = ({
   title,

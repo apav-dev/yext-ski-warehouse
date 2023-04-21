@@ -5,12 +5,13 @@ import {
   GetPath,
   Template,
   HeadConfig,
+  TransformProps,
 } from "@yext/pages";
 import * as React from "react";
 import Main from "../layouts/Main";
 import "../index.css";
-import Header from "../components/Header";
 import skiSign from "../assets/images/ski-sign.avif";
+import { transformSiteData } from "../utils/transformSiteData";
 
 export const getPath: GetPath<TemplateProps> = () => {
   return "404.html";
@@ -26,10 +27,26 @@ export const getHeadConfig: GetHeadConfig<
   };
 };
 
+export const transformProps: TransformProps<TemplateRenderProps> = async (
+  data
+) => {
+  const { _site } = data.document;
+
+  return {
+    ...data,
+    document: {
+      ...data.document,
+      _site: transformSiteData(_site),
+    },
+  };
+};
+
 const FourOhFour: Template<TemplateRenderProps> = ({
   document,
 }: TemplateRenderProps) => {
   const { _site } = document;
+
+  console.log("404", document);
 
   return (
     <Main directory={_site}>

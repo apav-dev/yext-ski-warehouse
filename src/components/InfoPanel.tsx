@@ -4,11 +4,11 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Section } from "./CategorySelector";
 
-type InfoPanelProps = {
+export interface InfoPanelProps {
   infoPanelOpen: boolean;
   setPanelOpen: (open: boolean) => void;
   data?: Section;
-};
+}
 
 const InfoPanel = ({ infoPanelOpen, setPanelOpen, data }: InfoPanelProps) => {
   return (

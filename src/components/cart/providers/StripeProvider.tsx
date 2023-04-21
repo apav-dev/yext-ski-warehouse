@@ -4,9 +4,9 @@ import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useCartState } from "../hooks/useCartState";
 
-type StripeProviderProps = {
+export interface StripeProviderProps {
   children: React.ReactNode;
-};
+}
 
 const stripePromise = loadStripe(YEXT_PUBLIC_STRIPE_PK_KEY);
 

@@ -7,7 +7,7 @@ const ReactMarkdown = React.lazy(() => import("react-markdown"));
 import skiLiftUrl from "../assets/images/ski-lift.jpeg";
 import headshotUrl from "../assets/images/max.jpeg";
 
-export type BlogPostProps = {
+export interface BlogPostProps {
   title?: string;
   subtitle?: string;
   coverPhoto?: ComplexImageType;
@@ -17,7 +17,7 @@ export type BlogPostProps = {
     headshot?: ComplexImageType;
   };
   content: string;
-};
+}
 
 export const BlogPost = ({
   title,

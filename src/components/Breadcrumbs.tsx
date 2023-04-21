@@ -1,12 +1,12 @@
 import * as React from "react";
 import { HomeIcon } from "@heroicons/react/24/solid";
 
-type BreadcrumbsProps = {
+export interface BreadcrumbsProps {
   breadcrumbs: {
     name: string;
     slug?: string;
   }[];
-};
+}
 
 export const Breadcrumbs = ({ breadcrumbs }: BreadcrumbsProps) => {
   // since there aren't pages for the top level categories, we route to the last category in the breadcrumbs
@@ -17,7 +17,7 @@ export const Breadcrumbs = ({ breadcrumbs }: BreadcrumbsProps) => {
       <ol role="list" className="flex items-center space-x-2">
         {breadcrumbs.map((breadcrumb, breadcrumbIdx) => (
           <li key={breadcrumbIdx}>
-            <div className="flex items-center text-sm">
+            <div className="flex items-center text-sm cursor-pointer">
               {breadcrumbIdx !== 0 ? (
                 <a
                   href={`/${lastBreadcrumb}`}

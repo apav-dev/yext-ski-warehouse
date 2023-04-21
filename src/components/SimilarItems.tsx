@@ -7,10 +7,10 @@ import * as React from "react";
 import { useEffect } from "react";
 import ProductCard from "./search/ProductCard";
 
-type SimilarItemsProps = {
+export interface SimilarItemsProps {
   title?: string;
   filter?: SelectableStaticFilter;
-};
+}
 
 export const SimilarItems = ({ title, filter }: SimilarItemsProps) => {
   const searchActions = useSearchActions();

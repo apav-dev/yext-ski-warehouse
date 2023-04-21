@@ -6,11 +6,11 @@ import { Image, Link } from "@yext/pages/components";
 import { twMerge } from "tailwind-merge";
 import { SkiWarehouseDirectory } from "../../utils/transformSiteData";
 
-type MobileMenuProps = {
+export interface MobileMenuProps {
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
   directory?: SkiWarehouseDirectory;
-};
+}
 
 const MobileMenu = ({
   mobileMenuOpen,

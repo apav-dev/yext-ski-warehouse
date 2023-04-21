@@ -4,10 +4,10 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import SearchBar from "../search/SearchBar";
 
-type MobileSearchPanelProps = {
+export interface MobileSearchPanelProps {
   searchPanelOpen: boolean;
   setSearchPanelOpen: (open: boolean) => void;
-};
+}
 
 const MobileSearchPanel = ({
   searchPanelOpen,

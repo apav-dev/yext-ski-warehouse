@@ -1,6 +1,6 @@
 import React from "react";
 
-type FormTextAreaProps = {
+export interface FormTextAreaProps {
   id: string;
   value: string;
   onChange: (value: string) => void;
@@ -11,7 +11,7 @@ type FormTextAreaProps = {
   rows?: number;
   cols?: number;
   required?: boolean;
-};
+}
 
 const FormTextArea = ({
   id,

@@ -18,7 +18,7 @@ export type Section = {
   filterItems?: SectionItem[];
 };
 
-type ScrollingSelectorProps = {
+export interface ScrollingSelectorProps {
   sections?: Section[];
   scrollToStart: boolean;
   onComplete?: (
@@ -27,7 +27,7 @@ type ScrollingSelectorProps = {
       filterValue: string;
     }[]
   ) => void;
-};
+}
 
 const ScrollingSelector = ({
   sections,

@@ -1,7 +1,7 @@
 import React, { useState, HTMLInputTypeAttribute } from "react";
 import { twMerge } from "tailwind-merge";
 
-type FormInputProps = {
+export interface FormInputProps {
   id: string;
   value: string;
   onChange: (value: string) => void;
@@ -16,7 +16,7 @@ type FormInputProps = {
   message?: string;
   type?: HTMLInputTypeAttribute;
   ariaDescribedBy?: string;
-};
+}
 
 const FormInput = ({
   id,

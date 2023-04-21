@@ -1,12 +1,12 @@
 import * as React from "react";
 
-type TableProps = {
+export interface TableProps {
   title?: string;
   items: {
     name?: string;
     value?: string;
   }[];
-};
+}
 
 export const Table = ({ title, items }: TableProps) => {
   return (
