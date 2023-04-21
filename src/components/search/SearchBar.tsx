@@ -13,9 +13,9 @@ import { getSearchProviderConfig } from "../../config";
 import Ce_product from "../../types/products";
 import { Image, Link } from "@yext/pages/components";
 
-type SearchBarProps = {
+export interface SearchBarProps {
   customCssClasses?: SearchBarCssClasses;
-};
+}
 
 const entityPreviewSearcher = provideHeadless(
   getSearchProviderConfig(undefined, "entity-preview-searcher")

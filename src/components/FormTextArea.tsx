@@ -1,6 +1,6 @@
 import React from "react";
 
-type FormTextAreaProps = {
+export interface FormTextAreaProps {
   id: string;
   value: string;
   onChange: (value: string) => void;
@@ -11,7 +11,7 @@ type FormTextAreaProps = {
   rows?: number;
   cols?: number;
   required?: boolean;
-};
+}
 
 const FormTextArea = ({
   id,
@@ -47,7 +47,7 @@ const FormTextArea = ({
           cols={cols || 50}
           name={id}
           id={id}
-          className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-400 sm:py-1.5 sm:text-sm sm:leading-6"
+          className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-sky-400 sm:py-1.5 sm:text-sm sm:leading-6"
           defaultValue={""}
           onChange={handleOnChange}
         />

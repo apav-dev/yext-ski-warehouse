@@ -24,10 +24,10 @@ const reviewSorts: { reviewSort: ReviewSort; label: string }[] = [
   },
 ];
 
-type ReviewSortDropdownProps = {
+export interface ReviewSortDropdownProps {
   selectedSort: ReviewSort;
   setSelectedSort: (sort: ReviewSort) => void;
-};
+}
 
 const ReviewSortDropdown = ({
   selectedSort,

@@ -11,6 +11,9 @@ module.exports = {
   theme: {
     // the default theme is extended with custom styling used by the components
     extend: {
+      boxShadow: {
+        "3xl": "0 35px 60px -15px rgba(0, 0, 0, 0.3)",
+      },
       colors: {
         primary: "var(--primary-color, #2563eb)",
         "primary-light": "var(--primary-color-light, #dbeafe)",

@@ -12,7 +12,6 @@ import {
 import "../index.css";
 import EditTool from "../components/EditTool";
 import Main from "../layouts/Main";
-import Header from "../components/Header";
 import { transformSiteData } from "../utils/transformSiteData";
 import StoreDetails from "../components/StoreDetails";
 import Hours from "../components/Hours";
@@ -103,12 +102,9 @@ const Store: Template<TemplateRenderProps> = ({
     _site,
   } = document;
 
-  console.log("document", document);
-
   return (
     <>
-      <Main>
-        <Header directory={_site} />
+      <Main directory={_site}>
         {c_coverPhoto && (
           <div className="bg-white">
             <div className="mx-auto max-w-7xl sm:px-6 sm:py-8 lg:px-8">

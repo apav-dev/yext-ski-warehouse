@@ -1,7 +1,7 @@
 import React from "react";
 import { StarIcon } from "@heroicons/react/24/solid";
 
-type StarRatingInputProps = {
+export interface StarRatingInputProps {
   id: string;
   value: number;
   onChange: (value: number) => void;
@@ -9,7 +9,7 @@ type StarRatingInputProps = {
     starRatingInputContainer?: string;
   };
   label?: string;
-};
+}
 
 const StarRatingInput = ({
   id,

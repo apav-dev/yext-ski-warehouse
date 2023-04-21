@@ -10,7 +10,6 @@ import {
 } from "@yext/pages";
 import SearchResults from "../components/search/SearchResults";
 import Main from "../layouts/Main";
-import Header from "../components/Header";
 import { transformSiteData } from "../utils/transformSiteData";
 import { useEffect, useState } from "react";
 
@@ -90,10 +89,7 @@ const SkiFinder = ({ document }: TemplateRenderProps) => {
   }, []);
 
   return (
-    <Main>
-      <div className="relative">
-        <Header directory={_site} />
-      </div>
+    <Main directory={_site}>
       <div className="flex justify-center py-8 text-2xl font-semibold text-sky-400 sm:text-4xl">
         <h1>{resultsHeading}</h1>
       </div>

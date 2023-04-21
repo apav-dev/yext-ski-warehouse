@@ -14,11 +14,11 @@ import Facets from "./Facets";
 import SortDropdown from "./SortDropdown";
 import LoadingSnowflakes from "./LoadingSnowflakes";
 
-type SearchResultsProps = {
+export interface SearchResultsProps {
   filters?: Section[];
   headingText?: string;
   subheadingText?: string;
-};
+}
 
 type InitialSearchStatus = "notStarted" | "inProgress" | "complete";
 

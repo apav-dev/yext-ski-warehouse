@@ -7,26 +7,27 @@ import * as React from "react";
 import { useEffect } from "react";
 import ProductCard from "./search/ProductCard";
 
-type SimilarItemsProps = {
-  filters?: SelectableStaticFilter[];
-};
+export interface SimilarItemsProps {
+  title?: string;
+  filter?: SelectableStaticFilter;
+}
 
-export const SimilarItems = ({ filters }: SimilarItemsProps) => {
+export const SimilarItems = ({ title, filter }: SimilarItemsProps) => {
   const searchActions = useSearchActions();
 
   useEffect(() => {
-    if (filters) {
-      searchActions.setStaticFilters(filters);
+    if (filter) {
+      searchActions.setStaticFilters([filter]);
       searchActions.setVerticalLimit(4);
       searchActions.executeVerticalQuery();
     }
-  }, [filters]);
+  }, [filter]);
 
   return (
     <>
       <section aria-labelledby="related-heading" className="mt-16 sm:mt-24">
         <h2 id="related-heading" className="text-lg font-medium text-gray-900">
-          Similar Items
+          {title}
         </h2>
         <VerticalResults
           customCssClasses={{

@@ -43,7 +43,7 @@ const MobileFilters = ({ open, setOpen }: MobileFiltersProps) => {
                 <h2 className="text-xl font-medium text-sky-400">Filters</h2>
                 <button
                   type="button"
-                  className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                  className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-500"
                   onClick={() => setOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>

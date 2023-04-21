@@ -8,7 +8,6 @@ import {
   TemplateConfig,
   TransformProps,
 } from "@yext/pages";
-import Header from "../components/Header";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import SupportResults from "../components/search/SupportResults";
@@ -68,10 +67,7 @@ const SupportHome = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText } = document;
 
   return (
-    <Main>
-      <div className="relative">
-        <Header directory={_site} />
-      </div>
+    <Main directory={_site}>
       <div className="bg-white py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">

@@ -11,11 +11,11 @@ import { ComplexImageType } from "@yext/pages/components";
 import ReviewSortDropdown from "./ReviewSortDropdown";
 import ReviewSkeleton from "./ReviewSkeleton";
 
-type ReviewProps = {
+export interface ReviewProps {
   entityId: string;
   entityName?: string;
   entityImage?: ComplexImageType;
-};
+}
 
 type EntityReviewAggregate = {
   averageRating: number;

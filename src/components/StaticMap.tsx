@@ -1,9 +1,9 @@
 import * as React from "react";
 
-type Coordinates = {
+export interface Coordinates {
   latitude: string;
   longitude: string;
-};
+}
 
 const StaticMap = (props: Coordinates) => {
   const { latitude, longitude } = props;

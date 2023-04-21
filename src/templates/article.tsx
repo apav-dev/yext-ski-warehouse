@@ -95,10 +95,7 @@ const Article = ({ document }: TemplateRenderProps) => {
   const markdown = c_helpArticleContent?.markdown;
 
   return (
-    <Main>
-      <div className="relative">
-        <Header directory={_site} />
-      </div>
+    <Main directory={_site}>
       {markdown && (
         <HelpArticle
           title={name}

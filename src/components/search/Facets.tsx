@@ -1,6 +1,6 @@
 import { useSearchActions, useSearchState } from "@yext/search-headless-react";
 import { NumericalFacets, StandardFacets } from "@yext/search-ui-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Facets = () => {
   const resultsCount = useSearchState((state) => state.vertical.resultsCount);
@@ -14,6 +14,16 @@ const Facets = () => {
     ) ?? [];
 
   const searchActions = useSearchActions();
+
+  const [excludedFieldIds, setExcludedFieldIds] = useState<string[]>();
+
+  // useEffect that adds c_genderName to excludedFieldIds when "men" or "women" is in the url
+  useEffect(() => {
+    console.log(window.location.href);
+    if (window.location.href.includes("men" || "women")) {
+      setExcludedFieldIds(["c_genderName"]);
+    }
+  }, []);
 
   const handleClearFilters = () => {
     searchActions.resetFacets();
@@ -30,6 +40,7 @@ const Facets = () => {
 
     searchActions.executeVerticalQuery();
   };
+
   return (
     <>
       <StandardFacets
@@ -37,6 +48,7 @@ const Facets = () => {
           optionInput: "focus:ring-sky-400 text-sky-400 w-6 h-6",
           optionLabel: "text-base text-left",
         }}
+        excludedFieldIds={excludedFieldIds}
       />
       <NumericalFacets
         customCssClasses={{
