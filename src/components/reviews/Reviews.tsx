@@ -4,12 +4,12 @@ import { Stars } from "../Stars";
 import { twMerge } from "tailwind-merge";
 import { StarIcon } from "@heroicons/react/24/solid";
 import { useQuery } from "@tanstack/react-query";
-import { fetch } from "@yext/pages/util";
 import ReviewSubmissionForm from "./ReviewSubmissionForm";
 import { useEffect, useState } from "react";
 import { ComplexImageType } from "@yext/pages/components";
 import ReviewSortDropdown from "./ReviewSortDropdown";
 import ReviewSkeleton from "./ReviewSkeleton";
+import fetch from "../../utils/fetch";
 
 export interface ReviewProps {
   entityId: string;
@@ -77,22 +77,19 @@ const fetchReviewsAggForEntity = async (
   return data;
 };
 
-const reviewStreamUrl =
-  "https://streams.yext.com/v2/accounts/me/api/fetchReviewsForEntity?api_key=1316c9fafd65fd4518e69100166461a7&v=20221114";
+const reviewsUrl = `https://streams.yext.com/v2/accounts/me/api/fetchReviewsForEntity?api_key=${YEXT_PUBLIC_CONTENT_API_KEY}&v=20221114`;
 
 const fetchReviews = async (
-  entityId: string,
+  productId: string,
   sort?: ReviewSort
-  // limit?: number
 ): Promise<ReviewsResponse> => {
-  let requestUrl = reviewStreamUrl + "&entity.id=" + entityId;
+  let requestUrl = reviewsUrl + "&entity.id=" + productId;
   if (sort) {
     requestUrl += `&${reviewSortOptions[sort].key}=${reviewSortOptions[sort].value}`;
   }
   requestUrl += "&limit=" + REVIEWS_LIMIT;
 
-  const response = await fetch(requestUrl);
-  const data = await response.json();
+  const data = await fetch<{ response: ReviewsResponse }>(requestUrl);
   return data.response;
 };
 

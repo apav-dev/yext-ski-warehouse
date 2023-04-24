@@ -10,7 +10,6 @@ import {
 } from "@yext/pages";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
-import ImageGridHero from "../components/ImageGridHero";
 import Section from "../components/Section";
 import SectionHeader from "../components/SectionHeader";
 import GridContainer from "../components/GridContainer";
@@ -18,6 +17,7 @@ import FeatureCard from "../components/FeatureCard";
 import ProductCard from "../components/search/ProductCard";
 import Hero from "../components/Hero";
 import { Image } from "@yext/pages/components";
+import GridHero from "../components/GridHero";
 
 export const config: TemplateConfig = {
   stream: {
@@ -94,20 +94,18 @@ const Home = ({ document }: TemplateRenderProps) => {
     rawData: product,
   }));
 
+  const primaryImage = c_primaryHero?.images?.[0];
+
   return (
     <Main directory={_site}>
-      <div className="relative overflow-hidden bg-white">
-        {/* Hero section */}
-        <ImageGridHero
-          title={c_primaryHero.title}
-          subtitle={c_primaryHero.subtitle}
-          cta={c_primaryHero.cta}
-          images={c_primaryHero.images}
-        />
-      </div>
+      <GridHero
+        title={c_primaryHero.title}
+        subtitle={c_primaryHero.subtitle}
+        cta={c_primaryHero.cta}
+        image={primaryImage}
+      />
       <main>
         {/* Category section */}
-
         <Section backgroundColor="bg-gray-50">
           <SectionHeader title="Featured Categories" />
           <GridContainer>
@@ -137,7 +135,7 @@ const Home = ({ document }: TemplateRenderProps) => {
         </Section>
 
         {/* Featured section */}
-        <Section>
+        <Section backgroundColor="">
           <Hero
             title={c_featuredBlog.title}
             description={c_featuredBlog.description}
@@ -159,7 +157,7 @@ const Home = ({ document }: TemplateRenderProps) => {
 
         {/* CTA section */}
         {/* TODO: Studiotize */}
-        <Section aria-labelledby="sale-heading">
+        <Section aria-labelledby="sale-heading" backgroundColor="">
           <div className="overflow-hidden pt-32 sm:pt-14">
             <div className="bg-sky-400">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
