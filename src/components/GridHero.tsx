@@ -30,7 +30,7 @@ const GridHero = ({ title, subtitle, cta, image }: GridHeroProps) => {
                 {cta && (
                   <div className="mt-6">
                     <a
-                      href="#"
+                      href={cta.link}
                       className="inline-block rounded-md border border-transparent bg-sky-400 px-8 py-3 font-medium text-white hover:bg-sky-700"
                     >
                       {cta.label}
