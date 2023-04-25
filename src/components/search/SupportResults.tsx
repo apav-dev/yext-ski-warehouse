@@ -76,7 +76,6 @@ const SupportResults = () => {
       ) : (
         <>
           <DirectAnswer />
-          {/* TODO: ask Slapshot about this interface */}
           <UniversalResults
             verticalConfigMap={{
               help_articles: {

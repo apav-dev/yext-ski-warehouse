@@ -40,9 +40,9 @@ const ArticleCard = ({ result }: CardProps<Ce_HelpArticle>) => {
               {article.name}
             </a>
           </h3>
-          <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
+          {/* <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
             {article.c_summary}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>

@@ -25,9 +25,9 @@ const VideoCard = ({ result }: CardProps<Ce_video>) => {
               {video.name}
             </h3>
           </a>
-          <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
+          {/* <p className="mt-5 text-sm leading-6 text-gray-600 line-clamp-3">
             {video.c_videoDescription}
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
