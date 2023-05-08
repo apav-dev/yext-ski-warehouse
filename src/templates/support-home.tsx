@@ -8,7 +8,6 @@ import {
   TemplateConfig,
   TransformProps,
 } from "@yext/pages";
-// import { fetch } from "@yext/pages/util";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import SupportResults from "../components/search/SupportResults";
@@ -18,8 +17,6 @@ import {
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
 import { provideCore } from "@yext/search-core";
-// import crossFetch from "cross-fetch";
-import "cross-fetch/polyfill";
 
 export const config: TemplateConfig = {
   stream: {
@@ -33,22 +30,6 @@ export const config: TemplateConfig = {
       primary: false,
     },
   },
-};
-
-const fetchUniversalResults = async () => {
-  // if (typeof window !== "undefined" && window.fetch) {
-  //   return window.fetch(
-  //     "https://cdn.yextapis.com/v2/accounts/me/search/query?experienceKey=yext-ski-warehouse&api_key=61836bbb8fa572b8c9306eedfa4a2d2e&v=20230508&input="
-  //   );
-  // }
-  // return crossFetch(
-  //   "https://cdn.yextapis.com/v2/accounts/me/search/query?experienceKey=yext-ski-warehouse&api_key=61836bbb8fa572b8c9306eedfa4a2d2e&v=20230508&input="
-  // );
-  // const searchResponse = await fetch(
-  //   "https://cdn.yextapis.com/v2/accounts/me/search/query?experienceKey=yext-ski-warehouse&api_key=61836bbb8fa572b8c9306eedfa4a2d2e&v=20230508&input="
-  // );
-  // const searchResponseJson = await searchResponse.json();
-  // return searchResponseJson;
 };
 
 export const transformProps: TransformProps<TemplateRenderProps> = async (
@@ -95,22 +76,8 @@ const searcher = provideHeadless(
   getSearchProviderConfig("", "support-searcher")
 );
 
-const searchClient = provideCore({
-  apiKey: YEXT_PUBLIC_SEARCH_API_KEY || "",
-  experienceKey: "yext-ski-warehouse",
-  locale: "en",
-});
-
 const SupportHome = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText } = document;
-
-  console.log("document", document);
-
-  React.useEffect(() => {
-    const res = searchClient
-      .universalSearch({ query: "" })
-      .then((res) => console.log("res", res));
-  }, []);
 
   return (
     <Main directory={_site}>
