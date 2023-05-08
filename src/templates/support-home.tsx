@@ -16,6 +16,7 @@ import {
   provideHeadless,
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
+import { provideCore } from "@yext/search-core";
 
 export const config: TemplateConfig = {
   stream: {
@@ -36,11 +37,22 @@ export const transformProps: TransformProps<TemplateRenderProps> = async (
 ) => {
   const { _site } = data.document;
 
+  const searchClient = provideCore({
+    apiKey: YEXT_PUBLIC_SEARCH_API_KEY || "",
+    experienceKey: "yext-ski-warehouse",
+    locale: "en",
+  });
+
+  const universalResults = await searchClient.universalSearch({
+    query: "",
+  });
+
   return {
     ...data,
     document: {
       ...data.document,
       _site: transformSiteData(_site),
+      universalResults,
     },
   };
 };
@@ -65,6 +77,8 @@ const searcher = provideHeadless(
 
 const SupportHome = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText } = document;
+
+  console.log("document", document);
 
   return (
     <Main directory={_site}>
