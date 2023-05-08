@@ -8,7 +8,7 @@ import {
   TemplateConfig,
   TransformProps,
 } from "@yext/pages";
-import { fetch } from "@yext/pages/util";
+// import { fetch } from "@yext/pages/util";
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import SupportResults from "../components/search/SupportResults";
@@ -18,6 +18,7 @@ import {
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
 import { provideCore } from "@yext/search-core";
+import fetch from "cross-fetch";
 
 export const config: TemplateConfig = {
   stream: {
@@ -46,13 +47,13 @@ export const transformProps: TransformProps<TemplateRenderProps> = async (
 ) => {
   const { _site } = data.document;
 
-  const searchClient = provideCore({
-    apiKey: YEXT_PUBLIC_SEARCH_API_KEY || "",
-    experienceKey: "yext-ski-warehouse",
-    locale: "en",
-  });
+  // const searchClient = provideCore({
+  //   apiKey: YEXT_PUBLIC_SEARCH_API_KEY || "",
+  //   experienceKey: "yext-ski-warehouse",
+  //   locale: "en",
+  // });
 
-  const searchResponse = await searchClient.universalSearch({ query: "" });
+  const searchResponse = await fetchUniversalResults();
 
   return {
     ...data,
