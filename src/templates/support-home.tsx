@@ -18,7 +18,7 @@ import {
   SearchHeadlessProvider,
 } from "@yext/search-headless-react";
 import { provideCore } from "@yext/search-core";
-import fetch from "cross-fetch";
+import crossFetch from "cross-fetch";
 
 export const config: TemplateConfig = {
   stream: {
@@ -35,11 +35,19 @@ export const config: TemplateConfig = {
 };
 
 const fetchUniversalResults = async () => {
-  const searchResponse = await fetch(
+  if (typeof window !== "undefined" && window.fetch) {
+    return window.fetch(
+      "https://cdn.yextapis.com/v2/accounts/me/search/query?experienceKey=yext-ski-warehouse&api_key=61836bbb8fa572b8c9306eedfa4a2d2e&v=20230508&input="
+    );
+  }
+  return crossFetch(
     "https://cdn.yextapis.com/v2/accounts/me/search/query?experienceKey=yext-ski-warehouse&api_key=61836bbb8fa572b8c9306eedfa4a2d2e&v=20230508&input="
   );
-  const searchResponseJson = await searchResponse.json();
-  return searchResponseJson;
+  // const searchResponse = await fetch(
+  //   "https://cdn.yextapis.com/v2/accounts/me/search/query?experienceKey=yext-ski-warehouse&api_key=61836bbb8fa572b8c9306eedfa4a2d2e&v=20230508&input="
+  // );
+  // const searchResponseJson = await searchResponse.json();
+  // return searchResponseJson;
 };
 
 export const transformProps: TransformProps<TemplateRenderProps> = async (
@@ -87,6 +95,12 @@ const SupportHome = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText } = document;
 
   console.log("document", document);
+
+  React.useEffect(() => {
+    const res = fetchUniversalResults().then((res) =>
+      res.json().then((json) => console.log(json))
+    );
+  }, []);
 
   return (
     <Main directory={_site}>
