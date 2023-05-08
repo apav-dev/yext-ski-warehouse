@@ -63,7 +63,7 @@ export const transformProps: TransformProps<TemplateRenderProps> = async (
   });
 
   // const searchResponse = await fetchUniversalResults();
-  const searchResponse = searchClient.universalSearch({
+  const searchResponse = await searchClient.universalSearch({
     query: "",
   });
 
@@ -95,16 +95,22 @@ const searcher = provideHeadless(
   getSearchProviderConfig("", "support-searcher")
 );
 
+const searchClient = provideCore({
+  apiKey: YEXT_PUBLIC_SEARCH_API_KEY || "",
+  experienceKey: "yext-ski-warehouse",
+  locale: "en",
+});
+
 const SupportHome = ({ document }: TemplateRenderProps) => {
   const { _site, c_headingText, c_subHeadingText } = document;
 
   console.log("document", document);
 
-  // React.useEffect(() => {
-  //   const res = fetchUniversalResults().then((res) =>
-  //     res.json().then((json) => console.log(json))
-  //   );
-  // }, []);
+  React.useEffect(() => {
+    const res = searchClient
+      .universalSearch({ query: "" })
+      .then((res) => console.log("res", res));
+  }, []);
 
   return (
     <Main directory={_site}>
