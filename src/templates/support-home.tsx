@@ -32,6 +32,35 @@ export const config: TemplateConfig = {
   },
 };
 
+async function fetchUniversalResults() {
+  const url =
+    "https://cdn.yextapis.com/v2/accounts/me/search/query?experienceKey=yext-ski-warehouse&api_key=61836bbb8fa572b8c9306eedfa4a2d2e&v=20230508&input=null";
+  const headers = new Headers({
+    "Cookie":
+      "session-id=42747ca5-a9af-4b5d-845b-5f3cf056fa9f; __cf_bm=2MUQ8Fj8jVQdOLj4IhAcTt8iYbZjV6oHSfvSYRL1rmo-1683574309-0-AWpV1Ei/5lW9JeTVgLSF3oigRMY6f7A0KJJOgPtXuMQF6VnjCptbzceYMPpgSCKLQEYIUAu2yMY0duR5zULZgoE=",
+  });
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: headers,
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+    } else {
+      console.error(
+        "Error fetching data:",
+        response.status,
+        response.statusText
+      );
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
 export const transformProps: TransformProps<TemplateRenderProps> = async (
   data
 ) => {
@@ -43,9 +72,7 @@ export const transformProps: TransformProps<TemplateRenderProps> = async (
     locale: "en",
   });
 
-  const universalResults = await searchClient.universalSearch({
-    query: "",
-  });
+  const universalResults = fetchUniversalResults();
 
   return {
     ...data,
