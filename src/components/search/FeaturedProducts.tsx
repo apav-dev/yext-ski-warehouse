@@ -17,12 +17,14 @@ export const FeaturedProducts = () => {
     const recentProductSearches = localStorage.getItem(
       "__yxt_recent_searches_products__"
     );
-    // if it does, parse it
-    if (recentProductSearches && recentProductSearches.length > 0) {
+
+    debugger;
+    if (recentProductSearches) {
       const parsedRecentProductSearches: RecentSearches[] = JSON.parse(
         recentProductSearches
       );
-      searchActions.setQuery(parsedRecentProductSearches[0].query);
+      parsedRecentProductSearches.length > 0 &&
+        searchActions.setQuery(parsedRecentProductSearches[0].query);
     }
 
     searchActions.setVerticalLimit(4);
