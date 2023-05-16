@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { SimilarItems } from "../SimilarItems";
-import { useCartState } from "./hooks/useCartState";
+import FilteredResults from "./FilteredResults";
+import { useCartState } from "../cart/hooks/useCartState";
 import { SelectableStaticFilter } from "@yext/search-headless-react";
 
-const RelatedProducts = () => {
+const SimilarToCartProducts = () => {
   const cartState = useCartState();
   const [filter, setFilter] = useState<SelectableStaticFilter>();
 
@@ -23,9 +23,12 @@ const RelatedProducts = () => {
 
   return (
     <section aria-labelledby="related-heading" className="mt-24">
-      <SimilarItems title="You may also like..." filter={firstProductFilter} />
+      <FilteredResults
+        title="You may also like..."
+        filter={firstProductFilter}
+      />
     </section>
   );
 };
 
-export default RelatedProducts;
+export default SimilarToCartProducts;

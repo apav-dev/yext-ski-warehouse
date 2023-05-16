@@ -18,6 +18,12 @@ import ProductCard from "../components/search/ProductCard";
 import Hero from "../components/Hero";
 import { Image } from "@yext/pages/components";
 import GridHero from "../components/GridHero";
+import {
+  SearchHeadlessProvider,
+  provideHeadless,
+} from "@yext/search-headless-react";
+import { getSearchProviderConfig } from "../config";
+import { FeaturedProducts } from "../components/search/FeaturedProducts";
 
 export const config: TemplateConfig = {
   stream: {
@@ -79,6 +85,10 @@ export const getHeadConfig: GetHeadConfig<
     ],
   };
 };
+
+const featuredProductsSearcher = provideHeadless(
+  getSearchProviderConfig("products", "featured-products")
+);
 
 const Home = ({ document }: TemplateRenderProps) => {
   const {
@@ -144,16 +154,13 @@ const Home = ({ document }: TemplateRenderProps) => {
           />
         </Section>
 
-        {/* Favorites section */}
-        <Section backgroundColor="bg-gray-50">
-          <SectionHeader title="Featured Products" />
-          {/* <GridContainer> */}
-          <div className="mt-6 grid grid-cols-1 gap-y-6 sm:gap-x-6 sm:grid-cols-3 lg:gap-8">
-            {featuredProducts?.map((product) => (
-              <ProductCard key={product.id} result={product} />
-            ))}
-          </div>
-        </Section>
+        {/* Featured Products section */}
+        <SearchHeadlessProvider searcher={featuredProductsSearcher}>
+          <Section backgroundColor="bg-gray-50">
+            <SectionHeader title="Featured Products" />
+            <FeaturedProducts />
+          </Section>
+        </SearchHeadlessProvider>
 
         {/* CTA section */}
         {/* TODO: Studiotize */}

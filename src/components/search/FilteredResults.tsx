@@ -5,14 +5,14 @@ import {
 import { VerticalResults } from "@yext/search-ui-react";
 import * as React from "react";
 import { useEffect } from "react";
-import ProductCard from "./search/ProductCard";
+import ProductCard from "./ProductCard";
 
-export interface SimilarItemsProps {
+export interface FilteredResultsProps {
   title?: string;
   filter?: SelectableStaticFilter;
 }
 
-export const SimilarItems = ({ title, filter }: SimilarItemsProps) => {
+const FilteredResults = ({ title, filter }: FilteredResultsProps) => {
   const searchActions = useSearchActions();
 
   useEffect(() => {
@@ -40,3 +40,5 @@ export const SimilarItems = ({ title, filter }: SimilarItemsProps) => {
     </>
   );
 };
+
+export default FilteredResults;

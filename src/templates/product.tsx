@@ -21,13 +21,13 @@ import {
   SelectableStaticFilter,
   StaticFilter,
 } from "@yext/search-headless-react";
-import { SimilarItems } from "../components/SimilarItems";
 import { Table } from "../components/Table";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import EditTool from "../components/EditTool";
 import { Reviews } from "../components/reviews/Reviews";
 import { ProductSchema } from "../components/ProductSchema";
 import AddToCart from "../components/AddToCartButton";
+import FilteredResults from "../components/search/FilteredResults";
 
 export const config: TemplateConfig = {
   stream: {
@@ -266,7 +266,7 @@ const Product = ({ document }: TemplateRenderProps) => {
           <ProductImageSelector images={photoGallery} />
         )}
         <div className="col-span-2">
-          <SimilarItems title="Similar Items" filter={similarItemsFilter} />
+          <FilteredResults title="Similar Items" filter={similarItemsFilter} />
         </div>
         {c_specs && c_specs.length > 0 && (
           <div className="col-span-2 mt-16 sm:mt-24">
