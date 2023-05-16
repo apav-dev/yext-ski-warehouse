@@ -18,7 +18,6 @@ export const FeaturedProducts = () => {
       "__yxt_recent_searches_products__"
     );
 
-    debugger;
     if (recentProductSearches) {
       const parsedRecentProductSearches: RecentSearches[] = JSON.parse(
         recentProductSearches
