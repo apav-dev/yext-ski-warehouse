@@ -18,7 +18,7 @@ export const FeaturedProducts = () => {
       "__yxt_recent_searches_products__"
     );
     // if it does, parse it
-    if (recentProductSearches) {
+    if (recentProductSearches && recentProductSearches.length > 0) {
       const parsedRecentProductSearches: RecentSearches[] = JSON.parse(
         recentProductSearches
       );
