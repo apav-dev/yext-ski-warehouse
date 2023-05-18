@@ -1,7 +1,7 @@
 import React from "react";
 import { ComplexImageType, Image } from "@yext/pages/components";
 
-export interface HeroProps {
+export interface ImageGridHeroProps {
   title: string;
   subtitle: string;
   cta?: {
@@ -11,7 +11,12 @@ export interface HeroProps {
   images?: ComplexImageType[];
 }
 
-const ImageGridHero = ({ title, subtitle, cta, images }: HeroProps) => {
+const ImageGridHero = ({
+  title,
+  subtitle,
+  cta,
+  images,
+}: ImageGridHeroProps) => {
   return (
     <div className="pb-80 pt-16 sm:pb-40 sm:pt-24 lg:pb-48 lg:pt-40">
       <div className="relative mx-auto max-w-7xl px-4 sm:static sm:px-6 lg:px-8">

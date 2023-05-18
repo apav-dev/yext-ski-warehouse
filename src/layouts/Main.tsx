@@ -12,6 +12,7 @@ import { CartProvider } from "../components/cart/providers/CartProvider";
 import { SkiWarehouseDirectory } from "../utils/transformSiteData";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { P13nProvider } from "../components/p13n/providers/P13nProvider";
 
 interface MainProps {
   children?: React.ReactNode;
@@ -26,22 +27,24 @@ const searcher = provideHeadless(getSearchProviderConfig("products"));
 const Main = ({ children, initialFilters, directory }: MainProps) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <HeadlessProvider
-        searcher={searcher}
-        routing={defaultRouter}
-        initialFilters={initialFilters}
-      >
-        <CartProvider>
-          <div className="min-h-screen text-gray-900">
-            <div className="relative">
-              <Header directory={directory} />
-              {children}
-              <Footer directory={directory} />
+      <P13nProvider>
+        <HeadlessProvider
+          searcher={searcher}
+          routing={defaultRouter}
+          initialFilters={initialFilters}
+        >
+          <CartProvider>
+            <div className="min-h-screen text-gray-900">
+              <div className="relative">
+                <Header directory={directory} />
+                {children}
+                <Footer directory={directory} />
+              </div>
             </div>
-          </div>
-          <ChatBot configId="ski-warehouse-assistant" />
-        </CartProvider>
-      </HeadlessProvider>
+            <ChatBot configId="ski-warehouse-assistant" />
+          </CartProvider>
+        </HeadlessProvider>
+      </P13nProvider>
     </QueryClientProvider>
   );
 };

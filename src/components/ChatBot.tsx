@@ -77,7 +77,7 @@ export function ChatBot({ configId }: { configId: string }) {
   return (
     <div
       className={cx(
-        "fixed z-50 bottom-6 right-4 lg:bottom-14 lg:right-10 2xl:right-auto 2xl:left-[80%]",
+        "fixed z-30 bottom-6 right-4 lg:bottom-14 lg:right-10 2xl:right-auto 2xl:left-[80%]",
         showChat && "h-auto"
       )}
     >
