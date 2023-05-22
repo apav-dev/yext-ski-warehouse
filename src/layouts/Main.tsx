@@ -13,6 +13,7 @@ import { SkiWarehouseDirectory } from "../utils/transformSiteData";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { P13nProvider } from "../components/p13n/providers/P13nProvider";
+import { ChatHeadlessProvider } from "@yext/chat-headless-react";
 
 interface MainProps {
   children?: React.ReactNode;
@@ -27,24 +28,31 @@ const searcher = provideHeadless(getSearchProviderConfig("products"));
 const Main = ({ children, initialFilters, directory }: MainProps) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <P13nProvider>
-        <HeadlessProvider
-          searcher={searcher}
-          routing={defaultRouter}
-          initialFilters={initialFilters}
-        >
-          <CartProvider>
-            <div className="min-h-screen text-gray-900">
-              <div className="relative">
-                <Header directory={directory} />
-                {children}
-                <Footer directory={directory} />
+      <ChatHeadlessProvider
+        config={{
+          apiKey: "ba41c60c65d874c5340985ad4fcda69a",
+          botId: "ski-warehouse-chat",
+        }}
+      >
+        <P13nProvider>
+          <HeadlessProvider
+            searcher={searcher}
+            routing={defaultRouter}
+            initialFilters={initialFilters}
+          >
+            <CartProvider>
+              <div className="min-h-screen text-gray-900">
+                <div className="relative">
+                  <Header directory={directory} />
+                  {children}
+                  <Footer directory={directory} />
+                </div>
               </div>
-            </div>
-            <ChatBot configId="ski-warehouse-assistant" />
-          </CartProvider>
-        </HeadlessProvider>
-      </P13nProvider>
+              <ChatBot configId="ski-warehouse-assistant" />
+            </CartProvider>
+          </HeadlessProvider>
+        </P13nProvider>
+      </ChatHeadlessProvider>
     </QueryClientProvider>
   );
 };
