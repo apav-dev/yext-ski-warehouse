@@ -29,16 +29,16 @@ const Chat = () => {
     setTimeout(() => {
       setShowGreeting(true);
     }, 500);
-    // after 2s, hide the greeting and show the first message
+    // after 300ms, hide the greeting and show the first message
     setTimeout(() => {
       setShowGreeting(false);
       setTimeout(() => {
         setGreetingText(messages[0].text);
         setShowGreeting(true);
-        // after .3s, setInputExpanded to true
+        // after 2s, begin chat
         setTimeout(() => {
           setInputExpanded(true);
-        }, 300);
+        }, 2000);
       }, 500);
     }, 2000);
   };
@@ -95,26 +95,41 @@ const Chat = () => {
           leave="transition-opacity duration-500"
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
-          className="absolute inset-0 bg-gradient-to-b from-gray-700/50 via-gray-900/70 to-black/80 bg-opacity-50 flex flex-col justify-center items-center"
+          className="absolute inset-0 bg-gradient-to-b from-gray-700/50 via-gray-900/70 to-black/80 bg-opacity-50"
         >
-          <Transition
-            show={showGreeting}
-            enter="transition-all ease-out duration-300"
-            enterFrom="opacity-0 translate-y-2"
-            enterTo="opacity-100 translate-y-0"
-            leave="transition-all ease-in duration-300"
-            leaveFrom="opacity-100 translate-y-0"
-            leaveTo="opacity-0 translate-y-2"
-          >
-            <div
-              className={twMerge(
-                `text-6xl font-bold text-white text-center px-4`,
-                messages?.[0]?.text === greetingText && "text-3xl"
-              )}
+          <div className="h-full w-full relative">
+            <Transition
+              show={showGreeting}
+              enter="transition-all ease-out duration-300"
+              enterFrom="opacity-0 translate-y-2"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition-all ease-in duration-300"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-2"
             >
-              {greetingText}
-            </div>
-          </Transition>
+              <div
+                className={twMerge(
+                  "absolute transition-all duration-1000 text-3xl left-0 right-0",
+                  !inputExpanded && "top-64",
+                  inputExpanded &&
+                    "top-4 transform md:-translate-x-[15%] lg:-translate-x-1/4 "
+                )}
+              >
+                <div className="flex justify-center">
+                  <p
+                    className={twMerge(
+                      "transition-all duration-1000 font-bold text-white text-center ",
+                      messages?.[0]?.text !== greetingText && "text-6xl",
+                      inputExpanded &&
+                        "p-2 bg-gray-100 rounded-2xl text-sm text-gray-900 font-normal md:p-4 md:text-base"
+                    )}
+                  >
+                    {greetingText}
+                  </p>
+                </div>
+              </div>
+            </Transition>
+          </div>
         </Transition>
         {/* chat */}
         <div className="mx-auto max-w-2xl ">
