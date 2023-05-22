@@ -1,12 +1,13 @@
-import React from "react";
-import { useEffect, useState, useRef } from "react";
+import React, { useRef } from "react";
+import { useEffect, useState } from "react";
 import { useChatState, useChatActions } from "@yext/chat-headless-react";
 import MessageBubble from "./MessageBubble";
-import { FaCircle, FaExclamationTriangle, FaSnowflake } from "react-icons/fa";
+import { FaExclamationTriangle, FaSnowflake } from "react-icons/fa";
 import { Transition } from "@headlessui/react";
 import { getGreetingText } from "../../utils/getGreetingText";
 import { twMerge } from "tailwind-merge";
 import { ArrowUpCircleIcon } from "@heroicons/react/24/solid";
+import LoadingBubble from "./LoadingBubble";
 
 const Chat = () => {
   const chat = useChatActions();
@@ -21,6 +22,27 @@ const Chat = () => {
   const [showGreeting, setShowGreeting] = useState(false);
   const [greetingText, setGreetingText] = useState(getGreetingText());
   const [inputExpanded, setInputExpanded] = useState(false);
+
+  useEffect(() => {
+    // triggerChatFlow();
+    setStartChat(true);
+    // after 0.5s, show the greeting
+    setTimeout(() => {
+      setShowGreeting(true);
+    }, 500);
+    // after 300ms, hide the greeting and show the first message
+    setTimeout(() => {
+      setShowGreeting(false);
+      setTimeout(() => {
+        setGreetingText(messages[0].text);
+        setShowGreeting(true);
+        // after 2s, begin chat
+        setTimeout(() => {
+          setInputExpanded(true);
+        }, 2000);
+      }, 500);
+    }, 2000);
+  }, []);
 
   // TODO: add check to make sure chat loaded
   const triggerChatFlow = async () => {
@@ -42,10 +64,6 @@ const Chat = () => {
       }, 500);
     }, 2000);
   };
-
-  // useEffect(() => {
-  //   setStartGreeting(true);
-  // }, []);
 
   useEffect(() => {
     chat.getNextMessage();
@@ -69,19 +87,24 @@ const Chat = () => {
     }
   };
 
-  const bottomDivRef = useRef<HTMLDivElement>(null);
+  const messagesDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (bottomDivRef.current) {
-      setTimeout(() => {
-        bottomDivRef.current?.scrollIntoView({ behavior: "smooth" });
-      }, 100); // Adjust this delay as needed
+    if (messagesDivRef.current) {
+      const div = messagesDivRef.current;
+      const isScrolledToBottom =
+        div.scrollHeight - div.clientHeight <= div.scrollTop + 1;
+
+      // Scroll to the bottom if already at the bottom or if the content overflows
+      if (isScrolledToBottom || div.scrollHeight > div.clientHeight) {
+        div.scrollTop = div.scrollHeight;
+      }
     }
   }, [messages, loading]);
 
   return (
-    <div className="bg-gray-900">
-      <div className="relative isolate overflow-hidden pt-14">
+    <div className="bg-gray-900 flex h-full flex-col">
+      <div className="relative isolate overflow-hidden pt-14 h-[700px]">
         <img
           src="https://a.mktgcdn.com/p/vBqAAeERK_DkUHW4Y-CzJJASOt2gDP3B-PzjwDZy8js/3021x3349.jpg"
           alt=""
@@ -110,78 +133,56 @@ const Chat = () => {
               <div
                 className={twMerge(
                   "absolute transition-all duration-1000 text-3xl left-0 right-0",
-                  !inputExpanded && "top-64",
-                  inputExpanded &&
-                    "top-4 transform md:-translate-x-[15%] lg:-translate-x-1/4 "
+                  !inputExpanded && "top-64 px-32",
+                  inputExpanded && "top-4 px-16 bottom-0"
                 )}
               >
-                <div className="flex justify-center">
-                  <p
-                    className={twMerge(
-                      "transition-all duration-1000 font-bold text-white text-center ",
-                      messages?.[0]?.text !== greetingText && "text-6xl",
-                      inputExpanded &&
-                        "p-2 bg-gray-100 rounded-2xl text-sm text-gray-900 font-normal md:p-4 md:text-base"
+                <div
+                  ref={messagesDivRef}
+                  className="max-h-[600px] overflow-y-auto pb-8"
+                >
+                  <div className="flex flex-col gap-y-6 justify-center h-full">
+                    <p
+                      className={twMerge(
+                        "transition-all duration-1000 font-bold text-white text-center w-fit",
+                        messages?.[0]?.text !== greetingText && "text-6xl",
+                        inputExpanded &&
+                          "p-2 bg-gray-100 rounded-2xl text-sm text-gray-900 font-semibold md:p-4 md:text-base"
+                      )}
+                    >
+                      {greetingText}
+                    </p>
+                    {messages.slice(1).map((message, index) => (
+                      <MessageBubble
+                        key={index}
+                        index={index}
+                        message={message}
+                      />
+                    ))}
+                    {loading && <LoadingBubble />}
+                    {error && (
+                      <Transition
+                        show={error}
+                        appear={true}
+                        enter="transition-opacity duration-500"
+                        enterFrom="opacity-0"
+                        enterTo="opacity-100"
+                        className="w-fit flex flex-row gap-1 rounded-md bg-red-100 p-4 text-red-600 text-base "
+                      >
+                        <div className="my-auto">
+                          <FaExclamationTriangle />
+                        </div>
+                        <div className="">Oops, something went wrong.</div>
+                      </Transition>
                     )}
-                  >
-                    {greetingText}
-                  </p>
+                  </div>
                 </div>
               </div>
             </Transition>
           </div>
         </Transition>
-        {/* chat */}
-        <div className="mx-auto max-w-2xl ">
-          <div className="w-full flex flex-col overflow-auto bg-transparent">
-            <div className="mx-auto max-w-5xl h-96 mt-auto w-full flex flex-col gap-y-6 py-2 mb-28 px-4">
-              <div className="hidden">
-                {messages.map((message, index) => (
-                  <MessageBubble key={index} index={index} message={message} />
-                ))}
-                {loading && (
-                  <Transition
-                    show={loading}
-                    appear={true}
-                    enter="transition-opacity duration-500"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    className="w-fit flex gap-1 rounded-3xl p-3 text-[8px] text-gray-500 bg-gray-100"
-                  >
-                    <FaCircle
-                      className="animate-bounce"
-                      style={{ animationDelay: "0ms" }}
-                    />
-                    <FaCircle
-                      className="animate-bounce"
-                      style={{ animationDelay: "300ms" }}
-                    />
-                    <FaCircle
-                      className="animate-bounce"
-                      style={{ animationDelay: "600ms" }}
-                    />
-                  </Transition>
-                )}
-                {error && (
-                  <Transition
-                    show={error}
-                    appear={true}
-                    enter="transition-opacity duration-500"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    className="w-fit flex flex-row gap-1 rounded-md bg-red-100 p-4 text-red-600 text-base "
-                  >
-                    <div className="my-auto">
-                      <FaExclamationTriangle />
-                    </div>
-                    <div className="">Oops, something went wrong.</div>
-                  </Transition>
-                )}
-                <div className="pb-2" ref={bottomDivRef} />
-              </div>
-            </div>
-          </div>
-          <div className="w-full max-w-5xl flex relative p-4">
+        <div className="absolute bottom-0 left-0 right-0">
+          <div className="w-full max-w-5xl flex relative p-4 mx-auto">
             <Transition
               as="div"
               show={inputExpanded}
@@ -195,7 +196,6 @@ const Chat = () => {
             >
               <div className="border border-gray-300 p-4 disabled:bg-gray-50 rounded-3xl bg-white flex">
                 <FaSnowflake className="inline-block text-sky-400 mr-2 h-6 w-6" />
-
                 <input
                   autoFocus
                   disabled={loading}
@@ -219,15 +219,6 @@ const Chat = () => {
               </button>
             </Transition>
           </div>
-        </div>
-        {/* absolute button in the bottom right */}
-        <div className="absolute bottom-0 right-0">
-          <button
-            onClick={triggerChatFlow}
-            className="bg-white rounded-full p-4 m-4"
-          >
-            Reset
-          </button>
         </div>
       </div>
     </div>

@@ -60,7 +60,7 @@ export default function MessageBubble({
             "p-4 rounded-2xl w-fit max-w-lg relative",
             message.source === "BOT"
               ? "text-left bg-gray-100"
-              : "text-right bg-blue-700 relative"
+              : "text-right bg-sky-400 relative"
           )}
         >
           <Transition
@@ -93,19 +93,10 @@ export default function MessageBubble({
               <HandThumbDownIcon className="w-4 h-4 p-1" />
             </button>
           </Transition>
-          {/* TODO: Update when @yext/react-components are working */}
-          {/* <div
-            className={cx(
-              "prose overflow-x-auto",
-              message.source === "BOT" ? "text-gray-900" : "text-white"
-            )}
-          >
-            {/* <Markdown content={messageText} /> */}
-          {/* </div>  */}
           <div
             className={cx(
-              "prose overflow-x-auto",
-              message.source === "BOT" ? "text-gray-900" : "text-white"
+              "prose overflow-x-auto font-semibold",
+              message.source === "BOT" ? "text-gray-900" : "text-white "
             )}
           >
             <Markdown content={messageText} />

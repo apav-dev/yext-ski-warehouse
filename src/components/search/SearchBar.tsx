@@ -88,6 +88,7 @@ const SearchBar = ({ customCssClasses }: SearchBarProps) => {
     <SB
       customCssClasses={customCssClasses}
       onSearch={handleSearch}
+      recentSearchesLimit={0}
       placeholder="Search for skis and more..."
       visualAutocompleteConfig={{
         renderEntityPreviews,
