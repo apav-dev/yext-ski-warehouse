@@ -123,7 +123,7 @@ const Home = ({ document }: TemplateRenderProps) => {
       {/* <P13nHeader isOpen={isP13nHeaderOpen} onClose={handleP13nHeaderClose} />
       <P13nTool open={isP13nToolOpen} onClick={handleP13nToolClick} />
       <HomeHero heros={c_p13nHeros} /> */}
-      {/* <Chat /> */}
+      <Chat />
       <main>
         {/* Category section */}
         <Section backgroundColor="bg-gray-50">
