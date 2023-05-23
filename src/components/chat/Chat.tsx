@@ -151,7 +151,7 @@ const Chat = () => {
                         message={message}
                       />
                     ))}
-                    {loading && <LoadingBubble />}
+                    {loading && firstMessage && <LoadingBubble />}
                     {error && (
                       <Transition
                         show={error}

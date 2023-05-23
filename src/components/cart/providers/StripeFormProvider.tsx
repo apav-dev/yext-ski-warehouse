@@ -13,11 +13,13 @@ const stripePromise = loadStripe(YEXT_PUBLIC_STRIPE_PK_KEY);
 const fetchStripeClientSecret = async (
   amount: number
 ): Promise<{ client_secret: string }> => {
-  const response = await fetch(`/payment-intent?amount=${amount}`);
+  const response = await fetch(
+    `http://localhost:8000/api/payment-intent?amount=${amount}`
+  );
   return response.json();
 };
 
-export const StripeProvider = ({ children }: StripeProviderProps) => {
+export const StripeFormProvider = ({ children }: StripeProviderProps) => {
   const cartState = useCartState();
 
   const subtotal = cartState.products.reduce(

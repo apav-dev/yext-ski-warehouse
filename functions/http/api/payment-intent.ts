@@ -1,19 +1,21 @@
-const main = async (request) => {
-  const url = "https://api.stripe.com/v1/payment_intents";
-  const currency = "usd";
-  const automaticPaymentMethodsEnabled = "true";
+const stripeUrl = "https://api.stripe.com/v1/payment_intents";
+const currency = "usd";
+const automaticPaymentMethodsEnabled = "true";
 
-  const requestURL = request["requestUrl"];
-  const params = new URLSearchParams(requestURL.split("?")[1]);
+const responseHeaders = {
+  "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "http://localhost:5173",
+};
+
+const paymentIntent = async (request) => {
+  const { queryParams } = request;
 
   // in a real app, you would want to determine the amount on the server
-  const amount = params.get("amount");
+  const amount = queryParams.amount;
   if (!amount) {
     return {
       statusCode: 400,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: responseHeaders,
       body: "Missing amount",
     };
   }
@@ -26,7 +28,7 @@ const main = async (request) => {
     automaticPaymentMethodsEnabled
   );
 
-  const response = await fetch(url, {
+  const response = await fetch(stripeUrl, {
     method: "POST",
     headers: {
       Authorization: "Basic " + btoa(YEXT_PUBLIC_STRIPE_SK_KEY),
@@ -39,24 +41,22 @@ const main = async (request) => {
 
   const clientSecret = data.client_secret;
 
+  console.log(data);
+
   if (!clientSecret) {
     console.error(data.error.message);
     return {
       statusCode: 500,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: responseHeaders,
       body: "Payment intent creation failed",
     };
   }
 
   return {
     statusCode: 200,
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: responseHeaders,
     body: JSON.stringify({ client_secret: clientSecret }),
   };
 };
 
-export default main;
+export default paymentIntent;

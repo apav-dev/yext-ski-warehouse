@@ -10,7 +10,6 @@ import {
 import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import CheckoutForm from "../components/cart/CheckoutForm";
-import { StripeProvider } from "../components/cart/providers/StripeProvider";
 
 export const transformProps: TransformProps<TemplateRenderProps> = async (
   data
@@ -49,9 +48,7 @@ const Checkout = ({ document }: TemplateRenderProps) => {
         <h1 className="flex justify-center py-8 text-2xl font-semibold text-sky-400 sm:text-4xl">
           Checkout
         </h1>
-        <StripeProvider>
-          <CheckoutForm />
-        </StripeProvider>
+        <CheckoutForm />
       </div>
     </Main>
   );

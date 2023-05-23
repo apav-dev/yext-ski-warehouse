@@ -1,8 +1,8 @@
 {
-  "functions/api/payment-intent.ts": {
-    "entrypoint": "main"
+  "functions/http/api/payment-intent.ts": {
+    "entrypoint": "paymentIntent"
   },
-  "functions/api/reviewsAgg.ts": {
+  "functions/http/api/reviewsAgg.ts": {
     "entrypoint": "main"
   }
 }
