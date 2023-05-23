@@ -10,7 +10,6 @@ import {
 import * as React from "react";
 import Main from "../layouts/Main";
 import "../index.css";
-import skiSign from "../assets/images/ski-sign.avif";
 import { transformSiteData } from "../utils/transformSiteData";
 
 export const getPath: GetPath<TemplateProps> = () => {
@@ -74,11 +73,11 @@ const FourOhFour: Template<TemplateRenderProps> = ({
             </div>
           </main>
           <div className="hidden lg:relative lg:col-start-2 lg:row-start-1 lg:row-end-4 lg:block">
-            <img
+            {/* <img
               className="absolute inset-0 h-full w-full object-cover"
               src={skiSign}
               alt=""
-            />
+            /> */}
           </div>
         </div>
       </div>

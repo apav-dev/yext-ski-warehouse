@@ -35,22 +35,22 @@ const Main = ({ children, initialFilters, directory }: MainProps) => {
         }}
       >
         <P13nProvider>
-          <HeadlessProvider
+          {/* <HeadlessProvider
             searcher={searcher}
             routing={defaultRouter}
             initialFilters={initialFilters}
-          >
-            <CartProvider>
-              <div className="min-h-screen text-gray-900">
-                <div className="relative">
-                  <Header directory={directory} />
-                  {children}
-                  <Footer directory={directory} />
-                </div>
+          > */}
+          <CartProvider>
+            <div className="min-h-screen text-gray-900">
+              <div className="relative">
+                <Header directory={directory} />
+                {children}
+                <Footer directory={directory} />
               </div>
-              <ChatBot configId="ski-warehouse-assistant" />
-            </CartProvider>
-          </HeadlessProvider>
+            </div>
+            <ChatBot configId="ski-warehouse-assistant" />
+          </CartProvider>
+          {/* </HeadlessProvider> */}
         </P13nProvider>
       </ChatHeadlessProvider>
     </QueryClientProvider>

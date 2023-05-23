@@ -1,4 +1,4 @@
-export const main = async (request) => {
+const main = async (request) => {
   const url = "https://api.stripe.com/v1/payment_intents";
   const currency = "usd";
   const automaticPaymentMethodsEnabled = "true";
@@ -58,3 +58,5 @@ export const main = async (request) => {
     body: JSON.stringify({ client_secret: clientSecret }),
   };
 };
+
+export default main;
