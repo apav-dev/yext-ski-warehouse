@@ -3,7 +3,7 @@ import type { Message } from "@yext/chat-core";
 import cx from "classnames";
 import { HandThumbUpIcon, HandThumbDownIcon } from "@heroicons/react/20/solid";
 import { Transition } from "@headlessui/react";
-import { Markdown } from "@yext/react-components";
+// import { Markdown } from "@yext/react-components";
 
 const formatUglyServerTimestamp = (timestamp: number | string) => {
   if (typeof timestamp === "string") {
@@ -99,7 +99,7 @@ export default function MessageBubble({
               message.source === "BOT" ? "text-gray-900" : "text-white "
             )}
           >
-            <Markdown content={messageText} />
+            {/* <Markdown content={messageText} /> */}
           </div>
           {explanation && (
             <div className="text-xs text-gray-600 mt-2 pt-2 border-t border-gray-300">
