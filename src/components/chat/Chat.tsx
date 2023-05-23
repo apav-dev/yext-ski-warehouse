@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useEffect, useState } from "react";
-import { useChatState, useChatActions } from "@yext/chat-headless-react";
+// import { useChatState, useChatActions } from "@yext/chat-headless-react";
 import MessageBubble from "./MessageBubble";
 import { FaExclamationTriangle, FaSnowflake } from "react-icons/fa";
 import { Transition } from "@headlessui/react";
@@ -14,10 +14,10 @@ function delay(duration: number) {
 }
 
 const Chat = () => {
-  const chat = useChatActions();
+  // const chat = useChatActions();
 
-  const messages = useChatState((state) => state.conversation.messages);
-  const loading = useChatState((state) => state.conversation.isLoading);
+  // const messages = useChatState((state) => state.conversation.messages);
+  // const loading = useChatState((state) => state.conversation.isLoading);
 
   const [input, setInput] = useState("");
   const [error, setError] = useState<boolean>(false);
@@ -28,15 +28,15 @@ const Chat = () => {
   const [greetingText, setGreetingText] = useState(getGreetingText());
   const [inputExpanded, setInputExpanded] = useState(false);
 
-  useEffect(() => {
-    chat.getNextMessage();
-  }, [chat]);
+  // useEffect(() => {
+  //   chat.getNextMessage();
+  // }, [chat]);
 
-  useEffect(() => {
-    if (!firstMessage && messages.length > 0) {
-      setFirstMessage(messages[0].text);
-    }
-  }, [messages]);
+  // useEffect(() => {
+  //   if (!firstMessage && messages.length > 0) {
+  //     setFirstMessage(messages[0].text);
+  //   }
+  // }, [messages]);
 
   useEffect(() => {
     async function triggerAnimations() {
@@ -55,38 +55,38 @@ const Chat = () => {
     triggerAnimations();
   }, [firstMessage]);
 
-  const sendMessage = async () => {
-    setInput("");
-    try {
-      await chat.getNextMessage(input);
-    } catch (e) {
-      setError(true);
-      return;
-    }
-    setError(false);
-    return;
-  };
+  // const sendMessage = async () => {
+  //   setInput("");
+  //   try {
+  //     await chat.getNextMessage(input);
+  //   } catch (e) {
+  //     setError(true);
+  //     return;
+  //   }
+  //   setError(false);
+  //   return;
+  // };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter") {
-      sendMessage();
-    }
-  };
+  // const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  //   if (e.key === "Enter") {
+  //     sendMessage();
+  //   }
+  // };
 
   const messagesDivRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (messagesDivRef.current) {
-      const div = messagesDivRef.current;
-      const isScrolledToBottom =
-        div.scrollHeight - div.clientHeight <= div.scrollTop + 1;
+  // useEffect(() => {
+  //   if (messagesDivRef.current) {
+  //     const div = messagesDivRef.current;
+  //     const isScrolledToBottom =
+  //       div.scrollHeight - div.clientHeight <= div.scrollTop + 1;
 
-      // Scroll to the bottom if already at the bottom or if the content overflows
-      if (isScrolledToBottom || div.scrollHeight > div.clientHeight) {
-        div.scrollTop = div.scrollHeight;
-      }
-    }
-  }, [messages, loading]);
+  //     // Scroll to the bottom if already at the bottom or if the content overflows
+  //     if (isScrolledToBottom || div.scrollHeight > div.clientHeight) {
+  //       div.scrollTop = div.scrollHeight;
+  //     }
+  //   }
+  // }, [messages, loading]);
 
   return (
     <div className="bg-gray-900 flex h-full flex-col">
@@ -144,14 +144,14 @@ const Chat = () => {
                         {greetingText}
                       </span>
                     </p>
-                    {messages.slice(1).map((message, index) => (
+                    {/* {messages.slice(1).map((message, index) => (
                       <MessageBubble
                         key={index}
                         index={index}
                         message={message}
                       />
                     ))}
-                    {loading && <LoadingBubble />}
+                    {loading && <LoadingBubble />} */}
                     {error && (
                       <Transition
                         show={error}
@@ -188,7 +188,7 @@ const Chat = () => {
             >
               <div className="border border-gray-300 p-4 disabled:bg-gray-50 rounded-3xl bg-white flex">
                 <FaSnowflake className="inline-block text-sky-400 mr-2 h-6 w-6" />
-                <input
+                {/* <input
                   autoFocus
                   disabled={loading}
                   onKeyDown={handleKeyDown}
@@ -196,7 +196,7 @@ const Chat = () => {
                   onChange={(e) => setInput(e.target.value)}
                   className="flex-1 pr-8 outline-none bg-transparent"
                   placeholder="Type a message..."
-                />
+                /> */}
               </div>
             </Transition>
             <Transition
@@ -206,9 +206,9 @@ const Chat = () => {
               enterTo="opacity-1"
               className="rounded-full mx-auto text-white disabled:bg-gray-100 text-xl absolute right-7 top-8 my-auto"
             >
-              <button disabled={loading} onClick={sendMessage}>
+              {/* <button disabled={loading} onClick={sendMessage}>
                 <ArrowUpCircleIcon className="h-7 w-7 text-sky-400 hover:text-sky-700" />
-              </button>
+              </button> */}
             </Transition>
           </div>
         </div>

@@ -27,7 +27,6 @@ import P13nHeader from "../components/p13n/P13nHeader";
 import P13nTool from "../components/p13n/P13nTool";
 import { useState } from "react";
 import HomeHero from "../components/HomeHero";
-import ChatPanel from "../components/chat/ChatPanel";
 import Chat from "../components/chat/Chat";
 
 export const config: TemplateConfig = {
@@ -124,7 +123,7 @@ const Home = ({ document }: TemplateRenderProps) => {
       {/* <P13nHeader isOpen={isP13nHeaderOpen} onClose={handleP13nHeaderClose} />
       <P13nTool open={isP13nToolOpen} onClick={handleP13nToolClick} />
       <HomeHero heros={c_p13nHeros} /> */}
-      <Chat />
+      {/* <Chat /> */}
       <main>
         {/* Category section */}
         <Section backgroundColor="bg-gray-50">
