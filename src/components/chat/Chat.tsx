@@ -9,6 +9,10 @@ import { twMerge } from "tailwind-merge";
 import { ArrowUpCircleIcon } from "@heroicons/react/24/solid";
 import LoadingBubble from "./LoadingBubble";
 
+function delay(duration: number) {
+  return new Promise((resolve) => setTimeout(resolve, duration));
+}
+
 const Chat = () => {
   const chat = useChatActions();
 
@@ -18,56 +22,38 @@ const Chat = () => {
   const [input, setInput] = useState("");
   const [error, setError] = useState<boolean>(false);
 
+  const [firstMessage, setFirstMessage] = useState("");
   const [startChat, setStartChat] = useState(false);
   const [showGreeting, setShowGreeting] = useState(false);
   const [greetingText, setGreetingText] = useState(getGreetingText());
   const [inputExpanded, setInputExpanded] = useState(false);
 
   useEffect(() => {
-    // triggerChatFlow();
-    setStartChat(true);
-    // after 0.5s, show the greeting
-    setTimeout(() => {
-      setShowGreeting(true);
-    }, 500);
-    // after 300ms, hide the greeting and show the first message
-    setTimeout(() => {
-      setShowGreeting(false);
-      setTimeout(() => {
-        setGreetingText(messages[0].text);
-        setShowGreeting(true);
-        // after 2s, begin chat
-        setTimeout(() => {
-          setInputExpanded(true);
-        }, 2000);
-      }, 500);
-    }, 2000);
-  }, []);
-
-  // TODO: add check to make sure chat loaded
-  const triggerChatFlow = async () => {
-    setStartChat(true);
-    // after 0.5s, show the greeting
-    setTimeout(() => {
-      setShowGreeting(true);
-    }, 500);
-    // after 300ms, hide the greeting and show the first message
-    setTimeout(() => {
-      setShowGreeting(false);
-      setTimeout(() => {
-        setGreetingText(messages[0].text);
-        setShowGreeting(true);
-        // after 2s, begin chat
-        setTimeout(() => {
-          setInputExpanded(true);
-        }, 2000);
-      }, 500);
-    }, 2000);
-  };
-
-  useEffect(() => {
     chat.getNextMessage();
   }, [chat]);
+
+  useEffect(() => {
+    if (!firstMessage && messages.length > 0) {
+      setFirstMessage(messages[0].text);
+    }
+  }, [messages]);
+
+  useEffect(() => {
+    async function triggerAnimations() {
+      setStartChat(true);
+      await delay(500);
+      setShowGreeting(true);
+      await delay(2000);
+      setShowGreeting(false);
+      await delay(500);
+      setGreetingText(firstMessage);
+      setShowGreeting(true);
+      await delay(2000);
+      setInputExpanded(true);
+    }
+
+    triggerAnimations();
+  }, [firstMessage]);
 
   const sendMessage = async () => {
     setInput("");
@@ -145,12 +131,18 @@ const Chat = () => {
                     <p
                       className={twMerge(
                         "transition-all duration-1000 font-bold text-white text-center w-fit",
-                        messages?.[0]?.text !== greetingText && "text-6xl",
+
                         inputExpanded &&
                           "p-2 bg-gray-100 rounded-2xl text-sm text-gray-900 font-semibold md:p-4 md:text-base"
                       )}
                     >
-                      {greetingText}
+                      <span
+                        className={twMerge(
+                          firstMessage !== greetingText && "text-6xl"
+                        )}
+                      >
+                        {greetingText}
+                      </span>
                     </p>
                     {messages.slice(1).map((message, index) => (
                       <MessageBubble
