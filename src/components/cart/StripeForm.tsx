@@ -50,13 +50,15 @@ const StripeForm = ({ products, subtotal }: StripeFormProps) => {
     // add taxes and shipping to the return_url as query params
     return_url += `&taxes=${taxes}&shipping=${shipping}`;
 
-    const { error } = await stripe.confirmPayment({
+    const resp = await stripe.confirmPayment({
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
         return_url,
       },
     });
+
+    console.log(resp);
 
     // TODO: handle errors
     // This point will only be reached if there is an immediate error when

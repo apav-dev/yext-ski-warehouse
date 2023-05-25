@@ -116,7 +116,6 @@ const OrderedItems = () => {
         if (paymentIntent) {
           switch (paymentIntent.status) {
             case "succeeded":
-              console.log("Payment succeeded!");
               setShippingInfo(paymentIntent.shipping);
               cartActions.clearCart();
               break;
