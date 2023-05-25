@@ -6,8 +6,10 @@ const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeWlxaG10Zmhpb2JlYnFwcXFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5Mzc3MDgsImV4cCI6MjAwMDUxMzcwOH0.fZ9aTZ6EYt78fsibQxxVJEWptzcQnqWzYqqDQwZViAM";
 
 interface PaymentRecord {
-  firstName: string;
-  lastName: string;
+  firstName?: string;
+  lastName?: string;
+  customerId?: string;
+  paymentIntentId: string;
   items: {
     id: string;
     quantity: number;
@@ -37,34 +39,32 @@ const createPaymentRecord = async (request) => {
 
   switch (method) {
     case "POST":
-      console.log("Hello from POST");
       break;
     default:
       return new Response("Method not allowed", null, 405);
   }
 
-  const payment_intent_id = pathParams.id;
-
-  const customerId = crypto.randomUUID();
   const paymentRecord: PaymentRecord = JSON.parse(body);
+
+  const payment_intent_id = paymentRecord.paymentIntentId;
+  let customerId = paymentRecord.customerId;
+
+  if (!customerId) {
+    customerId = crypto.randomUUID();
+  } else {
+    // validate that the customerId is a valid uuid
+    if (!isValidV4UUID(customerId)) {
+      return new Response("Customer ID must be a valid v4 uuid", null, 400);
+    }
+  }
 
   try {
     // Upsert the customer record
     await upsertCustomer(customerId, paymentRecord);
 
-    //   if (customerError) {
-    //     console.error("Error upserting customer:", customerError);
-    //     return new Response("Failed to upsert customer", null, 500);
-    //   }
-
     // Insert the order record
     const order_id = crypto.randomUUID();
     await insertOrder(customerId, order_id, payment_intent_id);
-
-    //   if (orderError) {
-    //     console.error("Error inserting order:", orderError);
-    //     return new Response("Failed to insert order", null, 500);
-    //   }
 
     // Prepare the order items
     const orderItems = paymentRecord.items.map(({ id, quantity }) => ({
@@ -73,15 +73,10 @@ const createPaymentRecord = async (request) => {
       quantity: quantity,
     }));
 
-    //   // Insert the order items
+    // Insert the order items
     await insertOrderItems(orderItems);
 
-    //   if (orderItemsError) {
-    //     console.error("Error inserting order items:", orderItemsError);
-    //     return new Response("Failed to insert order items", null, 500);
-    //   }
-
-    return new Response("Payment record created successfully", null, 201);
+    return new Response(JSON.stringify({ customerId }), null, 201);
   } catch (error) {
     console.error("Error creating payment record:", error);
     return new Response("Failed to create payment record", null, 500);
@@ -192,4 +187,10 @@ async function insertOrderItems(
   } catch (error) {
     console.error("Error inserting order items: ", error);
   }
+}
+
+function isValidV4UUID(input: string): boolean {
+  const regex =
+    /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  return regex.test(input);
 }
