@@ -6,11 +6,18 @@ import { PaymentIntent } from "@stripe/stripe-js/types/api/payment-intents";
 import { Product } from "./providers/CartProvider";
 import OrderedItemsSkeleton from "./OrderedItemsSkeleton";
 import { useCartActions } from "./hooks/useCartActions";
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
+
+interface PaymentRecord {
+  customerId?: string;
+  paymentIntentId: string;
+  items: {
+    id: string;
+    quantity: number;
+  }[];
+}
 
 const fetchProducts = async (productIds: string[]) => {
-  // fetch products by appending a series of id__in query params to this url: https://cdn.yextapis.com/v2/accounts/me/content/products?api_key=1316c9fafd65fd4518e69100166461a7&v=20230417
-
   const url = new URL(
     "https://cdn.yextapis.com/v2/accounts/me/content/products"
   );
@@ -24,6 +31,18 @@ const fetchProducts = async (productIds: string[]) => {
   productIds.forEach((id) => url.searchParams.append("id__in", id));
 
   const response = await fetch(url.toString());
+  const data = await response.json();
+  return data;
+};
+
+const createPaymentRecord = async (
+  paymentRecord: PaymentRecord
+): Promise<{ customerId: string }> => {
+  // make a post request to api/payment-record with the payment record
+  const response = await fetch("http://localhost:8000/api/payment-record", {
+    method: "POST",
+    body: JSON.stringify(paymentRecord),
+  });
   const data = await response.json();
   return data;
 };
@@ -117,7 +136,9 @@ const OrderedItems = () => {
           switch (paymentIntent.status) {
             case "succeeded":
               setShippingInfo(paymentIntent.shipping);
-              cartActions.clearCart();
+              handlePaymentSuccess(paymentIntent.id).then(() => {
+                cartActions.clearCart();
+              });
               break;
             case "processing":
               console.log("Payment processing");
@@ -133,6 +154,30 @@ const OrderedItems = () => {
       });
     }
   }, [stripe]);
+
+  const paymentRecordMutation = useMutation(createPaymentRecord, {
+    onSuccess: (data) => {
+      localStorage.setItem("ski_warehouse_customer_id", data.customerId);
+    },
+  });
+
+  const handlePaymentSuccess = async (paymentIntentId: string) => {
+    // check if there is an item in local storage called ski_warehouse_customer_record
+    const customerId = localStorage.getItem("ski_warehouse_customer_id");
+    const paymentRecord: PaymentRecord = {
+      paymentIntentId,
+      items: Object.entries(productQuantities || {}).map(([key, quantity]) => {
+        return {
+          id: key,
+          quantity: Number(quantity),
+        };
+      }),
+    };
+    if (customerId) {
+      paymentRecord.customerId = customerId;
+    }
+    await paymentRecordMutation.mutateAsync(paymentRecord);
+  };
 
   return (
     <div>
