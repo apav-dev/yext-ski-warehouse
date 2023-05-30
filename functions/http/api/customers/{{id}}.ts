@@ -19,7 +19,8 @@ interface CustomerOrderRecord {
   lastName?: string;
   orders: {
     id: string;
-    payment_intent_id: string;
+    paymentIntentId: string;
+    date: string;
     items: {
       id: string;
       quantity: number;
@@ -31,6 +32,7 @@ interface CustomerOrderRecord {
 interface Order {
   id: string;
   customer_id: string;
+  date: string;
   payment_intent_id: string;
 }
 
@@ -68,19 +70,25 @@ const fetchPaymentRecordsForCustomer = async (request) => {
   // create list of orders containing items
   const customerOrderRecords: CustomerOrderRecord = {
     id: customerId,
-    orders: orders.map((order, index) => {
-      return {
-        id: order.id,
-        payment_intent_id: order.payment_intent_id,
-        items: orderItems[index].map((item) => {
-          return {
-            id: item.id,
-            quantity: item.quantity,
-            yextId: item.yext_id,
-          };
-        }),
-      };
-    }),
+    orders: orders
+      .map((order, index) => {
+        return {
+          id: order.id,
+          paymentIntentId: order.payment_intent_id,
+          date: order.date,
+          items: orderItems[index].map((item) => {
+            return {
+              id: item.id,
+              quantity: item.quantity,
+              yextId: item.yext_id,
+            };
+          }),
+        };
+      })
+      .sort((a, b) => {
+        // each order has a date in the format YYYY-MM-DD. Sort by date descending
+        return b.date.localeCompare(a.date);
+      }),
   };
 
   return new Response(JSON.stringify(customerOrderRecords), null, 200);
