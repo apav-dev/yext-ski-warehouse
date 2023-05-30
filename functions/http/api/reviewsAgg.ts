@@ -57,7 +57,10 @@ const main = async (argumentJson) => {
       totalReviews,
       totalReviewsByRating,
     }),
-    Headers: {},
+    Headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "http://localhost:5173",
+    },
   };
 };
 
