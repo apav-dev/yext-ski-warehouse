@@ -1,9 +1,12 @@
 // TODO: see how I can create a path that looks like api/customers/{{id}}/payment-record/{{id}}
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2.22.0";
 
 // Supabase configuration
 const supabaseUrl = "https://hryiqhmtfhiobebqpqqc.supabase.co/rest/v1";
 const supabaseKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhyeWlxaG10Zmhpb2JlYnFwcXFjIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5Mzc3MDgsImV4cCI6MjAwMDUxMzcwOH0.fZ9aTZ6EYt78fsibQxxVJEWptzcQnqWzYqqDQwZViAM";
+
+const test = createClient(supabaseUrl, supabaseKey);
 
 interface PaymentRecord {
   firstName?: string;
