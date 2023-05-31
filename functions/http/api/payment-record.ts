@@ -64,7 +64,9 @@ const createPaymentRecord = async (request) => {
 
     // Insert the order record
     const order_id = crypto.randomUUID();
-    await insertOrder(customerId, order_id, payment_intent_id);
+    // get date in the form YYYY-MM-DD
+    const date = new Date().toISOString().split("T")[0];
+    await insertOrder(customerId, order_id, payment_intent_id, date);
 
     // Prepare the order items
     const orderItems = paymentRecord.items.map(({ id, quantity }) => ({
@@ -74,6 +76,7 @@ const createPaymentRecord = async (request) => {
     }));
 
     // Insert the order items
+    console.log("orderItems:", orderItems);
     await insertOrderItems(orderItems);
 
     return new Response(JSON.stringify({ customerId }), null, 201);
@@ -124,7 +127,8 @@ async function upsertCustomer(
 async function insertOrder(
   customer_id: string,
   order_id: string,
-  payment_intent_id: string
+  payment_intent_id: string,
+  date: string
 ) {
   const headers = new Headers();
   headers.set("Content-Type", "application/json");
@@ -132,7 +136,7 @@ async function insertOrder(
   headers.set("apikey", supabaseKey);
   headers.set("Prefer", "resolution=merge-duplicates");
 
-  const body = { id: order_id, customer_id, payment_intent_id };
+  const body = { id: order_id, customer_id, payment_intent_id, date };
 
   try {
     const response = await fetch(`${supabaseUrl}/orders`, {
