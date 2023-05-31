@@ -91,7 +91,12 @@ const fetchPaymentRecordsForCustomer = async (request) => {
       }),
   };
 
-  return new Response(JSON.stringify(customerOrderRecords), null, 200);
+  // return new Response(JSON.stringify(customerOrderRecords), null, 200);
+  return new Response(
+    JSON.stringify(customerOrderRecords.orders[0]),
+    null,
+    200
+  );
 };
 
 export default fetchPaymentRecordsForCustomer;
