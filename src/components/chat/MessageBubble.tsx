@@ -34,7 +34,7 @@ export default function MessageBubble({
 
   let messageText = message.text;
   let explanation: string | undefined = undefined;
-  if (message.text.includes(SPLIT_CHAR)) {
+  if (message.text?.includes(SPLIT_CHAR)) {
     [messageText, explanation] = message.text.split(SPLIT_CHAR);
   }
 

@@ -1,13 +1,14 @@
 import React, { useRef } from "react";
 import { useEffect, useState } from "react";
 import { useChatState, useChatActions } from "@yext/chat-headless-react";
-import MessageBubble from "./MessageBubble";
 import { FaExclamationTriangle, FaSnowflake } from "react-icons/fa";
 import { Transition } from "@headlessui/react";
 import { getGreetingText } from "../../utils/getGreetingText";
 import { twMerge } from "tailwind-merge";
 import { ArrowUpCircleIcon } from "@heroicons/react/24/solid";
 import LoadingBubble from "./LoadingBubble";
+import InvoiceWidget from "./widgets/InvoiceWidget";
+import MessageBubble from "./MessageBubble";
 
 function delay(duration: number) {
   return new Promise((resolve) => setTimeout(resolve, duration));
@@ -18,25 +19,57 @@ const Chat = () => {
 
   const messages = useChatState((state) => state.conversation.messages);
   const loading = useChatState((state) => state.conversation.isLoading);
+  const queryResult = useChatState(
+    (state) => state.conversation.notes?.queryResult
+  );
+  const currentStepIndices = useChatState(
+    (state) => state.conversation.notes?.currentStepIndices
+  );
 
   const [input, setInput] = useState("");
   const [error, setError] = useState<boolean>(false);
-
   const [firstMessage, setFirstMessage] = useState("");
   const [startChat, setStartChat] = useState(false);
   const [showGreeting, setShowGreeting] = useState(false);
   const [greetingText, setGreetingText] = useState(getGreetingText());
   const [inputExpanded, setInputExpanded] = useState(false);
+  const [renderedMessages, setRenderedMessages] = useState<React.ReactNode[]>(
+    []
+  );
 
   useEffect(() => {
+    const customerId = localStorage.getItem("ski_warehouse_customer_id");
+    if (customerId) {
+      chat.setContext({
+        customerId,
+      });
+    }
     chat.getNextMessage();
   }, [chat]);
 
   useEffect(() => {
     if (!firstMessage && messages.length > 0) {
       setFirstMessage(messages[0].text);
+    } else {
+      const newMessage = (
+        <MessageBubble message={messages[messages.length - 1]} />
+      );
+
+      setRenderedMessages((prev) => [...prev, newMessage]);
     }
   }, [messages]);
+
+  useEffect(() => {
+    if ((currentStepIndices?.length || 0) === 2 && queryResult?.orders) {
+      const newMessage = (
+        <InvoiceWidget
+          message={messages[messages.length - 1]}
+          paymentRecord={queryResult.orders[0]}
+        />
+      );
+      setRenderedMessages((prev) => [...prev, newMessage]);
+    }
+  }, [currentStepIndices, queryResult]);
 
   useEffect(() => {
     async function triggerAnimations() {
@@ -144,13 +177,7 @@ const Chat = () => {
                         {greetingText}
                       </span>
                     </p>
-                    {messages.slice(1).map((message, index) => (
-                      <MessageBubble
-                        key={index}
-                        index={index}
-                        message={message}
-                      />
-                    ))}
+                    {renderedMessages.slice(1)}
                     {loading && firstMessage && <LoadingBubble />}
                     {error && (
                       <Transition

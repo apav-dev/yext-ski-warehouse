@@ -25,6 +25,7 @@ export interface EntityReference {
 }
 
 export default interface Ce_product {
+  id: string;
   slug?: string;
   name: string;
   c_price?: number;

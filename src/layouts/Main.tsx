@@ -31,7 +31,7 @@ const Main = ({ children, initialFilters, directory }: MainProps) => {
       <ChatHeadlessProvider
         config={{
           apiKey: "ba41c60c65d874c5340985ad4fcda69a",
-          botId: "ski-warehouse-chat",
+          botId: "order-history-bot",
         }}
       >
         <P13nProvider>

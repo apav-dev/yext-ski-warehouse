@@ -7,6 +7,7 @@ import { Product } from "./providers/CartProvider";
 import OrderedItemsSkeleton from "./OrderedItemsSkeleton";
 import { useCartActions } from "./hooks/useCartActions";
 import { useMutation, useQuery } from "@tanstack/react-query";
+import { fetchProducts } from "../../utils/api";
 
 interface PaymentRecord {
   customerId?: string;
@@ -16,24 +17,6 @@ interface PaymentRecord {
     quantity: number;
   }[];
 }
-
-const fetchProducts = async (productIds: string[]) => {
-  const url = new URL(
-    "https://cdn.yextapis.com/v2/accounts/me/content/products"
-  );
-  const params = {
-    api_key: YEXT_PUBLIC_CONTENT_API_KEY,
-    v: "20230417",
-  };
-  Object.keys(params).forEach((key) =>
-    url.searchParams.append(key, params[key])
-  );
-  productIds.forEach((id) => url.searchParams.append("id__in", id));
-
-  const response = await fetch(url.toString());
-  const data = await response.json();
-  return data;
-};
 
 const createPaymentRecord = async (
   paymentRecord: PaymentRecord
