@@ -62,3 +62,5 @@ export const VerticalResultsSchema = z
     }),
   })
   .nonstrict();
+
+export type ProductResult = z.infer<typeof DataSchema>;

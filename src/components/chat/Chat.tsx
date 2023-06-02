@@ -10,10 +10,13 @@ import LoadingBubble from "./LoadingBubble";
 import InvoiceWidget from "./widgets/InvoiceWidget";
 import MessageBubble from "./MessageBubble";
 import ProductWidget from "./widgets/ProductWidget";
+import { VerticalResultsSchema } from "../../schema/VerticalResultsSchema";
 
 function delay(duration: number) {
   return new Promise((resolve) => setTimeout(resolve, duration));
 }
+const easeInOutCubic = (t: number): number =>
+  t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 
 const Chat = () => {
   const chat = useChatActions();
@@ -56,7 +59,11 @@ const Chat = () => {
       setFirstMessage(messages[0].text);
     } else {
       const newMessage = (
-        <MessageBubble message={messages[messages.length - 1]} />
+        <MessageBubble
+          key={`message-${messages.length - 1}`}
+          showThumbStatus
+          message={messages[messages.length - 1]}
+        />
       );
 
       setRenderedMessages((prev) => [...prev, newMessage]);
@@ -65,6 +72,7 @@ const Chat = () => {
 
   useEffect(() => {
     if ((currentStepIndices?.length || 0) === 2 && queryResult?.orders) {
+      // TODO: zod validation for order history
       const newMessage = (
         <InvoiceWidget
           message={messages[messages.length - 1]}
@@ -74,8 +82,14 @@ const Chat = () => {
       setRenderedMessages((prev) => [...prev, newMessage]);
     }
     if (currentGoal === "RECOMMEND-SKIS" && queryResult) {
-      const newMessage = <ProductWidget />;
-      setRenderedMessages((prev) => [...prev, newMessage]);
+      const parsedResults = VerticalResultsSchema.safeParse(queryResult);
+      if (parsedResults.success) {
+        const products = parsedResults.data.response.results.map(
+          (searchResult) => searchResult.data
+        );
+        const newMessage = <ProductWidget products={products} />;
+        setRenderedMessages((prev) => [...prev, newMessage]);
+      }
     }
   }, [currentStepIndices, queryResult, currentGoal]);
 
@@ -117,17 +131,43 @@ const Chat = () => {
   const messagesDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (messagesDivRef.current) {
-      const div = messagesDivRef.current;
-      const isScrolledToBottom =
-        div.scrollHeight - div.clientHeight <= div.scrollTop + 1;
+    const scrollChatToBottom = () => {
+      if (messagesDivRef.current) {
+        const div = messagesDivRef.current;
+        const isScrolledToBottom =
+          div.scrollHeight - div.clientHeight <= div.scrollTop + 1;
 
-      // Scroll to the bottom if already at the bottom or if the content overflows
-      if (isScrolledToBottom || div.scrollHeight > div.clientHeight) {
-        div.scrollTop = div.scrollHeight;
+        // Scroll to the bottom if already at the bottom or if the content overflows
+        if (isScrolledToBottom || div.scrollHeight > div.clientHeight) {
+          smoothScrollToBottom(div);
+        }
       }
-    }
-  }, [messages, loading]);
+    };
+
+    setTimeout(scrollChatToBottom, 50);
+  }, [messages, loading, renderedMessages]);
+
+  const smoothScrollToBottom = (element: HTMLElement): void => {
+    const targetPosition = element.scrollHeight;
+    const startPosition = element.scrollTop;
+    const distance = targetPosition - startPosition;
+    const duration = 800; // This can be adjusted
+    let start: number | null = null;
+
+    const step = (timestamp: number): void => {
+      if (!start) start = timestamp;
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const easedProgress = easeInOutCubic(progress);
+
+      element.scrollTop = startPosition + easedProgress * distance;
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  };
 
   return (
     <div className="bg-gray-900 flex h-full flex-col">
@@ -161,12 +201,12 @@ const Chat = () => {
                 className={twMerge(
                   "absolute transition-all duration-1000 text-3xl left-0 right-0",
                   !inputExpanded && "top-64 px-32",
-                  inputExpanded && "top-4 px-16 bottom-0"
+                  inputExpanded && "top-0 px-16 bottom-0"
                 )}
               >
                 <div
                   ref={messagesDivRef}
-                  className="max-h-[600px] overflow-y-auto pb-8"
+                  className="max-h-[700px] overflow-y-auto pb-24 pt-8"
                 >
                   <div className="flex flex-col gap-y-6 justify-center h-full">
                     <p
@@ -208,7 +248,7 @@ const Chat = () => {
             </Transition>
           </div>
         </Transition>
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-b from-transparent via-gray-900/50 to-black/80">
           <div className="w-full max-w-5xl flex relative p-4 mx-auto">
             <Transition
               as="div"

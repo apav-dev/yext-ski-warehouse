@@ -22,10 +22,10 @@ const SPLIT_CHAR = "ℹ";
 
 export default function MessageBubble({
   message,
-  index,
+  showThumbStatus,
 }: {
   message: Message;
-  index: number;
+  showThumbStatus?: boolean;
 }) {
   const [showTimestamp, setShowTimestamp] = useState(false);
   const [thumbStatus, setThumbStatus] = useState<"UP" | "DOWN" | undefined>(
@@ -64,7 +64,7 @@ export default function MessageBubble({
           )}
         >
           <Transition
-            show={showTimestamp && message.source === "BOT" && index !== 0}
+            show={showTimestamp && message.source === "BOT" && showThumbStatus}
             enter="transition-opacity duration-200"
             enterFrom="opacity-0"
             enterTo="opacity-1"
