@@ -13,9 +13,7 @@ const stripePromise = loadStripe(YEXT_PUBLIC_STRIPE_PK_KEY);
 const fetchStripeClientSecret = async (
   amount: number
 ): Promise<{ client_secret: string }> => {
-  const response = await fetch(
-    `http://localhost:8000/api/payment-intent?amount=${amount}`
-  );
+  const response = await fetch(`/api/payment-intent?amount=${amount}`);
   return response.json();
 };
 

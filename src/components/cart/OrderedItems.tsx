@@ -22,7 +22,7 @@ const createPaymentRecord = async (
   paymentRecord: PaymentRecord
 ): Promise<{ customerId: string }> => {
   // make a post request to api/payment-record with the payment record
-  const response = await fetch("http://localhost:8000/api/payment-record", {
+  const response = await fetch("/api/payment-record", {
     method: "POST",
     body: JSON.stringify(paymentRecord),
   });
