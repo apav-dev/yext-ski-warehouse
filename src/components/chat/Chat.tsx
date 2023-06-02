@@ -9,6 +9,7 @@ import { ArrowUpCircleIcon } from "@heroicons/react/24/solid";
 import LoadingBubble from "./LoadingBubble";
 import InvoiceWidget from "./widgets/InvoiceWidget";
 import MessageBubble from "./MessageBubble";
+import ProductWidget from "./widgets/ProductWidget";
 
 function delay(duration: number) {
   return new Promise((resolve) => setTimeout(resolve, duration));
@@ -24,6 +25,9 @@ const Chat = () => {
   );
   const currentStepIndices = useChatState(
     (state) => state.conversation.notes?.currentStepIndices
+  );
+  const currentGoal = useChatState(
+    (state) => state.conversation.notes?.currentGoal
   );
 
   const [input, setInput] = useState("");
@@ -69,7 +73,11 @@ const Chat = () => {
       );
       setRenderedMessages((prev) => [...prev, newMessage]);
     }
-  }, [currentStepIndices, queryResult]);
+    if (currentGoal === "RECOMMEND-SKIS" && queryResult) {
+      const newMessage = <ProductWidget />;
+      setRenderedMessages((prev) => [...prev, newMessage]);
+    }
+  }, [currentStepIndices, queryResult, currentGoal]);
 
   useEffect(() => {
     async function triggerAnimations() {

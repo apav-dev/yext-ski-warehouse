@@ -21,7 +21,7 @@ import {
   SelectableStaticFilter,
   StaticFilter,
 } from "@yext/search-headless-react";
-import { Table } from "../components/Table";
+import { SpecTable } from "../components/SpecTable";
 import { Breadcrumbs } from "../components/Breadcrumbs";
 import EditTool from "../components/EditTool";
 import { Reviews } from "../components/reviews/Reviews";
@@ -108,7 +108,6 @@ const Product = ({ document }: TemplateRenderProps) => {
     c_terrain,
     c_sizes,
     c_sizeDescriptor,
-    c_sizeRequired,
     c_genderName,
     c_productType,
     c_categoryName,
@@ -118,6 +117,8 @@ const Product = ({ document }: TemplateRenderProps) => {
   } = document;
   const abilityLevel = c_abilityLevel?.[0];
   const terrain = c_terrain?.[0];
+
+  console.log(c_specs);
 
   const [similarItemsFilter, setSimilarItemsFilter] =
     useState<SelectableStaticFilter>();
@@ -270,7 +271,13 @@ const Product = ({ document }: TemplateRenderProps) => {
         </div>
         {c_specs && c_specs.length > 0 && (
           <div className="col-span-2 mt-16 sm:mt-24">
-            <Table items={c_specs} title="Specs" />
+            <SpecTable
+              items={c_specs.map((spec) => ({
+                name: spec.name,
+                values: [spec.value],
+              }))}
+              title="Specs"
+            />
           </div>
         )}
         <Reviews

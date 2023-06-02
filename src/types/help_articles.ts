@@ -26,9 +26,12 @@ export default interface Ce_helpArticle {
 	c_coverPhoto?: ComplexImage,
 	c_generatedQuestion?: string,
 	c_helpArticleContent?: any,
+	c_helpArticleContentJA?: any,
 	c_keywords?: string,
 	c_metaDescription?: string,
 	c_subtitle?: string,
+	c_subtitleJA?: string,
 	c_summary?: string,
+	c_summaryJA?: string,
 	id: string,
 }

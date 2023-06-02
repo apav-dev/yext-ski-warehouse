@@ -19,17 +19,20 @@ export interface ComplexImage {
   clickthroughUrl?: string;
 }
 
-export interface EntityReference {
+export interface Icon {
   name: string;
-  c_icon: Image;
+  c_icon: ComplexImage;
 }
-
 export default interface Ce_product {
   id: string;
-  slug?: string;
+  slug: string;
   name: string;
-  c_price?: number;
-  photoGallery?: ComplexImage[];
-  c_terrain?: EntityReference[];
-  c_abilityLevel?: EntityReference[];
+  c_price?: string;
+  c_sizes?: string[];
+  c_brand?: string;
+  c_turningRadius?: string;
+  c_rockerType?: string;
+  photoGallery: ComplexImage[];
+  c_terrain?: Icon[];
+  c_abilityLevel?: Icon[];
 }
