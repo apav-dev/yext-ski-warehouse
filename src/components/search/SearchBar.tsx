@@ -86,7 +86,6 @@ const SearchBar = ({ customCssClasses }: SearchBarProps) => {
 
   return (
     <SB
-      hideRecentSearches
       customCssClasses={customCssClasses}
       onSearch={handleSearch}
       placeholder="Search for skis and more..."

@@ -64,6 +64,8 @@ const SupportResults = () => {
       locations: 0,
       faqs: 3,
     });
+
+    searchActions.executeUniversalQuery();
   }, []);
 
   return (

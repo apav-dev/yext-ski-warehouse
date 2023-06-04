@@ -1,5 +1,5 @@
 import React from "react";
-import { ComplexImageType, Image } from "@yext/pages/components";
+import { ComplexImageType, Image, ImageType } from "@yext/pages/components";
 
 export interface GridHeroProps {
   title?: string;
@@ -8,7 +8,7 @@ export interface GridHeroProps {
     label: string;
     link: string;
   };
-  image?: ComplexImageType;
+  image?: ComplexImageType | ImageType;
 }
 
 const GridHero = ({ title, subtitle, cta, image }: GridHeroProps) => {

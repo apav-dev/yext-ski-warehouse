@@ -14,10 +14,19 @@ import Section from "../components/Section";
 import SectionHeader from "../components/SectionHeader";
 import GridContainer from "../components/GridContainer";
 import FeatureCard from "../components/FeatureCard";
-import ProductCard from "../components/search/ProductCard";
 import Hero from "../components/Hero";
 import { Image } from "@yext/pages/components";
 import GridHero from "../components/GridHero";
+import {
+  SearchHeadlessProvider,
+  provideHeadless,
+} from "@yext/search-headless-react";
+import { getSearchProviderConfig } from "../config";
+import { FeaturedProducts } from "../components/search/FeaturedProducts";
+import P13nHeader from "../components/p13n/P13nHeader";
+import P13nTool from "../components/p13n/P13nTool";
+import { useState } from "react";
+import HomeHero from "../components/HomeHero";
 
 export const config: TemplateConfig = {
   stream: {
@@ -32,6 +41,7 @@ export const config: TemplateConfig = {
       "c_featuredProducts.slug",
       "c_featuredBlog",
       "c_saleHero",
+      "c_p13nHeros",
     ],
     filter: {
       entityIds: ["home_page"],
@@ -80,30 +90,40 @@ export const getHeadConfig: GetHeadConfig<
   };
 };
 
+const featuredProductsSearcher = provideHeadless(
+  getSearchProviderConfig("products", "featured-products")
+);
+
 const Home = ({ document }: TemplateRenderProps) => {
   const {
     _site,
     c_primaryHero,
     c_featuredCategories,
-    c_featuredProducts,
     c_featuredBlog,
     c_saleHero,
+    c_p13nHeros,
   } = document;
 
-  const featuredProducts = c_featuredProducts?.map((product) => ({
-    rawData: product,
-  }));
+  const [isP13nHeaderOpen, setIsP13nHeaderOpen] = useState(false);
+  const [isP13nToolOpen, setIsP13nToolOpen] = useState(true);
 
-  const primaryImage = c_primaryHero?.images?.[0];
+  const handleP13nHeaderClose = () => {
+    setIsP13nHeaderOpen(false);
+    setIsP13nToolOpen(true);
+  };
+
+  const handleP13nToolClick = () => {
+    setIsP13nToolOpen(false);
+    setIsP13nHeaderOpen(true);
+  };
+
+  console.log(c_p13nHeros);
 
   return (
     <Main directory={_site}>
-      <GridHero
-        title={c_primaryHero.title}
-        subtitle={c_primaryHero.subtitle}
-        cta={c_primaryHero.cta}
-        image={primaryImage}
-      />
+      <P13nHeader isOpen={isP13nHeaderOpen} onClose={handleP13nHeaderClose} />
+      <P13nTool open={isP13nToolOpen} onClick={handleP13nToolClick} />
+      <HomeHero heros={c_p13nHeros} />
       <main>
         {/* Category section */}
         <Section backgroundColor="bg-gray-50">
@@ -144,16 +164,13 @@ const Home = ({ document }: TemplateRenderProps) => {
           />
         </Section>
 
-        {/* Favorites section */}
-        <Section backgroundColor="bg-gray-50">
-          <SectionHeader title="Featured Products" />
-          {/* <GridContainer> */}
-          <div className="mt-6 grid grid-cols-1 gap-y-6 sm:gap-x-6 sm:grid-cols-3 lg:gap-8">
-            {featuredProducts?.map((product) => (
-              <ProductCard key={product.id} result={product} />
-            ))}
-          </div>
-        </Section>
+        {/* Featured Products section */}
+        <SearchHeadlessProvider searcher={featuredProductsSearcher}>
+          <Section backgroundColor="bg-gray-50">
+            <SectionHeader title="Featured Products" />
+            <FeaturedProducts />
+          </Section>
+        </SearchHeadlessProvider>
 
         {/* CTA section */}
         {/* TODO: Studiotize */}

@@ -11,7 +11,7 @@ import Main from "../layouts/Main";
 import { transformSiteData } from "../utils/transformSiteData";
 import CartProducts from "../components/cart/CartProducts";
 import Subtotal from "../components/cart/Subtotal";
-import RelatedProducts from "../components/cart/RelatedProducts";
+import SimilarToCartProducts from "../components/search/SimilarToCartProducts";
 
 export const transformProps: TransformProps<TemplateRenderProps> = async (
   data
@@ -61,7 +61,7 @@ const Cart = ({ document }: TemplateRenderProps) => {
           <Subtotal />
         </form>
         {/* Related products */}
-        <RelatedProducts />
+        <SimilarToCartProducts />
       </div>
     </Main>
   );
