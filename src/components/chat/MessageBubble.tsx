@@ -95,7 +95,7 @@ export default function MessageBubble({
           </Transition>
           <div
             className={cx(
-              "prose overflow-x-auto font-semibold",
+              "prose overflow-x-auto font-semibold text-left",
               message.source === "BOT" ? "text-gray-900" : "text-white "
             )}
           >

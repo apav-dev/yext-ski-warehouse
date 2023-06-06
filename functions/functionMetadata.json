@@ -1,0 +1,17 @@
+{
+  "functions/http/api/customers/{{id}}.ts": {
+    "entrypoint": "fetchPaymentRecordsForCustomer"
+  },
+  "functions/http/api/payment-intent.ts": {
+    "entrypoint": "paymentIntent"
+  },
+  "functions/http/api/payment-record.ts": {
+    "entrypoint": "createPaymentRecord"
+  },
+  "functions/http/api/reviewsAgg.ts": {
+    "entrypoint": "main"
+  },
+  "functions/http/api/shipping/{{id}}.ts": {
+    "entrypoint": "fetchShippingInfoForOrder"
+  }
+}

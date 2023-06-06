@@ -1,5 +1,9 @@
 import React from "react";
-import { Message, useChatActions } from "@yext/chat-headless-react";
+import {
+  Message,
+  useChatActions,
+  useChatState,
+} from "@yext/chat-headless-react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPaymentIntent, fetchProducts } from "../../../utils/api";
 import { Image } from "@yext/pages/components";
@@ -27,6 +31,8 @@ export interface InvoiceMessageProps {
 const InvoiceWidget = ({ paymentRecord }: InvoiceMessageProps) => {
   const chat = useChatActions();
 
+  const context = useChatState((state) => state.meta.context);
+
   const productIds = paymentRecord.items.map(
     (item) => item.yextId.split("-")[0]
   );
@@ -41,6 +47,7 @@ const InvoiceWidget = ({ paymentRecord }: InvoiceMessageProps) => {
     queryFn: () => fetchPaymentIntent(paymentRecord.paymentIntentId),
     onSuccess: (data) => {
       chat.setContext({
+        ...context,
         paymentIntentId: data.id,
       });
     },

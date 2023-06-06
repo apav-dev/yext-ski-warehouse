@@ -32,6 +32,7 @@ const Chat = () => {
   const currentGoal = useChatState(
     (state) => state.conversation.notes?.currentGoal
   );
+  const context = useChatState((state) => state.meta.context);
 
   const [input, setInput] = useState("");
   const [error, setError] = useState<boolean>(false);
@@ -48,6 +49,7 @@ const Chat = () => {
     const customerId = localStorage.getItem("ski_warehouse_customer_id");
     if (customerId) {
       chat.setContext({
+        ...context,
         customerId,
       });
     }
