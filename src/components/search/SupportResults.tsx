@@ -13,7 +13,7 @@ import FaqCard from "./FaqCard";
 import Faq from "../../types/faqs";
 import Ce_video from "../../types/videos";
 import Ce_helpArticle from "../../types/help_articles";
-åimport FaqCardLoadingSkeleton from "./FaqCardLoadingSkeleton";
+import FaqCardLoadingSkeleton from "./FaqCardLoadingSkeleton";
 
 const GridSection = ({ results, CardComponent, header }: SectionProps<T>) => {
   if (!CardComponent) {
