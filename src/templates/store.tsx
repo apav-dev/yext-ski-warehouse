@@ -18,6 +18,7 @@ import Hours from "../components/Hours";
 import StaticMap from "../components/StaticMap";
 import { Image } from "@yext/pages/components";
 import { Reviews } from "../components/reviews/Reviews";
+import ProductCard from "../components/search/ProductCard";
 
 export const config: TemplateConfig = {
   stream: {
@@ -37,6 +38,14 @@ export const config: TemplateConfig = {
       "hours",
       "slug",
       "geocodedCoordinate",
+      "c_products.id",
+      "c_products.name",
+      "c_products.c_price",
+      "c_products.photoGallery",
+      "c_products.c_abilityLevel.name",
+      "c_products.c_abilityLevel.c_icon",
+      "c_products.c_terrain.name",
+      "c_products.c_terrain.c_icon",
     ],
     // The entity language profiles that documents will be generated for.
     localization: {
@@ -102,8 +111,17 @@ const Store: Template<TemplateRenderProps> = ({
     c_storeDescription,
     geocodedCoordinate,
     c_coverPhoto,
+    c_products,
     _site,
   } = document;
+
+  const products = c_products.map((product) => {
+    return {
+      rawData: {
+        ...product,
+      },
+    };
+  });
 
   return (
     <>
@@ -146,6 +164,19 @@ const Store: Template<TemplateRenderProps> = ({
                 )}
             </div>
           </div>
+          <section aria-labelledby="related-heading" className="mt-16 sm:mt-24">
+            <h2
+              id="related-heading"
+              className="text-lg font-medium text-gray-900"
+            >
+              Products at this Location
+            </h2>
+            <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+              {products.map((product) => {
+                return <ProductCard key={product.id} result={product} />;
+              })}
+            </div>
+          </section>
           <Reviews
             entityId={id}
             entityName={name}
