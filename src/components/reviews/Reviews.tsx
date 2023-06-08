@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import { ComplexImageType } from "@yext/pages/components";
 import ReviewSortDropdown from "./ReviewSortDropdown";
 import ReviewSkeleton from "./ReviewSkeleton";
-import fetch from "../../utils/fetch";
 
 export interface ReviewProps {
   entityId: string;
@@ -70,7 +69,7 @@ const REVIEWS_LIMIT = 5;
 const fetchReviewsAggForEntity = async (
   entityId: string
 ): Promise<EntityReviewAggregate> => {
-  const requestUrl = "/reviewsAgg?entityId=" + entityId;
+  const requestUrl = `/reviews/${entityId}`;
 
   const response = await fetch(requestUrl);
   const data = await response.json();
@@ -89,7 +88,8 @@ const fetchReviews = async (
   }
   requestUrl += "&limit=" + REVIEWS_LIMIT;
 
-  const data = await fetch<{ response: ReviewsResponse }>(requestUrl);
+  const response = await fetch(requestUrl);
+  const data = await response.json();
   return data.response;
 };
 

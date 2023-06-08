@@ -1,21 +1,17 @@
-const main = async (argumentJson) => {
-  const requestURL = argumentJson["requestUrl"];
-  const searchParams = new URLSearchParams();
-  requestURL
-    .split("?")[1]
-    .split("&")
-    .forEach((pair) => {
-      const [key, value] = pair.split("=");
-      searchParams.append(key, value);
-    });
-  const entityId = searchParams.get("entityId");
+const fetchAggregateReviewDataForEntity = async (request) => {
+  const { pathParams, method } = request;
 
-  if (entityId === null) {
-    return {
-      statusCode: 400,
-      body: "Entity ID is required",
-      Headers: {},
-    };
+  switch (method) {
+    case "GET":
+      break;
+    default:
+      return new Response("Method not allowed", null, 405);
+  }
+
+  const entityId = pathParams.id;
+
+  if (!entityId) {
+    return new Response("Entity ID not provided", null, 400);
   }
 
   // use Promise.all to fetch reviews for yext for 1, 2, 3, 4, 5 stars
@@ -49,17 +45,19 @@ const main = async (argumentJson) => {
   console.log(`averageReview: ${averageRating}`);
 
   // return the average review and the reviews for each star rating, the total number of reviews, and the total number of reviews for each star rating
-  return {
-    statusCode: 200,
-    body: JSON.stringify({
+  return new Response(
+    JSON.stringify({
       averageRating,
       // reviews,
       totalReviews,
       totalReviewsByRating,
     }),
-    Headers: {},
-  };
+    null,
+    200
+  );
 };
+
+export default fetchAggregateReviewDataForEntity;
 
 const reviewsPath =
   "https://cdn.yextapis.com/v2/accounts/me/content/fetchReviewsForEntity";
@@ -73,7 +71,7 @@ const fetchReviewsFromYext = async (
   docs: ReviewProfile[];
   nextPageToken?: string;
 }> => {
-  let requestString = `${reviewsPath}?api_key=1316c9fafd65fd4518e69100166461a7&v=20221114&entity.id=${entityId}`;
+  let requestString = `${reviewsPath}?api_key=${YEXT_PUBLIC_CONTENT_API_KEY}&v=20221114&entity.id=${entityId}`;
   if (pageToken) {
     requestString += `&pageToken=${pageToken}`;
   }
@@ -105,4 +103,17 @@ interface ReviewProfile {
   reviewDate: string;
 }
 
-export default main;
+class Response {
+  body: string;
+  headers: any;
+  statusCode: number;
+
+  constructor(body: string, headers: any, statusCode: number) {
+    this.body = body;
+    this.headers = headers || {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "http://localhost:5173",
+    };
+    this.statusCode = statusCode;
+  }
+}
