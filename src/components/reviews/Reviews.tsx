@@ -14,6 +14,7 @@ export interface ReviewProps {
   entityId: string;
   entityName?: string;
   entityImage?: ComplexImageType;
+  reviewSubmissionLabel?: string;
 }
 
 type EntityReviewAggregate = {
@@ -79,10 +80,10 @@ const fetchReviewsAggForEntity = async (
 const reviewsUrl = `https://streams.yext.com/v2/accounts/me/api/fetchReviewsForEntity?api_key=${YEXT_PUBLIC_CONTENT_API_KEY}&v=20221114`;
 
 const fetchReviews = async (
-  productId: string,
+  id: string,
   sort?: ReviewSort
 ): Promise<ReviewsResponse> => {
-  let requestUrl = reviewsUrl + "&entity.id=" + productId;
+  let requestUrl = reviewsUrl + "&entity.id=" + id;
   if (sort) {
     requestUrl += `&${reviewSortOptions[sort].key}=${reviewSortOptions[sort].value}`;
   }
@@ -93,7 +94,12 @@ const fetchReviews = async (
   return data.response;
 };
 
-export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
+export const Reviews = ({
+  entityId,
+  entityName,
+  entityImage,
+  reviewSubmissionLabel,
+}: ReviewProps) => {
   const [showReviewSubmissionForm, setShowReviewSubmissionForm] =
     useState(false);
   const [sort, setSort] = useState<ReviewSort>("reviewDateDesc");
@@ -209,8 +215,7 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
                 Share your thoughts
               </h3>
               <p className="mt-1 text-sm text-gray-600">
-                If you’ve used this product, share your thoughts with other
-                customers
+                {reviewSubmissionLabel}
               </p>
 
               <button

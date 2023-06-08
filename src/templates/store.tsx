@@ -17,6 +17,7 @@ import StoreDetails from "../components/StoreDetails";
 import Hours from "../components/Hours";
 import StaticMap from "../components/StaticMap";
 import { Image } from "@yext/pages/components";
+import { Reviews } from "../components/reviews/Reviews";
 
 export const config: TemplateConfig = {
   stream: {
@@ -93,6 +94,8 @@ const Store: Template<TemplateRenderProps> = ({
   document,
 }: TemplateRenderProps) => {
   const {
+    id,
+    name,
     address,
     hours,
     mainPhone,
@@ -105,41 +108,49 @@ const Store: Template<TemplateRenderProps> = ({
   return (
     <>
       <Main directory={_site}>
-        {c_coverPhoto && (
-          <div className="bg-white">
-            <div className="mx-auto max-w-7xl sm:px-6 sm:py-8 lg:px-8">
-              <div className="relative overflow-hidden px-6 py-24 sm:rounded-lg sm:px-16 min-h-[600px]">
-                <Image
-                  image={c_coverPhoto}
-                  className="absolute inset-0 h-full w-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        )}
-        <div className="mx-auto max-w-7xl py-8 px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
-            <div>
-              <StoreDetails address={address} phone={mainPhone} />
-              {hours && <Hours title={"Store Hours"} hours={hours} />}
-            </div>
-            {c_storeDescription && (
-              <div className="p-2 px-4 py-5 sm:p-6">
-                <div className="text-sky-400 font-semibold text-xl">
-                  <h3>{`About our ${address.city} Store`}</h3>
-                  <p className="my-4 prose lg:prose-lg ">
-                    {c_storeDescription}
-                  </p>
+        <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:gap-x-8 lg:px-8">
+          {c_coverPhoto && (
+            <div className="bg-white">
+              <div className="mx-auto max-w-7xl sm:px-6 sm:py-8 lg:px-8">
+                <div className="relative overflow-hidden px-6 py-24 sm:rounded-lg sm:px-16 min-h-[600px]">
+                  <Image
+                    image={c_coverPhoto}
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
                 </div>
               </div>
-            )}
-            {geocodedCoordinate?.latitude && geocodedCoordinate?.longitude && (
-              <StaticMap
-                latitude={geocodedCoordinate.latitude}
-                longitude={geocodedCoordinate.longitude}
-              />
-            )}
+            </div>
+          )}
+          <div className="mx-auto max-w-7xl py-8 px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-x-10 gap-y-10 md:grid-cols-2">
+              <div>
+                <StoreDetails address={address} phone={mainPhone} />
+                {hours && <Hours title={"Store Hours"} hours={hours} />}
+              </div>
+              {c_storeDescription && (
+                <div className="p-2 px-4 py-5 sm:p-6">
+                  <div className="text-sky-400 font-semibold text-xl">
+                    <h3>{`About our ${address.city} Store`}</h3>
+                    <p className="my-4 prose lg:prose-lg ">
+                      {c_storeDescription}
+                    </p>
+                  </div>
+                </div>
+              )}
+              {geocodedCoordinate?.latitude &&
+                geocodedCoordinate?.longitude && (
+                  <StaticMap
+                    latitude={geocodedCoordinate.latitude}
+                    longitude={geocodedCoordinate.longitude}
+                  />
+                )}
+            </div>
           </div>
+          <Reviews
+            entityId={id}
+            entityName={name}
+            reviewSubmissionLabel="If you’ve visited this location, share your thoughts with other customers"
+          />
         </div>
       </Main>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}

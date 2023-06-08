@@ -277,6 +277,7 @@ const Product = ({ document }: TemplateRenderProps) => {
           entityId={id}
           entityName={name}
           entityImage={photoGallery[0]}
+          reviewSubmissionLabel="If you’ve used this product, share your thoughts with other customers"
         />
       </div>
       {/* This component displays a link to the entity that represents the given page in the Knowledge Graph*/}
