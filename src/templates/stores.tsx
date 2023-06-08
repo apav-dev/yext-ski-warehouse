@@ -18,7 +18,6 @@ export const config: TemplateConfig = {
   stream: {
     $id: "stores-locator",
     fields: [
-      "name",
       "slug",
       "c_headingText",
       "c_subHeadingText",

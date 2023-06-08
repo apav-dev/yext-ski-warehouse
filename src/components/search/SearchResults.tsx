@@ -5,7 +5,6 @@ import {
   VerticalResults,
 } from "@yext/search-ui-react";
 import ProductCard from "./ProductCard";
-import { Section } from "../CategorySelector";
 import { useEffect, useState } from "react";
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/20/solid";
 import MobileFilters from "../mobile/MobileFilters";
@@ -14,25 +13,13 @@ import Facets from "./Facets";
 import SortDropdown from "./SortDropdown";
 import LoadingSnowflakes from "./LoadingSnowflakes";
 
-export interface SearchResultsProps {
-  filters?: Section[];
-  headingText?: string;
-  subheadingText?: string;
-}
-
 type InitialSearchStatus = "notStarted" | "inProgress" | "complete";
 
-const SearchResults = ({
-  headingText,
-  subheadingText,
-  filters,
-}: SearchResultsProps) => {
+const SearchResults = () => {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [initialSearchStatus, setInitialSearchStatus] =
     useState<InitialSearchStatus>("notStarted");
 
-  const resultsCount =
-    useSearchState((state) => state.vertical.resultsCount) || 0;
   const searchLoading = useSearchState((state) => state.searchStatus.isLoading);
 
   const handleFiltersClick = () => {

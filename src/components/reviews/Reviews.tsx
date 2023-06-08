@@ -9,12 +9,12 @@ import { useEffect, useState } from "react";
 import { ComplexImageType } from "@yext/pages/components";
 import ReviewSortDropdown from "./ReviewSortDropdown";
 import ReviewSkeleton from "./ReviewSkeleton";
-import fetch from "../../utils/fetch";
 
 export interface ReviewProps {
   entityId: string;
   entityName?: string;
   entityImage?: ComplexImageType;
+  reviewSubmissionLabel?: string;
 }
 
 type EntityReviewAggregate = {
@@ -70,7 +70,7 @@ const REVIEWS_LIMIT = 5;
 const fetchReviewsAggForEntity = async (
   entityId: string
 ): Promise<EntityReviewAggregate> => {
-  const requestUrl = "/reviewsAgg?entityId=" + entityId;
+  const requestUrl = `/reviews/${entityId}`;
 
   const response = await fetch(requestUrl);
   const data = await response.json();
@@ -80,20 +80,26 @@ const fetchReviewsAggForEntity = async (
 const reviewsUrl = `https://streams.yext.com/v2/accounts/me/api/fetchReviewsForEntity?api_key=${YEXT_PUBLIC_CONTENT_API_KEY}&v=20221114`;
 
 const fetchReviews = async (
-  productId: string,
+  id: string,
   sort?: ReviewSort
 ): Promise<ReviewsResponse> => {
-  let requestUrl = reviewsUrl + "&entity.id=" + productId;
+  let requestUrl = reviewsUrl + "&entity.id=" + id;
   if (sort) {
     requestUrl += `&${reviewSortOptions[sort].key}=${reviewSortOptions[sort].value}`;
   }
   requestUrl += "&limit=" + REVIEWS_LIMIT;
 
-  const data = await fetch<{ response: ReviewsResponse }>(requestUrl);
+  const response = await fetch(requestUrl);
+  const data = await response.json();
   return data.response;
 };
 
-export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
+export const Reviews = ({
+  entityId,
+  entityName,
+  entityImage,
+  reviewSubmissionLabel,
+}: ReviewProps) => {
   const [showReviewSubmissionForm, setShowReviewSubmissionForm] =
     useState(false);
   const [sort, setSort] = useState<ReviewSort>("reviewDateDesc");
@@ -209,8 +215,7 @@ export const Reviews = ({ entityId, entityName, entityImage }: ReviewProps) => {
                 Share your thoughts
               </h3>
               <p className="mt-1 text-sm text-gray-600">
-                If you’ve used this product, share your thoughts with other
-                customers
+                {reviewSubmissionLabel}
               </p>
 
               <button
