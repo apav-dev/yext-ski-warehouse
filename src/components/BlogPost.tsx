@@ -1,9 +1,5 @@
-import React, { Suspense } from "react";
-import { StyledComponents } from "./StyledComponents";
+import React from "react";
 import { ComplexImageType, Image } from "@yext/pages/components";
-// import NoSsr from "@mui/base/NoSsr";
-// // Import reactmarkdown lazily
-// const ReactMarkdown = React.lazy(() => import("react-markdown"));
 import skiLiftUrl from "../assets/images/ski-lift.jpeg";
 import headshotUrl from "../assets/images/max.jpeg";
 import { Markdown } from "@yext/react-components";
@@ -79,11 +75,6 @@ export const BlogPost = ({
           <img className="w-full h-full object-cover" src={skiLiftUrl} alt="" />
         )}
       </div>
-      {/* <NoSsr>
-        <Suspense fallback="">
-          <ReactMarkdown components={StyledComponents}>{content}</ReactMarkdown>
-        </Suspense>
-      </NoSsr> */}
       <Markdown content={content} />
     </div>
   );
