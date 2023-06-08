@@ -10,10 +10,10 @@ import { useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 import VideoCard from "./VideoCard";
 import FaqCard from "./FaqCard";
-import LoadingSnowflakes from "./LoadingSnowflakes";
 import Faq from "../../types/faqs";
 import Ce_video from "../../types/videos";
 import Ce_helpArticle from "../../types/help_articles";
+åimport FaqCardLoadingSkeleton from "./FaqCardLoadingSkeleton";
 
 const GridSection = ({ results, CardComponent, header }: SectionProps<T>) => {
   if (!CardComponent) {
@@ -74,7 +74,11 @@ const SupportResults = () => {
         <SearchBar placeholder="Search for articles and other helpful resources" />
       </div>
       {searchLoading ? (
-        <LoadingSnowflakes />
+        <div className="space-y-4">
+          {Array.from(Array(3).keys()).map((i) => (
+            <FaqCardLoadingSkeleton key={i} />
+          ))}
+        </div>
       ) : (
         <>
           <DirectAnswer />

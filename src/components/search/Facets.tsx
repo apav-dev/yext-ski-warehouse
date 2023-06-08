@@ -1,6 +1,6 @@
+import React, { useEffect, useState } from "react";
 import { useSearchActions, useSearchState } from "@yext/search-headless-react";
 import { NumericalFacets, StandardFacets } from "@yext/search-ui-react";
-import React, { useEffect, useState } from "react";
 
 const Facets = () => {
   const resultsCount = useSearchState((state) => state.vertical.resultsCount);
