@@ -1,0 +1,5 @@
+{
+  "functions/api/reviews/{{id}}.ts": {
+    "entrypoint": "fetchAggregateReviewDataForEntity"
+  }
+}

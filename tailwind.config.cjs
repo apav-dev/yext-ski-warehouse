@@ -5,6 +5,7 @@ module.exports = {
   content: [
     "./src/**/*.{ts,tsx}",
     "./lib/**/*.{js,jsx}",
+    "node_modules/@yext/chat-ui-react/lib/**/*.{js,jsx}",
     // tailwind is applied to the components by adding the component path here
     ComponentsContentPath,
   ],
