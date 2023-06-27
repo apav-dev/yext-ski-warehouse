@@ -38,6 +38,12 @@ module.exports = {
           "50%": { transform: "rotate(45deg)", "stroke-dashoffset": 52 },
           "100%": { transform: "rotate(360deg)", "stroke-dashoffset": 204 },
         },
+        keyframes: {
+          "fade-in": {
+            "0%": { opacity: "0" },
+            "100%": { opacity: "1" },
+          },
+        },
         snowflakes: {
           "0%": {
             transform: "translateY(0%)",
@@ -54,5 +60,6 @@ module.exports = {
     require("@tailwindcss/forms"),
     require("@tailwindcss/aspect-ratio"),
     require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/container-queries"),
   ],
 };
