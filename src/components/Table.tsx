@@ -29,7 +29,7 @@ export const Table = ({ title, items }: TableProps) => {
                 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
                   {spec.name}
                 </td>
-                <td className="whitespace-nowrap py-4 px-3 text-sm text-gray-500">
+                <td className="py-4 px-3 text-sm text-gray-500">
                   {spec.value}
                 </td>
               </tr>
