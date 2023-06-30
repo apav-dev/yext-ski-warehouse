@@ -39,8 +39,8 @@ const MobileFilters = ({ open, setOpen }: MobileFiltersProps) => {
             leaveTo="-translate-x-full"
           >
             <Dialog.Panel className="relative flex w-full max-w-sm flex-col overflow-y-auto bg-white shadow-xl">
-              <div className="flex px-4 pt-5 pb-2 justify-between">
-                <h2 className="text-xl font-medium text-sky-400">Filters</h2>
+              <div className="flex px-4 py-4 justify-between shadow-md">
+                <h2 className="text-xl font-medium text-sky-400 ">Filters</h2>
                 <button
                   type="button"
                   className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-500"
@@ -50,10 +50,10 @@ const MobileFilters = ({ open, setOpen }: MobileFiltersProps) => {
                   <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
               </div>
-              <div className="px-4 py-2">
+              <div className="px-4 py-4 overflow-y-auto">
                 <Facets />
               </div>
-              <div className="absolute inset-x-0 bottom-4 h-16 ">
+              <div className="py-4 shadow-top">
                 <button
                   type="button"
                   className="w-56 py-4 flex justify-center rounded-lg border mx-auto bg-sky-400 text-white shadow-sm"

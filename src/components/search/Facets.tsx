@@ -1,6 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useSearchActions, useSearchState } from "@yext/search-headless-react";
-import { NumericalFacets, StandardFacets } from "@yext/search-ui-react";
+import {
+  NumericalFacet,
+  StandardFacet,
+  Facets as FacetContainer,
+} from "@yext/search-ui-react";
 
 const Facets = () => {
   const resultsCount = useSearchState((state) => state.vertical.resultsCount);
@@ -14,16 +18,6 @@ const Facets = () => {
     ) ?? [];
 
   const searchActions = useSearchActions();
-
-  const [excludedFieldIds, setExcludedFieldIds] = useState<string[]>();
-
-  // useEffect that adds c_genderName to excludedFieldIds when "men" or "women" is in the url
-  useEffect(() => {
-    console.log(window.location.href);
-    if (window.location.href.includes("men" || "women")) {
-      setExcludedFieldIds(["c_genderName"]);
-    }
-  }, []);
 
   const handleClearFilters = () => {
     searchActions.resetFacets();
@@ -43,21 +37,19 @@ const Facets = () => {
 
   return (
     <>
-      <StandardFacets
+      <FacetContainer
+        // onlyRenderChildren
         customCssClasses={{
           optionInput: "focus:ring-sky-400 text-sky-400 w-6 h-6",
           optionLabel: "text-base text-left",
         }}
-        excludedFieldIds={excludedFieldIds}
-      />
-      <NumericalFacets
-        customCssClasses={{
-          optionInput: "focus:ring-sky-400 text-sky-400 w-6 h-6",
-          optionLabel: "text-base",
-          input: "focus:border-sky-400",
-          applyButton: "text-sky-400",
-        }}
-      />
+      >
+        <NumericalFacet fieldId="c_price" />
+        <StandardFacet fieldId="c_abilityLevel.name" label="Ability Level" />
+        <StandardFacet fieldId="c_brand" />
+        <StandardFacet fieldId="c_terrain.name" label="Terrain" />
+        <StandardFacet fieldId="c_rockerType" />
+      </FacetContainer>
       {(selectedFacetCount > 0 || resultsCount === 0) && (
         <button
           className="text-sky-400 hover:underline w-full text-left"
