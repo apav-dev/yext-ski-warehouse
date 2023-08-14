@@ -29,11 +29,13 @@ const Main = ({ children, initialFilters, directory }: MainProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <P13nProvider>
-        <ChatHeadlessProvider config={{
-          apiKey: YEXT_PUBLIC_CONTENT_API_KEY || "",
-          botId: "ski-warehouse-chat",
-          saveToSessionStorage: false,
-        }}>
+        <ChatHeadlessProvider
+          config={{
+            apiKey: YEXT_PUBLIC_CONTENT_API_KEY || "",
+            botId: "ski-warehouse-chat",
+            saveToSessionStorage: false,
+          }}
+        >
           <HeadlessProvider
             searcher={searcher}
             routing={defaultRouter}
@@ -52,21 +54,26 @@ const Main = ({ children, initialFilters, directory }: MainProps) => {
                 stream={false}
                 customCssClasses={{
                   buttonIcon: "text-white",
-                  button: "bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700",
+                  button:
+                    "bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700",
                   panelCssClasses: {
                     messageBubbleCssClasses: {
                       message: "text-base",
                       message__user: "bg-gradient-to-r from-sky-500 to-sky-600",
                     },
                     inputCssClasses: {
-                      sendButton: "bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700",
-                      textArea: "border border-gray-300 focus:ring-sky-500 focus:border-sky-500 text-base",
-                    }
+                      sendButton:
+                        "bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-600 hover:to-sky-700",
+                      textArea:
+                        "border border-gray-300 focus:ring-sky-500 focus:border-sky-500 text-base",
+                    },
                   },
                   headerCssClasses: {
-                    container: "bg-gradient-to-r from-sky-500 to-sky-600",
+                    container:
+                      "bg-gradient-to-r from-sky-500 to-sky-600 rounded-t-3xl",
+
                     title: "overflow-hidden",
-                  }
+                  },
                 }}
               />
             </CartProvider>
